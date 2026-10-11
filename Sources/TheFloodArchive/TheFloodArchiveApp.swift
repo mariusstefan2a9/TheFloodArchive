@@ -73,7 +73,8 @@ private struct AuditFile: Identifiable {
 private let auditFiles: [AuditFile] = [
     AuditFile(id: "megafloods", title: "Megafloods: Missoula and Altai", label: "STRONG EVIDENCE · REGIONAL EVENTS", proClaim: "The pro-flood case starts with a sound observation: ordinary rivers cannot explain every landscape. The Missoula floods and Altai outburst floods were immense, fast, and geomorphically transformative.", observations: "Field mapping, giant current ripples, flood gravel, erratic boulders, and stacked flood beds document repeated glacial-lake outbursts. USGS synthesis estimates dozens, likely over a hundred, Missoula floods across roughly 20–14 thousand years ago. Altai lake drainage is a separate, independently studied regional megaflood system.", context: "These are excellent evidence that catastrophic regional floods happen. Their different basins, glacial dams, deposits, and ages do not combine into evidence for one simultaneous global flood or identify Noah’s event.", references: [
         EvidenceReference(title: "USGS · Missoula and Bonneville floods review", kind: "GOVERNMENT GEOLOGY REVIEW", url: "https://www.usgs.gov/publications/missoula-and-bonneville-floods-a-review-ice-age-megafloods-columbia-river-basin"),
-        EvidenceReference(title: "Herget et al. · Last ice-dammed lake in the Kuray basin", kind: "PEER-REVIEWED REVIEW · 2020", url: "https://doi.org/10.1016/j.earscirev.2020.103183"),
+        EvidenceReference(title: "Agatova et al. · Last ice-dammed lake in the Kuray basin", kind: "PEER-REVIEWED RESEARCH · 2020", url: "https://doi.org/10.1016/j.earscirev.2020.103183"),
+        EvidenceReference(title: "Herget et al. · Altai megafloods—The temporal context", kind: "PEER-REVIEWED REVIEW · 2020", url: "https://doi.org/10.1016/j.earscirev.2019.102995"),
         EvidenceReference(title: "Rudoy · Altai glacial superfloods", kind: "PEER-REVIEWED RESEARCH · 2002", url: "https://doi.org/10.1016/S1040-6182(01)00066-0")
     ]),
     AuditFile(id: "blacksea", title: "Black Sea: a candidate flood", label: "RAPID-INFLOW HYPOTHESIS", proClaim: "Ryan and Pitman proposed that rising Mediterranean water breached the Bosporus and rapidly flooded a lower Black Sea basin in the early Holocene. They suggested the event could have affected farming communities and inspired flood traditions.", observations: "Submerged shorelines, marine and freshwater sediments, and changing salinity are documented in the Black Sea basin. Ryan and Pitman used geological and archaeological clues to argue for rapid inflow.", context: "This is a proposed regional event and one possible setting for ancient flood memories. The original paper presents its evidence and interpretation; the broader connection to Noah is an additional historical interpretation.", references: [
@@ -95,7 +96,7 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "ICR · Global sedimentary sequences and megaflood interpretation", kind: "CREATIONIST-PERSPECTIVE RESEARCH", url: "https://www.icr.org/article/global-stratigraphy-supports-progressive"),
         EvidenceReference(title: "Whitmore & Garner · Coconino subaqueous interpretation", kind: "CREATIONIST-PERSPECTIVE CONFERENCE PAPER · 2023", url: "https://publications.cedarville.edu/icc_proceedings/vol_9_2023/588/")
     ]),
-    AuditFile(id: "polystrate", title: "Upright trees and rapid burial", label: "POLYSTRATE FOSSILS · RAPID-BURIAL ARGUMENT", proClaim: "Some fossil trunks cross multiple beds. Flood proponents argue that sediment must have accumulated quickly enough to bury the standing trees before they decayed.", observations: "At Joggins, Nova Scotia, researchers documented fossil forests and plant–sediment structures in Pennsylvanian rocks. Creationist authors highlight upright trunks extending through several strata as evidence for rapid deposition.", context: "The flood interpretation treats polystrate trunks as snapshots of fast sedimentation during a large-scale catastrophe. Examine the fossils, their surrounding strata, and the proposed mechanism in the cited sources.", references: [
+    AuditFile(id: "polystrate", title: "Upright trees and rapid burial", label: "POLYSTRATE FOSSILS · RAPID-BURIAL ARGUMENT", proClaim: "Some fossil trunks cross multiple beds. Flood proponents argue that sediment must have accumulated quickly enough to bury the standing trees before they decayed.", observations: "At Joggins, Nova Scotia, researchers documented fossil forests and plant–sediment structures in Pennsylvanian floodplain strata. The fossil forests record interactions between plants and sediment; creationist authors highlight upright trunks extending through several strata as evidence for rapid deposition.", context: "The flood interpretation treats polystrate trunks as snapshots of fast sedimentation during a large-scale catastrophe. Compare the fossil trunks, surrounding beds, and proposed mechanisms in the linked field and research sources.", references: [
         EvidenceReference(title: "Rygel, Gibling & Calder · Joggins fossil-forest sediment structures", kind: "PEER-REVIEWED RESEARCH · SEDIMENTOLOGY", url: "https://doi.org/10.1111/j.1365-3091.2004.00635.x"),
         EvidenceReference(title: "Joggins Fossil Cliffs · UNESCO World Heritage", kind: "INSTITUTIONAL SITE", url: "https://whc.unesco.org/en/list/1285/"),
         EvidenceReference(title: "ICR · Polystrate trees at Joggins Fossil Cliffs", kind: "CREATIONIST-PERSPECTIVE INTERPRETATION", url: "https://www.icr.org/article/445/")
@@ -105,28 +106,35 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "Schweitzer et al. · Iron and deep-time preservation", kind: "PROCEEDINGS OF THE ROYAL SOCIETY B · 2014", url: "https://doi.org/10.1098/rspb.2013.2741"),
         EvidenceReference(title: "Wiemann et al. · Mechanisms of soft-tissue preservation", kind: "PEER-REVIEWED RESEARCH · 2019", url: "https://doi.org/10.1098/rsos.191972")
     ]),
-    AuditFile(id: "unconformities", title: "Flat contacts and missing time", label: "WIDESPREAD LAYERS · RAPID-DEPOSITION ARGUMENT", proClaim: "Flood advocates point to broad, apparently flat contacts between rock units and argue that they could have been deposited in quick succession, without long gaps for erosion.", observations: "Grand Canyon formations include broad sedimentary layers and the Great Unconformity, a contact between crystalline basement and sedimentary rock. Creationist field reports emphasize the lateral continuity and relatively flat appearance of selected contacts.", context: "Flood geologists interpret extensive layers and selected flat contacts as products of successive, high-volume sediment flows during a major catastrophe. The linked field report presents their argument and evidence.", references: [
+    AuditFile(id: "unconformities", title: "Flat contacts and missing time", label: "WIDESPREAD LAYERS · RAPID-DEPOSITION ARGUMENT", proClaim: "Flood advocates point to broad, apparently flat contacts between rock units and argue that they could have been deposited in quick succession, without long gaps for erosion.", observations: "Grand Canyon formations include broad sedimentary layers and the Great Unconformity, a contact between ancient crystalline basement and younger sedimentary rock. The USGS describes unconformities as gaps caused by erosion and elapsed time before new deposition; creationist field reports emphasize the lateral continuity and relatively flat appearance of selected contacts.", context: "Flood geologists interpret extensive layers and selected flat contacts as products of successive, high-volume sediment flows during a major catastrophe. The linked field report presents that argument; the USGS source documents the contact and conventional geologic interpretation.", references: [
         EvidenceReference(title: "ICR · Grand Canyon: Exposing the Flood", kind: "CREATIONIST-PERSPECTIVE FIELD REPORT", url: "https://www.icr.org/node/18094"),
-        EvidenceReference(title: "USGS · Stratified Rocks of the Grand Canyon", kind: "GOVERNMENT GEOLOGY MONOGRAPH", url: "https://pubs.usgs.gov/pp/0669/report.pdf")
+        EvidenceReference(title: "USGS · Stratified Rocks of the Grand Canyon", kind: "GOVERNMENT GEOLOGY MONOGRAPH", url: "https://pubs.usgs.gov/pp/0669/report.pdf"),
+        EvidenceReference(title: "USGS · Geology of Grand Canyon National Park", kind: "GOVERNMENT GEOLOGY RESOURCE", url: "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-grand-canyon-national-park")
     ]),
     AuditFile(id: "folds", title: "Bent strata and the Kaibab fold", label: "FOLDING IS REAL · CAUSE REQUIRES STRUCTURAL EVIDENCE", proClaim: "Flood advocates cite sharply bent layers, including near the East Kaibab monocline, and argue that rock could bend without breaking only while sediment was still soft.", observations: "Soft-sediment deformation is real, but so are tectonic folds and faults. Structural studies of the East Kaibab monocline map faults through the fold and interpret it as fault-propagation folding during later regional compression.", context: "The claim that a whole sequence bent while uniformly soft is not established by the visual curve alone. Researchers map fractures, fault relationships, deformation across multiple strata, and timing indicators. Some local soft-sediment structures can coexist with much older and younger tectonic folding.", references: [
+        EvidenceReference(title: "Tindall & Davis · East Kaibab monocline fault-propagation folding", kind: "PEER-REVIEWED STRUCTURAL GEOLOGY · 1999", url: "https://doi.org/10.1016/S0191-8141(99)00089-9"),
         EvidenceReference(title: "Snelling · Flood interpretation of Grand Canyon folds", kind: "CREATIONIST-PERSPECTIVE PAPER", url: "https://www.biblicalcreationtrust.org/pdf/e-origins_vol4_pp22-25_flood_geology_explains_grand_canyon_folds.pdf")
     ]),
     AuditFile(id: "cpt", title: "Catastrophic Plate Tectonics", label: "PROPOSED FLOOD MODEL · NOT MAINSTREAM CONSENSUS", proClaim: "John Baumgardner’s creationist model proposes runaway subduction, rapid movement of plates, seafloor volcanism, rising oceans, and intense rainfall during a Genesis Flood.", observations: "The model has been presented in the Proceedings of the International Conference on Creationism. Modern plate tectonics is strongly supported, but that does not automatically validate a rapid, year-long version of plate motion.", context: "A scientific model must match measured plate kinematics, geochemistry, heat flow, the thermal history of Earth, and geological chronology. Cite the specific model as its authors present it; do not label it as a result accepted by mainstream geophysics. The cited conference proceedings are a creationist venue, not a mainstream geoscience journal.", references: [
         EvidenceReference(title: "Baumgardner · Catastrophic Plate Tectonics: physics behind the model", kind: "CREATIONIST-PERSPECTIVE RESEARCH · 2003", url: "https://www.icr.org/article/catastrophic-plate-tectonics-flood"),
     ]),
     AuditFile(id: "rate", title: "RATE and helium in zircon", label: "PROPONENT CLAIM · METHOD-DEPENDENT INTERPRETATION", proClaim: "The RATE project reported helium retained in zircons from deep granite and argued that diffusion calculations imply a recent age and accelerated radioactive decay.", observations: "Helium diffusion in zircon is measurable and is used in thermochronology. Published research shows that diffusion behavior depends on temperature history, crystal properties, and radiation damage; those details matter when interpreting an age.", context: "The RATE interpretation is published in creationist research venues and is not accepted as evidence for accelerated nuclear decay by mainstream geochronology. A single helium-retention result cannot independently establish a six-thousand-year timescale; it must be tested against U–Pb ages, measured diffusion kinetics, and the full thermal history.", references: [
-        EvidenceReference(title: "Humphreys et al. · Helium diffusion rates support accelerated decay", kind: "CREATIONIST-PERSPECTIVE RESEARCH SUMMARY · 2003", url: "https://www.icr.org/content/new-rate-data-support-young-world"),
+        EvidenceReference(title: "Humphreys · RATE zircon helium diffusion study", kind: "CREATIONIST-PERSPECTIVE RESEARCH · RATE II · 2005", url: "https://www.icr.org/node/8376"),
+        EvidenceReference(title: "Guenthner et al. · Radiation damage and helium diffusion in zircon", kind: "PEER-REVIEWED THERMOCHRONOLOGY · 2013", url: "https://doi.org/10.2475/03.2013.01"),
+        EvidenceReference(title: "Guenthner et al. · Zircon damage-annealing model", kind: "PEER-REVIEWED RESEARCH · 2021", url: "https://doi.org/10.1029/2019GC008757"),
     ]),
-    AuditFile(id: "fossilOrder", title: "Fossil order and radiometric ages", label: "MULTIPLE INDEPENDENT LINES OF EVIDENCE", proClaim: "Flood proponents suggest ecological zonation, mobility, habitat, and water transport could influence which organisms were buried first, so fossil order deserves investigation rather than a slogan.", observations: "Across many regions, fossil assemblages occur in a reproducible succession. Radiometric ages from suitable igneous minerals bracket sedimentary strata; fossil succession and isotope dating are related but distinct methods.", context: "A single short flood would need to explain the repeated global order, ecological patterns, trackways, soils, burrows, reefs, and independently dated volcanic layers. The full fossil and geochronologic record supports a deep-time sequence, not a single recent depositional year. The app links the underlying methods so players can inspect how the age model is built.", references: [
-        EvidenceReference(title: "ICR · The five rules of Flood paleontology", kind: "CREATIONIST-PERSPECTIVE RESEARCH", url: "https://www.icr.org/article/13444/")
+    AuditFile(id: "fossilOrder", title: "Fossil order and radiometric ages", label: "MULTIPLE INDEPENDENT LINES OF EVIDENCE", proClaim: "Flood proponents suggest ecological zonation, mobility, habitat, and water transport could influence which organisms were buried first, so fossil order deserves investigation rather than a slogan.", observations: "Across many regions, fossil assemblages occur in a reproducible succession. Radiometric ages from suitable igneous minerals bracket sedimentary strata; fossil succession and isotope dating are related but distinct methods.", context: "A flood model can be compared with the observed fossil order and with independently dated layers. The references below explain both the pro-flood proposal and the methods used to build and cross-check geological sequences.", references: [
+        EvidenceReference(title: "ICR · The five rules of Flood paleontology", kind: "CREATIONIST-PERSPECTIVE RESEARCH", url: "https://www.icr.org/article/13444/"),
+        EvidenceReference(title: "Smithsonian · Stratigraphy, fossil succession, and dating", kind: "MUSEUM SCIENCE RESOURCE", url: "https://humanorigins.si.edu/evidence/dating"),
+        EvidenceReference(title: "International Commission on Stratigraphy · Geologic time scale", kind: "INTERNATIONAL SCIENTIFIC STANDARD", url: "https://stratigraphy.org/" )
     ]),
-    AuditFile(id: "birthFossil", title: "A fossil caught giving birth", label: "EXCEPTIONAL FOSSIL · CHINA, NOT NORTH AMERICA", proClaim: "A Chaohusaurus fossil preserves a mother and embryo in a birth position. Flood advocates point to such snapshots as evidence that organisms were buried suddenly during a catastrophe.", observations: "The fossil was described in peer-reviewed research; the authors interpret it as a marine reptile giving birth when it died. Abrupt burial can preserve an extraordinary moment in any suitable depositional setting.", context: "The specimen comes from China and dates to the Triassic, around 248 million years ago. It supports rapid local burial and fossilization, not a single recent global flood. The original paper discusses the fossil and the authors’ interpretation directly.", references: [
-        EvidenceReference(title: "Froebisch et al. · A marine reptile giving birth", kind: "PEER-REVIEWED RESEARCH · PLOS ONE · 2014", url: "https://pubmed.ncbi.nlm.nih.gov/24533127/"),
-        EvidenceReference(title: "PLOS ONE · Full article", kind: "ORIGINAL PAPER & FIGURES", url: "https://doi.org/10.1371/journal.pone.0088640")
+    AuditFile(id: "birthFossil", title: "A fossil caught giving birth", label: "EXCEPTIONAL FOSSIL · CHINA, NOT NORTH AMERICA", proClaim: "A Chaohusaurus fossil preserves a mother, two embryos, and a neonate in a birth-position arrangement. Flood advocates point to such snapshots as evidence that organisms could be buried suddenly during catastrophe.", observations: "The authors report three associated young: one inside the mother, one partly emerging, and one outside. They conclude that the mother likely died in labor; they also note that the rock is marine and infer that birth most likely occurred underwater.", context: "The specimen comes from China and dates to the Early Triassic, around 248 million years ago. It is a remarkable snapshot of preservation. The paper documents the fossil and the authors’ interpretation; the broader link to Noah’s Flood is a separate inference.", references: [
+        EvidenceReference(title: "Motani et al. · Chaohusaurus embryos and birth position", kind: "PEER-REVIEWED RESEARCH · PLOS ONE · 2014", url: "https://doi.org/10.1371/journal.pone.0088640"),
+        EvidenceReference(title: "PLOS ONE · Full article and figures", kind: "OPEN-ACCESS ORIGINAL PAPER", url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0088640")
     ]),
-    AuditFile(id: "grassMammoth", title: "The mammoth with grass in its stomach", label: "BERESOVKA · SIBERIA · RAPID-PRESERVATION CLUE", proClaim: "The Berezovka mammoth was found with plant material in its digestive tract. Flood advocates cite its preservation and last meal as a striking snapshot of an animal overcome and rapidly buried.", observations: "Museum records identify Berezovka as a woolly mammoth recovered from Siberian permafrost, with stomach contents that included grasses and other plants. Permafrost preserved soft tissue and material from its final meal.", context: "The specimen is from Siberia, not North America. The preserved stomach contents and carcass provide a vivid case for investigating rapid burial and exceptional preservation; the global-flood connection is the proponents’ interpretation.", references: [
+    AuditFile(id: "grassMammoth", title: "The mammoth with grass in its mouth", label: "BEREZOVKA · SIBERIA · RAPID-PRESERVATION CLUE", proClaim: "The Berezovka mammoth was found with vegetation in its mouth and plant material in its stomach. Flood advocates cite this preserved final meal as a striking snapshot of an animal overcome and rapidly buried.", observations: "The Smithsonian documents grasses and other plants in the mammoth’s stomach. Pfizenmayer’s expedition account also describes vegetation preserved in the mouth. The specimen was recovered from Siberian permafrost, which preserved soft tissue and plant material.", context: "This is one exceptionally preserved Siberian mammoth. The last meal is directly documented; the cause and speed of burial are interpreted from the carcass and its geological setting. Flood proponents connect the case to a larger catastrophe.", references: [
         EvidenceReference(title: "Smithsonian · Berezovka woolly mammoth and stomach contents", kind: "MUSEUM RESEARCH NOTE", url: "https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar"),
+        EvidenceReference(title: "Pfizenmayer · Siberian mammoths and the Berezovka expedition", kind: "HISTORICAL EXPEDITION ACCOUNT · 1939", url: "https://rcin.org.pl/dlibra/publication/3640/edition/3278/les-mammouths-de-siberie-le-decouverte-de-cadavres-de-mammouths-prehistoriques-sur-les-bords-de-la-berezovka-et-de-la-sanga-iourakh-pfizenmayer-eugen-wilhelm-1869-1941?language=pl"),
         EvidenceReference(title: "ICR · Mammoths and rapid burial in the Flood model", kind: "CREATIONIST-PERSPECTIVE INTERPRETATION", url: "https://www.icr.org/article/mammoths-testify-flood")
     ])
 ]
@@ -136,37 +144,37 @@ private let clues: [Clue] = [
         id: "scablands", title: "The Scablands Scar", place: "EASTERN WASHINGTON · NORTH AMERICA", symbol: "water.waves",
         category: "GEOLOGY · CONFIRMED ICE-AGE MEGAFLOODS",
         summary: "Basalt coulees, giant ripple marks, and gravel bars record immense outburst floods.",
-        detail: "USGS research links the Channeled Scablands to repeated outburst floods from glacial Lake Missoula during the last Ice Age. These are well-supported, extraordinary regional floods. Their North American setting and geologic ages do not by themselves identify them with Noah’s Flood or establish a worldwide event."
+        detail: "USGS research links the Channeled Scablands to repeated outburst floods from glacial Lake Missoula during the last Ice Age. These extraordinary floods reshaped a vast region. Could memories of a catastrophe on this scale have traveled far beyond the landscape where it happened?"
     ),
     Clue(
         id: "nuncho", title: "Nun cho ga", place: "YUKON · NORTH AMERICA", symbol: "pawprint.fill",
         category: "PALEONTOLOGY · PERMAFROST PRESERVATION",
         summary: "A remarkably preserved baby mammoth emerged from Yukon permafrost in 2022.",
-        detail: "Nun cho ga is a female woolly mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in traditional territory. The find is an extraordinary example of permafrost preservation. It is not the famous Berezovka mammoth with analyzed stomach contents: that specimen came from Siberia. Neither specimen alone establishes a global flood."
+        detail: "Nun cho ga is a female woolly mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in traditional territory. The find is an extraordinary example of permafrost preservation. Compare it with the Berezovka mammoth in the Siberian file: different animals, different places, both preserved in frozen ground. What burial conditions can preserve a whole carcass?"
     ),
     Clue(
         id: "ashfall", title: "The Ashfall Nursery", place: "NEBRASKA · NORTH AMERICA", symbol: "leaf",
         category: "FOSSIL SITE · VOLCANIC ASH",
         summary: "A Nebraska fossil bed preserves articulated animals in a layer of volcanic ash.",
-        detail: "At Ashfall Fossil Beds, Nebraska, the University of Nebraska State Museum describes a Miocene assemblage buried by volcanic ash from an eruption in what is now Idaho. Researchers interpret the ash and groundwater as the cause of rapid burial and preservation. Pregnant animals are among the site's finds; this is not the famous marine-reptile fossil caught giving birth, which comes from China."
+        detail: "At Ashfall Fossil Beds, Nebraska, the University of Nebraska State Museum describes a Miocene assemblage buried by volcanic ash from an eruption in what is now Idaho. The site preserves articulated skeletons and pregnant animals. Compare this mass burial with the individual Chaohusaurus birth-position fossil from China: two very different snapshots of life interrupted."
     ),
     Clue(
         id: "silt", title: "The Silt Line", place: "MESOPOTAMIA", symbol: "water.waves",
         category: "ARCHAEOLOGY · MESOPOTAMIA",
         summary: "A band of water-laid clay cuts through the remains of an ancient settlement.",
-        detail: "Excavations at several Mesopotamian cities found flood deposits. Their layers differ in place and date: they are evidence of serious local floods, but do not form one worldwide layer or identify a single event as Noah’s Flood."
+        detail: "Excavations at several Mesopotamian cities found flood deposits. Each layer belongs to the story of its own settlement; together they show how water repeatedly reshaped the region where some of the oldest flood narratives took form. Compare the sites, dates, and stories."
     ),
     Clue(
         id: "tablet", title: "The Broken Tablet", place: "ANCIENT NEAR EAST", symbol: "scroll",
         category: "ANCIENT TEXT · CUNEIFORM",
         summary: "A flood survivor tells a story of a warning, a vessel, and a ruined world.",
-        detail: "Mesopotamian flood narratives, including the Epic of Gilgamesh and Atrahasis, share themes with the Genesis account. The surviving written versions are ancient; similarities show a shared cultural world, but cannot by themselves prove exactly which events inspired each story."
+        detail: "Mesopotamian flood narratives, including the Epic of Gilgamesh and Atrahasis, share themes with the Genesis account. The ancient versions share striking themes: a warning, a vessel, survival, and a changed world. Read the tablet record, then ask what catastrophe or memory could lie behind these accounts."
     ),
     Clue(
         id: "shore", title: "The Shifting Shore", place: "BLACK SEA",
         symbol: "water.waves.and.arrow.up", category: "GEOLOGY · ACTIVE DEBATE",
         summary: "A submerged ancient shoreline raises a difficult question: how quickly did the water rise?",
-        detail: "One proposal links a rapid rise in the Black Sea to memories behind flood traditions. Researchers dispute the speed and scale of the event; other evidence supports a more gradual change. It remains a hypothesis, not a confirmed identification of Noah’s Flood."
+        detail: "Ryan and Pitman proposed that Mediterranean water broke through the Bosporus and rapidly entered a lower Black Sea basin. Submerged shorelines and changing sediments preserve a real environmental transition; how fast it happened, and what memories it left, remain questions for the investigator."
     )
 ]
 
@@ -191,7 +199,11 @@ private func references(for clueID: String) -> [EvidenceReference] {
         EvidenceReference(title: "Woolley · Ur flood deposit in archaeological context", kind: "RESEARCH HISTORY & DISCUSSION", url: "https://doi.org/10.4236/ad.2015.31003")
     ]
     case "tablet": [
-        EvidenceReference(title: "British Museum · Flood Tablet and Epic of Gilgamesh", kind: "PRIMARY ARTEFACT CATALOGUE", url: "https://www.britishmuseum.org/collection/search?keyword=WCT5128"),
+        EvidenceReference(title: "British Museum · Flood Tablet (K.2252)", kind: "PRIMARY ARTEFACT CATALOGUE", url: "https://www.britishmuseum.org/collection/object/W_K-2252"),
+        EvidenceReference(title: "Genesis 6 · Noah commissioned to build the Ark", kind: "BIBLE TEXT · NEW WORLD TRANSLATION", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/6/"),
+        EvidenceReference(title: "Genesis 7 · The Flood begins", kind: "BIBLE TEXT · NEW WORLD TRANSLATION", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/7/"),
+        EvidenceReference(title: "Genesis 8 · The waters recede", kind: "BIBLE TEXT · NEW WORLD TRANSLATION", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/8/"),
+        EvidenceReference(title: "Genesis 9 · The covenant", kind: "BIBLE TEXT · NEW WORLD TRANSLATION", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/9/"),
         EvidenceReference(title: "Oxford Academic · Precursors to Genesis flood narrative", kind: "SCHOLARLY BIBLICAL STUDIES · 2020", url: "https://doi.org/10.1093/oso/9780190062545.003.0007")
     ]
     case "shore": [
@@ -410,7 +422,7 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 22) {
             eyebrow("EVIDENCE WALL  /  FIELD NOTES")
             Text("The clues, connected.").font(.system(size: 34, weight: .regular, design: .serif))
-            Text("Keep observation and interpretation in view. A clue can be real while its connection to Noah’s Flood remains uncertain.")
+            Text("Every clue enters the archive with a source. Decide which traces belong together, and what kind of event could leave them behind.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).frame(maxWidth: 740, alignment: .leading)
             if collected.isEmpty {
                 emptyState(icon: "text.magnifyingglass", title: "No evidence logged yet", subtitle: "Visit the expedition to examine your first lead.", button: "GO TO EXPEDITION") { page = .sites }
@@ -428,7 +440,7 @@ private struct ArchiveView: View {
                 }
                 HStack(spacing: 10) {
                     Image(systemName: "link").foregroundStyle(gold)
-                    Text("Working question: can evidence for regional floods identify one specific event behind the wider story?")
+                    Text("Working question: what event could connect these flood deposits, fossils, coastlines, and ancient accounts?")
                         .font(.system(size: 12, design: .serif)).italic().foregroundStyle(.white.opacity(0.71))
                 }.padding(16).background(gold.opacity(0.07), in: RoundedRectangle(cornerRadius: 11))
                 Button("FORM YOUR THEORY  →") { page = .conclusion }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.count < clues.count)
@@ -441,9 +453,9 @@ private struct ArchiveView: View {
     private var conclusionPage: some View {
         VStack(alignment: .leading, spacing: 22) {
             eyebrow("CASE REVIEW  /  YOUR INTERPRETATION")
-            Text(theory == nil ? "What does the evidence say?" : "Case note saved.")
+            Text(theory == nil ? "What is your final theory?" : "Theory entered into the archive.")
                 .font(.system(size: 34, weight: .regular, design: .serif))
-            Text("Choose the conclusion that best describes the evidence you examined. Your personal beliefs can be part of your interpretation; this question asks what the physical and textual traces establish on their own.")
+            Text("Lay the clues beside one another. Consider the landscapes, the sudden burials, the stories, and the account of Noah. What is the strongest explanation you can make from the case?")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).lineSpacing(4).frame(maxWidth: 770, alignment: .leading)
             if collected.count < clues.count {
                 emptyState(icon: "lock", title: "The case is still open", subtitle: "Collect all six leads before writing your theory.", button: "RETURN TO EXPEDITION") { page = .sites }
@@ -451,10 +463,10 @@ private struct ArchiveView: View {
                 resultCard(theory)
             } else {
                 VStack(spacing: 10) {
-                    theoryOption("regional", title: "A catastrophic regional flood became a lasting memory.", note: "Connect a documented landscape to the ancient flood tradition.")
-                    theoryOption("several", title: "Many catastrophic floods shaped flood traditions.", note: "Follow the echoes across continents and generations.")
-                    theoryOption("noah", title: "Noah’s Flood lies behind the scattered clues.", note: "Connect the geological investigation to the Genesis account.")
-                    theoryOption("global", title: "The clues point to one worldwide cataclysm.", note: "Make the global flood interpretation your final theory.")
+                    theoryOption("regional", title: "A great regional catastrophe began the story.", note: "One landscape, one disaster, remembered for generations.")
+                    theoryOption("several", title: "Many disasters became one shared memory.", note: "Separate floods, carried together through ancient stories.")
+                    theoryOption("noah", title: "Noah’s account preserves the memory of a real Flood.", note: "Connect the geological and historical clues to Genesis.")
+                    theoryOption("global", title: "One worldwide cataclysm connects the clues.", note: "The scattered traces are fragments of one event.")
                 }
             }
             Spacer()
@@ -480,13 +492,13 @@ private struct ArchiveView: View {
         let title: String = switch id {
         case "regional": "A regional disaster can become a world-changing story."
         case "several": "Many waters. Many memories. One enduring mystery."
-        case "noah": "You connect the traces to Noah’s Flood through faith and interpretation."
-        default: "One catastrophe. A world reshaped by water. The archive leaves you with a global flood theory to investigate."
+        case "noah": "You connected the geological and historical clues to Noah’s account. Your theory is now part of the archive."
+        default: "One catastrophe. A world reshaped by water. Your theory connects the scattered clues to a global event."
         }
         let body: String = switch id {
         case "regional": "Flood deposits and old narratives make regional disasters a compelling possibility. You connected a documented landscape with a story carried through generations."
         case "several": "The layers belong to different places and times. That leaves room for more than one disaster to echo through stories passed between generations."
-        case "noah": "You connected real flood deposits, submerged landscapes, and ancient flood traditions to Noah’s story. Your case file records the geological clues and the interpretation that links them."
+        case "noah": "You connected flood deposits, submerged landscapes, ancient flood traditions, and the Genesis account. Your case file records the clues that led you to this theory."
         default: "You assembled evidence of catastrophic flooding, extensive sedimentary layers, fossils, submerged coastlines, and ancient flood traditions into a worldwide flood theory. The investigation continues as new clues emerge."
         }
         VStack(alignment: .leading, spacing: 15) {
@@ -494,7 +506,7 @@ private struct ArchiveView: View {
             Text(title).font(.system(size: 23, design: .serif))
             Text(body).font(.system(size: 13)).foregroundStyle(.white.opacity(0.65)).lineSpacing(4)
             Divider().overlay(.white.opacity(0.1))
-            Text("Your faith and the historical investigation can sit beside each other. This case records what the evidence supports, what remains debated, and where interpretation begins.")
+            Text("A good investigator records both the clues and the theory they support. Reopen the archive whenever you want to examine a source again.")
                 .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
             Button("REOPEN CASE") { theory = nil }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
         }.padding(22).background(panel, in: RoundedRectangle(cornerRadius: 14)).frame(maxWidth: 760, alignment: .leading)

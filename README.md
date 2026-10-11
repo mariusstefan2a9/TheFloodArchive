@@ -1,6 +1,6 @@
 # The Flood Archive
 
-**A source-led flood investigation game for macOS, iPadOS, and iPhone.** The English-language experience uses an adventurous, mysterious field-dossier style. Its case file foregrounds evidence and interpretations cited by proponents of a global flood, while identifying where each fossil or geological site was found.
+**A source-led flood investigation game for macOS, iPadOS, and iPhone.** The English-language experience uses an adventurous, mysterious field-dossier style. Players assemble geological, fossil, archaeological, and textual clues into their own theory about Noah’s Flood. Each case file identifies its location and links the observation to its source, while labeling flood-geology interpretations as interpretations.
 
 ## Open in Xcode
 
@@ -20,7 +20,7 @@
 
 ## Source labels
 
-Each Claim Audit reference is labeled by source type, such as peer-reviewed research, government or museum record, or creationist-perspective research. The linked articles document the underlying observation or the pro-flood interpretation named on the card. Creationist interpretation sources are labeled openly rather than presented as mainstream consensus.
+Each Claim Audit reference is labeled by source type, such as peer-reviewed research, government or museum record, historical expedition account, Bible text, or creationist-perspective research. The linked articles document the underlying observation or the pro-flood interpretation named on the card. The game presents a flood-forward investigation, but the player forms the final theory; it does not state that scientific research has proven one global flood.
 
 Notable scientific and institutional records include the USGS review of the Missoula floods; peer-reviewed Black Sea research by Ryan and colleagues; the Barbados sea-level record; Grand Canyon and Yukon park/government geology; the Nebraska State Museum's Ashfall research; Schweitzer and colleagues' dinosaur-protein studies; sedimentology at Joggins; and the PLOS ONE report of the Chaohusaurus birth-position fossil.
 
