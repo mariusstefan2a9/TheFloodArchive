@@ -408,6 +408,18 @@ private struct ArchiveView: View {
         connectionReasonDraft = ""
     }
 
+    private func prepareConnectionSelection() {
+        let availableIDs = availableConnectionClues.map(\.id)
+        guard availableIDs.count >= 2 else { return }
+
+        if !availableIDs.contains(connectionFirst) {
+            connectionFirst = availableIDs[0]
+        }
+        if !availableIDs.contains(connectionSecond) || connectionSecond == connectionFirst {
+            connectionSecond = availableIDs.first(where: { $0 != connectionFirst }) ?? availableIDs[1]
+        }
+    }
+
     private func removeCaseConnection(_ connection: CaseConnection) {
         storedCaseConnections = caseConnections.filter { $0.id != connection.id }
             .map { "\($0.firstID)~\($0.secondID)~\($0.relation)" }.joined(separator: ",")
@@ -780,6 +792,7 @@ private struct ArchiveView: View {
             }
         }
         .padding(16).background(panel, in: RoundedRectangle(cornerRadius: 14))
+        .onAppear(perform: prepareConnectionSelection)
     }
 
     private func clueMenu(selection: Binding<String>) -> some View {
