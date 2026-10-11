@@ -389,8 +389,9 @@ private let romanianBibleBooks = [
     "luke": "luca", "john": "ioan", "hebrews": "evrei", "1-peter": "1-petru", "2-peter": "2-petru"
 ]
 
-// Watchtower Online Library document IDs of the Romanian Insight entries; the Romanian edition has no matching "Ark" entry.
-private let romanianInsightEntries = ["Flood-of-Noahs-Day": "1200000758", "Deluge": "1200001150", "Noah": "1200003266"]
+// Watchtower Online Library document IDs of the Romanian Insight entries. The Romanian edition has no separate "Ark"
+// entry, so it opens "Potopul din zilele lui Noe", which covers the ark's capacity.
+private let romanianInsightEntries = ["Flood-of-Noahs-Day": "1200000758", "Deluge": "1200001150", "Noah": "1200003266", "Ark": "1200000758"]
 
 private func romanianURL(for url: String) -> String? {
     let biblePrefix = "https://www.jw.org/en/library/bible/nwt/books/"
