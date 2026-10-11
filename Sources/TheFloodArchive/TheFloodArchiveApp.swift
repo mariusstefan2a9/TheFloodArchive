@@ -58,6 +58,7 @@ private struct Clue: Identifiable {
 private struct ChallengeOption: Identifiable {
     let id: String
     let text: String
+    let feedback: String
 }
 
 private struct FieldChallenge {
@@ -241,6 +242,12 @@ private let clues: [Clue] = [
         detail: "Mesopotamian flood narratives, including the Epic of Gilgamesh and Atrahasis, share themes with the Genesis account. The ancient versions share striking themes: a warning, a vessel, survival, and a changed world. Read the tablet record, then ask what catastrophe or memory could lie behind these accounts."
     ),
     Clue(
+        id: "scripture", title: "The Biblical Record", place: "GENESIS & LATER BIBLE REFERENCES", symbol: "book.closed.fill",
+        category: "SCRIPTURE · TEXTUAL TESTIMONY",
+        summary: "Trace the Flood account from Genesis to later references in the Bible.",
+        detail: "Genesis 6–9 recounts the Flood in Noah’s day, the Ark, the waters receding, and the covenant. Later Bible passages refer to Noah or the Flood for different scriptural purposes. Read each passage in context, then compare how the Biblical encyclopedia assembles them as testimony."
+    ),
+    Clue(
         id: "shore", title: "The Shifting Shore", place: "BLACK SEA",
         symbol: "water.waves.and.arrow.up", category: "GEOLOGY · ACTIVE DEBATE",
         summary: "A submerged ancient shoreline raises a difficult question: how quickly did the water rise?",
@@ -252,39 +259,45 @@ private func challenge(for clueID: String) -> FieldChallenge {
     switch clueID {
     case "scablands":
         FieldChallenge(question: "Which field pattern best distinguishes repeated outbursts from one immense flow?", options: [
-            ChallengeOption(id: "stacked", text: "Flood deposits stacked in sequence, with evidence of more than one inundation."),
-            ChallengeOption(id: "erratics", text: "Giant ripples and transported boulders within one flood surface."),
-            ChallengeOption(id: "channels", text: "A network of channels cut into basalt, without a sequence of deposits.")
+            ChallengeOption(id: "stacked", text: "Separate flood beds divided by surfaces showing the landscape was exposed between flows.", feedback: "Successive beds separated by exposure surfaces are the clearest record here of repeated inundation."),
+            ChallengeOption(id: "erratics", text: "Giant current ripples and transported boulders in a single flood deposit.", feedback: "These features show great flow power. A single deposit by itself does not establish how many floods passed through."),
+            ChallengeOption(id: "channels", text: "A deep channel cut through basalt, with no sequence of flood deposits preserved.", feedback: "A channel records erosion and a route for water; repeated episodes need evidence from the sequence of deposits or landforms.")
         ], answerID: "stacked", explanation: "The USGS synthesis describes repeated Lake Missoula outbursts. Successive deposits help investigators distinguish recurrence from the scale of any single flow.", reasoningNote: "The landscape preserves both the power of the flows and clues to their sequence." )
     case "nuncho":
         FieldChallenge(question: "Which observation does Nun cho ga preserve most directly?", options: [
-            ChallengeOption(id: "permafrost", text: "A near-complete calf preserved in frozen ground, with soft tissue intact."),
-            ChallengeOption(id: "environment", text: "The calf’s exact habitat and the climate of its final day."),
-            ChallengeOption(id: "cause", text: "The precise event and speed that buried the animal.")
+            ChallengeOption(id: "permafrost", text: "A near-complete mammoth calf with preserved tissue, recovered from Yukon permafrost.", feedback: "That is the direct specimen and find-context record for Nun cho ga."),
+            ChallengeOption(id: "berezovka", text: "Grasses recorded in the mouth and stomach of a mammoth from Siberia.", feedback: "That clue belongs to the separate Berezovka mammoth in the Smithsonian record, not to Nun cho ga."),
+            ChallengeOption(id: "chaohusaurus", text: "A marine reptile fossil preserving a mother and young in a birth-position arrangement.", feedback: "That fossil is Chaohusaurus from China. It is a different specimen, place, and geological period.")
         ], answerID: "permafrost", explanation: "The Yukon discovery documents an unusually complete frozen mammoth calf. Its tissues and permafrost setting are direct observations; the wider burial story is reconstructed from additional clues.", reasoningNote: "A specimen is a time capsule. Its contents and surrounding ground are separate parts of the record." )
     case "ashfall":
         FieldChallenge(question: "What would help reconstruct how animals died at Ashfall?", options: [
-            ChallengeOption(id: "sequence", text: "Compare the skeletons’ positions through the ash layers and the signs of ash inhalation."),
-            ChallengeOption(id: "species", text: "Count the species and infer that all died at the same moment."),
-            ChallengeOption(id: "waterhole", text: "Treat the watering hole alone as the cause of death.")
+            ChallengeOption(id: "sequence", text: "Compare which animals occur in lower and upper ash layers with evidence of lung damage.", feedback: "The layer sequence and bone pathology together help reconstruct the order and duration of deaths."),
+            ChallengeOption(id: "species", text: "Use the number of species as a timeline for when each animal died.", feedback: "Species diversity describes the community, but the count alone does not establish the order or timing of deaths."),
+            ChallengeOption(id: "waterhole", text: "Use the watering-hole setting alone to decide what killed the animals.", feedback: "The setting explains why animals gathered there. The ash layers and signs of lung damage provide evidence about cause and sequence.")
         ], answerID: "sequence", explanation: "Researchers use the vertical sequence of skeletons, preservation, and bone evidence to reconstruct a series of deaths during ashfall at the watering hole.", reasoningNote: "The bed preserves a sequence. Read the layers as well as the dramatic final scene." )
     case "silt":
         FieldChallenge(question: "How would an investigator compare flood deposits at two settlements?", options: [
-            ChallengeOption(id: "date", text: "Compare their dates, sediment signatures, and archaeological layers."),
-            ChallengeOption(id: "surface", text: "Match the deposits by colour and thickness, then check the dates."),
-            ChallengeOption(id: "texts", text: "Start with flood stories from the region, then test the sites against them.")
+            ChallengeOption(id: "date", text: "Compare their independent dates, sediment signatures, and archaeological layers.", feedback: "Those independent site records let investigators test whether deposits could belong to the same episode."),
+            ChallengeOption(id: "surface", text: "Compare colour, thickness, and grain size before checking whether the dates agree.", feedback: "Physical similarity is useful for comparison, but matching appearance does not establish that two layers are the same age."),
+            ChallengeOption(id: "texts", text: "Begin with a nearby flood story and use it to date the archaeological layer.", feedback: "Texts can add historical context; the layer itself needs archaeological and geological dating evidence.")
         ], answerID: "date", explanation: "Lagash’s layer is dated using several archaeological and geological clues. Similar deposits at other sites can be compared against that independent evidence.", reasoningNote: "Site-by-site dating lets you test whether separate traces belong to a shared episode." )
     case "tablet":
         FieldChallenge(question: "Two ancient flood accounts share a vessel and a survivor. What is the strongest next clue to examine?", options: [
-            ChallengeOption(id: "compare", text: "Compare wording, order of events, dates, and the route by which stories could travel."),
-            ChallengeOption(id: "motif", text: "Count the shared motifs and treat the total as the age of their common source."),
-            ChallengeOption(id: "setting", text: "Compare each account’s setting and distinctive details, while leaving chronology aside.")
+            ChallengeOption(id: "compare", text: "Compare wording, event order, historical setting, dates, and possible transmission.", feedback: "That comparison weighs both the shared elements and differences while keeping the texts in historical context."),
+            ChallengeOption(id: "motif", text: "Treat the shared vessel and survivor as proof that both texts describe the same event.", feedback: "Shared motifs invite comparison, but by themselves they do not establish identity of event or a route of transmission."),
+            ChallengeOption(id: "setting", text: "Compare each account’s setting and distinctive details, without examining chronology.", feedback: "Setting and distinctive details matter; chronology is also needed to assess possible relationships between the texts.")
         ], answerID: "compare", explanation: "A careful comparison looks at shared and distinctive details, historical setting, chronology, and possible transmission. These clues help weigh whether the accounts are related.", reasoningNote: "The strongest connections account for both the parallels and the differences." )
+    case "scripture":
+        FieldChallenge(question: "How can you examine the Bible’s later references to Noah?", options: [
+            ChallengeOption(id: "context", text: "Read each passage in context and compare what it says about Noah and the Flood.", feedback: "Reading the passages in context shows how the Bible’s later writers use Noah and the Flood in their own arguments."),
+            ChallengeOption(id: "eyewitness", text: "Treat every later reference as a separate eyewitness account of the event.", feedback: "These are later scriptural references, not separate contemporaneous field reports. Read what each passage actually says."),
+            ChallengeOption(id: "count", text: "Count the references and use the total to date the Flood.", feedback: "A count tells you how often the account is recalled; it does not give a date. Compare each reference’s content and context.")
+        ], answerID: "context", explanation: "Genesis gives the main narrative; later passages refer to Noah and the Flood for different scriptural purposes. The Biblical encyclopedia presents those passages as testimony supporting the account.", reasoningNote: "Keep the Biblical text, the encyclopedia’s argument, and geological records identifiable as different kinds of evidence." )
     default:
         FieldChallenge(question: "Which record could best test the timing of a proposed Black Sea inflow?", options: [
-            ChallengeOption(id: "sediments", text: "Dated cores showing a transition from freshwater to marine conditions."),
-            ChallengeOption(id: "shoreline", text: "Submerged shorelines that show changing water levels across the basin."),
-            ChallengeOption(id: "coast", text: "A coastline map by itself, without dates or sediment samples.")
+            ChallengeOption(id: "sediments", text: "Dated cores showing a transition from freshwater to marine conditions.", feedback: "Dated cores preserve both a sequence and environmental change, which can be used to constrain timing."),
+            ChallengeOption(id: "shoreline", text: "Submerged shorelines mapped across the basin, with no dates for when they formed.", feedback: "Shorelines reveal former water levels and are valuable evidence; dating them is needed to test when the changes occurred."),
+            ChallengeOption(id: "coast", text: "A modern coastline map used to infer the timing of the ancient change.", feedback: "A present-day map gives a reference for the basin, but it does not record the ancient environmental transition or its date.")
         ], answerID: "sediments", explanation: "Researchers test the rapid-inflow proposal against dated sediment sequences, salinity changes, and submerged shorelines. Together, these records help constrain timing and scale.", reasoningNote: "Several independent traces from the basin make a stronger case than one striking clue." )
     }
 }
@@ -317,6 +330,16 @@ private func references(for clueID: String) -> [EvidenceReference] {
         EvidenceReference(title: "Genesis 8 · The waters recede", kind: "BIBLE TEXT · NEW WORLD TRANSLATION", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/8/"),
         EvidenceReference(title: "Genesis 9 · The covenant", kind: "BIBLE TEXT · NEW WORLD TRANSLATION", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/9/"),
         EvidenceReference(title: "Oxford Academic · Precursors to Genesis flood narrative", kind: "SCHOLARLY BIBLICAL STUDIES · 2020", url: "https://doi.org/10.1093/oso/9780190062545.003.0007")
+    ]
+    case "scripture": [
+        EvidenceReference(title: "Genesis 6–9 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/6/"),
+        EvidenceReference(title: "Matthew 24 · Noah in Jesus’ warning", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/matthew/24/"),
+        EvidenceReference(title: "Luke 17 · The days of Noah", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/luke/17/"),
+        EvidenceReference(title: "Hebrews 11 · Noah’s faith", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/hebrews/11/"),
+        EvidenceReference(title: "1 Peter 3 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/1-peter/3/"),
+        EvidenceReference(title: "2 Peter 2–3 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/2/"),
+        EvidenceReference(title: "Insight on the Scriptures · ‘Flood of Noah’s Day’", kind: "BIBLICAL ENCYCLOPEDIA · REPORTED ARGUMENT", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/"),
+        EvidenceReference(title: "Insight on the Scriptures · ‘Noah’", kind: "BIBLICAL ENCYCLOPEDIA · REPORTED ARGUMENT", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Noah/")
     ]
     case "shore": [
         EvidenceReference(title: "Ryan et al. · Black Sea flooding hypothesis", kind: "ORIGINAL RESEARCH · 1997", url: "https://doi.org/10.1016/S0025-3227(97)00007-8"),
@@ -354,12 +377,17 @@ private struct ArchiveView: View {
 
     private var collected: Set<String> {
         Set(storedCollectedClueIDs.split(separator: ",").map(String.init))
+            .filter { challengeAnswers[$0] == challenge(for: $0).answerID }
     }
 
     private var challengeAnswers: [String: String] {
         guard let data = Data(base64Encoded: storedChallengeAnswers),
               let answers = try? JSONDecoder().decode([String: String].self, from: data) else { return [:] }
         return answers
+    }
+
+    private var solvedChallengeCount: Int {
+        clues.filter { challengeAnswers[$0.id] == challenge(for: $0.id).answerID }.count
     }
 
     private var caseConnections: [CaseConnection] {
@@ -511,10 +539,10 @@ private struct ArchiveView: View {
                 HStack { Text("MISSIONS CLEARED"); Spacer(); Text("\(collected.count)/\(clues.count)") }
                     .font(.system(size: 10, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
                 ProgressView(value: Double(collected.count), total: Double(clues.count)).tint(sea)
-                HStack { Text("FIELD CHALLENGES"); Spacer(); Text("\(challengeAnswers.count)/\(clues.count)") }
+                HStack { Text("CHALLENGES SOLVED"); Spacer(); Text("\(solvedChallengeCount)/\(clues.count)") }
                     .font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
-                ProgressView(value: Double(challengeAnswers.count), total: Double(clues.count)).tint(gold)
-                Text(LocalizedStringKey(challengeAnswers.count == clues.count ? "Every mission cleared. Build your theory." : "Choose an answer in each field challenge to unlock its clue."))
+                ProgressView(value: Double(solvedChallengeCount), total: Double(clues.count)).tint(gold)
+                Text(LocalizedStringKey(solvedChallengeCount == clues.count ? "Every mission cleared. Build your theory." : "Solve each field challenge to unlock its clue."))
                     .font(.system(size: 11)).foregroundStyle(.white.opacity(0.56))
             }
             .padding(16).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12)).padding(14)
@@ -550,7 +578,7 @@ private struct ArchiveView: View {
                 .font(.system(size: 16)).foregroundStyle(.white.opacity(0.65)).lineSpacing(5).frame(maxWidth: 660, alignment: .leading)
 
             HStack(spacing: 14) {
-                dossierStat(number: "06", label: "MISSIONS TO CLEAR", icon: "point.topleft.down.to.point.bottomright.curvepath")
+                dossierStat(number: String(format: "%02d", clues.count), label: "MISSIONS TO CLEAR", icon: "point.topleft.down.to.point.bottomright.curvepath")
                 dossierStat(number: "01", label: "ACTIVE INVESTIGATION", icon: "scope")
                 dossierStat(number: "∞", label: "QUESTIONS", icon: "questionmark.circle")
             }.padding(.top, 3)
@@ -577,11 +605,10 @@ private struct ArchiveView: View {
     private var sitesPage: some View {
         ScrollView {
           VStack(alignment: .leading, spacing: 22) {
-            eyebrow("EXPEDITION MAP  /  SIX ACTIVE LEADS")
+            eyebrow("EXPEDITION MAP  /  \(clues.count) ACTIVE MISSIONS")
             Text("Choose your next lead.").font(.system(size: 34, weight: .regular, design: .serif))
             Text("Each mission sends you to a real place, specimen, or historical record. Examine the evidence, then make your call.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58))
-            regionalMap
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 245))], spacing: 15) {
                 ForEach(clues) { clue in siteCard(clue) }
                 if collected.count == clues.count { closingCard }
@@ -640,20 +667,25 @@ private struct ArchiveView: View {
             Text(LocalizedStringKey(clue.summary)).font(.system(size: 15, weight: .medium)).foregroundStyle(.white.opacity(0.78))
             Text(LocalizedStringKey(clue.detail)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
             clueIllustration(clue)
-            if clue.id == "tablet" { ArkProportionDiagram() }
-            VStack(alignment: .leading, spacing: 8) {
-                eyebrow("OPEN THE SOURCE RECORDS FIRST")
-                ForEach(references(for: clue.id)) { referenceLink($0) }
-            }.padding(.top, 4)
             fieldChallengeCard(for: clue)
+            let isSolved = challengeAnswers[clue.id] == challenge(for: clue.id).answerID
+            Button(LocalizedStringKey(collected.contains(clue.id) ? "MISSION CLEARED ✓" : isSolved ? "CLEAR THIS MISSION  →" : "SOLVE THE CHALLENGE FIRST")) {
+                recordClue(clue.id); selectedClue = nil
+            }
+            .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
+            .disabled(collected.contains(clue.id) || !isSolved)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            DisclosureGroup("OPEN ORIGINAL SOURCE RECORDS · \(references(for: clue.id).count)") {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(references(for: clue.id)) { referenceLink($0) }
+                }.padding(.top, 10)
+            }
+            .font(.system(size: 10, weight: .bold, design: .monospaced)).tint(gold)
+            .padding(14).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12))
             HStack {
                 Button("CLOSE") { selectedClue = nil }.buttonStyle(.plain).foregroundStyle(.white.opacity(0.6))
                 Spacer()
-                Button(LocalizedStringKey(collected.contains(clue.id) ? "MISSION CLEARED ✓" : "CLEAR THIS MISSION  →")) {
-                    recordClue(clue.id); selectedClue = nil
-                }
-                .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
-                .disabled(collected.contains(clue.id) || challengeAnswers[clue.id] == nil)
+                Text("SOURCE TRAIL PRESERVED").font(.system(size: 8, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.4))
             }.padding(.top, 8)
         }
         .padding(28).frame(maxWidth: 530).background(ink).preferredColorScheme(.dark)
@@ -663,19 +695,21 @@ private struct ArchiveView: View {
         }
       }
 #if os(iOS)
-            .presentationDetents([.medium, .large])
+            .presentationDetents([.large])
 #endif
     }
 
     private func fieldChallengeCard(for clue: Clue) -> some View {
         let fieldChallenge = challenge(for: clue.id)
         let savedAnswer = challengeAnswers[clue.id]
+        let isSolved = savedAnswer == fieldChallenge.answerID
         let isRevealed = challengeRevealedClueID == clue.id, choice = fieldChallenge.options.first { $0.id == challengeDraft }
         return VStack(alignment: .leading, spacing: 13) {
             HStack {
                 Label("FIELD CHALLENGE", systemImage: "scope").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.9).foregroundStyle(gold)
                 Spacer()
-                if savedAnswer != nil { Label("CHALLENGE COMPLETE", systemImage: "checkmark.circle.fill").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea) }
+                if isSolved { Label("CHALLENGE SOLVED", systemImage: "checkmark.circle.fill").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea) }
+                else if savedAnswer != nil { Label("TRY AGAIN", systemImage: "arrow.counterclockwise").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold) }
             }
             Text(LocalizedStringKey(fieldChallenge.question)).font(.system(size: 19, design: .serif)).foregroundStyle(.white)
             ForEach(fieldChallenge.options) { option in
@@ -690,18 +724,23 @@ private struct ArchiveView: View {
                         Spacer(minLength: 0)
                     }.padding(12).background(challengeDraft == option.id ? gold.opacity(0.10) : .white.opacity(0.025), in: RoundedRectangle(cornerRadius: 10))
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(challengeDraft == option.id ? gold.opacity(0.34) : .white.opacity(0.06), lineWidth: 1))
-                }.buttonStyle(.plain)
+                }.buttonStyle(.plain).disabled(isSolved)
             }
-            Button(LocalizedStringKey(savedAnswer == nil ? "COMPARE WITH THE RECORD  →" : "UPDATE MY PREDICTION  →")) {
+            Button(LocalizedStringKey(isSolved ? "CHALLENGE SOLVED ✓" : savedAnswer == nil ? "CHECK MY ANSWER  →" : "TRY AGAIN  →")) {
                 guard let challengeDraft else { return }
                 saveChallengeAnswer(challengeDraft, for: clue.id)
                 challengeRevealedClueID = clue.id
             }
-            .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(challengeDraft == nil)
+            .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(challengeDraft == nil || isSolved)
             if isRevealed, let choice {
                 VStack(alignment: .leading, spacing: 9) {
                     Label(choice.id == fieldChallenge.answerID ? "YOU FOUND THE KEY DETAIL" : "HERE’S WHAT THE RECORD SHOWS", systemImage: choice.id == fieldChallenge.answerID ? "sparkle.magnifyingglass" : "text.magnifyingglass")
                         .font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
+                    Text(LocalizedStringKey(choice.feedback)).font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.86)).lineSpacing(3)
+                    if choice.id != fieldChallenge.answerID, let answer = fieldChallenge.options.first(where: { $0.id == fieldChallenge.answerID }) {
+                        Text("KEY DETAIL TO UNLOCK THIS MISSION").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.6).foregroundStyle(gold)
+                        Text(LocalizedStringKey(answer.text)).font(.system(size: 11)).foregroundStyle(.white.opacity(0.75)).lineSpacing(3)
+                    }
                     Text(LocalizedStringKey(fieldChallenge.explanation)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.78)).lineSpacing(3)
                     Text(LocalizedStringKey(fieldChallenge.reasoningNote)).font(.system(size: 11, design: .serif)).italic().foregroundStyle(gold.opacity(0.9)).lineSpacing(3)
                 }.padding(14).background(sea.opacity(0.08), in: RoundedRectangle(cornerRadius: 11))
@@ -955,6 +994,16 @@ private struct ArchiveView: View {
                     DiagramStep(title: "COMPARE", detail: "Mark shared and different details.", symbol: "arrow.left.arrow.right"),
                     DiagramStep(title: "INTERPRET", detail: "Weigh possible connections.", symbol: "text.magnifyingglass")
                 ])
+        case "scripture":
+            ConceptDiagram(kind: "scripture", title: "Follow the account through the text.",
+                analogy: "Think of later references as cross-links in a case file: each one recalls Noah for its own purpose. Read the surrounding passage to see exactly what it contributes.",
+                note: "Genesis 6–9 contains the main narrative. Later passages are scriptural references, not separate geological observations or independent eyewitness reports.",
+                steps: [
+                    DiagramStep(title: "GENESIS", detail: "Read the Flood narrative in chapters 6–9.", symbol: "book.closed.fill"),
+                    DiagramStep(title: "TRACE", detail: "Find later passages that mention Noah.", symbol: "magnifyingglass"),
+                    DiagramStep(title: "CONTEXT", detail: "Read each passage around the reference.", symbol: "text.alignleft"),
+                    DiagramStep(title: "COMPARE", detail: "Separate the text from the encyclopedia’s argument.", symbol: "arrow.left.arrow.right")
+                ])
         case "shore":
             ConceptDiagram(kind: "blackSea", title: "The Black Sea rapid-inflow hypothesis.",
                 analogy: "Picture water spilling over a low divider between two basins. The Bosporus proposal applies that idea to ancient shorelines and changing salinity; the rate and scale remain part of the hypothesis.",
@@ -1044,7 +1093,7 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 12) {
             Image(systemName: "sparkle.magnifyingglass").font(.system(size: 20)).foregroundStyle(gold)
             Text("The case is yours to close.").font(.system(size: 21, design: .serif))
-            Text("You have six missions cleared. Connect the clues and choose your theory.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
+            Text("You have \(clues.count) missions cleared. Connect the clues and choose your theory.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
             Button("REVIEW EVIDENCE  →") { page = .evidence }.buttonStyle(.plain).font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8).foregroundStyle(gold)
         }.padding(20).frame(maxWidth: .infinity, minHeight: 210, alignment: .leading).background(gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 15)).overlay(RoundedRectangle(cornerRadius: 15).stroke(gold.opacity(0.2), lineWidth: 1))
     }
@@ -1062,7 +1111,7 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 17) {
             HStack { Text("DOCUMENTED CASES · ORIGINAL SOURCES").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1.0).foregroundStyle(gold); Spacer(); Image(systemName: "water.waves").foregroundStyle(sea) }
             Text("Flood stories. Traces in the ground.").font(.system(size: 26, design: .serif))
-            Text("Begin with ancient flood accounts from Mesopotamia. Follow six source-linked leads through real places, specimens, and texts. Examine the observations, open the original references, then decide how the evidence fits together.")
+            Text("Begin with ancient flood accounts from Mesopotamia. Follow \(clues.count) source-linked missions through real places, specimens, and texts. Examine the observations, open the original references, then decide how the evidence fits together.")
                 .font(.system(size: 13)).foregroundStyle(.white.opacity(0.63)).lineSpacing(4)
             Text("Your mission: follow the trail, uncover clues, and build the strongest case you can.")
                 .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.82)).lineSpacing(3)
@@ -1146,7 +1195,7 @@ private struct ArchiveView: View {
                 embeddedVideoCard
                 ashfallVideoCard
                 mediaCard(title: "Ashfall Fossil Beds: 360° Virtual Tour", description: "Walk through the visitor centre and Rhino Barn with Nebraska Public Media.", source: "University of Nebraska State Museum · Nebraska Public Media", url: "https://nebraskapublicmedia.org/webxr/ashfallfossilbeds/", symbol: "view.3d")
-                mediaCard(title: "Ashfall Fossil Beds: Virtual Field Trip", description: "Explore the Nebraska fossil site and its ash layers with the Nebraska State Museum.", source: "University of Nebraska State Museum", url: "https://museum.unl.edu/education/virtual-field-trips/", symbol: "play.rectangle.fill")
+                mediaCard(title: "Ashfall: Mysteries in the Dust", description: "Explore the Nebraska Studies story with archival NET Television footage and images from Ashfall.", source: "Nebraska Studies · Nebraska Public Media", url: "https://www.nebraskastudies.org/en/pre-1500/ashfall/", symbol: "play.rectangle.fill")
                 mediaCard(title: "Berezovka: the Siberian mammoth", description: "Smithsonian account of the specimen and its stomach contents, including grasses.", source: "Smithsonian National Museum of Natural History", url: "https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar", symbol: "photo")
                 timelineGraphic
                 Text("The timeline places each clue beside its published age range. Compare traces from different places and periods.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.45))
@@ -1167,7 +1216,7 @@ private struct ArchiveView: View {
                     }
                 }
             }
-            .frame(height: 300)
+            .aspectRatio(16.0 / 9.0, contentMode: .fit)
             .onAppear {
                 guard embeddedUSGSPlayer == nil,
                       let url = URL(string: "https://usgs-ocapsv2-public-output-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/video/sep10/MP4/sep10.mp4") else { return }
@@ -1190,7 +1239,7 @@ private struct ArchiveView: View {
     private var ashfallVideoCard: some View {
         VStack(alignment: .leading, spacing: 0) {
             if let url = URL(string: "https://www.youtube-nocookie.com/embed/u5NlLnSG2fw?playsinline=1&rel=0") {
-                InlineWebMedia(url: url).frame(height: 270)
+                InlineWebMedia(url: url).aspectRatio(16.0 / 9.0, contentMode: .fit)
             }
             VStack(alignment: .leading, spacing: 7) {
                 Text("Ashfall Fossil Beds").font(.system(size: 22, design: .serif))
@@ -1244,6 +1293,7 @@ private struct ArchiveView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     auditParagraph("WHAT IS OBSERVED", text: file.observations, color: sea)
                     auditParagraph("HOW FLOOD ADVOCATES READ THE CLUES", text: file.context, color: gold)
+                    if file.id == "arkCapacity" { ArkProportionDiagram() }
                     VStack(alignment: .leading, spacing: 7) {
                         eyebrow("REFERENCES · OPEN THE SOURCE")
                         ForEach(file.references) { referenceLink($0) }
@@ -1458,6 +1508,12 @@ private struct DiagramArtwork: View {
                         Image(systemName: "book.closed.fill").font(.system(size: 42)).foregroundStyle(gold)
                         Image(systemName: "arrow.left.arrow.right").font(.system(size: 22, weight: .semibold)).foregroundStyle(sea)
                         Image(systemName: "scroll.fill").font(.system(size: 42)).foregroundStyle(gold.opacity(0.76))
+                    }
+                case "scripture":
+                    HStack(spacing: 22) {
+                        Image(systemName: "book.closed.fill").font(.system(size: 42)).foregroundStyle(gold)
+                        Image(systemName: "arrow.right").font(.system(size: 22, weight: .semibold)).foregroundStyle(sea)
+                        Image(systemName: "text.book.closed.fill").font(.system(size: 42)).foregroundStyle(gold.opacity(0.76))
                     }
                 default:
                     HStack(alignment: .bottom, spacing: 0) {

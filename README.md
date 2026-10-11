@@ -21,7 +21,7 @@ The game is an investigation interface, not a report of a newly discovered archi
 - One universal Xcode project for Mac, iPad, and iPhone, with a custom illustrated title scene, mission map, clue collection, evidence wall, final theory, and reference-linked **Claim Audit**.
 - Twenty-one evidence files covering regional megafloods, the Black Sea rapid-inflow hypothesis, post-Ice-Age sea-level rise, marine fossils at elevation, Tapeats/Coconino megasequences, polystrate trees, dinosaur soft-tissue reports, unconformities, folded strata, catastrophic plate tectonics, RATE helium-in-zircon claims, fossil succession, a fossil preserving a marine reptile giving birth, Berezovka’s last meal, mammoth die-off arguments, flood traditions, the smoothed-Earth water-volume calculation, Ark-capacity claims, the proposed scriptural water source, biblical testimony cited by later writers, and the historical water-pressure fossilization estimate.
 - North American cases for the Channeled Scablands, Yukon mammoths, and Ashfall Fossil Beds in Nebraska.
-- Images that load from NASA, Yukon, and the University of Nebraska; a USGS lecture and an Ashfall Museum video embedded in the game; additional virtual field-trip links open at their publishers. Credits and source links appear beside the media.
+- Images that load from NASA, Yukon, and the University of Nebraska; a USGS lecture and an Ashfall Museum video embedded in the game; an official 360° tour and Nebraska Studies multimedia story open at their publishers. Credits and source links appear beside the media.
 - A timeline that keeps separate places, specimens, and geological periods distinct.
 
 ## Source labels
