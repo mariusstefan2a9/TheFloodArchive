@@ -19,14 +19,16 @@ The game is an investigation interface, not a report of a newly discovered archi
 ## Included
 
 - One universal Xcode project for Mac, iPad, and iPhone, with a custom illustrated title scene, expedition map, clue collection, evidence wall, case theory, and reference-linked **Claim Audit**.
-- Fourteen evidence files covering regional megafloods, the Black Sea rapid-inflow hypothesis, post-Ice-Age sea-level rise, marine fossils at elevation, Tapeats/Coconino megasequences, polystrate trees, dinosaur soft-tissue reports, unconformities, folded strata, catastrophic plate tectonics, RATE helium-in-zircon claims, fossil succession, and a fossil preserving a marine reptile giving birth.
+- Twenty evidence files covering regional megafloods, the Black Sea rapid-inflow hypothesis, post-Ice-Age sea-level rise, marine fossils at elevation, Tapeats/Coconino megasequences, polystrate trees, dinosaur soft-tissue reports, unconformities, folded strata, catastrophic plate tectonics, RATE helium-in-zircon claims, fossil succession, a fossil preserving a marine reptile giving birth, Berezovka’s last meal, mammoth die-off arguments, flood traditions, the smoothed-Earth water-volume calculation, Ark-capacity claims, the proposed scriptural water source, and the historical water-pressure fossilization estimate.
 - North American cases for the Channeled Scablands, Yukon mammoths, and Ashfall Fossil Beds in Nebraska.
 - Images that load from NASA, Yukon, and the University of Nebraska; video and virtual field-trip links that open at their publishers; credits and source links appear beside the media.
 - A timeline that keeps separate places, specimens, and geological periods distinct.
 
 ## Source labels
 
-Each Claim Audit reference is labeled by source type, such as peer-reviewed research, government or museum record, historical expedition account, Bible text, or creationist-perspective research. The linked articles document the underlying observation or the pro-flood interpretation named on the card. The game presents a flood-forward investigation, but the player forms the final theory; it does not state that scientific research has proven one global flood.
+Each Claim Audit reference is labeled by source type, such as peer-reviewed research, government or museum record, historical expedition account, Bible text, or reported interpretation. Cards separate observations from the pro-flood argument. When the reviewed material provides no independent scientific source for an argument, the card says so; it does not present that gap as scientific confirmation. The game presents a flood-forward investigation, but the player forms the final theory; it does not state that scientific research has proven one global flood.
+
+The evidence files cover the principal argument families located in the reviewed flood-related publications, not every mention across the full jw.org and wol.jw.org archives. The scientific references support the described measurements, specimens, or research; they do not automatically support a connection to Noah’s Flood.
 
 Notable scientific and institutional records include the USGS review of the Missoula floods; peer-reviewed Black Sea research by Ryan and colleagues; the Barbados sea-level record; Grand Canyon and Yukon park/government geology; the Nebraska State Museum's Ashfall research; Schweitzer and colleagues' dinosaur-protein studies; sedimentology at Joggins; and the PLOS ONE report of the Chaohusaurus birth-position fossil.
 
