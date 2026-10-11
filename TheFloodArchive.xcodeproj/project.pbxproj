@@ -1,0 +1,51 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 60;
+	objects = {
+
+		A10000000000000000000001 /* TheFloodArchiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* TheFloodArchiveApp.swift */; };
+		A10000000000000000000002 /* TheFloodArchiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFloodArchiveApp.swift; sourceTree = "<group>"; };
+		A10000000000000000000003 /* TheFloodArchive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFloodArchive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000004 /* Sources */ = {isa = PBXGroup; children = (A10000000000000000000005 /* TheFloodArchive */,); path = Sources; sourceTree = "<group>"; };
+		A10000000000000000000005 /* TheFloodArchive */ = {isa = PBXGroup; children = (A10000000000000000000002 /* TheFloodArchiveApp.swift */,); path = TheFloodArchive; sourceTree = "<group>"; };
+		A10000000000000000000006 /* Products */ = {isa = PBXGroup; children = (A10000000000000000000003 /* TheFloodArchive.app */,); name = Products; sourceTree = "<group>"; };
+		A10000000000000000000007 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001 /* TheFloodArchiveApp.swift in Sources */,); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000008 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A10000000000000000000009 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A1000000000000000000000A /* TheFloodArchive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000000000000000000000B /* Build configuration list for PBXNativeTarget */;
+			buildPhases = (A10000000000000000000007 /* Sources */, A10000000000000000000008 /* Frameworks */, A10000000000000000000009 /* Resources */,);
+			buildRules = ();
+			dependencies = ();
+			name = TheFloodArchive;
+			productName = TheFloodArchive;
+			productReference = A10000000000000000000003 /* TheFloodArchive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1000000000000000000000C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {BuildIndependentTargetsInParallel = 1; LastUpgradeCheck = 1600; TargetAttributes = {A1000000000000000000000A = {CreatedOnToolsVersion = 16.0; }; }; };
+			buildConfigurationList = A1000000000000000000000D /* Build configuration list for PBXProject */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base,);
+			mainGroup = A1000000000000000000000E;
+			productRefGroup = A10000000000000000000006 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (A1000000000000000000000A /* TheFloodArchive */,);
+		};
+		A1000000000000000000000E /* Main Group */ = {isa = PBXGroup; children = (A10000000000000000000004 /* Sources */, A10000000000000000000006 /* Products */,); sourceTree = "<group>"; };
+		A1000000000000000000000F /* Project Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_STRICT_OBJC_MSGSEND = YES; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_OPTIMIZATION_LEVEL = 0; GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)",); MACOSX_DEPLOYMENT_TARGET = 13.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SDKROOT = auto; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		A10000000000000000000010 /* Project Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; GCC_C_LANGUAGE_STANDARD = gnu17; MACOSX_DEPLOYMENT_TARGET = 13.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; SDKROOT = auto; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; name = Release; };
+		A10000000000000000000011 /* App Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "The Flood Archive"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.TheFloodArchive; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = auto; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "2"; MACOSX_DEPLOYMENT_TARGET = 13.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; }; name = Debug; };
+		A10000000000000000000012 /* App Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; DEVELOPMENT_TEAM = ""; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "The Flood Archive"; INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.TheFloodArchive; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = auto; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "2"; MACOSX_DEPLOYMENT_TARGET = 13.0; IPHONEOS_DEPLOYMENT_TARGET = 16.0; }; name = Release; };
+		A1000000000000000000000D /* Project Configurations */ = {isa = XCConfigurationList; buildConfigurations = (A1000000000000000000000F /* Project Debug */, A10000000000000000000010 /* Project Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A1000000000000000000000B /* Target Configurations */ = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000011 /* App Debug */, A10000000000000000000012 /* App Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+	};
+	rootObject = A1000000000000000000000C /* Project object */;
+}
