@@ -8,6 +8,8 @@ The interface and investigation content launch in English. Use the English / Rom
 
 Navigation follows JW Library. On every device a bottom bar holds five tabs: Home, Missions, Evidence, Library, and Theory; the active tab is highlighted, and pages opened from a tab show a Back button in the top bar. Home shows what remains of the investigation with a Continue button, the tutorial, language and restart settings, and useful links. Library holds the Claim Audit, Field Media, and North America. Missions open full screen on iPhone and iPad, and in a large window on Mac.
 
+Missions unlock in order: a mission shows only as a locked, classified lead until the missions before it are cleared. The Biblical Record mission appears only after the player saves a theory that the Flood happened (Noah’s account preserves a real Flood, or one worldwide cataclysm connects the clues); the case board and the final theory open after three cleared missions.
+
 Bible references appear as blue citations (for example, Matthew 24:37–39). Tapping one opens a short summary of the passage written for the game; tapping again closes it. The New World Translation text itself is not copied into the app, because it is copyrighted.
 
 The game is an investigation interface, not a report of a newly discovered archive. Its named places, specimens, and ancient texts are real and linked to their sources; players assemble them into a theory.

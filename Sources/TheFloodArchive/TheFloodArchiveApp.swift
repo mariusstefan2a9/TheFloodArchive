@@ -144,6 +144,9 @@ private struct ClueRecord {
 private let linkBases = ["same-region", "overlapping-dates", "same-kind"]
 private let differenceBases = ["different-region", "different-dates"]
 private let explainedTheories: Set<String> = ["regional", "several", "noah", "global", "other"]
+// The Bible mission appears only after the player files a theory that the Flood happened.
+private let bibleMissionID = "scripture"
+private let floodTheories: Set<String> = ["noah", "global"]
 
 private struct EvidenceReference: Identifiable {
     let title: String
@@ -312,16 +315,16 @@ private let clues: [Clue] = [
         detail: "Mesopotamian flood narratives, including the Epic of Gilgamesh and Atrahasis, share themes with the Genesis account. The ancient versions share striking themes: a warning, a vessel, survival, and a changed world. Read the tablet record, then ask what catastrophe or memory could lie behind these accounts."
     ),
     Clue(
-        id: "scripture", title: "The Biblical Record", place: "GENESIS & LATER BIBLE REFERENCES", symbol: "book.closed.fill",
-        category: "SCRIPTURE · TEXTUAL TESTIMONY",
-        summary: "Trace the Flood account from Genesis to later references in the Bible.",
-        detail: "Genesis 6–9 recounts the Flood in Noah’s day, the Ark, the waters receding, and the covenant. Later Bible passages refer to Noah or the Flood for different scriptural purposes. Read each passage in context, then compare how the Biblical encyclopedia assembles them as testimony."
-    ),
-    Clue(
         id: "shore", title: "The Shifting Shore", place: "BLACK SEA",
         symbol: "water.waves.and.arrow.up", category: "GEOLOGY · ACTIVE DEBATE",
         summary: "A submerged ancient shoreline raises a difficult question: how quickly did the water rise?",
         detail: "Ryan and Pitman proposed that Mediterranean water broke through the Bosporus and rapidly entered a lower Black Sea basin. Submerged shorelines and changing sediments preserve a real environmental transition; how fast it happened, and what memories it left, remain questions for the investigator."
+    ),
+    Clue(
+        id: "scripture", title: "The Biblical Record", place: "GENESIS & LATER BIBLE REFERENCES", symbol: "book.closed.fill",
+        category: "SCRIPTURE · TEXTUAL TESTIMONY",
+        summary: "Trace the Flood account from Genesis to later references in the Bible.",
+        detail: "Genesis 6–9 recounts the Flood in Noah’s day, the Ark, the waters receding, and the covenant. Later Bible passages refer to Noah or the Flood for different scriptural purposes. Read each passage in context, then compare how the Biblical encyclopedia assembles them as testimony."
     )
 ]
 
@@ -562,7 +565,30 @@ private struct ArchiveView: View {
     }
 
     private var solvedChallengeCount: Int {
-        clues.filter { challengeAnswers[$0.id] == challenge(for: $0.id).answerID }.count
+        activeClues.filter { challengeAnswers[$0.id] == challenge(for: $0.id).answerID }.count
+    }
+
+    private var bibleMissionUnlocked: Bool {
+        collected.contains(bibleMissionID) || (theoryFiled && floodTheories.contains(storedTheory))
+    }
+
+    private var baseClues: [Clue] {
+        clues.filter { $0.id != bibleMissionID }
+    }
+
+    private var activeClues: [Clue] {
+        bibleMissionUnlocked ? clues : baseClues
+    }
+
+    private var missionTotal: Int {
+        activeClues.count
+    }
+
+    private func isMissionUnlocked(_ clue: Clue) -> Bool {
+        if clue.id == bibleMissionID { return bibleMissionUnlocked }
+        if collected.contains(clue.id) { return true }
+        guard let index = baseClues.firstIndex(where: { $0.id == clue.id }) else { return false }
+        return baseClues[..<index].allSatisfy { collected.contains($0.id) }
     }
 
     private var openedSourceClueIDs: Set<String> {
@@ -763,10 +789,10 @@ private struct ArchiveView: View {
                 .font(.system(size: 17, weight: .semibold)).foregroundStyle(.white)
                 .lineLimit(1)
             Spacer(minLength: 4)
-            Text("\(collected.count)/\(clues.count)")
+            Text("\(collected.count)/\(missionTotal)")
                 .font(.system(size: 12, weight: .bold, design: .monospaced)).foregroundStyle(gold)
                 .frame(width: 96, alignment: .trailing)
-                .accessibilityLabel(Text("MISSIONS CLEARED \(collected.count)/\(clues.count)"))
+                .accessibilityLabel(Text("MISSIONS CLEARED \(collected.count)/\(missionTotal)"))
         }
         .padding(.horizontal, 12)
         .frame(height: 50)
@@ -775,7 +801,7 @@ private struct ArchiveView: View {
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     Rectangle().fill(.white.opacity(0.08))
-                    Rectangle().fill(gold).frame(width: geo.size.width * CGFloat(collected.count) / CGFloat(max(clues.count, 1)))
+                    Rectangle().fill(gold).frame(width: geo.size.width * CGFloat(collected.count) / CGFloat(max(missionTotal, 1)))
                 }
             }
             .frame(height: 2)
@@ -837,7 +863,10 @@ private struct ArchiveView: View {
         if !theoryFiled {
             return ("Choose your working theory and explain it.", .conclusion)
         }
-        if collected.count < clues.count {
+        if bibleMissionUnlocked && !collected.contains(bibleMissionID) {
+            return ("A new mission is open: The Biblical Record.", .sites)
+        }
+        if collected.count < missionTotal {
             return ("Your theory is saved. Clear the remaining missions and revisit it.", .sites)
         }
         return ("Every mission is cleared and your theory is saved. Compare it with the claims and sources.", .library)
@@ -891,10 +920,10 @@ private struct ArchiveView: View {
             HStack {
                 Text("YOUR INVESTIGATION").font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea)
                 Spacer()
-                Text("\(clues.count - collected.count) missions left").font(.system(size: 11, weight: .semibold)).foregroundStyle(gold)
+                Text("\(missionTotal - collected.count) missions left").font(.system(size: 11, weight: .semibold)).foregroundStyle(gold)
             }
-            homeProgress("MISSIONS CLEARED", value: collected.count, total: clues.count, tint: sea)
-            homeProgress("CHALLENGES SOLVED", value: solvedChallengeCount, total: clues.count, tint: gold)
+            homeProgress("MISSIONS CLEARED", value: collected.count, total: missionTotal, tint: sea)
+            homeProgress("CHALLENGES SOLVED", value: solvedChallengeCount, total: missionTotal, tint: gold)
             homeProgress("PAIRS WITH SUPPORTED FINDINGS", value: min(distinctComparisonCount, 2), total: 2, tint: sea)
             HStack {
                 Text("THEORY").font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.6))
@@ -1009,7 +1038,7 @@ private struct ArchiveView: View {
                 .font(.system(size: 16)).foregroundStyle(.white.opacity(0.65)).lineSpacing(5).frame(maxWidth: 660, alignment: .leading)
 
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 14)], alignment: .leading, spacing: 14) {
-                dossierStat(number: String(format: "%02d", clues.count), label: "MISSIONS TO CLEAR", icon: "point.topleft.down.to.point.bottomright.curvepath")
+                dossierStat(number: String(format: "%02d", missionTotal), label: "MISSIONS TO CLEAR", icon: "point.topleft.down.to.point.bottomright.curvepath")
                 dossierStat(number: "01", label: "ACTIVE INVESTIGATION", icon: "scope")
                 dossierStat(number: "∞", label: "QUESTIONS", icon: "questionmark.circle")
             }.padding(.top, 3)
@@ -1037,13 +1066,15 @@ private struct ArchiveView: View {
     private var sitesPage: some View {
         ScrollView {
           VStack(alignment: .leading, spacing: 22) {
-            eyebrow("EXPEDITION MAP  /  \(clues.count) ACTIVE MISSIONS")
+            eyebrow("EXPEDITION MAP  /  \(missionTotal) ACTIVE MISSIONS")
             Text("Choose your next lead.").font(.system(size: 34, weight: .regular, design: .serif))
             Text("Each mission sends you to a real place, specimen, or historical record. Examine the evidence, then make your call.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58))
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 245))], spacing: 15) {
-                ForEach(clues) { clue in siteCard(clue) }
-                if collected.count == clues.count { closingCard }
+                ForEach(activeClues) { clue in
+                    if isMissionUnlocked(clue) { siteCard(clue) } else { lockedSiteCard(clue) }
+                }
+                if collected.count == missionTotal { closingCard }
             }
             Spacer()
           }
@@ -1081,6 +1112,29 @@ private struct ArchiveView: View {
             .background(panel, in: RoundedRectangle(cornerRadius: 15))
             .overlay(RoundedRectangle(cornerRadius: 15).stroke(found ? sea.opacity(0.22) : .white.opacity(0.06), lineWidth: 1))
         }.buttonStyle(.plain)
+    }
+
+    private func lockedSiteCard(_ clue: Clue) -> some View {
+        let missionNumber = (clues.firstIndex(where: { $0.id == clue.id }) ?? 0) + 1
+        return VStack(alignment: .leading, spacing: 15) {
+            HStack {
+                Image(systemName: "lock.fill").font(.system(size: 18)).foregroundStyle(.white.opacity(0.35))
+                    .frame(width: 43, height: 43).background(.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 12))
+                Spacer()
+                VStack(alignment: .trailing, spacing: 4) {
+                    Text("MISSION \(String(format: "%02d", missionNumber))").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(.white.opacity(0.4))
+                    Text("LOCKED").font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(.white.opacity(0.35))
+                }
+            }
+            VStack(alignment: .leading, spacing: 5) {
+                Text("Classified lead").font(.system(size: 21, weight: .regular, design: .serif)).foregroundStyle(.white.opacity(0.45))
+                Text("Clear the previous missions to reveal this lead.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.4)).lineSpacing(3)
+            }
+        }
+        .padding(20).frame(maxWidth: .infinity, minHeight: 210, alignment: .leading)
+        .background(panel.opacity(0.55), in: RoundedRectangle(cornerRadius: 15))
+        .overlay(RoundedRectangle(cornerRadius: 15).stroke(.white.opacity(0.04), lineWidth: 1))
+        .accessibilityElement(children: .combine)
     }
 
     private var selectedClueBinding: Binding<Clue?> {
@@ -1659,10 +1713,21 @@ private struct ArchiveView: View {
                     }
                 }
             }
-            Divider().overlay(.white.opacity(0.1))
-            Text("Your mission record keeps its sources, open questions, and revisions together. Your conclusion can change when your evidence changes.")
-                .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
-            Button("EDIT MY THEORY") { theoryFiled = false }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
+            VStack(alignment: .leading, spacing: 12) {
+                if floodTheories.contains(id) && !collected.contains(bibleMissionID) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Label("NEW MISSION UNLOCKED", systemImage: "book.closed.fill").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(gold)
+                        Text("Your theory opens the last mission: The Biblical Record. Trace the Flood account from Genesis to later references in the Bible.")
+                            .font(.system(size: 12)).foregroundStyle(.white.opacity(0.75)).fixedSize(horizontal: false, vertical: true)
+                        Button("GO TO MISSIONS  →") { page = .sites }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
+                    }
+                    .padding(14).background(gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 11))
+                }
+                Divider().overlay(.white.opacity(0.1))
+                Text("Your mission record keeps its sources, open questions, and revisions together. Your conclusion can change when your evidence changes.")
+                    .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
+                Button("EDIT MY THEORY") { theoryFiled = false }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
+            }
         }.padding(22).background(panel, in: RoundedRectangle(cornerRadius: 14)).frame(maxWidth: 760, alignment: .leading)
     }
 
@@ -1670,7 +1735,7 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 12) {
             Image(systemName: "sparkle.magnifyingglass").font(.system(size: 20)).foregroundStyle(gold)
             Text("The case is yours to close.").font(.system(size: 21, design: .serif))
-            Text("You have \(clues.count) missions cleared. Connect the clues and choose your theory.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
+            Text("You have \(missionTotal) missions cleared. Connect the clues and choose your theory.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
             Button("REVIEW EVIDENCE  →") { page = .evidence }.buttonStyle(.plain).font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8).foregroundStyle(gold)
         }.padding(20).frame(maxWidth: .infinity, minHeight: 210, alignment: .leading).background(gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 15)).overlay(RoundedRectangle(cornerRadius: 15).stroke(gold.opacity(0.2), lineWidth: 1))
     }
@@ -1688,7 +1753,7 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 17) {
             HStack { Text("DOCUMENTED CASES · ORIGINAL SOURCES").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1.0).foregroundStyle(gold); Spacer(); Image(systemName: "water.waves").foregroundStyle(sea) }
             Text("Flood stories. Traces in the ground.").font(.system(size: 26, design: .serif))
-            Text("Follow \(clues.count) source-linked missions through real places, specimens, and texts, from Ice Age flood landscapes in North America to ancient flood accounts from Mesopotamia. Examine the observations, open the original references, then decide how the evidence fits together.")
+            Text("Follow \(baseClues.count) source-linked missions through real places, specimens, and texts, from Ice Age flood landscapes in North America to ancient flood accounts from Mesopotamia. Examine the observations, open the original references, then decide how the evidence fits together.")
                 .font(.system(size: 13)).foregroundStyle(.white.opacity(0.63)).lineSpacing(4)
             Text("Your mission: follow the trail, uncover clues, and build the strongest case you can.")
                 .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.82)).lineSpacing(3)
