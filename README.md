@@ -6,7 +6,7 @@
 
 The interface and investigation content launch in English. Use the English / Română segmented control in the sidebar to switch to Romanian; the choice is saved on the device. Original publication titles and institution names remain in their published language so sources are easy to find. Bible references and the *Insight on the Scriptures* entries that exist in Romanian link to both editions: the active language opens its own edition, and a small EN / RO button opens the other. The Romanian Bible links use the New World Translation on jw.org; the Romanian *Insight* entries open on wol.jw.org. The Romanian edition has no separate “Ark” entry, so its Romanian link opens “Potopul din zilele lui Noe”, which covers the ark’s capacity.
 
-On iPhone, pages are reached from the menu button in the top bar; Mac and iPad keep the sidebar.
+On iPhone, the six game sections (Missions, Evidence, America, Media, Claims, Theory) sit in a bottom bar that highlights the active one; the top-left menu keeps the mission briefing, language, and restart. Mac and iPad keep the sidebar, with the active section marked.
 
 The game is an investigation interface, not a report of a newly discovered archive. Its named places, specimens, and ancient texts are real and linked to their sources; players assemble them into a theory.
 

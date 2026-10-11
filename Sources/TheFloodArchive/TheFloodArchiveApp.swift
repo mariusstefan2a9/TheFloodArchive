@@ -43,7 +43,20 @@ private enum Page: String, CaseIterable, Identifiable {
         case .conclusion: "scope"
         }
     }
+    var tabTitle: String {
+        switch self {
+        case .briefing: "Briefing"
+        case .sites: "Missions"
+        case .evidence: "Evidence"
+        case .northAmerica: "America"
+        case .media: "Media"
+        case .claimAudit: "Claims"
+        case .conclusion: "Theory"
+        }
+    }
 }
+
+private let compactTabs: [Page] = [.sites, .evidence, .northAmerica, .media, .claimAudit, .conclusion]
 
 private struct Clue: Identifiable {
     let id: String
@@ -691,7 +704,8 @@ private struct ArchiveView: View {
     }
 
 #if os(iOS)
-    // A collapsed NavigationSplitView only pushes its detail column from a List selection, so iPhone gets its own stack with a page menu.
+    // A collapsed NavigationSplitView only pushes its detail column from a List selection, so iPhone gets its own stack:
+    // game sections live in a bottom bar, and the top menu keeps the briefing, language, and reset.
     private var compactLayout: some View {
         NavigationStack {
             ZStack {
@@ -700,16 +714,15 @@ private struct ArchiveView: View {
                     .padding(.horizontal, 16).padding(.top, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             }
+            .safeAreaInset(edge: .bottom, spacing: 0) { compactTabBar }
             .navigationTitle(LocalizedStringKey(page.rawValue))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Menu {
                         Section {
-                            ForEach(Page.allCases) { item in
-                                Button { page = item } label: {
-                                    Label(LocalizedStringKey(item.rawValue), systemImage: page == item ? "checkmark" : item.icon)
-                                }
+                            Button { page = .briefing } label: {
+                                Label(LocalizedStringKey(Page.briefing.rawValue), systemImage: Page.briefing.icon)
                             }
                         }
                         Section("MISSIONS CLEARED \(collected.count)/\(clues.count)") {
@@ -727,6 +740,35 @@ private struct ArchiveView: View {
                 }
             }
         }
+    }
+
+    private var compactTabBar: some View {
+        HStack(spacing: 2) {
+            ForEach(compactTabs) { item in
+                let isActive = page == item
+                Button { page = item } label: {
+                    VStack(spacing: 4) {
+                        Image(systemName: item.icon)
+                            .font(.system(size: 17, weight: isActive ? .bold : .regular))
+                            .frame(width: 46, height: 28)
+                            .background(isActive ? gold.opacity(0.22) : .clear, in: Capsule())
+                        Text(LocalizedStringKey(item.tabTitle))
+                            .font(.system(size: 10, weight: isActive ? .bold : .medium))
+                            .lineLimit(1).minimumScaleFactor(0.75)
+                    }
+                    .foregroundStyle(isActive ? gold : .white.opacity(0.5))
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 6)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(LocalizedStringKey(item.rawValue))
+                .accessibilityAddTraits(isActive ? .isSelected : [])
+            }
+        }
+        .padding(.horizontal, 6).padding(.top, 4)
+        .background(Color(red: 0.075, green: 0.095, blue: 0.108).ignoresSafeArea(edges: .bottom))
+        .overlay(alignment: .top) { Rectangle().fill(.white.opacity(0.08)).frame(height: 1) }
     }
 #endif
 
@@ -749,7 +791,7 @@ private struct ArchiveView: View {
             ForEach(Page.allCases) { item in
                 Button { page = item } label: {
                     HStack(spacing: 12) {
-                        Image(systemName: item.icon).frame(width: 18)
+                        Image(systemName: item.icon).frame(width: 18).foregroundStyle(page == item ? gold : .white.opacity(0.66))
                         Text(LocalizedStringKey(item.rawValue))
                         Spacer()
                         if item == .evidence, !collected.isEmpty {
@@ -759,7 +801,10 @@ private struct ArchiveView: View {
                     .font(.system(size: 13, weight: page == item ? .semibold : .regular))
                     .foregroundStyle(page == item ? .white : .white.opacity(0.66))
                     .padding(.horizontal, 14).padding(.vertical, 12)
-                    .background(page == item ? gold.opacity(0.13) : .clear, in: RoundedRectangle(cornerRadius: 9))
+                    .background(page == item ? gold.opacity(0.18) : .clear, in: RoundedRectangle(cornerRadius: 9))
+                    .overlay(alignment: .leading) {
+                        if page == item { Capsule().fill(gold).frame(width: 3, height: 22) }
+                    }
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain).padding(.horizontal, 10).padding(.vertical, 2)
