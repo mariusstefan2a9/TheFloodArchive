@@ -1,6 +1,6 @@
 # The Flood Archive
 
-**A source-led flood investigation game for macOS, iPadOS, and iPhone.** The English-language experience uses an adventurous, mysterious mission structure. Players clear short evidence challenges, assemble geological, fossil, archaeological, and Biblical clues, then choose their own theory about Noah’s Flood. Each mission links real places and records to sources, while identifying Flood-geology interpretations as interpretations.
+**A source-led flood investigation game for macOS, iPadOS, and iPhone.** In the English-language experience, players examine a source record before unlocking each evidence challenge, compare clue pairs on a case board, then choose their own theory about Noah’s Flood. Missions link real places, specimens, and texts to their sources, while identifying Flood-geology interpretations as interpretations.
 
 ## Languages
 

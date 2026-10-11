@@ -258,11 +258,11 @@ private let clues: [Clue] = [
 private func challenge(for clueID: String) -> FieldChallenge {
     switch clueID {
     case "scablands":
-        FieldChallenge(question: "Which field pattern best distinguishes repeated outbursts from one immense flow?", options: [
-            ChallengeOption(id: "stacked", text: "Separate flood beds divided by surfaces showing the landscape was exposed between flows.", feedback: "Successive beds separated by exposure surfaces are the clearest record here of repeated inundation."),
+        FieldChallenge(question: "In the glacial-lake deposits, what separates successive Missoula flood beds?", options: [
+            ChallengeOption(id: "varves", text: "Sequences of varves: fine lake sediments that accumulated between gravel or sand flood beds.", feedback: "Correct. The varves are lake deposits between floods; they record intervals between outbursts, not evidence that the landscape was exposed."),
             ChallengeOption(id: "erratics", text: "Giant current ripples and transported boulders in a single flood deposit.", feedback: "These features show great flow power. A single deposit by itself does not establish how many floods passed through."),
-            ChallengeOption(id: "channels", text: "A deep channel cut through basalt, with no sequence of flood deposits preserved.", feedback: "A channel records erosion and a route for water; repeated episodes need evidence from the sequence of deposits or landforms.")
-        ], answerID: "stacked", explanation: "The USGS synthesis describes repeated Lake Missoula outbursts. Successive deposits help investigators distinguish recurrence from the scale of any single flow.", reasoningNote: "The landscape preserves both the power of the flows and clues to their sequence." )
+            ChallengeOption(id: "channels", text: "A deep channel cut through basalt, with no sequence of flood deposits preserved.", feedback: "A channel records erosion and a route for water; the varve sequences are the evidence for intervals between repeated lake outbursts.")
+        ], answerID: "varves", explanation: "Waitt describes gravel or sand beds emplaced by floods, separated by 20–55 varves in glacial-lake deposits. Varves are sediment layers, not dry-land exposure surfaces.", reasoningNote: "Read the deposit in its setting: the intervals accumulated in glacial lakes between outbursts." )
     case "nuncho":
         FieldChallenge(question: "Which observation does Nun cho ga preserve most directly?", options: [
             ChallengeOption(id: "permafrost", text: "A near-complete mammoth calf with preserved tissue, recovered from Yukon permafrost.", feedback: "That is the direct specimen and find-context record for Nun cho ga."),
@@ -305,6 +305,7 @@ private func challenge(for clueID: String) -> FieldChallenge {
 private func references(for clueID: String) -> [EvidenceReference] {
     switch clueID {
     case "scablands": [
+        EvidenceReference(title: "Waitt · Tens of successive, colossal Missoula floods", kind: "USGS FIELD REPORT · 1983", url: "https://pubs.usgs.gov/publication/ofr83671"),
         EvidenceReference(title: "USGS · Missoula and Bonneville floods review", kind: "GOVERNMENT GEOLOGY REVIEW", url: "https://www.usgs.gov/publications/missoula-and-bonneville-floods-a-review-ice-age-megafloods-columbia-river-basin"),
         EvidenceReference(title: "NASA Earth Observatory · Channeled Scablands imagery", kind: "SATELLITE IMAGERY & GEOLOGY", url: "https://science.nasa.gov/earth/earth-observatory/channeled-scablands-92025/")
     ]
@@ -332,12 +333,16 @@ private func references(for clueID: String) -> [EvidenceReference] {
         EvidenceReference(title: "Oxford Academic · Precursors to Genesis flood narrative", kind: "SCHOLARLY BIBLICAL STUDIES · 2020", url: "https://doi.org/10.1093/oso/9780190062545.003.0007")
     ]
     case "scripture": [
-        EvidenceReference(title: "Genesis 6–9 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/6/"),
+        EvidenceReference(title: "Genesis 6 · Noah commissioned to build the Ark", kind: "NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/6/"),
+        EvidenceReference(title: "Genesis 7 · The Flood begins", kind: "NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/7/"),
+        EvidenceReference(title: "Genesis 8 · The waters recede", kind: "NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/8/"),
+        EvidenceReference(title: "Genesis 9 · The covenant", kind: "NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/9/"),
         EvidenceReference(title: "Matthew 24 · Noah in Jesus’ warning", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/matthew/24/"),
         EvidenceReference(title: "Luke 17 · The days of Noah", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/luke/17/"),
         EvidenceReference(title: "Hebrews 11 · Noah’s faith", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/hebrews/11/"),
         EvidenceReference(title: "1 Peter 3 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/1-peter/3/"),
-        EvidenceReference(title: "2 Peter 2–3 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/2/"),
+        EvidenceReference(title: "2 Peter 2 · Noah as a preacher", kind: "NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/2/"),
+        EvidenceReference(title: "2 Peter 3 · The Flood account", kind: "NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/3/"),
         EvidenceReference(title: "Insight on the Scriptures · ‘Flood of Noah’s Day’", kind: "BIBLICAL ENCYCLOPEDIA · REPORTED ARGUMENT", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/"),
         EvidenceReference(title: "Insight on the Scriptures · ‘Noah’", kind: "BIBLICAL ENCYCLOPEDIA · REPORTED ARGUMENT", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Noah/")
     ]
@@ -349,6 +354,7 @@ private func references(for clueID: String) -> [EvidenceReference] {
 }
 
 private struct ArchiveView: View {
+    @Environment(\.openURL) private var openURL
     @AppStorage("archiveLanguage") private var languageCode = "en"
     @AppStorage("archiveCurrentPage") private var storedPage = Page.briefing.rawValue
     @AppStorage("archiveCollectedClueIDs") private var storedCollectedClueIDs = ""
@@ -357,6 +363,7 @@ private struct ArchiveView: View {
     @AppStorage("archiveTheoryConfidence") private var storedTheoryConfidence = 50.0
     @AppStorage("archiveTheoryFiled") private var theoryFiled = false
     @AppStorage("archiveChallengeAnswers") private var storedChallengeAnswers = ""
+    @AppStorage("archiveExaminedSourceClueIDs") private var storedExaminedSourceClueIDs = ""
     @AppStorage("archiveCaseConnections") private var storedCaseConnections = ""
     @AppStorage("archiveConnectionNotes") private var storedConnectionNotes = ""
     @AppStorage("archiveOpeningDismissed") private var openingDismissed = false
@@ -366,6 +373,7 @@ private struct ArchiveView: View {
     @State private var isOptionalNoteOpen = false
     @State private var challengeDraft: String?
     @State private var challengeRevealedClueID: String?
+    @State private var expandedSourceClueID: String?
     @State private var connectionFirst = "scablands"
     @State private var connectionSecond = "nuncho"
     @State private var connectionRelation = "possible-link"
@@ -388,6 +396,18 @@ private struct ArchiveView: View {
 
     private var solvedChallengeCount: Int {
         clues.filter { challengeAnswers[$0.id] == challenge(for: $0.id).answerID }.count
+    }
+
+    private var examinedSourceClueIDs: Set<String> {
+        Set(storedExaminedSourceClueIDs.split(separator: ",").map(String.init))
+    }
+
+    private var canFileTheory: Bool {
+        collected.count >= 3 && distinctComparisonCount >= 2
+    }
+
+    private var distinctComparisonCount: Int {
+        Set(caseConnections.map { [$0.firstID, $0.secondID].sorted().joined(separator: "|") }).count
     }
 
     private var caseConnections: [CaseConnection] {
@@ -423,6 +443,12 @@ private struct ArchiveView: View {
         answers[clueID] = answerID
         guard let data = try? JSONEncoder().encode(answers) else { return }
         storedChallengeAnswers = data.base64EncodedString()
+    }
+
+    private func markSourceExamined(for clueID: String) {
+        var ids = examinedSourceClueIDs
+        ids.insert(clueID)
+        storedExaminedSourceClueIDs = ids.sorted().joined(separator: ",")
     }
 
     private func addCaseConnection() {
@@ -542,7 +568,7 @@ private struct ArchiveView: View {
                 HStack { Text("CHALLENGES SOLVED"); Spacer(); Text("\(solvedChallengeCount)/\(clues.count)") }
                     .font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
                 ProgressView(value: Double(solvedChallengeCount), total: Double(clues.count)).tint(gold)
-                Text(LocalizedStringKey(solvedChallengeCount == clues.count ? "Every mission cleared. Build your theory." : "Solve each field challenge to unlock its clue."))
+                Text(LocalizedStringKey(solvedChallengeCount == clues.count ? (canFileTheory ? "All challenges solved and clue pairs compared. Build your theory." : "Challenges solved. Compare two different clue pairs to unlock your theory.") : "Examine a source record, then solve each field challenge."))
                     .font(.system(size: 11)).foregroundStyle(.white.opacity(0.56))
             }
             .padding(16).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12)).padding(14)
@@ -667,21 +693,35 @@ private struct ArchiveView: View {
             Text(LocalizedStringKey(clue.summary)).font(.system(size: 15, weight: .medium)).foregroundStyle(.white.opacity(0.78))
             Text(LocalizedStringKey(clue.detail)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
             clueIllustration(clue)
-            fieldChallengeCard(for: clue)
+            DisclosureGroup(isExpanded: Binding(
+                get: { expandedSourceClueID == clue.id },
+                set: { expandedSourceClueID = $0 ? clue.id : nil }
+            )) {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(references(for: clue.id)) { referenceLink($0, missionID: clue.id) }
+                    if examinedSourceClueIDs.contains(clue.id) {
+                        Label("SOURCE OPENED · CHALLENGE UNLOCKED", systemImage: "checkmark.seal.fill")
+                            .font(.system(size: 9, weight: .bold, design: .monospaced)).foregroundStyle(sea).padding(.top, 5)
+                    } else {
+                        Text("Select a source above to open it and unlock the challenge.")
+                            .font(.system(size: 10)).foregroundStyle(.white.opacity(0.5)).padding(.top, 5)
+                    }
+                }.padding(.top, 10)
+            } label: {
+                Label("SOURCE RECORDS · OPEN ONE TO UNLOCK THE CHALLENGE", systemImage: examinedSourceClueIDs.contains(clue.id) ? "checkmark.seal.fill" : "doc.text.magnifyingglass")
+                    .font(.system(size: 10, weight: .bold, design: .monospaced))
+                    .foregroundStyle(examinedSourceClueIDs.contains(clue.id) ? sea : gold)
+            }
+            .tint(gold).padding(14).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12))
+            fieldChallengeCard(for: clue, sourceExamined: examinedSourceClueIDs.contains(clue.id))
             let isSolved = challengeAnswers[clue.id] == challenge(for: clue.id).answerID
-            Button(LocalizedStringKey(collected.contains(clue.id) ? "MISSION CLEARED ✓" : isSolved ? "CLEAR THIS MISSION  →" : "SOLVE THE CHALLENGE FIRST")) {
+            let sourceExamined = examinedSourceClueIDs.contains(clue.id)
+            Button(LocalizedStringKey(collected.contains(clue.id) ? "MISSION CLEARED ✓" : !sourceExamined ? "OPEN A SOURCE RECORD FIRST" : isSolved ? "CLEAR THIS MISSION  →" : "SOLVE THE CHALLENGE FIRST")) {
                 recordClue(clue.id); selectedClue = nil
             }
             .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
-            .disabled(collected.contains(clue.id) || !isSolved)
+            .disabled(collected.contains(clue.id) || !sourceExamined || !isSolved)
             .frame(maxWidth: .infinity, alignment: .trailing)
-            DisclosureGroup("OPEN ORIGINAL SOURCE RECORDS · \(references(for: clue.id).count)") {
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(references(for: clue.id)) { referenceLink($0) }
-                }.padding(.top, 10)
-            }
-            .font(.system(size: 10, weight: .bold, design: .monospaced)).tint(gold)
-            .padding(14).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12))
             HStack {
                 Button("CLOSE") { selectedClue = nil }.buttonStyle(.plain).foregroundStyle(.white.opacity(0.6))
                 Spacer()
@@ -690,6 +730,7 @@ private struct ArchiveView: View {
         }
         .padding(28).frame(maxWidth: 530).background(ink).preferredColorScheme(.dark)
         .onAppear {
+            expandedSourceClueID = clue.id
             challengeDraft = challengeAnswers[clue.id]
             challengeRevealedClueID = challengeAnswers[clue.id] == nil ? nil : clue.id
         }
@@ -699,7 +740,7 @@ private struct ArchiveView: View {
 #endif
     }
 
-    private func fieldChallengeCard(for clue: Clue) -> some View {
+    private func fieldChallengeCard(for clue: Clue, sourceExamined: Bool) -> some View {
         let fieldChallenge = challenge(for: clue.id)
         let savedAnswer = challengeAnswers[clue.id]
         let isSolved = savedAnswer == fieldChallenge.answerID
@@ -712,6 +753,10 @@ private struct ArchiveView: View {
                 else if savedAnswer != nil { Label("TRY AGAIN", systemImage: "arrow.counterclockwise").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold) }
             }
             Text(LocalizedStringKey(fieldChallenge.question)).font(.system(size: 19, design: .serif)).foregroundStyle(.white)
+            if !sourceExamined {
+                Label("Open a source record above to activate this evidence challenge.", systemImage: "lock.fill")
+                    .font(.system(size: 11)).foregroundStyle(gold.opacity(0.9)).fixedSize(horizontal: false, vertical: true)
+            }
             ForEach(fieldChallenge.options) { option in
                 Button {
                     challengeDraft = option.id
@@ -724,14 +769,14 @@ private struct ArchiveView: View {
                         Spacer(minLength: 0)
                     }.padding(12).background(challengeDraft == option.id ? gold.opacity(0.10) : .white.opacity(0.025), in: RoundedRectangle(cornerRadius: 10))
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(challengeDraft == option.id ? gold.opacity(0.34) : .white.opacity(0.06), lineWidth: 1))
-                }.buttonStyle(.plain).disabled(isSolved)
+                }.buttonStyle(.plain).disabled(isSolved || !sourceExamined)
             }
-            Button(LocalizedStringKey(isSolved ? "CHALLENGE SOLVED ✓" : savedAnswer == nil ? "CHECK MY ANSWER  →" : "TRY AGAIN  →")) {
+            Button(LocalizedStringKey(!sourceExamined ? "OPEN A SOURCE TO BEGIN" : isSolved ? "CHALLENGE SOLVED ✓" : savedAnswer == nil ? "CHECK MY ANSWER  →" : "TRY AGAIN  →")) {
                 guard let challengeDraft else { return }
                 saveChallengeAnswer(challengeDraft, for: clue.id)
                 challengeRevealedClueID = clue.id
             }
-            .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(challengeDraft == nil || isSolved)
+            .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(challengeDraft == nil || isSolved || !sourceExamined)
             if isRevealed, let choice {
                 VStack(alignment: .leading, spacing: 9) {
                     Label(choice.id == fieldChallenge.answerID ? "YOU FOUND THE KEY DETAIL" : "HERE’S WHAT THE RECORD SHOWS", systemImage: choice.id == fieldChallenge.answerID ? "sparkle.magnifyingglass" : "text.magnifyingglass")
@@ -780,8 +825,12 @@ private struct ArchiveView: View {
                     Text("Case question: which clues converge, and what might they reveal together?")
                         .font(.system(size: 12, design: .serif)).italic().foregroundStyle(.white.opacity(0.71))
                 }.padding(16).background(gold.opacity(0.07), in: RoundedRectangle(cornerRadius: 11))
-                Button("FORM YOUR THEORY  →") { page = .conclusion }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.count < 3)
-                if collected.count < 3 { Text("Clear three missions to unlock the final theory. You can return for the rest at any time.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4)) }
+                Button("FORM YOUR THEORY  →") { page = .conclusion }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(!canFileTheory)
+                if collected.count < 3 {
+                    Text("Clear three missions to unlock the final theory.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4))
+                } else if distinctComparisonCount < 2 {
+                    Text("Compare two different pairs of clues on your case board before filing a theory.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4))
+                }
             }
             Spacer()
         }
@@ -794,11 +843,11 @@ private struct ArchiveView: View {
                 Label("CASE BOARD", systemImage: "point.3.connected.trianglepath.dotted").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.9).foregroundStyle(gold)
                 Spacer()
                 HStack(spacing: 4) {
-                    Text("\(caseConnections.count)")
-                    Text("LINKS")
+                    Text("\(distinctComparisonCount)")
+                    Text("PAIRS COMPARED")
                 }.font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(.white.opacity(0.45))
             }
-            Text("Choose two clues, then tap the relationship that best fits.")
+            Text("Choose two cleared clues, compare their source records, then mark whether they may connect, belong to different times or places, or need more evidence.")
                 .font(.system(size: 13, design: .serif)).foregroundStyle(.white.opacity(0.68))
             HStack(spacing: 8) {
                 clueMenu(selection: $connectionFirst)
@@ -888,8 +937,12 @@ private struct ArchiveView: View {
                 .font(.system(size: 34, weight: .regular, design: .serif))
             Text("Lay the clues beside one another. Decide what your explanation accounts for, what it leaves unanswered, and how strongly you hold it.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).lineSpacing(4).frame(maxWidth: 770, alignment: .leading)
-            if collected.count < 3 {
-                emptyState(icon: "lock", title: "The investigation is still unfolding", subtitle: "Clear three missions to unlock the final theory. More clues can be added later.", button: "RETURN TO MISSIONS") { page = .sites }
+            if !canFileTheory {
+                if collected.count < 3 {
+                    emptyState(icon: "lock", title: "The investigation is still unfolding", subtitle: "Clear three missions to unlock the final theory. More clues can be added later.", button: "RETURN TO MISSIONS") { page = .sites }
+                } else {
+                    emptyState(icon: "point.3.connected.trianglepath.dotted", title: "Connect the evidence", subtitle: "Compare two different pairs of cleared clues on the case board, using the source records to decide whether each pair may connect, is from a different time or place, or needs more evidence.", button: "OPEN THE CASE BOARD") { page = .evidence }
+                }
             } else if theoryFiled, let theory {
                 resultCard(theory)
             } else {
@@ -1312,8 +1365,12 @@ private struct ArchiveView: View {
         }
     }
 
-    private func referenceLink(_ reference: EvidenceReference) -> some View {
-        Link(destination: URL(string: reference.url)!) {
+    private func referenceLink(_ reference: EvidenceReference, missionID: String? = nil) -> some View {
+        Button {
+            if let missionID { markSourceExamined(for: missionID) }
+            guard let url = URL(string: reference.url) else { return }
+            openURL(url)
+        } label: {
             HStack(alignment: .top, spacing: 8) {
                 Image(systemName: "arrow.up.right.square").font(.system(size: 11)).foregroundStyle(gold).padding(.top, 1)
                 VStack(alignment: .leading, spacing: 2) {
@@ -1323,6 +1380,7 @@ private struct ArchiveView: View {
                 Spacer(minLength: 0)
             }.contentShape(Rectangle())
         }.buttonStyle(.plain)
+            .accessibilityHint("Opens the cited source in your browser.")
     }
 
     private func photoCase(title: String, subtitle: String, url: String, image: String, source: String) -> some View {
