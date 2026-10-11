@@ -6,6 +6,8 @@
 
 The interface and investigation content launch in English. Use the English / Română segmented control in the sidebar to switch to Romanian; the choice is saved on the device. Original publication titles remain in their published language so sources are easy to find.
 
+The game is an investigation interface, not a report of a newly discovered archive. Its named places, specimens, and ancient texts are real and linked to their sources; players assemble them into a theory.
+
 ## Open in Xcode
 
 1. Copy this folder to your MacBook.

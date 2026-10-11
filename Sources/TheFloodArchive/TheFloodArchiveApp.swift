@@ -215,12 +215,31 @@ private func references(for clueID: String) -> [EvidenceReference] {
 
 private struct ArchiveView: View {
     @AppStorage("archiveLanguage") private var languageCode = "en"
-    @State private var page: Page = .briefing
-    @State private var collected: Set<String> = []
+    @AppStorage("archiveCurrentPage") private var storedPage = Page.briefing.rawValue
+    @AppStorage("archiveCollectedClueIDs") private var storedCollectedClueIDs = ""
+    @AppStorage("archiveTheory") private var storedTheory = ""
+    @AppStorage("archiveOpeningDismissed") private var openingDismissed = false
     @State private var selectedClue: String?
-    @State private var theory: String?
-    @State private var showOpening = true
     @State private var expandedAuditID: String?
+
+    private var page: Page {
+        get { Page(rawValue: storedPage) ?? .briefing }
+        nonmutating set { storedPage = newValue.rawValue }
+    }
+
+    private var collected: Set<String> {
+        Set(storedCollectedClueIDs.split(separator: ",").map(String.init))
+    }
+
+    private var theory: String? {
+        storedTheory.isEmpty ? nil : storedTheory
+    }
+
+    private func recordClue(_ id: String) {
+        var ids = collected
+        ids.insert(id)
+        storedCollectedClueIDs = ids.sorted().joined(separator: ",")
+    }
 
     private let ink = Color(red: 0.055, green: 0.075, blue: 0.09)
     private let panel = Color(red: 0.09, green: 0.12, blue: 0.135)
@@ -243,7 +262,10 @@ private struct ArchiveView: View {
         }
         .tint(gold)
         .environment(\.locale, Locale(identifier: languageCode))
-        .sheet(isPresented: $showOpening) { openingCard }
+        .sheet(isPresented: Binding(
+            get: { !openingDismissed },
+            set: { if !$0 { openingDismissed = true } }
+        )) { openingCard }
     }
 
     private var sidebar: some View {
@@ -344,14 +366,18 @@ private struct ArchiveView: View {
             Spacer(minLength: 5)
             HStack(spacing: 8) {
                 Image(systemName: "quote.opening").foregroundStyle(sea)
-                Text("“The past is never buried as deep as it seems.”")
-                    .font(.system(size: 13, design: .serif)).italic().foregroundStyle(.white.opacity(0.55))
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("ORIGINAL INVESTIGATION MOTTO").font(.system(size: 8, weight: .semibold, design: .monospaced)).tracking(0.7).foregroundStyle(sea)
+                    Text("The past is never buried as deep as it seems.")
+                        .font(.system(size: 13, design: .serif)).italic().foregroundStyle(.white.opacity(0.55))
+                }
             }
         }
     }
 
     private var sitesPage: some View {
-        VStack(alignment: .leading, spacing: 22) {
+        ScrollView {
+          VStack(alignment: .leading, spacing: 22) {
             eyebrow("EXPEDITION MAP  /  SIX ACTIVE LEADS")
             Text("Choose your next lead.").font(.system(size: 34, weight: .regular, design: .serif))
             Text("Each location holds a fragment of the case. Examine the evidence and add it to your field notes.")
@@ -362,6 +388,7 @@ private struct ArchiveView: View {
                 if collected.count == clues.count { closingCard }
             }
             Spacer()
+          }
         }
         .sheet(item: selectedClueBinding) { clue in clueSheet(clue) }
     }
@@ -399,6 +426,7 @@ private struct ArchiveView: View {
     }
 
     private func clueSheet(_ clue: Clue) -> some View {
+      ScrollView {
         VStack(alignment: .leading, spacing: 18) {
             HStack {
                 Image(systemName: clue.symbol).font(.system(size: 20)).foregroundStyle(gold)
@@ -416,18 +444,20 @@ private struct ArchiveView: View {
                 Button("CLOSE") { selectedClue = nil }.buttonStyle(.plain).foregroundStyle(.white.opacity(0.6))
                 Spacer()
                 Button(LocalizedStringKey(collected.contains(clue.id) ? "IN FIELD NOTES ✓" : "ADD TO FIELD NOTES  →")) {
-                    collected.insert(clue.id); selectedClue = nil
+                    recordClue(clue.id); selectedClue = nil
                 }
                 .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.contains(clue.id))
             }.padding(.top, 8)
         }
         .padding(28).frame(maxWidth: 530).background(ink).preferredColorScheme(.dark)
+      }
 #if os(iOS)
             .presentationDetents([.medium, .large])
 #endif
     }
 
     private var evidencePage: some View {
+      ScrollView {
         VStack(alignment: .leading, spacing: 22) {
             eyebrow("EVIDENCE WALL  /  FIELD NOTES")
             Text("The clues, connected.").font(.system(size: 34, weight: .regular, design: .serif))
@@ -457,6 +487,7 @@ private struct ArchiveView: View {
             }
             Spacer()
         }
+      }
     }
 
     private var conclusionPage: some View {
@@ -483,7 +514,7 @@ private struct ArchiveView: View {
     }
 
     private func theoryOption(_ id: String, title: String, note: String) -> some View {
-        Button { theory = id } label: {
+        Button { storedTheory = id } label: {
             HStack(alignment: .top, spacing: 13) {
                 Image(systemName: "circle").font(.system(size: 16)).foregroundStyle(gold).padding(.top, 2)
                 VStack(alignment: .leading, spacing: 5) {
@@ -517,7 +548,7 @@ private struct ArchiveView: View {
             Divider().overlay(.white.opacity(0.1))
             Text("A good investigator records both the clues and the theory they support. Reopen the archive whenever you want to examine a source again.")
                 .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
-            Button("REOPEN CASE") { theory = nil }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
+            Button("REOPEN CASE") { storedTheory = "" }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
         }.padding(22).background(panel, in: RoundedRectangle(cornerRadius: 14)).frame(maxWidth: 760, alignment: .leading)
     }
 
@@ -541,13 +572,13 @@ private struct ArchiveView: View {
 
     private var openingCard: some View {
         VStack(alignment: .leading, spacing: 17) {
-            HStack { Text("CASE 001").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1.2).foregroundStyle(gold); Spacer(); Image(systemName: "water.waves").foregroundStyle(sea) }
-            Text("A message beneath the mud.").font(.system(size: 26, design: .serif))
-            Text("The expedition begins in southern Mesopotamia. A field team has uncovered a sealed archive near an old river channel. Inside: fragments of a flood story and a dossier pointing to six locations across two continents.")
+            HStack { Text("DOCUMENTED CASES · ORIGINAL SOURCES").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1.0).foregroundStyle(gold); Spacer(); Image(systemName: "water.waves").foregroundStyle(sea) }
+            Text("Flood stories. Traces in the ground.").font(.system(size: 26, design: .serif))
+            Text("Begin with ancient flood accounts from Mesopotamia. Follow six source-linked leads through real places, specimens, and texts. Examine the observations, open the original references, then decide how the evidence fits together.")
                 .font(.system(size: 13)).foregroundStyle(.white.opacity(0.63)).lineSpacing(4)
             Text("Your mission: follow the trail, examine each clue, and record what the evidence can—and cannot—tell you.")
                 .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.82)).lineSpacing(3)
-            HStack { Spacer(); Button("OPEN THE CASE  →") { showOpening = false }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink) }
+            HStack { Spacer(); Button("OPEN THE CASE  →") { openingDismissed = true }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink) }
         }.padding(26).frame(maxWidth: 490).background(ink).preferredColorScheme(.dark)
 #if os(iOS)
             .presentationDetents([.medium, .large])
