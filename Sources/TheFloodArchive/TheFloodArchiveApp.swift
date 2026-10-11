@@ -436,6 +436,8 @@ private struct ArchiveView: View {
             Text(LocalizedStringKey(clue.title)).font(.system(size: 30, weight: .regular, design: .serif))
             Text(LocalizedStringKey(clue.summary)).font(.system(size: 15, weight: .medium)).foregroundStyle(.white.opacity(0.78))
             Text(LocalizedStringKey(clue.detail)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
+            clueIllustration(clue)
+            if clue.id == "tablet" { ArkProportionDiagram() }
             VStack(alignment: .leading, spacing: 8) {
                 eyebrow("REFERENCES · OPEN ORIGINAL SOURCES")
                 ForEach(references(for: clue.id)) { referenceLink($0) }
@@ -510,6 +512,73 @@ private struct ArchiveView: View {
                 }
             }
             Spacer()
+        }
+    }
+
+    @ViewBuilder private func clueIllustration(_ clue: Clue) -> some View {
+        switch clue.id {
+        case "scablands":
+            ConceptDiagram(kind: "missoula", title: "One lake. Repeated regional floods.",
+                analogy: "Imagine a plug holding back a bathtub: when it opens, water rushes out. Lake Missoula was vastly larger, and the real ice-dam mechanics were more complex.",
+                note: "USGS research links the Scablands to repeated glacial-lake outbursts. This is evidence for regional megafloods; it does not by itself establish a worldwide flood.",
+                steps: [
+                    DiagramStep(title: "ICE DAM", detail: "A glacier blocks the river.", symbol: "snowflake"),
+                    DiagramStep(title: "LAKE FILLS", detail: "Water builds behind the ice.", symbol: "water.waves"),
+                    DiagramStep(title: "OUTBURST", detail: "Water races across the land.", symbol: "arrow.down.right"),
+                    DiagramStep(title: "REPEATS", detail: "The lake refills; deposits remain.", symbol: "repeat")
+                ])
+        case "nuncho":
+            ConceptDiagram(kind: "permafrost", title: "Permafrost: a natural freezer.",
+                analogy: "Like a freezer, persistent cold slows decay. But preserved tissue alone cannot tell us exactly when, how, or how quickly an animal was buried.",
+                note: "Nun cho ga was found in Yukon; Berezovka was found in Siberia. They are separate specimens from separate sites, not one shared event.",
+                steps: [
+                    DiagramStep(title: "REMAINS", detail: "An animal is buried in cold ground.", symbol: "pawprint.fill"),
+                    DiagramStep(title: "FROZEN", detail: "Permafrost stays below freezing.", symbol: "snowflake"),
+                    DiagramStep(title: "PRESERVED", detail: "Cold slows decomposition.", symbol: "leaf.fill"),
+                    DiagramStep(title: "EXPOSED", detail: "Erosion or mining reveals it.", symbol: "magnifyingglass")
+                ])
+        case "ashfall":
+            ConceptDiagram(kind: "ashfall", title: "From volcanic ash to fossil bed.",
+                analogy: "Think of ash like a blanket settling over a landscape. At Ashfall, the deposit built up during a local event; the fossil bed preserves a sequence, not one instant frozen in time.",
+                note: "The Nebraska State Museum describes a roughly 12-million-year-old volcanic-ash bed. Its burial history is distinct from water-laid flood deposits.",
+                steps: [
+                    DiagramStep(title: "ERUPTION", detail: "Volcanic ash rises in Idaho.", symbol: "smoke.fill"),
+                    DiagramStep(title: "ASH DRIFTS", detail: "Winds carry fine ash east.", symbol: "wind"),
+                    DiagramStep(title: "ANIMALS", detail: "Inhaled ash causes deaths over time.", symbol: "pawprint.fill"),
+                    DiagramStep(title: "BURIAL", detail: "Ash and sediment preserve skeletons.", symbol: "square.stack.3d.up.fill")
+                ])
+        case "silt":
+            ConceptDiagram(kind: "settlement", title: "A flood layer has a place and context.",
+                analogy: "Think of each excavated layer as a page in one settlement’s diary. Another city’s similar-looking page needs its own date before the stories can be joined.",
+                note: "Flood deposits at separate Mesopotamian sites need not be the same age or the same event. Archaeological context is essential.",
+                steps: [
+                    DiagramStep(title: "SETTLEMENT", detail: "People live beside a river.", symbol: "building.2.fill"),
+                    DiagramStep(title: "DEPOSIT", detail: "Water leaves sediment at this site.", symbol: "water.waves"),
+                    DiagramStep(title: "EXCAVATE", detail: "Archaeologists record its position.", symbol: "shovel.fill"),
+                    DiagramStep(title: "COMPARE", detail: "Other sites are dated separately.", symbol: "arrow.left.arrow.right")
+                ])
+        case "tablet":
+            ConceptDiagram(kind: "tablet", title: "Compare flood accounts, detail by detail.",
+                analogy: "Two reports of a storm may both mention rain and rescue without being identical. Compare the wording, setting, date, and transmission before drawing a connection.",
+                note: "The game places the Genesis account beside Mesopotamian texts. Shared themes invite comparison; the texts themselves do not prove that every account describes the same event.",
+                steps: [
+                    DiagramStep(title: "GENESIS", detail: "Read the account in context.", symbol: "book.closed.fill"),
+                    DiagramStep(title: "TABLET", detail: "Examine the cuneiform record.", symbol: "scroll.fill"),
+                    DiagramStep(title: "COMPARE", detail: "Mark shared and different details.", symbol: "arrow.left.arrow.right"),
+                    DiagramStep(title: "INTERPRET", detail: "Weigh possible connections.", symbol: "text.magnifyingglass")
+                ])
+        case "shore":
+            ConceptDiagram(kind: "blackSea", title: "The Black Sea rapid-inflow hypothesis.",
+                analogy: "Picture water spilling over a low divider between two basins. The Bosporus proposal applies that idea to ancient shorelines and changing salinity; the rate and scale remain part of the hypothesis.",
+                note: "Ryan and Pitman proposed rapid inflow from the Mediterranean into a lower Black Sea basin. Label this as a hypothesis, not an established global flood.",
+                steps: [
+                    DiagramStep(title: "BASIN", detail: "The Black Sea level is lower.", symbol: "water.waves"),
+                    DiagramStep(title: "THRESHOLD", detail: "Water crosses the Bosporus sill.", symbol: "arrow.right"),
+                    DiagramStep(title: "INFLOW", detail: "The basin receives seawater.", symbol: "water.waves.and.arrow.down"),
+                    DiagramStep(title: "TEST", detail: "Study shorelines and sediments.", symbol: "magnifyingglass")
+                ])
+        default:
+            EmptyView()
         }
     }
 
@@ -780,6 +849,147 @@ private struct ArchiveView: View {
             Text("Not to scale. The Siberian Berezovka specimen is a comparison, not a North American site.").font(.system(size: 9)).foregroundStyle(gold.opacity(0.8))
         }.padding(18).background(panel, in: RoundedRectangle(cornerRadius: 15))
     }
+}
+
+private struct DiagramStep: Identifiable {
+    let title: String
+    let detail: String
+    let symbol: String
+    var id: String { title }
+}
+
+private struct ConceptDiagram: View {
+    let kind: String
+    let title: String
+    let analogy: String
+    let note: String
+    let steps: [DiagramStep]
+
+    private let sea = Color(red: 0.31, green: 0.78, blue: 0.75)
+    private let gold = Color(red: 0.89, green: 0.68, blue: 0.37)
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 13) {
+            HStack {
+                Text("VISUAL EXPLAINER").foregroundStyle(sea)
+                Spacer()
+                Text("SCHEMATIC · NOT TO SCALE").foregroundStyle(.white.opacity(0.42))
+            }
+            .font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.6)
+            Text(LocalizedStringKey(title)).font(.system(size: 21, design: .serif))
+            DiagramArtwork(kind: kind, sea: sea, gold: gold).frame(height: 112)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], alignment: .leading, spacing: 10) {
+                ForEach(Array(steps.enumerated()), id: \.element.id) { item in
+                    let index = item.offset
+                    let step = item.element
+                    HStack(alignment: .top, spacing: 8) {
+                        Text(String(format: "%02d", index + 1))
+                            .font(.system(size: 9, weight: .bold, design: .monospaced)).foregroundStyle(gold)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Label(LocalizedStringKey(step.title), systemImage: step.symbol)
+                                .font(.system(size: 9, weight: .bold, design: .monospaced)).foregroundStyle(sea)
+                            Text(LocalizedStringKey(step.detail)).font(.system(size: 10)).foregroundStyle(.white.opacity(0.7)).fixedSize(horizontal: false, vertical: true)
+                        }
+                    }.frame(maxWidth: .infinity, minHeight: 50, alignment: .topLeading)
+                }
+            }
+            Text(LocalizedStringKey(analogy)).font(.system(size: 11, design: .serif)).italic().foregroundStyle(.white.opacity(0.78)).fixedSize(horizontal: false, vertical: true)
+            Text(LocalizedStringKey(note)).font(.system(size: 10)).foregroundStyle(gold.opacity(0.86)).fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(15)
+        .background(Color.white.opacity(0.045), in: RoundedRectangle(cornerRadius: 13))
+        .overlay(RoundedRectangle(cornerRadius: 13).stroke(.white.opacity(0.08), lineWidth: 1))
+    }
+}
+
+private struct DiagramArtwork: View {
+    let kind: String
+    let sea: Color
+    let gold: Color
+
+    var body: some View {
+        GeometryReader { proxy in
+            let w = proxy.size.width
+            let h = proxy.size.height
+            ZStack {
+                LinearGradient(colors: [Color(red: 0.08, green: 0.18, blue: 0.22), Color(red: 0.11, green: 0.14, blue: 0.18)], startPoint: .top, endPoint: .bottom)
+                switch kind {
+                case "missoula":
+                    VStack(spacing: 0) {
+                        Spacer()
+                        Rectangle().fill(sea.opacity(0.42)).frame(height: h * 0.34)
+                    }
+                    HStack(alignment: .bottom, spacing: 0) {
+                        Image(systemName: "mountain.2.fill").font(.system(size: 50)).foregroundStyle(gold.opacity(0.62))
+                        Spacer(minLength: 20)
+                        Rectangle().fill(Color.white.opacity(0.73)).frame(width: 18, height: h * 0.7)
+                        Image(systemName: "mountain.2.fill").font(.system(size: 42)).foregroundStyle(gold.opacity(0.46)).scaleEffect(x: -1, y: 1)
+                    }.padding(.horizontal, 18)
+                    Image(systemName: "arrow.right").font(.system(size: 23, weight: .bold)).foregroundStyle(sea).position(x: w * 0.68, y: h * 0.72)
+                case "permafrost":
+                    VStack(spacing: 0) {
+                        Rectangle().fill(Color.white.opacity(0.8)).frame(height: h * 0.18)
+                        Rectangle().fill(Color(red: 0.25, green: 0.34, blue: 0.34).opacity(0.92))
+                    }
+                    Image(systemName: "pawprint.fill").font(.system(size: 40)).foregroundStyle(gold).position(x: w * 0.48, y: h * 0.68)
+                    Image(systemName: "snowflake").font(.system(size: 26)).foregroundStyle(sea).position(x: w * 0.82, y: h * 0.35)
+                case "ashfall":
+                    VStack(spacing: 3) {
+                        Rectangle().fill(gold.opacity(0.24)).frame(height: h * 0.26)
+                        Rectangle().fill(Color(red: 0.69, green: 0.57, blue: 0.38)).frame(height: h * 0.27)
+                        Rectangle().fill(Color(red: 0.26, green: 0.31, blue: 0.29)).frame(height: h * 0.38)
+                    }.padding(.horizontal, 18).padding(.vertical, 6)
+                    Image(systemName: "wind").font(.system(size: 30)).foregroundStyle(.white.opacity(0.7)).position(x: w * 0.26, y: h * 0.28)
+                    Image(systemName: "pawprint.fill").font(.system(size: 24)).foregroundStyle(gold).position(x: w * 0.73, y: h * 0.7)
+                case "settlement":
+                    VStack(spacing: 2) {
+                        Color(red: 0.25, green: 0.31, blue: 0.26).frame(height: h * 0.27)
+                        gold.opacity(0.68).frame(height: h * 0.1)
+                        Color(red: 0.35, green: 0.27, blue: 0.21).frame(height: h * 0.5)
+                    }.padding(.horizontal, 15).padding(.vertical, 5)
+                    Image(systemName: "building.2.fill").font(.system(size: 33)).foregroundStyle(.white.opacity(0.82)).position(x: w * 0.72, y: h * 0.24)
+                    Image(systemName: "magnifyingglass").font(.system(size: 23, weight: .semibold)).foregroundStyle(sea).position(x: w * 0.34, y: h * 0.68)
+                case "tablet":
+                    HStack(spacing: 26) {
+                        Image(systemName: "book.closed.fill").font(.system(size: 42)).foregroundStyle(gold)
+                        Image(systemName: "arrow.left.arrow.right").font(.system(size: 22, weight: .semibold)).foregroundStyle(sea)
+                        Image(systemName: "scroll.fill").font(.system(size: 42)).foregroundStyle(gold.opacity(0.76))
+                    }
+                default:
+                    HStack(alignment: .bottom, spacing: 0) {
+                        Rectangle().fill(sea.opacity(0.7)).frame(width: w * 0.43, height: h * 0.39)
+                        Rectangle().fill(gold.opacity(0.55)).frame(width: w * 0.14, height: h * 0.55)
+                        Rectangle().fill(sea.opacity(0.38)).frame(width: w * 0.43, height: h * 0.2)
+                    }
+                    Image(systemName: "arrow.right").font(.system(size: 23, weight: .bold)).foregroundStyle(.white).position(x: w * 0.56, y: h * 0.35)
+                }
+            }
+        }
+    }
+}
+
+private struct ArkProportionDiagram: View {
+    private let sea = Color(red: 0.31, green: 0.78, blue: 0.75)
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("TEXTUAL DIAGRAM · GENESIS 6:15–16").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.6).foregroundStyle(sea)
+            Text("Dimensions stated in the text: 300 × 50 × 30 cubits").font(.system(size: 13, weight: .semibold, design: .serif))
+            Text("SIDE ELEVATION · 300 × 30").font(.system(size: 8, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.55))
+            RoundedRectangle(cornerRadius: 8).fill(Color(red: 0.55, green: 0.36, blue: 0.2).opacity(0.7))
+                .overlay(VStack(spacing: 0) { Spacer(minLength: 0); Rectangle().fill(Color.white.opacity(0.26)).frame(height: 1); Spacer(minLength: 0); Rectangle().fill(Color.white.opacity(0.26)).frame(height: 1); Spacer(minLength: 0) }.padding(.vertical, 8))
+                .frame(maxWidth: .infinity).frame(height: 32)
+            Text("TOP PLAN · 300 × 50").font(.system(size: 8, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.55))
+            RoundedRectangle(cornerRadius: 5).fill(Color(red: 0.55, green: 0.36, blue: 0.2).opacity(0.48))
+                .frame(maxWidth: .infinity).frame(height: 18)
+            Text("A proportional diagram of the biblical description, not an archaeological reconstruction or evidence of a surviving vessel.")
+                .font(.system(size: 10)).foregroundStyle(gold.opacity(0.86)).fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(15).background(Color.white.opacity(0.045), in: RoundedRectangle(cornerRadius: 13))
+    }
+
+    private let gold = Color(red: 0.89, green: 0.68, blue: 0.37)
 }
 
 private struct CanyonArt: Shape {
