@@ -214,6 +214,7 @@ private func references(for clueID: String) -> [EvidenceReference] {
 }
 
 private struct ArchiveView: View {
+    @AppStorage("archiveLanguage") private var languageCode = "en"
     @State private var page: Page = .briefing
     @State private var collected: Set<String> = []
     @State private var selectedClue: String?
@@ -241,6 +242,7 @@ private struct ArchiveView: View {
 #endif
         }
         .tint(gold)
+        .environment(\.locale, Locale(identifier: languageCode))
         .sheet(isPresented: $showOpening) { openingCard }
     }
 
@@ -264,7 +266,7 @@ private struct ArchiveView: View {
                 Button { page = item } label: {
                     HStack(spacing: 12) {
                         Image(systemName: item.icon).frame(width: 18)
-                        Text(item.rawValue)
+                        Text(LocalizedStringKey(item.rawValue))
                         Spacer()
                         if item == .evidence, !collected.isEmpty {
                             Text("\(collected.count)").font(.system(size: 10, weight: .bold, design: .monospaced)).foregroundStyle(gold)
@@ -280,11 +282,18 @@ private struct ArchiveView: View {
             }
 
             Spacer()
+            Picker("Language", selection: $languageCode) {
+                Text("English").tag("en")
+                Text("Română").tag("ro")
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal, 14)
+            .padding(.bottom, 12)
             VStack(alignment: .leading, spacing: 9) {
                 HStack { Text("FIELD NOTES"); Spacer(); Text("\(collected.count)/\(clues.count)") }
                     .font(.system(size: 10, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
             ProgressView(value: Double(collected.count), total: Double(clues.count)).tint(sea)
-                Text(collected.count == clues.count ? "All leads collected. Form your theory." : "Follow each lead to build the case.")
+                Text(LocalizedStringKey(collected.count == clues.count ? "All leads collected. Form your theory." : "Follow each lead to build the case."))
                     .font(.system(size: 11)).foregroundStyle(.white.opacity(0.56))
             }
             .padding(16).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12)).padding(14)
@@ -367,15 +376,15 @@ private struct ArchiveView: View {
                     Image(systemName: clue.symbol).font(.system(size: 19)).foregroundStyle(found ? sea : gold)
                         .frame(width: 43, height: 43).background((found ? sea : gold).opacity(0.12), in: RoundedRectangle(cornerRadius: 12))
                     Spacer()
-                    Text(found ? "LOGGED" : "UNEXPLORED").font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(found ? sea : .white.opacity(0.43))
+                    Text(LocalizedStringKey(found ? "LOGGED" : "UNEXPLORED")).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(found ? sea : .white.opacity(0.43))
                 }
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(clue.place).font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(1).foregroundStyle(.white.opacity(0.43))
-                    Text(clue.title).font(.system(size: 21, weight: .regular, design: .serif)).foregroundStyle(.white)
-                    Text(clue.summary).font(.system(size: 12)).foregroundStyle(.white.opacity(0.57)).lineSpacing(3).lineLimit(3)
+                    Text(LocalizedStringKey(clue.place)).font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(1).foregroundStyle(.white.opacity(0.43))
+                    Text(LocalizedStringKey(clue.title)).font(.system(size: 21, weight: .regular, design: .serif)).foregroundStyle(.white)
+                    Text(LocalizedStringKey(clue.summary)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.57)).lineSpacing(3).lineLimit(3)
                 }
                 HStack(spacing: 6) {
-                    Text(found ? "REVIEW EVIDENCE" : "INVESTIGATE LEAD").font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8)
+                    Text(LocalizedStringKey(found ? "REVIEW EVIDENCE" : "INVESTIGATE LEAD")).font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8)
                     Image(systemName: "arrow.up.right").font(.system(size: 9, weight: .bold))
                 }.foregroundStyle(gold).padding(.top, 2)
             }
@@ -394,11 +403,11 @@ private struct ArchiveView: View {
             HStack {
                 Image(systemName: clue.symbol).font(.system(size: 20)).foregroundStyle(gold)
                 Spacer()
-                Text(clue.category).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
+                Text(LocalizedStringKey(clue.category)).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
             }
-            Text(clue.title).font(.system(size: 30, weight: .regular, design: .serif))
-            Text(clue.summary).font(.system(size: 15, weight: .medium)).foregroundStyle(.white.opacity(0.78))
-            Text(clue.detail).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
+            Text(LocalizedStringKey(clue.title)).font(.system(size: 30, weight: .regular, design: .serif))
+            Text(LocalizedStringKey(clue.summary)).font(.system(size: 15, weight: .medium)).foregroundStyle(.white.opacity(0.78))
+            Text(LocalizedStringKey(clue.detail)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
             VStack(alignment: .leading, spacing: 8) {
                 eyebrow("REFERENCES · OPEN ORIGINAL SOURCES")
                 ForEach(references(for: clue.id)) { referenceLink($0) }
@@ -406,7 +415,7 @@ private struct ArchiveView: View {
             HStack {
                 Button("CLOSE") { selectedClue = nil }.buttonStyle(.plain).foregroundStyle(.white.opacity(0.6))
                 Spacer()
-                Button(collected.contains(clue.id) ? "IN FIELD NOTES ✓" : "ADD TO FIELD NOTES  →") {
+                Button(LocalizedStringKey(collected.contains(clue.id) ? "IN FIELD NOTES ✓" : "ADD TO FIELD NOTES  →")) {
                     collected.insert(clue.id); selectedClue = nil
                 }
                 .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.contains(clue.id))
@@ -432,8 +441,8 @@ private struct ArchiveView: View {
                         HStack(alignment: .top, spacing: 15) {
                             Image(systemName: clue.symbol).font(.system(size: 17)).foregroundStyle(sea).frame(width: 39, height: 39).background(sea.opacity(0.12), in: RoundedRectangle(cornerRadius: 11))
                             VStack(alignment: .leading, spacing: 6) {
-                                HStack { Text(clue.title).font(.system(size: 17, design: .serif)); Spacer(); Text(clue.category).font(.system(size: 8, weight: .medium, design: .monospaced)).foregroundStyle(gold.opacity(0.85)) }
-                                Text(clue.detail).font(.system(size: 12)).foregroundStyle(.white.opacity(0.59)).lineSpacing(3)
+                                HStack { Text(LocalizedStringKey(clue.title)).font(.system(size: 17, design: .serif)); Spacer(); Text(LocalizedStringKey(clue.category)).font(.system(size: 8, weight: .medium, design: .monospaced)).foregroundStyle(gold.opacity(0.85)) }
+                                Text(LocalizedStringKey(clue.detail)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.59)).lineSpacing(3)
                             }
                         }.padding(16).background(panel, in: RoundedRectangle(cornerRadius: 12))
                     }
@@ -453,7 +462,7 @@ private struct ArchiveView: View {
     private var conclusionPage: some View {
         VStack(alignment: .leading, spacing: 22) {
             eyebrow("CASE REVIEW  /  YOUR INTERPRETATION")
-            Text(theory == nil ? "What is your final theory?" : "Theory entered into the archive.")
+            Text(LocalizedStringKey(theory == nil ? "What is your final theory?" : "Theory entered into the archive."))
                 .font(.system(size: 34, weight: .regular, design: .serif))
             Text("Lay the clues beside one another. Consider the landscapes, the sudden burials, the stories, and the account of Noah. What is the strongest explanation you can make from the case?")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).lineSpacing(4).frame(maxWidth: 770, alignment: .leading)
@@ -478,8 +487,8 @@ private struct ArchiveView: View {
             HStack(alignment: .top, spacing: 13) {
                 Image(systemName: "circle").font(.system(size: 16)).foregroundStyle(gold).padding(.top, 2)
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(title).font(.system(size: 15, weight: .medium)).foregroundStyle(.white)
-                    Text(note).font(.system(size: 11)).foregroundStyle(.white.opacity(0.5))
+                    Text(LocalizedStringKey(title)).font(.system(size: 15, weight: .medium)).foregroundStyle(.white)
+                    Text(LocalizedStringKey(note)).font(.system(size: 11)).foregroundStyle(.white.opacity(0.5))
                 }
                 Spacer()
                 Image(systemName: "arrow.right").foregroundStyle(gold.opacity(0.8))
@@ -503,8 +512,8 @@ private struct ArchiveView: View {
         }
         VStack(alignment: .leading, spacing: 15) {
             HStack(spacing: 8) { Image(systemName: "checkmark.seal.fill").foregroundStyle(sea); Text("INVESTIGATION COMPLETE").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea) }
-            Text(title).font(.system(size: 23, design: .serif))
-            Text(body).font(.system(size: 13)).foregroundStyle(.white.opacity(0.65)).lineSpacing(4)
+            Text(LocalizedStringKey(title)).font(.system(size: 23, design: .serif))
+            Text(LocalizedStringKey(body)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.65)).lineSpacing(4)
             Divider().overlay(.white.opacity(0.1))
             Text("A good investigator records both the clues and the theory they support. Reopen the archive whenever you want to examine a source again.")
                 .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
@@ -524,9 +533,9 @@ private struct ArchiveView: View {
     private func emptyState(icon: String, title: String, subtitle: String, button: String, action: @escaping () -> Void) -> some View {
         VStack(spacing: 12) {
             Image(systemName: icon).font(.system(size: 24)).foregroundStyle(gold)
-            Text(title).font(.system(size: 20, design: .serif))
-            Text(subtitle).font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
-            Button(button, action: action).buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).padding(.top, 5)
+            Text(LocalizedStringKey(title)).font(.system(size: 20, design: .serif))
+            Text(LocalizedStringKey(subtitle)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
+            Button(LocalizedStringKey(button), action: action).buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).padding(.top, 5)
         }.frame(maxWidth: .infinity).padding(38).background(panel, in: RoundedRectangle(cornerRadius: 14)).padding(.top, 12)
     }
 
@@ -549,12 +558,12 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 13) {
             Image(systemName: icon).font(.system(size: 15)).foregroundStyle(sea)
             Text(number).font(.system(size: 30, weight: .regular, design: .serif)).foregroundStyle(.white)
-            Text(label).font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(0.8).foregroundStyle(.white.opacity(0.42))
+            Text(LocalizedStringKey(label)).font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(0.8).foregroundStyle(.white.opacity(0.42))
         }.frame(width: 175, height: 112, alignment: .leading).padding(.leading, 17).background(panel, in: RoundedRectangle(cornerRadius: 13))
     }
 
     private func eyebrow(_ text: String) -> some View {
-        Text(text).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(1.4).foregroundStyle(sea)
+        Text(LocalizedStringKey(text)).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(1.4).foregroundStyle(sea)
     }
 
     private var heroImage: some View {
@@ -589,7 +598,7 @@ private struct ArchiveView: View {
 
     private func mapPin(_ label: String, x: CGFloat, y: CGFloat) -> some View {
         GeometryReader { geo in
-            VStack(spacing: 3) { Circle().fill(gold).frame(width: 8, height: 8).overlay(Circle().stroke(ink, lineWidth: 2)); Text(label).font(.system(size: 7, weight: .bold, design: .monospaced)).foregroundStyle(.white).fixedSize() }
+            VStack(spacing: 3) { Circle().fill(gold).frame(width: 8, height: 8).overlay(Circle().stroke(ink, lineWidth: 2)); Text(LocalizedStringKey(label)).font(.system(size: 7, weight: .bold, design: .monospaced)).foregroundStyle(.white).fixedSize() }
                 .position(x: geo.size.width*x, y: geo.size.height*y)
         }
     }
@@ -652,9 +661,9 @@ private struct ArchiveView: View {
                     Image(systemName: isOpen ? "chevron.down.circle.fill" : "circle.hexagongrid.fill")
                         .font(.system(size: 19)).foregroundStyle(gold).frame(width: 28)
                     VStack(alignment: .leading, spacing: 7) {
-                        Text(file.label).font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
-                        Text(file.title).font(.system(size: 21, design: .serif)).foregroundStyle(.white)
-                        Text(file.proClaim).font(.system(size: 12)).foregroundStyle(.white.opacity(0.57)).lineSpacing(3).lineLimit(isOpen ? nil : 3)
+                        Text(LocalizedStringKey(file.label)).font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
+                        Text(LocalizedStringKey(file.title)).font(.system(size: 21, design: .serif)).foregroundStyle(.white)
+                        Text(LocalizedStringKey(file.proClaim)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.57)).lineSpacing(3).lineLimit(isOpen ? nil : 3)
                     }
                     Spacer(minLength: 0)
                 }.padding(17).contentShape(Rectangle())
@@ -676,8 +685,8 @@ private struct ArchiveView: View {
 
     private func auditParagraph(_ heading: String, text: String, color: Color) -> some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(heading).font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(color)
-            Text(text).font(.system(size: 12)).foregroundStyle(.white.opacity(0.70)).lineSpacing(4)
+            Text(LocalizedStringKey(heading)).font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(color)
+            Text(LocalizedStringKey(text)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.70)).lineSpacing(4)
         }
     }
 
@@ -686,8 +695,8 @@ private struct ArchiveView: View {
             HStack(alignment: .top, spacing: 8) {
                 Image(systemName: "arrow.up.right.square").font(.system(size: 11)).foregroundStyle(gold).padding(.top, 1)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(reference.title).font(.system(size: 11, weight: .medium)).foregroundStyle(.white.opacity(0.84))
-                    Text(reference.kind).font(.system(size: 8, weight: .medium, design: .monospaced)).tracking(0.45).foregroundStyle(sea)
+                    Text(LocalizedStringKey(reference.title)).font(.system(size: 11, weight: .medium)).foregroundStyle(.white.opacity(0.84))
+                    Text(LocalizedStringKey(reference.kind)).font(.system(size: 8, weight: .medium, design: .monospaced)).tracking(0.45).foregroundStyle(sea)
                 }
                 Spacer(minLength: 0)
             }.contentShape(Rectangle())
@@ -701,9 +710,9 @@ private struct ArchiveView: View {
                 else { ZStack { LinearGradient(colors: [panel, sea.opacity(0.35)], startPoint: .topLeading, endPoint: .bottomTrailing); Image(systemName: "mountain.2.fill").font(.system(size: 42)).foregroundStyle(.white.opacity(0.35)) } }
             }.frame(height: 190).clipped()
             VStack(alignment: .leading, spacing: 6) {
-                Text(title).font(.system(size: 22, design: .serif))
-                Text(subtitle).font(.system(size: 12)).foregroundStyle(.white.opacity(0.6))
-                HStack { Text(source).font(.system(size: 9, design: .monospaced)).foregroundStyle(sea); Spacer(); Link("OPEN SOURCE ↗", destination: URL(string: url)!).font(.system(size: 9, weight: .bold, design: .monospaced)).tint(gold) }
+                Text(LocalizedStringKey(title)).font(.system(size: 22, design: .serif))
+                Text(LocalizedStringKey(subtitle)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.6))
+                HStack { Text(LocalizedStringKey(source)).font(.system(size: 9, design: .monospaced)).foregroundStyle(sea); Spacer(); Link("OPEN SOURCE ↗", destination: URL(string: url)!).font(.system(size: 9, weight: .bold, design: .monospaced)).tint(gold) }
                     .padding(.top, 5)
             }.padding(16)
         }.background(panel, in: RoundedRectangle(cornerRadius: 15)).clipShape(RoundedRectangle(cornerRadius: 15))
@@ -713,7 +722,7 @@ private struct ArchiveView: View {
         Link(destination: URL(string: url)!) {
             HStack(spacing: 15) {
                 ZStack { RoundedRectangle(cornerRadius: 12).fill(gold.opacity(0.13)); Image(systemName: symbol).font(.system(size: 20)).foregroundStyle(gold) }.frame(width: 54, height: 54)
-                VStack(alignment: .leading, spacing: 5) { Text(title).font(.system(size: 18, design: .serif)).foregroundStyle(.white); Text(description).font(.system(size: 12)).foregroundStyle(.white.opacity(0.56)).lineSpacing(2); Text(source.uppercased()).font(.system(size: 8, weight: .medium, design: .monospaced)).tracking(0.7).foregroundStyle(sea).padding(.top, 3) }
+                VStack(alignment: .leading, spacing: 5) { Text(LocalizedStringKey(title)).font(.system(size: 18, design: .serif)).foregroundStyle(.white); Text(LocalizedStringKey(description)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.56)).lineSpacing(2); Text(LocalizedStringKey(source.uppercased())).font(.system(size: 8, weight: .medium, design: .monospaced)).tracking(0.7).foregroundStyle(sea).padding(.top, 3) }
                 Spacer(); Image(systemName: "arrow.up.right").foregroundStyle(gold)
             }.padding(16).background(panel, in: RoundedRectangle(cornerRadius: 14))
         }.buttonStyle(.plain)
@@ -734,7 +743,7 @@ private struct ArchiveView: View {
                 Image(systemName: "clock").foregroundStyle(sea)
                 VStack(alignment: .leading, spacing: 4) {
                     Text("~30,000 to ~14,000 years ago").font(.system(size: 12, weight: .semibold, design: .monospaced))
-                    Text("Nun cho ga · Yukon · ~30,000 years; Missoula floods · Washington · broad interval often given as ~20,000–14,000 years").font(.system(size: 11)).foregroundStyle(.white.opacity(0.58)).lineSpacing(3)
+                    Text("Nun cho ga · Yukon · preliminary estimate >30,000 years; Missoula floods · Washington · broad interval often given as ~20,000–14,000 years").font(.system(size: 11)).foregroundStyle(.white.opacity(0.58)).lineSpacing(3)
                 }
             }
             Text("Not to scale. The Siberian Berezovka specimen is a comparison, not a North American site.").font(.system(size: 9)).foregroundStyle(gold.opacity(0.8))

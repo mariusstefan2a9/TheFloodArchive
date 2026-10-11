@@ -2,6 +2,10 @@
 
 **A source-led flood investigation game for macOS, iPadOS, and iPhone.** The English-language experience uses an adventurous, mysterious field-dossier style. Players assemble geological, fossil, archaeological, and textual clues into their own theory about Noah’s Flood. Each case file identifies its location and links the observation to its source, while labeling flood-geology interpretations as interpretations.
 
+## Languages
+
+The interface and investigation content launch in English. Use the English / Română segmented control in the sidebar to switch to Romanian; the choice is saved on the device. Original publication titles remain in their published language so sources are easy to find.
+
 ## Open in Xcode
 
 1. Copy this folder to your MacBook.
