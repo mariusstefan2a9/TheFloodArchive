@@ -1,6 +1,6 @@
 # The Flood Archive
 
-**A cinematic SwiftUI field investigation for macOS and iPadOS.** The game is in English, designed around an adventurous, mysterious case file, with a respectful evidence-first approach to the Noah flood tradition.
+**A source-led flood investigation game for macOS and iPadOS.** The English-language experience uses an adventurous, mysterious field-dossier style. Its case file foregrounds evidence and interpretations cited by proponents of a global flood, while identifying where each fossil or geological site was found.
 
 ## Open in Xcode
 
@@ -10,31 +10,20 @@
 4. For your own iPad, sign in to Xcode with your Apple Account and select your **Personal Team** under **Signing & Capabilities**. On iPad, enable Developer Mode if Xcode asks.
 5. Press **Run**. Personal on-device development does not require the paid Apple Developer Program. App Store distribution is separate.
 
-## What is in this version
+## Included
 
-- A custom illustrated title scene and a schematic North American expedition map.
-- Six case leads spanning Mesopotamia, the Black Sea, Washington, Yukon, and Nebraska.
-- Photo panels for the Channeled Scablands, Nun cho ga, and Ashfall Fossil Beds. Photos load from their publisher over the internet; the app keeps the source link and credit beside each image.
-- A field-media library linking to USGS video, a University of Nebraska virtual field trip, and Smithsonian mammoth research.
-- A chronological evidence panel that keeps million-year fossil sites separate from Ice Age events.
-- A case conclusion that distinguishes observed evidence, scientific interpretation, and faith-based connection.
+- A custom illustrated title scene, expedition map, clue collection, evidence wall, case theory and reference-linked **Claim Audit**.
+- Fourteen evidence files covering regional megafloods, the Black Sea rapid-inflow hypothesis, post-Ice-Age sea-level rise, marine fossils at elevation, Tapeats/Coconino megasequences, polystrate trees, dinosaur soft-tissue reports, unconformities, folded strata, catastrophic plate tectonics, RATE helium-in-zircon claims, fossil succession, and a fossil preserving a marine reptile giving birth.
+- North American cases for the Channeled Scablands, Yukon mammoths, and Ashfall Fossil Beds in Nebraska.
+- Images that load from NASA, Yukon, and the University of Nebraska; video and virtual field-trip links that open at their publishers; credits and source links appear beside the media.
+- A timeline that keeps separate places, specimens, and geological periods distinct.
 
-## Evidence notes
+## Source labels
 
-The Channeled Scablands preserve evidence for repeated, immense Ice Age outburst floods. This confirms extraordinary **regional** floods in North America; it does not, by itself, establish a single worldwide flood.
+Each Claim Audit reference is labeled by source type, such as peer-reviewed research, government or museum record, or creationist-perspective research. The linked articles document the underlying observation or the pro-flood interpretation named on the card. Creationist interpretation sources are labeled openly rather than presented as mainstream consensus.
 
-Nun cho ga is a near-complete mummified mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in Traditional Territory. The game credits the Yukon release and the Treadstone Gold photo. The famous Berezovka mammoth whose stomach contents included grasses came from Siberia, not North America.
+Notable scientific and institutional records include the USGS review of the Missoula floods; peer-reviewed Black Sea research by Ryan and colleagues; the Barbados sea-level record; Grand Canyon and Yukon park/government geology; the Nebraska State Museum's Ashfall research; Schweitzer and colleagues' dinosaur-protein studies; sedimentology at Joggins; and the PLOS ONE report of the Chaohusaurus birth-position fossil.
 
-Ashfall Fossil Beds in Nebraska preserve animals buried in volcanic ash. The famous fossil of a marine reptile captured while giving birth is a different specimen from China. The game says where each example was found and does not present either one as proof of Noah’s Flood.
+The grass-filled Berezovka mammoth was found in Siberia, not North America. The Chaohusaurus birth-position fossil came from China. Nun cho ga is the separate mummified calf discovered in Yukon. The app distinguishes these well-known examples instead of relocating them to North America.
 
-## Sources
-
-- [USGS: Missoula and Bonneville floods review](https://www.usgs.gov/publications/missoula-and-bonneville-floods-a-review-ice-age-megafloods-columbia-river-basin)
-- [NASA Earth Observatory: Channeled Scablands](https://science.nasa.gov/earth/earth-observatory/channeled-scablands-92025/)
-- [Government of Yukon: Nun cho ga discovery](https://yukon.ca/en/news/mummified-baby-woolly-mammoth-found-gold-miner-klondike)
-- [University of Nebraska State Museum: Ashfall research](https://museum.unl.edu/ashfall/active-research/)
-- [Smithsonian: Berezovka mammoth](https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar)
-- [PubMed: Chaohusaurus birth-position fossil (China)](https://pubmed.ncbi.nlm.nih.gov/24533127/)
-- [USGS: Great Missoula and Ice Age Floods video](https://www.usgs.gov/media/videos/pubtalk-92010-great-missoula-and-ice-age-floods-natl-geologic-trail)
-
-Images and video links require an internet connection. Image credit is shown in the app; the Nun cho ga image is credited to Treadstone Gold through the Yukon release. The illustrated hero and map are original SwiftUI artwork and are labeled as illustrative/schematic.
+Images and video links require an internet connection. Third-party media remains on its publisher's website and is not bundled into this project. The hero illustration and map are original SwiftUI artwork; the map is labeled schematic.
