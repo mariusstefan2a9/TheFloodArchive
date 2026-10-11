@@ -53,6 +53,26 @@ private struct Clue: Identifiable {
     let detail: String
 }
 
+private struct ChallengeOption: Identifiable {
+    let id: String
+    let text: String
+}
+
+private struct FieldChallenge {
+    let question: String
+    let options: [ChallengeOption]
+    let answerID: String
+    let explanation: String
+    let reasoningNote: String
+}
+
+private struct CaseConnection: Identifiable {
+    let firstID: String
+    let secondID: String
+    let relation: String
+    var id: String { "\(firstID)|\(secondID)|\(relation)" }
+}
+
 private struct EvidenceReference: Identifiable {
     let title: String
     let kind: String
@@ -77,8 +97,9 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "Herget et al. · Altai megafloods—The temporal context", kind: "PEER-REVIEWED REVIEW · 2020", url: "https://doi.org/10.1016/j.earscirev.2019.102995"),
         EvidenceReference(title: "Rudoy · Altai glacial superfloods", kind: "PEER-REVIEWED RESEARCH · 2002", url: "https://doi.org/10.1016/S1040-6182(01)00066-0")
     ]),
-    AuditFile(id: "blacksea", title: "Black Sea: a candidate flood", label: "RAPID-INFLOW HYPOTHESIS", proClaim: "Ryan and Pitman proposed that rising Mediterranean water breached the Bosporus and rapidly flooded a lower Black Sea basin in the early Holocene. They suggested the event could have affected farming communities and inspired flood traditions.", observations: "Submerged shorelines, marine and freshwater sediments, and changing salinity are documented in the Black Sea basin. Ryan and Pitman used geological and archaeological clues to argue for rapid inflow.", context: "This is a proposed regional event and one possible setting for ancient flood memories. The original paper presents its evidence and interpretation; the broader connection to Noah is an additional historical interpretation.", references: [
+    AuditFile(id: "blacksea", title: "Black Sea: a candidate flood", label: "RAPID-INFLOW HYPOTHESIS", proClaim: "Ryan and Pitman’s 1997 research proposed that rising Mediterranean water breached the Bosporus and rapidly flooded a lower Black Sea basin in the early Holocene. In their later book, they argued that the event may have affected farming communities and inspired flood traditions.", observations: "Submerged shorelines, marine and freshwater sediments, and changing salinity are documented in the Black Sea basin. Ryan and Pitman used geological and archaeological clues to argue for rapid inflow.", context: "This is a proposed regional event and one possible setting for ancient flood memories. The original paper presents its evidence and interpretation; the broader connection to Noah is an additional historical interpretation.", references: [
         EvidenceReference(title: "Ryan et al. · Catastrophic flooding of the Black Sea", kind: "ORIGINAL RESEARCH · 1997", url: "https://doi.org/10.1016/S0025-3227(97)00007-8"),
+        EvidenceReference(title: "Ryan & Pitman · Noah’s Flood (book, 1998)", kind: "AUTHOR’S SYNTHESIS AND HISTORICAL INTERPRETATION", url: "https://books.google.com/books/about/Noah_s_Flood.html?id=wr3YAAAAMAAJ"),
     ]),
     AuditFile(id: "seaLevel", title: "Drowned coasts after the Ice Age", label: "GLOBAL SEA-LEVEL RISE · SUBMERGED LANDSCAPES", proClaim: "After the Last Glacial Maximum, global sea level rose by roughly 120 metres as land ice melted. Former coastal plains and human landscapes were submerged; this could help explain why flood memories recur in coastal cultures.", observations: "Coral terraces, sediment cores, and dated shorelines record a large, multi-stage rise, including shorter meltwater pulses.", context: "The evidence includes submerged coastlines around the world. Flood researchers consider how memories of lost coastal landscapes may have travelled through generations; this cultural link is an interpretation built on the physical record.", references: [
         EvidenceReference(title: "Nature Geoscience · Barbados-based LGM ice-volume estimate", kind: "PEER-REVIEWED RESEARCH · 2013", url: "https://www.nature.com/articles/ngeo1859"),
@@ -88,6 +109,8 @@ private let auditFiles: [AuditFile] = [
     AuditFile(id: "marineFossils", title: "Marine fossils high above today’s sea", label: "OBSERVATION CONFIRMED · PROCESS EXPLAINED", proClaim: "Marine fossils occur high in the Himalayas, Alps, and Colorado Plateau. Flood advocates point to them as evidence that water once covered land now at great altitude.", observations: "Marine fossils really are found in elevated rock formations. At Grand Canyon, the Kaibab Limestone and other units preserve marine fossils and were deposited in ancient seas.", context: "A fossil’s present elevation is not the elevation at which it formed. The Colorado Plateau and mountain belts were uplifted by tectonic processes after marine sediments accumulated. The fossils support ancient marine environments and later uplift; they do not show that a recent global flood covered today’s mountains.", references: [
         EvidenceReference(title: "National Park Service · Grand Canyon fossils", kind: "PARK GEOLOGY RESOURCE", url: "https://www.nps.gov/grca/learn/nature/fossils.htm"),
         EvidenceReference(title: "National Park Service · Grand Canyon geology and uplift", kind: "PARK GEOLOGY RESOURCE", url: "https://www.nps.gov/grca/learn/nature/grca-geology.htm"),
+        EvidenceReference(title: "Han et al. · Tethys Himalaya marine sedimentary record", kind: "PEER-REVIEWED GEOLOGY RESEARCH · 2016", url: "https://doi.org/10.1016/j.palaeo.2016.05.012"),
+        EvidenceReference(title: "Wang et al. · Constraints on Tibetan Plateau uplift history", kind: "PEER-REVIEWED PNAS RESEARCH · 2008", url: "https://doi.org/10.1073/pnas.0703595105"),
         EvidenceReference(title: "National Park Service · Kaibab Formation", kind: "PARK GEOLOGY RESOURCE", url: "https://www.nps.gov/zion/learn/nature/kaibab.htm"),
         EvidenceReference(title: "ICR · Marine fossils on today’s mountain ranges", kind: "CREATIONIST-PERSPECTIVE INTERPRETATION", url: "https://www.icr.org/node/7444")
     ]),
@@ -163,13 +186,16 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "Genesis 1 · The expanse and waters", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/1/"),
         EvidenceReference(title: "Genesis 7 · The Flood begins", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/7/")
     ]),
-    AuditFile(id: "scripturalWitness", title: "The Bible’s later witnesses to the Flood", label: "REPORTED ARGUMENT · BIBLICAL TESTIMONY", proClaim: "Insight on the Scriptures argues that later Bible writers, including Jesus, treated Noah and the Flood as historical and used the account in teaching. This is the encyclopedia’s scriptural argument for the Flood’s historicity.", observations: "The article cites Isaiah 54, Ezekiel 14, Matthew 24, Luke 17, Hebrews 11, 1 Peter 3, and 2 Peter 2–3 as later biblical references to Noah and the Flood. These are textual witnesses to how later biblical authors used the account; they are not geological measurements.", context: "The Biblical encyclopedia presents the later Bible references as confirmation of the Genesis account. This is a theological and textual argument, distinct from physical evidence such as dated deposits or fossils.", references: [
+    AuditFile(id: "scripturalWitness", title: "The Bible’s later witnesses to the Flood", label: "REPORTED ARGUMENT · BIBLICAL TESTIMONY", proClaim: "Insight on the Scriptures argues that later Bible writers, including Jesus, treated Noah and the Flood as historical and used the account in teaching. This is the encyclopedia’s scriptural argument for the Flood’s historicity.", observations: "The Deluge article cites Psalm 29, Isaiah 54, Ezekiel 14, Luke 3, Matthew 24, Luke 17, Hebrews 11, 1 Peter 3, and 2 Peter 2–3. The Flood of Noah’s Day article also refers to John 8:58 in support of its claim that Jesus was an eyewitness in heaven. These are textual and theological arguments in the encyclopedia, not geological measurements.", context: "The Biblical encyclopedia presents the later Bible references as confirmation of the Genesis account. This is a theological and textual argument, distinct from physical evidence such as dated deposits or fossils.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Flood of Noah’s Day’", kind: "BIBLICAL ENCYCLOPEDIA · SCRIPTURAL ARGUMENT", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/"),
         EvidenceReference(title: "Insight on the Scriptures · ‘Noah’", kind: "BIBLICAL ENCYCLOPEDIA · SCRIPTURAL ARGUMENT", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Noah/"),
         EvidenceReference(title: "Isaiah 54 · Noah reference", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/isaiah/54/"),
+        EvidenceReference(title: "Psalm 29 · Jehovah over the Deluge", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/psalms/29/"),
+        EvidenceReference(title: "John 8 · Jesus’ statement about his prehuman existence", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/john/8/"),
         EvidenceReference(title: "Ezekiel 14 · Noah, Daniel, and Job", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/ezekiel/14/"),
         EvidenceReference(title: "Matthew 24 · Jesus refers to Noah", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/matthew/24/"),
         EvidenceReference(title: "Luke 17 · Jesus refers to Noah", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/luke/17/"),
+        EvidenceReference(title: "Luke 3 · Noah in Jesus’ genealogy", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/luke/3/"),
         EvidenceReference(title: "Hebrews 11 · Noah’s faith", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/hebrews/11/"),
         EvidenceReference(title: "1 Peter 3 · Noah and the Flood", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/1-peter/3/"),
         EvidenceReference(title: "2 Peter 2 · Noah as a preacher", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/2/"),
@@ -192,19 +218,19 @@ private let clues: [Clue] = [
         id: "nuncho", title: "Nun cho ga", place: "YUKON · NORTH AMERICA", symbol: "pawprint.fill",
         category: "PALEONTOLOGY · PERMAFROST PRESERVATION",
         summary: "A remarkably preserved baby mammoth emerged from Yukon permafrost in 2022.",
-        detail: "Nun cho ga is a female woolly mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in traditional territory. The find is an extraordinary example of permafrost preservation. Compare it with the Berezovka mammoth in the Siberian file: different animals, different places, both preserved in frozen ground. What burial conditions can preserve a whole carcass?"
+        detail: "Nun cho ga is a near-complete mummified woolly mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in Traditional Territory. A quick examination suggested the calf was female; Yukon geologists estimated it died more than 30,000 years ago and was frozen in permafrost. Compare it with the Berezovka mammoth in the Siberian file: different animals, different places, both preserved in frozen ground. What can each specimen tell us about preservation—and what would require further evidence?"
     ),
     Clue(
         id: "ashfall", title: "The Ashfall Nursery", place: "NEBRASKA · NORTH AMERICA", symbol: "leaf",
         category: "FOSSIL SITE · VOLCANIC ASH",
         summary: "A Nebraska fossil bed preserves articulated animals in a layer of volcanic ash.",
-        detail: "At Ashfall Fossil Beds, Nebraska, the University of Nebraska State Museum describes a Miocene assemblage buried by volcanic ash from an eruption in what is now Idaho. The site preserves articulated skeletons and pregnant animals. Compare this mass burial with the individual Chaohusaurus birth-position fossil from China: two very different snapshots of life interrupted."
+        detail: "At Ashfall Fossil Beds, Nebraska, volcanic ash from an eruption in what is now southwestern Idaho fell over a watering hole about 11.93 million years ago. The ash bed preserves many articulated skeletons, including rhinos with unborn young. Compare this ashfall burial with the individual Chaohusaurus birth-position fossil from China: two very different snapshots, each with its own geological setting."
     ),
     Clue(
         id: "silt", title: "The Silt Line", place: "MESOPOTAMIA", symbol: "water.waves",
         category: "ARCHAEOLOGY · MESOPOTAMIA",
-        summary: "A band of water-laid clay cuts through the remains of an ancient settlement.",
-        detail: "Excavations at several Mesopotamian cities found flood deposits. Each layer belongs to the story of its own settlement; together they show how water repeatedly reshaped the region where some of the oldest flood narratives took form. Compare the sites, dates, and stories."
+        summary: "At Lagash, a dated flood deposit more than a metre thick covered existing architecture.",
+        detail: "A 2025 peer-reviewed study reports a flood-deposited silt layer more than a metre thick over architecture at Lagash (modern Tell al-Hiba), dated to the late Early Dynastic period, around 2400–2350 BCE. The authors propose that canal embankments may have been breached during conflict. Other Mesopotamian settlements preserve separate flood deposits from different periods. Compare the sites, dates, sediment, and historical context before linking any of them to a wider story."
     ),
     Clue(
         id: "tablet", title: "The Broken Tablet", place: "ANCIENT NEAR EAST", symbol: "scroll",
@@ -220,6 +246,47 @@ private let clues: [Clue] = [
     )
 ]
 
+private func challenge(for clueID: String) -> FieldChallenge {
+    switch clueID {
+    case "scablands":
+        FieldChallenge(question: "Which pattern points to repeated outburst floods?", options: [
+            ChallengeOption(id: "stacked", text: "Stacked flood beds and giant current ripples."),
+            ChallengeOption(id: "shore", text: "One shoreline with no flood deposits."),
+            ChallengeOption(id: "single", text: "A single isolated fossil.")
+        ], answerID: "stacked", explanation: "The USGS synthesis describes repeated Lake Missoula outbursts. Successive deposits and giant current ripples are clues to repeated flows.", reasoningNote: "This supports repeated regional floods. By itself it does not connect separate continents to one event." )
+    case "nuncho":
+        FieldChallenge(question: "What can the preserved calf show directly?", options: [
+            ChallengeOption(id: "permafrost", text: "Permafrost can preserve a carcass and soft tissue."),
+            ChallengeOption(id: "exact-time", text: "The exact hour and speed of burial."),
+            ChallengeOption(id: "global", text: "That a worldwide flood caused its death.")
+        ], answerID: "permafrost", explanation: "The Yukon discovery documents exceptional preservation in frozen ground. The specimen alone does not give an exact burial clock or identify a global cause.", reasoningNote: "Separate what the specimen preserves from the larger explanation proposed for how it was buried." )
+    case "ashfall":
+        FieldChallenge(question: "What buried the Ashfall animals?", options: [
+            ChallengeOption(id: "ash", text: "Volcanic ash reached Nebraska from an eruption to the west."),
+            ChallengeOption(id: "river", text: "A river flood from the Black Sea."),
+            ChallengeOption(id: "ice", text: "A glacier carrying the animals south.")
+        ], answerID: "ash", explanation: "The Nebraska State Museum describes volcanic ash from an eruption in what is now Idaho. The site is a local ashfall deposit, not a water-laid flood bed.", reasoningNote: "A mass burial can have different causes. Check the deposit itself before using it in a flood argument." )
+    case "silt":
+        FieldChallenge(question: "Two cities have flood layers. What would help test whether they record the same event?", options: [
+            ChallengeOption(id: "date", text: "Compare dates, layer properties, and archaeological context."),
+            ChallengeOption(id: "look", text: "Assume similar-looking mud means the same flood."),
+            ChallengeOption(id: "story", text: "Use a later story as the only dating method.")
+        ], answerID: "date", explanation: "Each excavated layer has a site context. Correlating separate deposits requires comparing their age and sediment evidence; similarity alone is not enough.", reasoningNote: "A connection between sites is a hypothesis to test, not a property of the word ‘flood’ alone." )
+    case "tablet":
+        FieldChallenge(question: "If two flood narratives share themes, what is the strongest next step?", options: [
+            ChallengeOption(id: "compare", text: "Compare wording, setting, dates, and possible transmission."),
+            ChallengeOption(id: "same", text: "Treat every shared theme as proof of one identical event."),
+            ChallengeOption(id: "ignore", text: "Ignore differences between the accounts.")
+        ], answerID: "compare", explanation: "Shared motifs make comparison useful. Similarities and differences, historical setting, and possible transmission all matter when evaluating a connection.", reasoningNote: "A good investigator records both matches and mismatches between sources." )
+    default:
+        FieldChallenge(question: "What evidence can test the proposed rapid Black Sea inflow?", options: [
+            ChallengeOption(id: "sediments", text: "Dated shorelines and sediment or salinity sequences."),
+            ChallengeOption(id: "legend", text: "A flood legend with no geological context."),
+            ChallengeOption(id: "mountain", text: "A mountain fossil far from the basin.")
+        ], answerID: "sediments", explanation: "The rapid-inflow proposal is tested against basin shorelines, sediment records, and changes in salinity. The rate and scale are part of the hypothesis.", reasoningNote: "A regional hypothesis needs evidence from its own basin before it can be linked to a wider story." )
+    }
+}
+
 private func references(for clueID: String) -> [EvidenceReference] {
     switch clueID {
     case "scablands": [
@@ -232,8 +299,9 @@ private func references(for clueID: String) -> [EvidenceReference] {
         EvidenceReference(title: "Smithsonian · Berezovka mammoth stomach contents", kind: "MUSEUM RESEARCH NOTE · SIBERIA", url: "https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar")
     ]
     case "ashfall": [
-        EvidenceReference(title: "University of Nebraska · Ashfall research", kind: "MUSEUM RESEARCH SITE", url: "https://museum.unl.edu/ashfall/active-research/"),
-        EvidenceReference(title: "University of Nebraska · Ashfall geology and imagery", kind: "MUSEUM GEOLOGY RESOURCE", url: "https://museum.unl.edu/ashfall/afb-geology/")
+        EvidenceReference(title: "National Park Service · Ashfall paleontology and burial sequence", kind: "GOVERNMENT PALEONTOLOGY RESOURCE", url: "https://www.nps.gov/articles/000/paleontology-of-ashfall-fossil-beds-national-natural-landmark.htm"),
+        EvidenceReference(title: "University of Nebraska · About Ashfall", kind: "MUSEUM GEOLOGY RESOURCE", url: "https://museum.unl.edu/ashfall/about-ashfall/"),
+        EvidenceReference(title: "American Museum of Natural History · Ashfall fossils, including unborn young", kind: "MUSEUM PALEONTOLOGY RESOURCE", url: "https://research.amnh.org/paleontology/perissodactyl/evidence/findings/ashfall")
     ]
     case "silt": [
         EvidenceReference(title: "Goodman et al. · Flooding of Lagash, Iraq", kind: "PEER-REVIEWED GEOARCHAEOLOGY · 2025", url: "https://doi.org/10.1002/gea.70027"),
@@ -260,9 +328,21 @@ private struct ArchiveView: View {
     @AppStorage("archiveCurrentPage") private var storedPage = Page.briefing.rawValue
     @AppStorage("archiveCollectedClueIDs") private var storedCollectedClueIDs = ""
     @AppStorage("archiveTheory") private var storedTheory = ""
+    @AppStorage("archiveTheoryNote") private var storedTheoryNote = ""
+    @AppStorage("archiveTheoryConfidence") private var storedTheoryConfidence = 50.0
+    @AppStorage("archiveTheoryFiled") private var theoryFiled = false
+    @AppStorage("archiveChallengeAnswers") private var storedChallengeAnswers = ""
+    @AppStorage("archiveCaseConnections") private var storedCaseConnections = ""
+    @AppStorage("archiveConnectionNotes") private var storedConnectionNotes = ""
     @AppStorage("archiveOpeningDismissed") private var openingDismissed = false
     @State private var selectedClue: String?
     @State private var expandedAuditID: String?
+    @State private var challengeDraft: String?
+    @State private var challengeRevealedClueID: String?
+    @State private var connectionFirst = "scablands"
+    @State private var connectionSecond = "nuncho"
+    @State private var connectionRelation = "possible-link"
+    @State private var connectionReasonDraft = ""
 
     private var page: Page {
         get { Page(rawValue: storedPage) ?? .briefing }
@@ -273,6 +353,30 @@ private struct ArchiveView: View {
         Set(storedCollectedClueIDs.split(separator: ",").map(String.init))
     }
 
+    private var challengeAnswers: [String: String] {
+        guard let data = Data(base64Encoded: storedChallengeAnswers),
+              let answers = try? JSONDecoder().decode([String: String].self, from: data) else { return [:] }
+        return answers
+    }
+
+    private var caseConnections: [CaseConnection] {
+        storedCaseConnections.split(separator: ",").compactMap { item in
+            let parts = item.split(separator: "~").map(String.init)
+            guard parts.count == 3 else { return nil }
+            return CaseConnection(firstID: parts[0], secondID: parts[1], relation: parts[2])
+        }
+    }
+
+    private var connectionNotes: [String: String] {
+        guard let data = Data(base64Encoded: storedConnectionNotes),
+              let notes = try? JSONDecoder().decode([String: String].self, from: data) else { return [:] }
+        return notes
+    }
+
+    private var availableConnectionClues: [Clue] {
+        clues.filter { collected.contains($0.id) }
+    }
+
     private var theory: String? {
         storedTheory.isEmpty ? nil : storedTheory
     }
@@ -281,6 +385,35 @@ private struct ArchiveView: View {
         var ids = collected
         ids.insert(id)
         storedCollectedClueIDs = ids.sorted().joined(separator: ",")
+    }
+
+    private func saveChallengeAnswer(_ answerID: String, for clueID: String) {
+        var answers = challengeAnswers
+        answers[clueID] = answerID
+        guard let data = try? JSONEncoder().encode(answers) else { return }
+        storedChallengeAnswers = data.base64EncodedString()
+    }
+
+    private func addCaseConnection() {
+        guard connectionFirst != connectionSecond else { return }
+        let pair = [connectionFirst, connectionSecond].sorted()
+        let connection = CaseConnection(firstID: pair[0], secondID: pair[1], relation: connectionRelation)
+        guard !caseConnections.contains(where: { $0.id == connection.id }),
+              connectionReasonDraft.trimmingCharacters(in: .whitespacesAndNewlines).count >= 8 else { return }
+        let all = caseConnections + [connection]
+        storedCaseConnections = all.map { "\($0.firstID)~\($0.secondID)~\($0.relation)" }.joined(separator: ",")
+        var notes = connectionNotes
+        notes[connection.id] = connectionReasonDraft.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let data = try? JSONEncoder().encode(notes) { storedConnectionNotes = data.base64EncodedString() }
+        connectionReasonDraft = ""
+    }
+
+    private func removeCaseConnection(_ connection: CaseConnection) {
+        storedCaseConnections = caseConnections.filter { $0.id != connection.id }
+            .map { "\($0.firstID)~\($0.secondID)~\($0.relation)" }.joined(separator: ",")
+        var notes = connectionNotes
+        notes.removeValue(forKey: connection.id)
+        if let data = try? JSONEncoder().encode(notes) { storedConnectionNotes = data.base64EncodedString() }
     }
 
     private let ink = Color(red: 0.055, green: 0.075, blue: 0.09)
@@ -356,8 +489,11 @@ private struct ArchiveView: View {
             VStack(alignment: .leading, spacing: 9) {
                 HStack { Text("FIELD NOTES"); Spacer(); Text("\(collected.count)/\(clues.count)") }
                     .font(.system(size: 10, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
-            ProgressView(value: Double(collected.count), total: Double(clues.count)).tint(sea)
-                Text(LocalizedStringKey(collected.count == clues.count ? "All leads collected. Form your theory." : "Follow each lead to build the case."))
+                ProgressView(value: Double(collected.count), total: Double(clues.count)).tint(sea)
+                HStack { Text("REASONING CHECKS"); Spacer(); Text("\(challengeAnswers.count)/\(clues.count)") }
+                    .font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
+                ProgressView(value: Double(challengeAnswers.count), total: Double(clues.count)).tint(gold)
+                Text(LocalizedStringKey(challengeAnswers.count == clues.count ? "Every lead examined. Build your case." : "Examine each clue; record what it can show."))
                     .font(.system(size: 11)).foregroundStyle(.white.opacity(0.56))
             }
             .padding(16).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12)).padding(14)
@@ -480,6 +616,7 @@ private struct ArchiveView: View {
             Text(LocalizedStringKey(clue.detail)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
             clueIllustration(clue)
             if clue.id == "tablet" { ArkProportionDiagram() }
+            fieldChallengeCard(for: clue)
             VStack(alignment: .leading, spacing: 8) {
                 eyebrow("REFERENCES · OPEN ORIGINAL SOURCES")
                 ForEach(references(for: clue.id)) { referenceLink($0) }
@@ -490,14 +627,66 @@ private struct ArchiveView: View {
                 Button(LocalizedStringKey(collected.contains(clue.id) ? "IN FIELD NOTES ✓" : "ADD TO FIELD NOTES  →")) {
                     recordClue(clue.id); selectedClue = nil
                 }
-                .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.contains(clue.id))
+                .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
+                .disabled(collected.contains(clue.id) || challengeAnswers[clue.id] == nil)
             }.padding(.top, 8)
         }
         .padding(28).frame(maxWidth: 530).background(ink).preferredColorScheme(.dark)
+        .onAppear {
+            challengeDraft = challengeAnswers[clue.id]
+            challengeRevealedClueID = challengeAnswers[clue.id] == nil ? nil : clue.id
+        }
       }
 #if os(iOS)
             .presentationDetents([.medium, .large])
 #endif
+    }
+
+    private func fieldChallengeCard(for clue: Clue) -> some View {
+        let fieldChallenge = challenge(for: clue.id)
+        let savedAnswer = challengeAnswers[clue.id]
+        let isRevealed = challengeRevealedClueID == clue.id, choice = fieldChallenge.options.first { $0.id == challengeDraft }
+        return VStack(alignment: .leading, spacing: 13) {
+            HStack {
+                Label("FIELD CHALLENGE", systemImage: "scope").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.9).foregroundStyle(gold)
+                Spacer()
+                if savedAnswer != nil { Label("PREDICTION LOGGED", systemImage: "checkmark.circle.fill").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea) }
+            }
+            Text(LocalizedStringKey(fieldChallenge.question)).font(.system(size: 19, design: .serif)).foregroundStyle(.white)
+            ForEach(fieldChallenge.options) { option in
+                Button {
+                    challengeDraft = option.id
+                    challengeRevealedClueID = nil
+                } label: {
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: challengeDraft == option.id ? "largecircle.fill.circle" : "circle")
+                            .foregroundStyle(challengeDraft == option.id ? gold : .white.opacity(0.38)).padding(.top, 1)
+                        Text(LocalizedStringKey(option.text)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.82)).multilineTextAlignment(.leading)
+                        Spacer(minLength: 0)
+                    }.padding(12).background(challengeDraft == option.id ? gold.opacity(0.10) : .white.opacity(0.025), in: RoundedRectangle(cornerRadius: 10))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(challengeDraft == option.id ? gold.opacity(0.34) : .white.opacity(0.06), lineWidth: 1))
+                }.buttonStyle(.plain)
+            }
+            Button(LocalizedStringKey(savedAnswer == nil ? "COMPARE WITH THE RECORD  →" : "UPDATE MY PREDICTION  →")) {
+                guard let challengeDraft else { return }
+                saveChallengeAnswer(challengeDraft, for: clue.id)
+                challengeRevealedClueID = clue.id
+            }
+            .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(challengeDraft == nil)
+            if isRevealed, let choice {
+                VStack(alignment: .leading, spacing: 9) {
+                    Label(choice.id == fieldChallenge.answerID ? "YOU FOUND THE KEY DETAIL" : "HERE’S WHAT THE RECORD SHOWS", systemImage: choice.id == fieldChallenge.answerID ? "sparkle.magnifyingglass" : "text.magnifyingglass")
+                        .font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
+                    Text(LocalizedStringKey(fieldChallenge.explanation)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.78)).lineSpacing(3)
+                    Text(LocalizedStringKey(fieldChallenge.reasoningNote)).font(.system(size: 11, design: .serif)).italic().foregroundStyle(gold.opacity(0.9)).lineSpacing(3)
+                }.padding(14).background(sea.opacity(0.08), in: RoundedRectangle(cornerRadius: 11))
+                    .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+            Text("The challenge checks how you read the evidence, not which flood theory you choose.")
+                .font(.system(size: 10)).foregroundStyle(.white.opacity(0.43)).lineSpacing(2)
+        }
+        .padding(16).background(panel, in: RoundedRectangle(cornerRadius: 14))
+        .animation(.easeOut(duration: 0.24), value: challengeRevealedClueID)
     }
 
     private var evidencePage: some View {
@@ -521,36 +710,166 @@ private struct ArchiveView: View {
                         }.padding(16).background(panel, in: RoundedRectangle(cornerRadius: 12))
                     }
                 }
+                if collected.count >= 2 { caseBoard }
                 HStack(spacing: 10) {
                     Image(systemName: "link").foregroundStyle(gold)
-                    Text("Working question: what event could connect these flood deposits, fossils, coastlines, and ancient accounts?")
+                    Text("Working question: which clues might belong together—and which only look alike?")
                         .font(.system(size: 12, design: .serif)).italic().foregroundStyle(.white.opacity(0.71))
                 }.padding(16).background(gold.opacity(0.07), in: RoundedRectangle(cornerRadius: 11))
-                Button("FORM YOUR THEORY  →") { page = .conclusion }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.count < clues.count)
-                if collected.count < clues.count { Text("Explore all six leads to unlock the case conclusion.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4)) }
+                Button("FORM YOUR THEORY  →") { page = .conclusion }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.count < 3)
+                if collected.count < 3 { Text("Log three leads to open the case review. You can return for the rest at any time.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4)) }
             }
             Spacer()
         }
       }
     }
 
+    private var caseBoard: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack {
+                Label("CASE BOARD", systemImage: "point.3.connected.trianglepath.dotted").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.9).foregroundStyle(gold)
+                Spacer()
+                HStack(spacing: 4) {
+                    Text("\(caseConnections.count)")
+                    Text("LINKS")
+                }.font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(.white.opacity(0.45))
+            }
+            Text("Build a connection—and label what kind of connection you mean.")
+                .font(.system(size: 13, design: .serif)).foregroundStyle(.white.opacity(0.68))
+            HStack(spacing: 8) {
+                clueMenu(selection: $connectionFirst)
+                Image(systemName: "arrow.left.and.right").font(.system(size: 12, weight: .bold)).foregroundStyle(gold)
+                clueMenu(selection: $connectionSecond)
+            }
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 145), spacing: 8)], spacing: 8) {
+                connectionRelationButton("possible-link", title: "MAY CONNECT", symbol: "link")
+                connectionRelationButton("different-records", title: "DIFFERENT TIMES / PLACES", symbol: "point.topleft.down.to.point.bottomright.curvepath")
+                connectionRelationButton("needs-more", title: "NEEDS MORE EVIDENCE", symbol: "questionmark.magnifyingglass")
+            }
+            TextField("What detail links—or separates—these records?", text: $connectionReasonDraft, axis: .vertical)
+                .lineLimit(2...4).font(.system(size: 12)).textFieldStyle(.roundedBorder)
+            Button {
+                addCaseConnection()
+            } label: {
+                Label("PIN CONNECTION TO BOARD", systemImage: "pin.fill").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.6)
+            }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
+                .disabled(connectionFirst == connectionSecond || connectionReasonDraft.trimmingCharacters(in: .whitespacesAndNewlines).count < 8 || caseConnections.contains { $0.id == CaseConnection(firstID: min(connectionFirst, connectionSecond), secondID: max(connectionFirst, connectionSecond), relation: connectionRelation).id })
+            if caseConnections.isEmpty {
+                Text("Your links are working hypotheses. Record a detail from the sources before treating a connection as an explanation.")
+                    .font(.system(size: 10)).foregroundStyle(.white.opacity(0.43)).lineSpacing(3)
+            } else {
+                VStack(spacing: 8) {
+                    ForEach(caseConnections) { connection in
+                        VStack(alignment: .leading, spacing: 7) {
+                            HStack(spacing: 8) {
+                                Text(LocalizedStringKey(clueTitle(connection.firstID))).font(.system(size: 11, design: .serif)).lineLimit(1)
+                                Image(systemName: "arrow.left.and.right").font(.system(size: 9)).foregroundStyle(gold)
+                                Text(LocalizedStringKey(clueTitle(connection.secondID))).font(.system(size: 11, design: .serif)).lineLimit(1)
+                                Spacer(minLength: 2)
+                                Text(LocalizedStringKey(connectionTitle(connection.relation))).font(.system(size: 7, weight: .bold, design: .monospaced)).foregroundStyle(sea).multilineTextAlignment(.trailing)
+                                Button { removeCaseConnection(connection) } label: {
+                                    Image(systemName: "xmark.circle.fill").foregroundStyle(.white.opacity(0.4))
+                                }.buttonStyle(.plain).accessibilityLabel("REMOVE CONNECTION")
+                            }
+                            if let reason = connectionNotes[connection.id] {
+                                Text(verbatim: reason).font(.system(size: 10)).foregroundStyle(.white.opacity(0.55)).frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                        }.padding(10).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 9))
+                    }
+                }
+            }
+        }
+        .padding(16).background(panel, in: RoundedRectangle(cornerRadius: 14))
+    }
+
+    private func clueMenu(selection: Binding<String>) -> some View {
+        Menu {
+            ForEach(availableConnectionClues) { clue in
+                Button(LocalizedStringKey(clue.title)) { selection.wrappedValue = clue.id }
+            }
+        } label: {
+            HStack {
+                Text(LocalizedStringKey(clueTitle(selection.wrappedValue))).font(.system(size: 11, weight: .medium, design: .serif)).lineLimit(1)
+                Image(systemName: "chevron.down").font(.system(size: 8, weight: .bold))
+            }.foregroundStyle(.white).frame(maxWidth: .infinity, alignment: .leading).padding(11)
+                .background(.white.opacity(0.055), in: RoundedRectangle(cornerRadius: 9))
+        }
+    }
+
+    private func connectionRelationButton(_ id: String, title: String, symbol: String) -> some View {
+        Button { connectionRelation = id } label: {
+            Label(LocalizedStringKey(title), systemImage: symbol).font(.system(size: 8, weight: .bold, design: .monospaced))
+                .foregroundStyle(connectionRelation == id ? gold : .white.opacity(0.58))
+                .frame(maxWidth: .infinity, minHeight: 35)
+                .padding(.horizontal, 7).background(connectionRelation == id ? gold.opacity(0.10) : .white.opacity(0.025), in: RoundedRectangle(cornerRadius: 8))
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(connectionRelation == id ? gold.opacity(0.3) : .white.opacity(0.05), lineWidth: 1))
+        }.buttonStyle(.plain)
+    }
+
+    private func clueTitle(_ id: String) -> String {
+        clues.first(where: { $0.id == id })?.title ?? id
+    }
+
+    private func connectionTitle(_ id: String) -> String {
+        switch id {
+        case "different-records": "DIFFERENT TIMES / PLACES"
+        case "needs-more": "NEEDS MORE EVIDENCE"
+        default: "MAY CONNECT"
+        }
+    }
+
     private var conclusionPage: some View {
         VStack(alignment: .leading, spacing: 22) {
             eyebrow("CASE REVIEW  /  YOUR INTERPRETATION")
-            Text(LocalizedStringKey(theory == nil ? "What is your final theory?" : "Theory entered into the archive."))
+            Text(LocalizedStringKey(theoryFiled ? "Theory entered into the archive." : "What is your working theory?"))
                 .font(.system(size: 34, weight: .regular, design: .serif))
-            Text("Lay the clues beside one another. Consider the landscapes, the sudden burials, the stories, and the account of Noah. What is the strongest explanation you can make from the case?")
+            Text("Lay the clues beside one another. Decide what your explanation accounts for, what it leaves unanswered, and how strongly you hold it.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).lineSpacing(4).frame(maxWidth: 770, alignment: .leading)
-            if collected.count < clues.count {
-                emptyState(icon: "lock", title: "The case is still open", subtitle: "Collect all six leads before writing your theory.", button: "RETURN TO EXPEDITION") { page = .sites }
-            } else if let theory {
+            if collected.count < 3 {
+                emptyState(icon: "lock", title: "The case is still taking shape", subtitle: "Log three leads to begin a theory. You can add more evidence later.", button: "RETURN TO EXPEDITION") { page = .sites }
+            } else if theoryFiled, let theory {
                 resultCard(theory)
             } else {
-                VStack(spacing: 10) {
+                VStack(alignment: .leading, spacing: 13) {
+                    Text("CHOOSE A WORKING POSITION · YOU CAN REVISE IT LATER").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
                     theoryOption("regional", title: "A great regional catastrophe began the story.", note: "One landscape, one disaster, remembered for generations.")
                     theoryOption("several", title: "Many disasters became one shared memory.", note: "Separate floods, carried together through ancient stories.")
                     theoryOption("noah", title: "Noah’s account preserves the memory of a real Flood.", note: "Connect the geological and historical clues to Genesis.")
                     theoryOption("global", title: "One worldwide cataclysm connects the clues.", note: "The scattered traces are fragments of one event.")
+                    theoryOption("undecided", title: "The evidence is not enough for me to decide yet.", note: "Keep the investigation open; record what would change your mind.")
+                    theoryOption("other", title: "I have another explanation.", note: "State it in your own words and attach the clues that matter to you.")
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(LocalizedStringKey(storedTheory == "other" ? "WRITE YOUR EXPLANATION" : "WHY DOES THIS FIT THE CLUES? WHAT IS STILL UNCERTAIN?"))
+                            .font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(gold)
+                        ZStack(alignment: .topLeading) {
+                            if storedTheoryNote.isEmpty {
+                                Text("Name one clue that supports your view, one that complicates it, and what you would investigate next…")
+                                    .font(.system(size: 12)).foregroundStyle(.white.opacity(0.32)).padding(.horizontal, 13).padding(.vertical, 15)
+                            }
+                            TextEditor(text: $storedTheoryNote).font(.system(size: 13)).scrollContentBackground(.hidden)
+                                .foregroundStyle(.white.opacity(0.88)).padding(7).accessibilityLabel("YOUR CASE REASONING")
+                        }
+                        .frame(height: 116).background(.white.opacity(0.045), in: RoundedRectangle(cornerRadius: 10))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.white.opacity(0.08), lineWidth: 1))
+                    }.padding(.top, 5)
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack {
+                            Text("HOW CONFIDENT ARE YOU?").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.7).foregroundStyle(sea)
+                            Spacer()
+                            Text("\(Int(storedTheoryConfidence))%").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold)
+                            Text("YOUR ESTIMATE").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold)
+                        }
+                        Slider(value: $storedTheoryConfidence, in: 0...100, step: 5).tint(sea)
+                        Text("Confidence describes your current judgement, not a scientific probability.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.42))
+                    }
+                    Button {
+                        theoryFiled = true
+                    } label: {
+                        Label("FILE MY THEORY", systemImage: "tray.and.arrow.down.fill").font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(0.7)
+                    }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
+                        .disabled(theory == nil || storedTheoryNote.trimmingCharacters(in: .whitespacesAndNewlines).count < 12)
+                    Text("Your theory is archived, not graded. Use EDIT any time new evidence changes your mind.")
+                        .font(.system(size: 10)).foregroundStyle(.white.opacity(0.42))
                 }
             }
             Spacer()
@@ -627,15 +946,15 @@ private struct ArchiveView: View {
     private func theoryOption(_ id: String, title: String, note: String) -> some View {
         Button { storedTheory = id } label: {
             HStack(alignment: .top, spacing: 13) {
-                Image(systemName: "circle").font(.system(size: 16)).foregroundStyle(gold).padding(.top, 2)
+                Image(systemName: storedTheory == id ? "largecircle.fill.circle" : "circle").font(.system(size: 16)).foregroundStyle(storedTheory == id ? gold : .white.opacity(0.42)).padding(.top, 2)
                 VStack(alignment: .leading, spacing: 5) {
                     Text(LocalizedStringKey(title)).font(.system(size: 15, weight: .medium)).foregroundStyle(.white)
                     Text(LocalizedStringKey(note)).font(.system(size: 11)).foregroundStyle(.white.opacity(0.5))
                 }
                 Spacer()
                 Image(systemName: "arrow.right").foregroundStyle(gold.opacity(0.8))
-            }.padding(15).background(panel, in: RoundedRectangle(cornerRadius: 11))
-                .overlay(RoundedRectangle(cornerRadius: 11).stroke(.white.opacity(0.06), lineWidth: 1))
+            }.padding(15).background(storedTheory == id ? gold.opacity(0.08) : panel, in: RoundedRectangle(cornerRadius: 11))
+                .overlay(RoundedRectangle(cornerRadius: 11).stroke(storedTheory == id ? gold.opacity(0.32) : .white.opacity(0.06), lineWidth: 1))
         }.buttonStyle(.plain)
     }
 
@@ -644,22 +963,51 @@ private struct ArchiveView: View {
         case "regional": "A regional disaster can become a world-changing story."
         case "several": "Many waters. Many memories. One enduring mystery."
         case "noah": "You connected the geological and historical clues to Noah’s account. Your theory is now part of the archive."
+        case "undecided": "You left the case open while the evidence is still incomplete."
+        case "other": "Your explanation is on file. Keep testing it against the evidence."
         default: "One catastrophe. A world reshaped by water. Your theory connects the scattered clues to a global event."
         }
         let body: String = switch id {
         case "regional": "Flood deposits and old narratives make regional disasters a compelling possibility. You connected a documented landscape with a story carried through generations."
         case "several": "The layers belong to different places and times. That leaves room for more than one disaster to echo through stories passed between generations."
         case "noah": "You connected flood deposits, submerged landscapes, ancient flood traditions, and the Genesis account. Your case file records the clues that led you to this theory."
+        case "undecided": "You recorded where the evidence currently stops short for you. An open question is a useful finding; return when you have new sources or a different connection to test."
+        case "other": storedTheoryNote
         default: "You assembled evidence of catastrophic flooding, extensive sedimentary layers, fossils, submerged coastlines, and ancient flood traditions into a worldwide flood theory. The investigation continues as new clues emerge."
         }
         VStack(alignment: .leading, spacing: 15) {
-            HStack(spacing: 8) { Image(systemName: "checkmark.seal.fill").foregroundStyle(sea); Text("INVESTIGATION COMPLETE").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea) }
+            HStack(spacing: 8) { Image(systemName: "archivebox.fill").foregroundStyle(sea); Text("THEORY ON FILE · NOT SCORED").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea) }
             Text(LocalizedStringKey(title)).font(.system(size: 23, design: .serif))
-            Text(LocalizedStringKey(body)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.65)).lineSpacing(4)
+            if id != "other" { Text(LocalizedStringKey(body)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.65)).lineSpacing(4) }
+            Text("YOUR REASONING").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(gold)
+            Text(verbatim: storedTheoryNote).font(.system(size: 13)).foregroundStyle(.white.opacity(0.78)).lineSpacing(4)
+            HStack {
+                Text("CURRENT CONFIDENCE").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea)
+                Spacer()
+                HStack(spacing: 4) {
+                    Text("\(Int(storedTheoryConfidence))%")
+                    Text("SELF-ESTIMATE")
+                }.font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold)
+            }
+            ProgressView(value: storedTheoryConfidence, total: 100).tint(sea)
+            if !caseConnections.isEmpty {
+                Text("LINKS YOU RECORDED").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(sea)
+                ForEach(caseConnections) { connection in
+                    VStack(alignment: .leading, spacing: 3) {
+                        HStack(spacing: 5) {
+                            Text(LocalizedStringKey(clueTitle(connection.firstID))).lineLimit(1)
+                            Image(systemName: "arrow.left.and.right").font(.system(size: 8)).foregroundStyle(gold)
+                            Text(LocalizedStringKey(clueTitle(connection.secondID))).lineLimit(1)
+                            Text(LocalizedStringKey(connectionTitle(connection.relation))).font(.system(size: 7, weight: .bold, design: .monospaced)).foregroundStyle(sea)
+                        }.font(.system(size: 10)).foregroundStyle(.white.opacity(0.70))
+                        if let reason = connectionNotes[connection.id] { Text(verbatim: reason).font(.system(size: 10)).foregroundStyle(.white.opacity(0.48)) }
+                    }
+                }
+            }
             Divider().overlay(.white.opacity(0.1))
-            Text("A good investigator records both the clues and the theory they support. Reopen the archive whenever you want to examine a source again.")
+            Text("A useful case file keeps its sources, uncertainties, and revisions together. Your conclusion can change when your evidence changes.")
                 .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
-            Button("REOPEN CASE") { storedTheory = "" }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
+            Button("EDIT MY THEORY") { theoryFiled = false }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
         }.padding(22).background(panel, in: RoundedRectangle(cornerRadius: 14)).frame(maxWidth: 760, alignment: .leading)
     }
 
