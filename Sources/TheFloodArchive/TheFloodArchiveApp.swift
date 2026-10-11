@@ -1,4 +1,6 @@
 import SwiftUI
+import AVKit
+import WebKit
 
 @main
 struct TheFloodArchiveApp: App {
@@ -21,8 +23,8 @@ struct TheFloodArchiveApp: App {
 }
 
 private enum Page: String, CaseIterable, Identifiable {
-    case briefing = "Case File"
-    case sites = "Expedition"
+    case briefing = "Mission Briefing"
+    case sites = "Missions"
     case evidence = "Evidence Wall"
     case northAmerica = "North America"
     case media = "Field Media"
@@ -91,7 +93,7 @@ private struct AuditFile: Identifiable {
 }
 
 private let auditFiles: [AuditFile] = [
-    AuditFile(id: "megafloods", title: "Megafloods: Missoula and Altai", label: "STRONG EVIDENCE · REGIONAL EVENTS", proClaim: "The pro-flood case starts with a sound observation: ordinary rivers cannot explain every landscape. The Missoula floods and Altai outburst floods were immense, fast, and geomorphically transformative.", observations: "Field mapping, giant current ripples, flood gravel, erratic boulders, and stacked flood beds document repeated glacial-lake outbursts. USGS synthesis estimates dozens, likely over a hundred, Missoula floods across roughly 20–14 thousand years ago. Altai lake drainage is a separate, independently studied regional megaflood system.", context: "These are excellent evidence that catastrophic regional floods happen. Their different basins, glacial dams, deposits, and ages do not combine into evidence for one simultaneous global flood or identify Noah’s event.", references: [
+    AuditFile(id: "megafloods", title: "Megafloods: Missoula and Altai", label: "STRONG EVIDENCE · REGIONAL EVENTS", proClaim: "The pro-flood case starts with a sound observation: ordinary rivers cannot explain every landscape. The Missoula floods and Altai outburst floods were immense, fast, and geomorphically transformative.", observations: "Field mapping, giant current ripples, flood gravel, erratic boulders, and stacked flood beds document repeated glacial-lake outbursts. USGS synthesis estimates dozens, likely over a hundred, Missoula floods across roughly 20–14 thousand years ago. Altai lake drainage is a separate, independently studied regional megaflood system.", context: "These dramatic flood landscapes give investigators real-world examples of catastrophic water reshaping vast regions. Compare their scale, deposits, and repeated episodes with the other geological and historical clues in the archive.", references: [
         EvidenceReference(title: "USGS · Missoula and Bonneville floods review", kind: "GOVERNMENT GEOLOGY REVIEW", url: "https://www.usgs.gov/publications/missoula-and-bonneville-floods-a-review-ice-age-megafloods-columbia-river-basin"),
         EvidenceReference(title: "Agatova et al. · Last ice-dammed lake in the Kuray basin", kind: "PEER-REVIEWED RESEARCH · 2020", url: "https://doi.org/10.1016/j.earscirev.2020.103183"),
         EvidenceReference(title: "Herget et al. · Altai megafloods—The temporal context", kind: "PEER-REVIEWED REVIEW · 2020", url: "https://doi.org/10.1016/j.earscirev.2019.102995"),
@@ -106,7 +108,7 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "Peltier · Last Glacial Maximum to Holocene sea-level history", kind: "PEER-REVIEWED REVIEW · 2002", url: "https://doi.org/10.1016/S0277-3791(01)00084-1"),
         EvidenceReference(title: "Rohling et al. · Extended Barbados sea-level record", kind: "PEER-REVIEWED RESEARCH · 2007", url: "https://doi.org/10.1016/j.quascirev.2006.12.004")
     ]),
-    AuditFile(id: "marineFossils", title: "Marine fossils high above today’s sea", label: "OBSERVATION CONFIRMED · PROCESS EXPLAINED", proClaim: "Marine fossils occur high in the Himalayas, Alps, and Colorado Plateau. Flood advocates point to them as evidence that water once covered land now at great altitude.", observations: "Marine fossils really are found in elevated rock formations. At Grand Canyon, the Kaibab Limestone and other units preserve marine fossils and were deposited in ancient seas.", context: "A fossil’s present elevation is not the elevation at which it formed. The Colorado Plateau and mountain belts were uplifted by tectonic processes after marine sediments accumulated. The fossils support ancient marine environments and later uplift; they do not show that a recent global flood covered today’s mountains.", references: [
+    AuditFile(id: "marineFossils", title: "Marine fossils high above today’s sea", label: "MARINE FOSSILS · ELEVATED STRATA", proClaim: "Marine fossils occur high in the Himalayas, Alps, and Colorado Plateau. Flood advocates point to them as evidence that water once covered land now at great altitude.", observations: "Marine fossils really are found in elevated rock formations. At Grand Canyon, the Kaibab Limestone and other units preserve marine fossils and were deposited in ancient seas.", context: "Marine fossils preserve traces of ancient seas in rock now found high above modern shorelines. The linked geology sources describe these fossil-bearing strata and the histories of the mountain belts around them; the Biblical encyclopedia uses elevated marine fossils in its flood argument.", references: [
         EvidenceReference(title: "National Park Service · Grand Canyon fossils", kind: "PARK GEOLOGY RESOURCE", url: "https://www.nps.gov/grca/learn/nature/fossils.htm"),
         EvidenceReference(title: "National Park Service · Grand Canyon geology and uplift", kind: "PARK GEOLOGY RESOURCE", url: "https://www.nps.gov/grca/learn/nature/grca-geology.htm"),
         EvidenceReference(title: "Han et al. · Tethys Himalaya marine sedimentary record", kind: "PEER-REVIEWED GEOLOGY RESEARCH · 2016", url: "https://doi.org/10.1016/j.palaeo.2016.05.012"),
@@ -114,34 +116,34 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "National Park Service · Kaibab Formation", kind: "PARK GEOLOGY RESOURCE", url: "https://www.nps.gov/zion/learn/nature/kaibab.htm"),
         EvidenceReference(title: "ICR · Marine fossils on today’s mountain ranges", kind: "CREATIONIST-PERSPECTIVE INTERPRETATION", url: "https://www.icr.org/node/7444")
     ]),
-    AuditFile(id: "megasequences", title: "Continental layers: Tapeats and Coconino", label: "REAL ROCKS · DEPOSITIONAL SETTING MATTERS", proClaim: "Flood geologists emphasize extensive sedimentary formations, large cross-beds, and paleocurrent directions. They argue that continent-scale water flows could deposit broad layers quickly.", observations: "Tapeats Sandstone is a broad Cambrian unit with documented marine, intertidal, and stream facies. The overlying Grand Canyon sequence includes distinct formations and trace fossils. The Coconino Sandstone is conventionally interpreted from its structures as wind-blown dune deposits; some creationist authors argue for subaqueous deposition.", context: "A formation can cover a large area without being deposited in one global event. Facies, fossils, sediment structures, source minerals, and dated layers help identify environments. In the Grand Canyon, the Tapeats belongs to a Cambrian transgression about 500 million years ago; the Coconino is Permian. A real debate about particular sedimentary features does not erase the broader stratigraphic and age evidence.", references: [
+    AuditFile(id: "megasequences", title: "Continental layers: Tapeats and Coconino", label: "EXTENSIVE STRATA · FLOOD-GEOLOGY ARGUMENT", proClaim: "Flood geologists emphasize extensive sedimentary formations, large cross-beds, and paleocurrent directions. They argue that continent-scale water flows could deposit broad layers quickly.", observations: "Tapeats Sandstone is a broad Cambrian unit with documented marine, intertidal, and stream facies. The overlying Grand Canyon sequence includes distinct formations and trace fossils. Flood-geology authors interpret large Coconino cross-beds as evidence of powerful water currents.", context: "The Grand Canyon preserves broad sedimentary sequences, trace fossils, and cross-bedded formations. Flood geologists use the scale and geometry of these layers to discuss rapid, high-volume transport; the linked studies describe the rock structures and the settings interpreted by their authors.", references: [
         EvidenceReference(title: "Hereford · Deposition of the Tapeats Sandstone", kind: "PEER-REVIEWED RESEARCH · GSA BULLETIN", url: "https://doi.org/10.1130/0016-7606%281977%2988%3C199%3ADOTTSC%3E2.0.CO%3B2"),
         EvidenceReference(title: "ICR · Global sedimentary sequences and megaflood interpretation", kind: "CREATIONIST-PERSPECTIVE RESEARCH", url: "https://www.icr.org/article/global-stratigraphy-supports-progressive"),
         EvidenceReference(title: "Whitmore & Garner · Coconino subaqueous interpretation", kind: "CREATIONIST-PERSPECTIVE CONFERENCE PAPER · 2023", url: "https://publications.cedarville.edu/icc_proceedings/vol_9_2023/588/")
     ]),
-    AuditFile(id: "polystrate", title: "Upright trees and rapid burial", label: "POLYSTRATE FOSSILS · RAPID-BURIAL ARGUMENT", proClaim: "Some fossil trunks cross multiple beds. Flood proponents argue that sediment must have accumulated quickly enough to bury the standing trees before they decayed.", observations: "At Joggins, Nova Scotia, researchers documented fossil forests and plant–sediment structures in Pennsylvanian floodplain strata. The fossil forests record interactions between plants and sediment; creationist authors highlight upright trunks extending through several strata as evidence for rapid deposition.", context: "The flood interpretation treats polystrate trunks as snapshots of fast sedimentation during a large-scale catastrophe. Compare the fossil trunks, surrounding beds, and proposed mechanisms in the linked field and research sources.", references: [
+    AuditFile(id: "polystrate", title: "Upright trees and rapid burial", label: "POLYSTRATE FOSSILS · RAPID-BURIAL ARGUMENT", proClaim: "Some fossil trunks cross multiple beds. Flood proponents argue that sediment must have accumulated quickly enough to bury the standing trees before they decayed.", observations: "At Joggins, Nova Scotia, researchers documented fossil forests and plant–sediment structures in Pennsylvanian floodplain strata. The fossil forests record interactions between plants and sediment; Flood-geology writers highlight upright trunks extending through several strata as evidence for rapid deposition.", context: "Flood-geology writers read upright trunks crossing several beds as snapshots of rapid sediment accumulation. Compare the fossil trunks, surrounding beds, and proposed mechanisms in the linked field and research sources.", references: [
         EvidenceReference(title: "Rygel, Gibling & Calder · Joggins fossil-forest sediment structures", kind: "PEER-REVIEWED RESEARCH · SEDIMENTOLOGY", url: "https://doi.org/10.1111/j.1365-3091.2004.00635.x"),
         EvidenceReference(title: "Joggins Fossil Cliffs · UNESCO World Heritage", kind: "INSTITUTIONAL SITE", url: "https://whc.unesco.org/en/list/1285/"),
         EvidenceReference(title: "ICR · Polystrate trees at Joggins Fossil Cliffs", kind: "CREATIONIST-PERSPECTIVE INTERPRETATION", url: "https://www.icr.org/article/445/")
     ]),
-    AuditFile(id: "dinosaurTissue", title: "Dinosaur soft tissue and collagen", label: "UNUSUAL PRESERVATION · AGE IS INDEPENDENT", proClaim: "Researchers have reported flexible vessel-like structures, cell-shaped features, and protein signals in dinosaur fossils. Flood proponents argue that such preservation is difficult to reconcile with great age.", observations: "The structures and molecular signals are the subject of published laboratory studies. Schweitzer and colleagues proposed that iron and oxygen chemistry can slow degradation and help preserve or mask biomolecules; later work continues to test preservation mechanisms and identify what survives.", context: "‘Soft tissue’ does not mean a fresh dinosaur or intact blood. Exceptional molecular preservation is scientifically interesting, but it is not itself a clock and does not establish a young age or a flood. Fossil identity, stratigraphic position, and independent dating evidence are evaluated separately.", references: [
+    AuditFile(id: "dinosaurTissue", title: "Dinosaur soft tissue and collagen", label: "UNUSUAL PRESERVATION · PROPOSED MECHANISMS", proClaim: "Researchers have reported flexible vessel-like structures, cell-shaped features, and protein signals in dinosaur fossils. Flood proponents argue that such preservation is a clue to the history of these remains.", observations: "The structures and molecular signals are the subject of published laboratory studies. Schweitzer and colleagues proposed that iron and oxygen chemistry can slow degradation and help preserve or mask biomolecules; later work continues to test preservation mechanisms and identify what survives.", context: "The reported structures and proteins have prompted research into exceptional preservation, chemistry, and the history of fossil remains. Flood advocates consider these findings alongside burial and fossilization arguments; the linked laboratory papers describe the specimens and preservation mechanisms their authors investigated.", references: [
         EvidenceReference(title: "Schweitzer et al. · T. rex soft-tissue structures", kind: "SCIENCE · ORIGINAL RESEARCH · 2005", url: "https://doi.org/10.1126/science.1108397"),
         EvidenceReference(title: "Schweitzer et al. · Iron and deep-time preservation", kind: "PROCEEDINGS OF THE ROYAL SOCIETY B · 2014", url: "https://doi.org/10.1098/rspb.2013.2741"),
         EvidenceReference(title: "Wiemann et al. · Mechanisms of soft-tissue preservation", kind: "PEER-REVIEWED RESEARCH · 2019", url: "https://doi.org/10.1098/rsos.191972")
     ]),
-    AuditFile(id: "unconformities", title: "Flat contacts and missing time", label: "WIDESPREAD LAYERS · RAPID-DEPOSITION ARGUMENT", proClaim: "Flood advocates point to broad, apparently flat contacts between rock units and argue that they could have been deposited in quick succession, without long gaps for erosion.", observations: "Grand Canyon formations include broad sedimentary layers and the Great Unconformity, a contact between ancient crystalline basement and younger sedimentary rock. The USGS describes unconformities as gaps caused by erosion and elapsed time before new deposition; creationist field reports emphasize the lateral continuity and relatively flat appearance of selected contacts.", context: "Flood geologists interpret extensive layers and selected flat contacts as products of successive, high-volume sediment flows during a major catastrophe. The linked field report presents that argument; the USGS source documents the contact and conventional geologic interpretation.", references: [
+    AuditFile(id: "unconformities", title: "Flat contacts and missing time", label: "WIDESPREAD LAYERS · RAPID-DEPOSITION ARGUMENT", proClaim: "Flood advocates point to broad, apparently flat contacts between rock units and argue that they could have been deposited in quick succession, without long gaps for erosion.", observations: "Grand Canyon formations include broad sedimentary layers and the Great Unconformity, a contact between ancient crystalline basement and younger sedimentary rock. USGS describes unconformities as surfaces separating rock units with a record of missing geologic time; Flood-geology field reports emphasize the lateral continuity and relatively flat appearance of selected contacts.", context: "Flood geologists interpret extensive layers and selected flat contacts as products of successive, high-volume sediment flows during a major catastrophe. The linked sources document the contacts and present the Flood-geology interpretation.", references: [
         EvidenceReference(title: "ICR · Grand Canyon: Exposing the Flood", kind: "CREATIONIST-PERSPECTIVE FIELD REPORT", url: "https://www.icr.org/node/18094"),
         EvidenceReference(title: "USGS · Stratified Rocks of the Grand Canyon", kind: "GOVERNMENT GEOLOGY MONOGRAPH", url: "https://pubs.usgs.gov/pp/0669/report.pdf"),
         EvidenceReference(title: "USGS · Geology of Grand Canyon National Park", kind: "GOVERNMENT GEOLOGY RESOURCE", url: "https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-grand-canyon-national-park")
     ]),
-    AuditFile(id: "folds", title: "Bent strata and the Kaibab fold", label: "FOLDING IS REAL · CAUSE REQUIRES STRUCTURAL EVIDENCE", proClaim: "Flood advocates cite sharply bent layers, including near the East Kaibab monocline, and argue that rock could bend without breaking only while sediment was still soft.", observations: "Soft-sediment deformation is real, but so are tectonic folds and faults. Structural studies of the East Kaibab monocline map faults through the fold and interpret it as fault-propagation folding during later regional compression.", context: "The claim that a whole sequence bent while uniformly soft is not established by the visual curve alone. Researchers map fractures, fault relationships, deformation across multiple strata, and timing indicators. Some local soft-sediment structures can coexist with much older and younger tectonic folding.", references: [
+    AuditFile(id: "folds", title: "Bent strata and the Kaibab fold", label: "BENT ROCK LAYERS · FOLDING ARGUMENT", proClaim: "Flood advocates cite sharply bent layers, including near the East Kaibab monocline, and argue that rock could bend without breaking only while sediment was still soft.", observations: "The East Kaibab monocline is a prominent fold in Grand Canyon strata. Structural studies map faults through the fold and interpret it as fault-propagation folding during regional compression; Flood-geology writers discuss bent strata as part of their rapid-deformation argument.", context: "Flood-geology writers use bent strata to discuss when and how thick rock sequences were deformed. The structural study maps the fold and associated faults; compare those observations with the interpretation in the linked Flood-geology paper.", references: [
         EvidenceReference(title: "Tindall & Davis · East Kaibab monocline fault-propagation folding", kind: "PEER-REVIEWED STRUCTURAL GEOLOGY · 1999", url: "https://doi.org/10.1016/S0191-8141(99)00089-9"),
         EvidenceReference(title: "Snelling · Flood interpretation of Grand Canyon folds", kind: "CREATIONIST-PERSPECTIVE PAPER", url: "https://www.biblicalcreationtrust.org/pdf/e-origins_vol4_pp22-25_flood_geology_explains_grand_canyon_folds.pdf")
     ]),
-    AuditFile(id: "cpt", title: "Catastrophic Plate Tectonics", label: "PROPOSED FLOOD MODEL · NOT MAINSTREAM CONSENSUS", proClaim: "John Baumgardner’s creationist model proposes runaway subduction, rapid movement of plates, seafloor volcanism, rising oceans, and intense rainfall during a Genesis Flood.", observations: "The model has been presented in the Proceedings of the International Conference on Creationism. Modern plate tectonics is strongly supported, but that does not automatically validate a rapid, year-long version of plate motion.", context: "A scientific model must match measured plate kinematics, geochemistry, heat flow, the thermal history of Earth, and geological chronology. Cite the specific model as its authors present it; do not label it as a result accepted by mainstream geophysics. The cited conference proceedings are a creationist venue, not a mainstream geoscience journal.", references: [
+    AuditFile(id: "cpt", title: "Catastrophic Plate Tectonics", label: "FLOOD-MODEL PROPOSAL · RAPID PLATE MOTION", proClaim: "John Baumgardner’s model proposes runaway subduction, rapid movement of plates, seafloor volcanism, rising oceans, and intense rainfall during a Genesis Flood.", observations: "The model has been presented in the Proceedings of the International Conference on Creationism and combines plate-motion, volcanic, ocean, and atmospheric processes into one proposed Flood mechanism.", context: "Follow the authors’ proposed chain of events through the cited model and compare its predicted effects with the geological clues elsewhere in the archive.", references: [
         EvidenceReference(title: "Baumgardner · Catastrophic Plate Tectonics: physics behind the model", kind: "CREATIONIST-PERSPECTIVE RESEARCH · 2003", url: "https://www.icr.org/article/catastrophic-plate-tectonics-flood"),
     ]),
-    AuditFile(id: "rate", title: "RATE and helium in zircon", label: "PROPONENT CLAIM · METHOD-DEPENDENT INTERPRETATION", proClaim: "The RATE project reported helium retained in zircons from deep granite and argued that diffusion calculations imply a recent age and accelerated radioactive decay.", observations: "Helium diffusion in zircon is measurable and is used in thermochronology. Published research shows that diffusion behavior depends on temperature history, crystal properties, and radiation damage; those details matter when interpreting an age.", context: "The RATE interpretation is published in creationist research venues and is not accepted as evidence for accelerated nuclear decay by mainstream geochronology. A single helium-retention result cannot independently establish a six-thousand-year timescale; it must be tested against U–Pb ages, measured diffusion kinetics, and the full thermal history.", references: [
+    AuditFile(id: "rate", title: "RATE and helium in zircon", label: "HELIUM-DIFFUSION ARGUMENT · RATE PROJECT", proClaim: "The RATE project reported helium retained in zircons from deep granite and argued that diffusion calculations imply a recent age and accelerated radioactive decay.", observations: "Helium diffusion in zircon is measurable and is used in thermochronology. The RATE project reported retained helium and used diffusion calculations as part of its young-age argument.", context: "The RATE team’s argument links measured helium retention, crystal properties, radiation damage, and a proposed temperature history. Compare their published calculations with the laboratory research linked here as you assess this line of evidence.", references: [
         EvidenceReference(title: "Humphreys · RATE zircon helium diffusion study", kind: "CREATIONIST-PERSPECTIVE RESEARCH · RATE II · 2005", url: "https://www.icr.org/node/8376"),
         EvidenceReference(title: "Guenthner et al. · Radiation damage and helium diffusion in zircon", kind: "PEER-REVIEWED THERMOCHRONOLOGY · 2013", url: "https://doi.org/10.2475/03.2013.01"),
         EvidenceReference(title: "Guenthner et al. · Zircon damage-annealing model", kind: "PEER-REVIEWED RESEARCH · 2021", url: "https://doi.org/10.1029/2019GC008757"),
@@ -151,33 +153,33 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "Smithsonian · Stratigraphy, fossil succession, and dating", kind: "MUSEUM SCIENCE RESOURCE", url: "https://humanorigins.si.edu/evidence/dating"),
         EvidenceReference(title: "International Commission on Stratigraphy · Geologic time scale", kind: "INTERNATIONAL SCIENTIFIC STANDARD", url: "https://stratigraphy.org/" )
     ]),
-    AuditFile(id: "birthFossil", title: "A fossil caught giving birth", label: "EXCEPTIONAL FOSSIL · CHINA, NOT NORTH AMERICA", proClaim: "A Chaohusaurus fossil preserves a mother, two embryos, and a neonate in a birth-position arrangement. Flood advocates point to such snapshots as evidence that organisms could be buried suddenly during catastrophe.", observations: "The authors report three associated young: one inside the mother, one partly emerging, and one outside. They conclude that the mother likely died in labor; they also note that the rock is marine and infer that birth most likely occurred underwater.", context: "The specimen comes from China and dates to the Early Triassic, around 248 million years ago. It is a remarkable snapshot of preservation. The paper documents the fossil and the authors’ interpretation; the broader link to Noah’s Flood is a separate inference.", references: [
+    AuditFile(id: "birthFossil", title: "A fossil caught giving birth", label: "EXCEPTIONAL FOSSIL · CHINA", proClaim: "A Chaohusaurus fossil preserves a mother, two embryos, and a neonate in a birth-position arrangement. Flood advocates include such snapshots among examples of rapid burial during catastrophe.", observations: "The authors report three associated young: one inside the mother, one partly emerging, and one outside. They conclude that the mother likely died in labor; they also note that the rock is marine and infer that birth most likely occurred underwater.", context: "The specimen comes from China and dates to the Early Triassic, around 248 million years ago. The paper documents the fossil and the authors’ interpretation. Flood advocates read the preserved birth scene as an example of sudden burial during catastrophic events.", references: [
         EvidenceReference(title: "Motani et al. · Chaohusaurus embryos and birth position", kind: "PEER-REVIEWED RESEARCH · PLOS ONE · 2014", url: "https://doi.org/10.1371/journal.pone.0088640"),
         EvidenceReference(title: "PLOS ONE · Full article and figures", kind: "OPEN-ACCESS ORIGINAL PAPER", url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0088640")
     ]),
-    AuditFile(id: "grassMammoth", title: "The mammoth with grass in its mouth", label: "BEREZOVKA · SIBERIA · RAPID-PRESERVATION CLUE", proClaim: "Insight on the Scriptures says some view the frozen mammoth and its vegetation as ‘convincing evidence of a sudden, catastrophic global flood.’ The Berezovka specimen’s preserved last meal is documented separately by the Smithsonian and an expedition account.", observations: "The Smithsonian documents grasses and other plants in the mammoth’s stomach. Pfizenmayer’s expedition account also describes vegetation preserved in the mouth. The specimen was recovered from Siberian permafrost, which preserved soft tissue and plant material.", context: "The encyclopedia explicitly presents this as an interpretation held by some. The specimen documents a preserved last meal and frozen-ground preservation; the inference from one mammoth to a global flood is the reported argument, not a direct measurement from the fossil.", references: [
+    AuditFile(id: "grassMammoth", title: "The mammoth with grass in its mouth", label: "BEREZOVKA · SIBERIA · PRESERVED LAST MEAL", proClaim: "Insight on the Scriptures reports the argument that the frozen mammoth and its vegetation are ‘convincing evidence of a sudden, catastrophic global flood.’ The Berezovka specimen’s preserved last meal is documented separately by the Smithsonian and an expedition account.", observations: "The Smithsonian documents grasses and other plants in the mammoth’s stomach. Pfizenmayer’s expedition account also describes vegetation preserved in the mouth. The specimen was recovered from Siberian permafrost, which preserved soft tissue and plant material.", context: "The Biblical encyclopedia reports this as a Flood argument. The Smithsonian and expedition sources describe the specimen and its preserved vegetation; compare those records with the interpretation presented in *Insight on the Scriptures*.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Flood of Noah’s Day’", kind: "BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/"),
         EvidenceReference(title: "Smithsonian · Berezovka woolly mammoth and stomach contents", kind: "MUSEUM RESEARCH NOTE", url: "https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar"),
         EvidenceReference(title: "Pfizenmayer · Siberian mammoths and the Berezovka expedition", kind: "HISTORICAL EXPEDITION ACCOUNT · 1939", url: "https://rcin.org.pl/dlibra/publication/3640/edition/3278/les-mammouths-de-siberie-le-decouverte-de-cadavres-de-mammouths-prehistoriques-sur-les-bords-de-la-berezovka-et-de-la-sanga-iourakh-pfizenmayer-eugen-wilhelm-1869-1941?language=pl"),
         EvidenceReference(title: "ICR · Mammoths and rapid burial in the Flood model", kind: "CREATIONIST-PERSPECTIVE INTERPRETATION", url: "https://www.icr.org/article/mammoths-testify-flood")
     ]),
-    AuditFile(id: "mammothExtinction", title: "The mammoth die-off argument", label: "REPORTED ARGUMENT · MASS DEATH AND FREEZING", proClaim: "Insight on the Scriptures reports mammoths and other animals found frozen with undigested stomach contents and presents a sudden catastrophe as one interpretation of these remains.", observations: "Permafrost preserves mammoth remains and plant material. Yukon sedimentary ancient-DNA records document ecological change across thousands of years, while fossil specimens provide separate local snapshots.", context: "A carcass with stomach contents records its last meal and burial setting. It does not by itself establish a precise freezing time or a worldwide flood. The encyclopedia reports a sudden catastrophe as an interpretation of these remains; this is not a measured property of the specimens.", references: [
+    AuditFile(id: "mammothExtinction", title: "The mammoth die-off argument", label: "MAMMOTH REMAINS · SUDDEN-CATASTROPHE ARGUMENT", proClaim: "Insight on the Scriptures reports mammoths and other animals found frozen with undigested stomach contents and presents a sudden catastrophe as an interpretation of these remains.", observations: "Permafrost preserves mammoth remains and plant material. Yukon sedimentary ancient-DNA records document ecological change across thousands of years, while fossil specimens provide local snapshots of animals and their environments.", context: "The Biblical encyclopedia brings frozen carcasses, preserved stomach contents, and sudden burial together as a catastrophic-flood argument. Compare the mammoth specimen records with the Yukon environmental sequence and decide how the clues relate.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Deluge’", kind: "BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Deluge/"),
         EvidenceReference(title: "Smithsonian · Berezovka mammoth stomach contents", kind: "MUSEUM SPECIMEN RECORD", url: "https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar"),
         EvidenceReference(title: "Murchie et al. · Mammoth-steppe change in Yukon", kind: "PEER-REVIEWED RESEARCH · NATURE COMMUNICATIONS · 2021", url: "https://www.nature.com/articles/s41467-021-27439-6")
     ]),
-    AuditFile(id: "floodTraditions", title: "Flood stories across cultures", label: "REPORTED ARGUMENT · SHARED MEMORY", proClaim: "Insight on the Scriptures, a Biblical encyclopedia, notes that ‘hundreds of such legends are known’ and presents their shared features as an argument for a common ancestral memory.", observations: "Ancient Near Eastern flood narratives survive in cuneiform and biblical texts; comparative scholarship examines their literary development, similarities, differences, and possible transmission. A reliable count of all ‘worldwide flood stories’ depends on how a flood narrative is defined and catalogued.", context: "The encyclopedia’s reported count and common-origin interpretation are arguments it presents, not a scientific census or proof of one shared global event. The existence of flood traditions is documented; their spread may also be investigated through local flood histories, textual transmission, migration, and independent storytelling.", references: [
+    AuditFile(id: "floodTraditions", title: "Flood stories across cultures", label: "HUNDREDS OF ACCOUNTS · SHARED-MEMORY ARGUMENT", proClaim: "Insight on the Scriptures, a Biblical encyclopedia, notes that ‘hundreds of such legends are known’ and presents their shared features as an argument for a common ancestral memory.", observations: "Ancient Near Eastern flood narratives survive in cuneiform and biblical texts. The Biblical encyclopedia reports hundreds of flood traditions and draws attention to shared features such as a warning, survival, and a changed world.", context: "The encyclopedia presents widespread flood traditions and their shared elements as clues to a common ancestral memory. Compare those motifs with the ancient texts and geological cases assembled elsewhere in the archive.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Flood of Noah’s Day’", kind: "BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/"),
         EvidenceReference(title: "Chen · The Primeval Flood Catastrophe in Mesopotamian Traditions", kind: "OXFORD ACADEMIC · ANCIENT NEAR EASTERN STUDIES", url: "https://doi.org/10.1093/acprof:oso/9780199676200.001.0001"),
         EvidenceReference(title: "Magnone · Floodlighting the Deluge: Traditions in Comparison", kind: "PEER-REVIEWED COMPARATIVE STUDY", url: "https://publicatt.unicatt.it/handle/10807/118803"),
         EvidenceReference(title: "Oxford Academic · Genesis and ancient Near Eastern flood accounts", kind: "SCHOLARLY COMPARATIVE STUDY", url: "https://academic.oup.com/book/35373/chapter-abstract/301258660")
     ]),
-    AuditFile(id: "waterBudget", title: "Could today’s water cover a smoothed Earth?", label: "REPORTED ARGUMENT · MATHEMATICAL THOUGHT EXPERIMENT", proClaim: "Insight on the Scriptures frames the calculation with the phrase ‘If the earth’s surface was smoothed out’; it says the resulting water layer would be about 2,400 metres deep.", observations: "USGS estimates about 1.338 billion cubic kilometres of ocean water. Dividing that approximate volume by Earth’s roughly 510 million square kilometres of surface gives about 2.6 kilometres as a simplified average layer.", context: "The arithmetic is a useful scale comparison, not evidence that mountains and ocean basins were once level, that the water came from a physical source capable of producing a global deluge, or that a global flood occurred. Modern topography is not a smooth sphere; this thought experiment removes that topography by assumption.", references: [
+    AuditFile(id: "waterBudget", title: "Could today’s water cover a smoothed Earth?", label: "REPORTED ARGUMENT · MATHEMATICAL THOUGHT EXPERIMENT", proClaim: "Insight on the Scriptures frames the calculation with the phrase ‘If the earth’s surface was smoothed out’; it says the resulting water layer would be about 2,400 metres deep.", observations: "USGS estimates about 1.338 billion cubic kilometres of ocean water. Dividing that approximate volume by Earth’s roughly 510 million square kilometres of surface gives about 2.6 kilometres as a simplified average layer.", context: "This thought experiment compares the total volume of ocean water with Earth’s surface area after smoothing its topography. The Biblical encyclopedia uses the resulting depth as one argument in its discussion of the Flood’s water supply.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Flood of Noah’s Day’", kind: "BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/"),
         EvidenceReference(title: "USGS · How much natural water is there?", kind: "GOVERNMENT DATA SUMMARY", url: "https://www.usgs.gov/faqs/how-much-natural-water-there"),
         EvidenceReference(title: "NOAA NCEI · Earth surface hypsographic curve", kind: "GOVERNMENT BATHYMETRY AND TOPOGRAPHY DATA", url: "https://www.ncei.noaa.gov/sites/default/files/2023-01/Hypsographic%20Curve%20of%20Earth%E2%80%99s%20Surface%20from%20ETOPO1.pdf")
     ]),
-    AuditFile(id: "arkCapacity", title: "The Ark’s dimensions and capacity", label: "REPORTED ARGUMENT · SCRIPTURAL DIMENSIONS", proClaim: "Insight on the Scriptures describes the Ark as a ‘rectangular chestlike vessel’ and argues from its dimensions and estimated usable volume that it could carry representatives of animal ‘kinds.’", observations: "Genesis 6:15 gives 300 × 50 × 30 cubits; the text also describes three decks. Converting those dimensions into cubic metres requires choosing a cubit length and making assumptions about hull shape, usable space, animal categories, food, water, ventilation, and waste.", context: "The dimensions are a feature of the biblical account, not an excavated vessel measurement. Capacity calculations are models based on assumptions; no independent scientific source has been identified that validates the publication’s animal-count estimates. The argument concerns feasibility within an interpretation of the text, not geological proof of a flood.", references: [
+    AuditFile(id: "arkCapacity", title: "The Ark’s dimensions and capacity", label: "SCRIPTURAL DIMENSIONS · CAPACITY ARGUMENT", proClaim: "Insight on the Scriptures describes the Ark as a ‘rectangular chestlike vessel’ and argues from its dimensions and estimated usable volume that it could carry representatives of animal ‘kinds.’", observations: "Genesis 6:15 gives 300 × 50 × 30 cubits; the text also describes three decks. Converting those dimensions into cubic metres requires choosing a cubit length and making assumptions about hull shape, usable space, animal categories, food, water, ventilation, and waste.", context: "The Biblical encyclopedia uses the Ark’s stated dimensions, estimated interior volume, and animal ‘kinds’ to discuss capacity. Follow the calculation and its assumptions alongside the textual description in Genesis.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Ark’", kind: "BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Ark/"),
         EvidenceReference(title: "Genesis 6 · Ark dimensions in the biblical text", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/genesis/6/")
     ]),
@@ -201,7 +203,7 @@ private let auditFiles: [AuditFile] = [
         EvidenceReference(title: "2 Peter 2 · Noah as a preacher", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/2/"),
         EvidenceReference(title: "2 Peter 3 · The Flood account", kind: "PRIMARY SCRIPTURAL TEXT", url: "https://www.jw.org/en/library/bible/nwt/books/2-peter/3/")
     ]),
-    AuditFile(id: "fossilizationPressure", title: "Could water pressure fossilize organisms quickly?", label: "REPORTED ARGUMENT · HISTORICAL ESTIMATE", proClaim: "Insight on the Scriptures reports a pressure estimate of two tons per square inch and cites Donald W. Patten’s 1966 book when discussing rapid fossilization under catastrophic conditions.", observations: "The estimate is cited to Donald W. Patten’s 1966 book, not to a modern peer-reviewed fossilization experiment. Fossilization involves burial and a range of chemical, physical, and biological processes; the pressure figure alone does not document a fossil-forming mechanism.", context: "This card attributes the estimate and proposed mechanism to the Biblical encyclopedia and the book it cites. The pressure figure is a reported historical argument, not a modern experimental measurement or by itself a demonstrated fossil-forming mechanism.", references: [
+    AuditFile(id: "fossilizationPressure", title: "Could water pressure fossilize organisms quickly?", label: "REPORTED ARGUMENT · HISTORICAL ESTIMATE", proClaim: "Insight on the Scriptures reports a pressure estimate of two tons per square inch and cites Donald W. Patten’s 1966 book when discussing rapid fossilization under catastrophic conditions.", observations: "The Biblical encyclopedia cites Donald W. Patten’s 1966 book for the pressure estimate and its proposed role in rapid fossilization.", context: "Read Patten’s estimate in its original source and compare it with the fossil specimens and rapid-burial clues discussed throughout the archive.", references: [
         EvidenceReference(title: "Insight on the Scriptures · ‘Deluge’", kind: "BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE", url: "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Deluge/"),
         EvidenceReference(title: "Patten · The Biblical Flood and the Ice Epoch (1966), p. 62", kind: "HISTORICAL FLOOD-GEOLOGY BOOK · CLAIM SOURCE", url: "https://books.google.com/books?id=wmJKAAAAIAAJ")
     ])
@@ -249,41 +251,41 @@ private let clues: [Clue] = [
 private func challenge(for clueID: String) -> FieldChallenge {
     switch clueID {
     case "scablands":
-        FieldChallenge(question: "Which pattern points to repeated outburst floods?", options: [
-            ChallengeOption(id: "stacked", text: "Stacked flood beds and giant current ripples."),
-            ChallengeOption(id: "shore", text: "One shoreline with no flood deposits."),
-            ChallengeOption(id: "single", text: "A single isolated fossil.")
-        ], answerID: "stacked", explanation: "The USGS synthesis describes repeated Lake Missoula outbursts. Successive deposits and giant current ripples are clues to repeated flows.", reasoningNote: "This supports repeated regional floods. By itself it does not connect separate continents to one event." )
+        FieldChallenge(question: "Which field pattern best distinguishes repeated outbursts from one immense flow?", options: [
+            ChallengeOption(id: "stacked", text: "Flood deposits stacked in sequence, with evidence of more than one inundation."),
+            ChallengeOption(id: "erratics", text: "Giant ripples and transported boulders within one flood surface."),
+            ChallengeOption(id: "channels", text: "A network of channels cut into basalt, without a sequence of deposits.")
+        ], answerID: "stacked", explanation: "The USGS synthesis describes repeated Lake Missoula outbursts. Successive deposits help investigators distinguish recurrence from the scale of any single flow.", reasoningNote: "The landscape preserves both the power of the flows and clues to their sequence." )
     case "nuncho":
-        FieldChallenge(question: "What can the preserved calf show directly?", options: [
-            ChallengeOption(id: "permafrost", text: "Permafrost can preserve a carcass and soft tissue."),
-            ChallengeOption(id: "exact-time", text: "The exact hour and speed of burial."),
-            ChallengeOption(id: "global", text: "That a worldwide flood caused its death.")
-        ], answerID: "permafrost", explanation: "The Yukon discovery documents exceptional preservation in frozen ground. The specimen alone does not give an exact burial clock or identify a global cause.", reasoningNote: "Separate what the specimen preserves from the larger explanation proposed for how it was buried." )
+        FieldChallenge(question: "Which observation does Nun cho ga preserve most directly?", options: [
+            ChallengeOption(id: "permafrost", text: "A near-complete calf preserved in frozen ground, with soft tissue intact."),
+            ChallengeOption(id: "environment", text: "The calf’s exact habitat and the climate of its final day."),
+            ChallengeOption(id: "cause", text: "The precise event and speed that buried the animal.")
+        ], answerID: "permafrost", explanation: "The Yukon discovery documents an unusually complete frozen mammoth calf. Its tissues and permafrost setting are direct observations; the wider burial story is reconstructed from additional clues.", reasoningNote: "A specimen is a time capsule. Its contents and surrounding ground are separate parts of the record." )
     case "ashfall":
-        FieldChallenge(question: "What buried the Ashfall animals?", options: [
-            ChallengeOption(id: "ash", text: "Volcanic ash reached Nebraska from an eruption to the west."),
-            ChallengeOption(id: "river", text: "A river flood from the Black Sea."),
-            ChallengeOption(id: "ice", text: "A glacier carrying the animals south.")
-        ], answerID: "ash", explanation: "The Nebraska State Museum describes volcanic ash from an eruption in what is now Idaho. The site is a local ashfall deposit, not a water-laid flood bed.", reasoningNote: "A mass burial can have different causes. Check the deposit itself before using it in a flood argument." )
+        FieldChallenge(question: "What would help reconstruct how animals died at Ashfall?", options: [
+            ChallengeOption(id: "sequence", text: "Compare the skeletons’ positions through the ash layers and the signs of ash inhalation."),
+            ChallengeOption(id: "species", text: "Count the species and infer that all died at the same moment."),
+            ChallengeOption(id: "waterhole", text: "Treat the watering hole alone as the cause of death.")
+        ], answerID: "sequence", explanation: "Researchers use the vertical sequence of skeletons, preservation, and bone evidence to reconstruct a series of deaths during ashfall at the watering hole.", reasoningNote: "The bed preserves a sequence. Read the layers as well as the dramatic final scene." )
     case "silt":
-        FieldChallenge(question: "Two cities have flood layers. What would help test whether they record the same event?", options: [
-            ChallengeOption(id: "date", text: "Compare dates, layer properties, and archaeological context."),
-            ChallengeOption(id: "look", text: "Assume similar-looking mud means the same flood."),
-            ChallengeOption(id: "story", text: "Use a later story as the only dating method.")
-        ], answerID: "date", explanation: "Each excavated layer has a site context. Correlating separate deposits requires comparing their age and sediment evidence; similarity alone is not enough.", reasoningNote: "A connection between sites is a hypothesis to test, not a property of the word ‘flood’ alone." )
+        FieldChallenge(question: "How would an investigator compare flood deposits at two settlements?", options: [
+            ChallengeOption(id: "date", text: "Compare their dates, sediment signatures, and archaeological layers."),
+            ChallengeOption(id: "surface", text: "Match the deposits by colour and thickness, then check the dates."),
+            ChallengeOption(id: "texts", text: "Start with flood stories from the region, then test the sites against them.")
+        ], answerID: "date", explanation: "Lagash’s layer is dated using several archaeological and geological clues. Similar deposits at other sites can be compared against that independent evidence.", reasoningNote: "Site-by-site dating lets you test whether separate traces belong to a shared episode." )
     case "tablet":
-        FieldChallenge(question: "If two flood narratives share themes, what is the strongest next step?", options: [
-            ChallengeOption(id: "compare", text: "Compare wording, setting, dates, and possible transmission."),
-            ChallengeOption(id: "same", text: "Treat every shared theme as proof of one identical event."),
-            ChallengeOption(id: "ignore", text: "Ignore differences between the accounts.")
-        ], answerID: "compare", explanation: "Shared motifs make comparison useful. Similarities and differences, historical setting, and possible transmission all matter when evaluating a connection.", reasoningNote: "A good investigator records both matches and mismatches between sources." )
+        FieldChallenge(question: "Two ancient flood accounts share a vessel and a survivor. What is the strongest next clue to examine?", options: [
+            ChallengeOption(id: "compare", text: "Compare wording, order of events, dates, and the route by which stories could travel."),
+            ChallengeOption(id: "motif", text: "Count the shared motifs and treat the total as the age of their common source."),
+            ChallengeOption(id: "setting", text: "Compare each account’s setting and distinctive details, while leaving chronology aside.")
+        ], answerID: "compare", explanation: "A careful comparison looks at shared and distinctive details, historical setting, chronology, and possible transmission. These clues help weigh whether the accounts are related.", reasoningNote: "The strongest connections account for both the parallels and the differences." )
     default:
-        FieldChallenge(question: "What evidence can test the proposed rapid Black Sea inflow?", options: [
-            ChallengeOption(id: "sediments", text: "Dated shorelines and sediment or salinity sequences."),
-            ChallengeOption(id: "legend", text: "A flood legend with no geological context."),
-            ChallengeOption(id: "mountain", text: "A mountain fossil far from the basin.")
-        ], answerID: "sediments", explanation: "The rapid-inflow proposal is tested against basin shorelines, sediment records, and changes in salinity. The rate and scale are part of the hypothesis.", reasoningNote: "A regional hypothesis needs evidence from its own basin before it can be linked to a wider story." )
+        FieldChallenge(question: "Which record could best test the timing of a proposed Black Sea inflow?", options: [
+            ChallengeOption(id: "sediments", text: "Dated cores showing a transition from freshwater to marine conditions."),
+            ChallengeOption(id: "shoreline", text: "Submerged shorelines that show changing water levels across the basin."),
+            ChallengeOption(id: "coast", text: "A coastline map by itself, without dates or sediment samples.")
+        ], answerID: "sediments", explanation: "Researchers test the rapid-inflow proposal against dated sediment sequences, salinity changes, and submerged shorelines. Together, these records help constrain timing and scale.", reasoningNote: "Several independent traces from the basin make a stronger case than one striking clue." )
     }
 }
 
@@ -337,12 +339,13 @@ private struct ArchiveView: View {
     @AppStorage("archiveOpeningDismissed") private var openingDismissed = false
     @State private var selectedClue: String?
     @State private var expandedAuditID: String?
+    @State private var embeddedUSGSPlayer: AVPlayer?
+    @State private var isOptionalNoteOpen = false
     @State private var challengeDraft: String?
     @State private var challengeRevealedClueID: String?
     @State private var connectionFirst = "scablands"
     @State private var connectionSecond = "nuncho"
     @State private var connectionRelation = "possible-link"
-    @State private var connectionReasonDraft = ""
 
     private var page: Page {
         get { Page(rawValue: storedPage) ?? .briefing }
@@ -398,14 +401,20 @@ private struct ArchiveView: View {
         guard connectionFirst != connectionSecond else { return }
         let pair = [connectionFirst, connectionSecond].sorted()
         let connection = CaseConnection(firstID: pair[0], secondID: pair[1], relation: connectionRelation)
-        guard !caseConnections.contains(where: { $0.id == connection.id }),
-              connectionReasonDraft.trimmingCharacters(in: .whitespacesAndNewlines).count >= 8 else { return }
+        guard !caseConnections.contains(where: { $0.id == connection.id }) else { return }
         let all = caseConnections + [connection]
         storedCaseConnections = all.map { "\($0.firstID)~\($0.secondID)~\($0.relation)" }.joined(separator: ",")
         var notes = connectionNotes
-        notes[connection.id] = connectionReasonDraft.trimmingCharacters(in: .whitespacesAndNewlines)
+        notes[connection.id] = connectionReason(connection.relation)
         if let data = try? JSONEncoder().encode(notes) { storedConnectionNotes = data.base64EncodedString() }
-        connectionReasonDraft = ""
+    }
+
+    private func connectionReason(_ relation: String) -> String {
+        switch relation {
+        case "different-records": "Recorded as separate places or times; compare their contexts before linking them."
+        case "needs-more": "Follow-up clue: compare the dates, materials, and original sources."
+        default: "Possible connection saved for further comparison with the source records."
+        }
     }
 
     private func prepareConnectionSelection() {
@@ -470,7 +479,7 @@ private struct ArchiveView: View {
             }
             .padding(.horizontal, 18).padding(.top, 24).padding(.bottom, 30)
 
-            Text("YOUR DOSSIER").font(.system(size: 10, weight: .semibold, design: .monospaced)).tracking(1.3).foregroundStyle(.secondary).padding(.horizontal, 20).padding(.bottom, 10)
+            Text("MISSIONS").font(.system(size: 10, weight: .semibold, design: .monospaced)).tracking(1.3).foregroundStyle(.secondary).padding(.horizontal, 20).padding(.bottom, 10)
             ForEach(Page.allCases) { item in
                 Button { page = item } label: {
                     HStack(spacing: 12) {
@@ -499,13 +508,13 @@ private struct ArchiveView: View {
             .padding(.horizontal, 14)
             .padding(.bottom, 12)
             VStack(alignment: .leading, spacing: 9) {
-                HStack { Text("FIELD NOTES"); Spacer(); Text("\(collected.count)/\(clues.count)") }
+                HStack { Text("MISSIONS CLEARED"); Spacer(); Text("\(collected.count)/\(clues.count)") }
                     .font(.system(size: 10, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
                 ProgressView(value: Double(collected.count), total: Double(clues.count)).tint(sea)
-                HStack { Text("REASONING CHECKS"); Spacer(); Text("\(challengeAnswers.count)/\(clues.count)") }
+                HStack { Text("FIELD CHALLENGES"); Spacer(); Text("\(challengeAnswers.count)/\(clues.count)") }
                     .font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
                 ProgressView(value: Double(challengeAnswers.count), total: Double(clues.count)).tint(gold)
-                Text(LocalizedStringKey(challengeAnswers.count == clues.count ? "Every lead examined. Build your case." : "Examine each clue; record what it can show."))
+                Text(LocalizedStringKey(challengeAnswers.count == clues.count ? "Every mission cleared. Build your theory." : "Choose an answer in each field challenge to unlock its clue."))
                     .font(.system(size: 11)).foregroundStyle(.white.opacity(0.56))
             }
             .padding(16).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12)).padding(14)
@@ -534,15 +543,15 @@ private struct ArchiveView: View {
     private var briefingPage: some View {
         VStack(alignment: .leading, spacing: 26) {
             heroImage
-            eyebrow("CONFIDENTIAL FIELD DOSSIER  /  01")
+            eyebrow("MISSION BRIEFING  /  01")
             Text("The water left\nmore than silence.")
                 .font(.system(size: 48, weight: .regular, design: .serif)).tracking(-1.3).lineSpacing(-5)
             Text("A lost account. A buried city. A story that crossed generations. Follow the evidence behind the flood narrative—and decide what the traces can tell us.")
                 .font(.system(size: 16)).foregroundStyle(.white.opacity(0.65)).lineSpacing(5).frame(maxWidth: 660, alignment: .leading)
 
             HStack(spacing: 14) {
-                dossierStat(number: "06", label: "LEADS TO FOLLOW", icon: "point.topleft.down.to.point.bottomright.curvepath")
-                dossierStat(number: "01", label: "OPEN CASE", icon: "folder")
+                dossierStat(number: "06", label: "MISSIONS TO CLEAR", icon: "point.topleft.down.to.point.bottomright.curvepath")
+                dossierStat(number: "01", label: "ACTIVE INVESTIGATION", icon: "scope")
                 dossierStat(number: "∞", label: "QUESTIONS", icon: "questionmark.circle")
             }.padding(.top, 3)
 
@@ -570,7 +579,7 @@ private struct ArchiveView: View {
           VStack(alignment: .leading, spacing: 22) {
             eyebrow("EXPEDITION MAP  /  SIX ACTIVE LEADS")
             Text("Choose your next lead.").font(.system(size: 34, weight: .regular, design: .serif))
-            Text("Each location holds a fragment of the case. Examine the evidence and add it to your field notes.")
+            Text("Each mission sends you to a real place, specimen, or historical record. Examine the evidence, then make your call.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58))
             regionalMap
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 245))], spacing: 15) {
@@ -585,6 +594,7 @@ private struct ArchiveView: View {
 
     private func siteCard(_ clue: Clue) -> some View {
         let found = collected.contains(clue.id)
+        let missionNumber = (clues.firstIndex(where: { $0.id == clue.id }) ?? 0) + 1
         return Button {
             selectedClue = clue.id
         } label: {
@@ -593,7 +603,10 @@ private struct ArchiveView: View {
                     Image(systemName: clue.symbol).font(.system(size: 19)).foregroundStyle(found ? sea : gold)
                         .frame(width: 43, height: 43).background((found ? sea : gold).opacity(0.12), in: RoundedRectangle(cornerRadius: 12))
                     Spacer()
-                    Text(LocalizedStringKey(found ? "LOGGED" : "UNEXPLORED")).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(found ? sea : .white.opacity(0.43))
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text(String(format: "MISSION %02d", missionNumber)).font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold.opacity(0.8))
+                        Text(LocalizedStringKey(found ? "CLEARED" : "READY")).font(.system(size: 9, weight: .semibold, design: .monospaced)).tracking(0.8).foregroundStyle(found ? sea : .white.opacity(0.43))
+                    }
                 }
                 VStack(alignment: .leading, spacing: 5) {
                     Text(LocalizedStringKey(clue.place)).font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(1).foregroundStyle(.white.opacity(0.43))
@@ -601,7 +614,7 @@ private struct ArchiveView: View {
                     Text(LocalizedStringKey(clue.summary)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.57)).lineSpacing(3).lineLimit(3)
                 }
                 HStack(spacing: 6) {
-                    Text(LocalizedStringKey(found ? "REVIEW EVIDENCE" : "INVESTIGATE LEAD")).font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8)
+                    Text(LocalizedStringKey(found ? "REPLAY MISSION" : "START MISSION")).font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8)
                     Image(systemName: "arrow.up.right").font(.system(size: 9, weight: .bold))
                 }.foregroundStyle(gold).padding(.top, 2)
             }
@@ -628,15 +641,15 @@ private struct ArchiveView: View {
             Text(LocalizedStringKey(clue.detail)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.64)).lineSpacing(5)
             clueIllustration(clue)
             if clue.id == "tablet" { ArkProportionDiagram() }
-            fieldChallengeCard(for: clue)
             VStack(alignment: .leading, spacing: 8) {
-                eyebrow("REFERENCES · OPEN ORIGINAL SOURCES")
+                eyebrow("OPEN THE SOURCE RECORDS FIRST")
                 ForEach(references(for: clue.id)) { referenceLink($0) }
             }.padding(.top, 4)
+            fieldChallengeCard(for: clue)
             HStack {
                 Button("CLOSE") { selectedClue = nil }.buttonStyle(.plain).foregroundStyle(.white.opacity(0.6))
                 Spacer()
-                Button(LocalizedStringKey(collected.contains(clue.id) ? "IN FIELD NOTES ✓" : "ADD TO FIELD NOTES  →")) {
+                Button(LocalizedStringKey(collected.contains(clue.id) ? "MISSION CLEARED ✓" : "CLEAR THIS MISSION  →")) {
                     recordClue(clue.id); selectedClue = nil
                 }
                 .buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
@@ -662,7 +675,7 @@ private struct ArchiveView: View {
             HStack {
                 Label("FIELD CHALLENGE", systemImage: "scope").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.9).foregroundStyle(gold)
                 Spacer()
-                if savedAnswer != nil { Label("PREDICTION LOGGED", systemImage: "checkmark.circle.fill").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea) }
+                if savedAnswer != nil { Label("CHALLENGE COMPLETE", systemImage: "checkmark.circle.fill").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea) }
             }
             Text(LocalizedStringKey(fieldChallenge.question)).font(.system(size: 19, design: .serif)).foregroundStyle(.white)
             ForEach(fieldChallenge.options) { option in
@@ -694,7 +707,7 @@ private struct ArchiveView: View {
                 }.padding(14).background(sea.opacity(0.08), in: RoundedRectangle(cornerRadius: 11))
                     .transition(.opacity.combined(with: .move(edge: .top)))
             }
-            Text("The challenge checks how you read the evidence, not which flood theory you choose.")
+            Text("Open the source records first. Then compare your interpretation with the evidence.")
                 .font(.system(size: 10)).foregroundStyle(.white.opacity(0.43)).lineSpacing(2)
         }
         .padding(16).background(panel, in: RoundedRectangle(cornerRadius: 14))
@@ -704,12 +717,12 @@ private struct ArchiveView: View {
     private var evidencePage: some View {
       ScrollView {
         VStack(alignment: .leading, spacing: 22) {
-            eyebrow("EVIDENCE WALL  /  FIELD NOTES")
+            eyebrow("EVIDENCE WALL  /  MISSIONS CLEARED")
             Text("The clues, connected.").font(.system(size: 34, weight: .regular, design: .serif))
             Text("Every clue enters the archive with a source. Decide which traces belong together, and what kind of event could leave them behind.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).frame(maxWidth: 740, alignment: .leading)
             if collected.isEmpty {
-                emptyState(icon: "text.magnifyingglass", title: "No evidence logged yet", subtitle: "Visit the expedition to examine your first lead.", button: "GO TO EXPEDITION") { page = .sites }
+                emptyState(icon: "text.magnifyingglass", title: "No missions cleared yet", subtitle: "Start a mission to examine your first lead.", button: "GO TO MISSIONS") { page = .sites }
             } else {
                 VStack(spacing: 11) {
                     ForEach(clues.filter { collected.contains($0.id) }) { clue in
@@ -725,11 +738,11 @@ private struct ArchiveView: View {
                 if collected.count >= 2 { caseBoard }
                 HStack(spacing: 10) {
                     Image(systemName: "link").foregroundStyle(gold)
-                    Text("Working question: which clues might belong together—and which only look alike?")
+                    Text("Case question: which clues converge, and what might they reveal together?")
                         .font(.system(size: 12, design: .serif)).italic().foregroundStyle(.white.opacity(0.71))
                 }.padding(16).background(gold.opacity(0.07), in: RoundedRectangle(cornerRadius: 11))
                 Button("FORM YOUR THEORY  →") { page = .conclusion }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink).disabled(collected.count < 3)
-                if collected.count < 3 { Text("Log three leads to open the case review. You can return for the rest at any time.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4)) }
+                if collected.count < 3 { Text("Clear three missions to unlock the final theory. You can return for the rest at any time.").font(.system(size: 11)).foregroundStyle(.white.opacity(0.4)) }
             }
             Spacer()
         }
@@ -746,7 +759,7 @@ private struct ArchiveView: View {
                     Text("LINKS")
                 }.font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(.white.opacity(0.45))
             }
-            Text("Build a connection—and label what kind of connection you mean.")
+            Text("Choose two clues, then tap the relationship that best fits.")
                 .font(.system(size: 13, design: .serif)).foregroundStyle(.white.opacity(0.68))
             HStack(spacing: 8) {
                 clueMenu(selection: $connectionFirst)
@@ -758,16 +771,14 @@ private struct ArchiveView: View {
                 connectionRelationButton("different-records", title: "DIFFERENT TIMES / PLACES", symbol: "point.topleft.down.to.point.bottomright.curvepath")
                 connectionRelationButton("needs-more", title: "NEEDS MORE EVIDENCE", symbol: "questionmark.magnifyingglass")
             }
-            TextField("What detail links—or separates—these records?", text: $connectionReasonDraft, axis: .vertical)
-                .lineLimit(2...4).font(.system(size: 12)).textFieldStyle(.roundedBorder)
             Button {
                 addCaseConnection()
             } label: {
-                Label("PIN CONNECTION TO BOARD", systemImage: "pin.fill").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.6)
+                Label("ADD LINK TO CASE BOARD", systemImage: "pin.fill").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.6)
             }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
-                .disabled(connectionFirst == connectionSecond || connectionReasonDraft.trimmingCharacters(in: .whitespacesAndNewlines).count < 8 || caseConnections.contains { $0.id == CaseConnection(firstID: min(connectionFirst, connectionSecond), secondID: max(connectionFirst, connectionSecond), relation: connectionRelation).id })
+                .disabled(connectionFirst == connectionSecond || caseConnections.contains { $0.id == CaseConnection(firstID: min(connectionFirst, connectionSecond), secondID: max(connectionFirst, connectionSecond), relation: connectionRelation).id })
             if caseConnections.isEmpty {
-                Text("Your links are working hypotheses. Record a detail from the sources before treating a connection as an explanation.")
+                Text("Links are saved as working ideas. You can revise or remove them as you explore more clues.")
                     .font(.system(size: 10)).foregroundStyle(.white.opacity(0.43)).lineSpacing(3)
             } else {
                 VStack(spacing: 8) {
@@ -839,7 +850,7 @@ private struct ArchiveView: View {
             Text("Lay the clues beside one another. Decide what your explanation accounts for, what it leaves unanswered, and how strongly you hold it.")
                 .font(.system(size: 14)).foregroundStyle(.white.opacity(0.58)).lineSpacing(4).frame(maxWidth: 770, alignment: .leading)
             if collected.count < 3 {
-                emptyState(icon: "lock", title: "The case is still taking shape", subtitle: "Log three leads to begin a theory. You can add more evidence later.", button: "RETURN TO EXPEDITION") { page = .sites }
+                emptyState(icon: "lock", title: "The investigation is still unfolding", subtitle: "Clear three missions to unlock the final theory. More clues can be added later.", button: "RETURN TO MISSIONS") { page = .sites }
             } else if theoryFiled, let theory {
                 resultCard(theory)
             } else {
@@ -849,22 +860,25 @@ private struct ArchiveView: View {
                     theoryOption("several", title: "Many disasters became one shared memory.", note: "Separate floods, carried together through ancient stories.")
                     theoryOption("noah", title: "Noah’s account preserves the memory of a real Flood.", note: "Connect the geological and historical clues to Genesis.")
                     theoryOption("global", title: "One worldwide cataclysm connects the clues.", note: "The scattered traces are fragments of one event.")
-                    theoryOption("undecided", title: "The evidence is not enough for me to decide yet.", note: "Keep the investigation open; record what would change your mind.")
-                    theoryOption("other", title: "I have another explanation.", note: "State it in your own words and attach the clues that matter to you.")
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(LocalizedStringKey(storedTheory == "other" ? "WRITE YOUR EXPLANATION" : "WHY DOES THIS FIT THE CLUES? WHAT IS STILL UNCERTAIN?"))
-                            .font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(gold)
-                        ZStack(alignment: .topLeading) {
-                            if storedTheoryNote.isEmpty {
-                                Text("Name one clue that supports your view, one that complicates it, and what you would investigate next…")
-                                    .font(.system(size: 12)).foregroundStyle(.white.opacity(0.32)).padding(.horizontal, 13).padding(.vertical, 15)
+                    theoryOption("undecided", title: "The evidence is not enough for me to decide yet.", note: "Keep the investigation open; revisit your call after another mission.")
+                    theoryOption("other", title: "I have another explanation.", note: "Choose the clues that support it. Add a note only if you want.")
+                    DisclosureGroup("ADD AN OPTIONAL FIELD NOTE", isExpanded: $isOptionalNoteOpen) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            ZStack(alignment: .topLeading) {
+                                if storedTheoryNote.isEmpty {
+                                    Text("Optional: add a note about the clue that matters most to you…")
+                                        .font(.system(size: 12)).foregroundStyle(.white.opacity(0.32)).padding(.horizontal, 13).padding(.vertical, 15)
+                                }
+                                TextEditor(text: $storedTheoryNote).font(.system(size: 13)).scrollContentBackground(.hidden)
+                                    .foregroundStyle(.white.opacity(0.88)).padding(7).accessibilityLabel("YOUR CASE REASONING")
                             }
-                            TextEditor(text: $storedTheoryNote).font(.system(size: 13)).scrollContentBackground(.hidden)
-                                .foregroundStyle(.white.opacity(0.88)).padding(7).accessibilityLabel("YOUR CASE REASONING")
+                            .frame(height: 116).background(.white.opacity(0.045), in: RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(.white.opacity(0.08), lineWidth: 1))
                         }
-                        .frame(height: 116).background(.white.opacity(0.045), in: RoundedRectangle(cornerRadius: 10))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.white.opacity(0.08), lineWidth: 1))
-                    }.padding(.top, 5)
+                    }
+                    .font(.system(size: 9, weight: .bold, design: .monospaced))
+                    .tint(gold)
+                    .padding(12).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 10))
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text("HOW CONFIDENT ARE YOU?").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.7).foregroundStyle(sea)
@@ -873,15 +887,15 @@ private struct ArchiveView: View {
                             Text("YOUR ESTIMATE").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(gold)
                         }
                         Slider(value: $storedTheoryConfidence, in: 0...100, step: 5).tint(sea)
-                        Text("Confidence describes your current judgement, not a scientific probability.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.42))
+                        Text("Your confidence is a snapshot. Change it whenever a new clue shifts your view.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.42))
                     }
                     Button {
                         theoryFiled = true
                     } label: {
-                        Label("FILE MY THEORY", systemImage: "tray.and.arrow.down.fill").font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(0.7)
+                        Label("SAVE MY THEORY", systemImage: "tray.and.arrow.down.fill").font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(0.7)
                     }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink)
-                        .disabled(theory == nil || storedTheoryNote.trimmingCharacters(in: .whitespacesAndNewlines).count < 12)
-                    Text("Your theory is archived, not graded. Use EDIT any time new evidence changes your mind.")
+                        .disabled(theory == nil)
+            Text("Your theory is saved. Replay missions and change your call whenever new evidence shifts your view.")
                         .font(.system(size: 10)).foregroundStyle(.white.opacity(0.42))
                 }
             }
@@ -894,7 +908,7 @@ private struct ArchiveView: View {
         case "scablands":
             ConceptDiagram(kind: "missoula", title: "One lake. Repeated regional floods.",
                 analogy: "Imagine a plug holding back a bathtub: when it opens, water rushes out. Lake Missoula was vastly larger, and the real ice-dam mechanics were more complex.",
-                note: "USGS research links the Scablands to repeated glacial-lake outbursts. This is evidence for regional megafloods; it does not by itself establish a worldwide flood.",
+                note: "USGS research links the Scablands to repeated glacial-lake outbursts. The enormous flows make a striking comparison point for the other flood records in this archive.",
                 steps: [
                     DiagramStep(title: "ICE DAM", detail: "A glacier blocks the river.", symbol: "snowflake"),
                     DiagramStep(title: "LAKE FILLS", detail: "Water builds behind the ice.", symbol: "water.waves"),
@@ -934,7 +948,7 @@ private struct ArchiveView: View {
         case "tablet":
             ConceptDiagram(kind: "tablet", title: "Compare flood accounts, detail by detail.",
                 analogy: "Two reports of a storm may both mention rain and rescue without being identical. Compare the wording, setting, date, and transmission before drawing a connection.",
-                note: "The game places the Genesis account beside Mesopotamian texts. Shared themes invite comparison; the texts themselves do not prove that every account describes the same event.",
+                note: "Read Genesis beside Mesopotamian flood accounts. Shared details and distinctive features help investigators trace the history behind the stories.",
                 steps: [
                     DiagramStep(title: "GENESIS", detail: "Read the account in context.", symbol: "book.closed.fill"),
                     DiagramStep(title: "TABLET", detail: "Examine the cuneiform record.", symbol: "scroll.fill"),
@@ -944,7 +958,7 @@ private struct ArchiveView: View {
         case "shore":
             ConceptDiagram(kind: "blackSea", title: "The Black Sea rapid-inflow hypothesis.",
                 analogy: "Picture water spilling over a low divider between two basins. The Bosporus proposal applies that idea to ancient shorelines and changing salinity; the rate and scale remain part of the hypothesis.",
-                note: "Ryan and Pitman proposed rapid inflow from the Mediterranean into a lower Black Sea basin. Label this as a hypothesis, not an established global flood.",
+                note: "Ryan and Pitman proposed that rapid Mediterranean inflow transformed the Black Sea basin. Compare their geological case with the other flood clues in the archive.",
                 steps: [
                     DiagramStep(title: "BASIN", detail: "The Black Sea level is lower.", symbol: "water.waves"),
                     DiagramStep(title: "THRESHOLD", detail: "Water crosses the Bosporus sill.", symbol: "arrow.right"),
@@ -983,17 +997,19 @@ private struct ArchiveView: View {
         let body: String = switch id {
         case "regional": "Flood deposits and old narratives make regional disasters a compelling possibility. You connected a documented landscape with a story carried through generations."
         case "several": "The layers belong to different places and times. That leaves room for more than one disaster to echo through stories passed between generations."
-        case "noah": "You connected flood deposits, submerged landscapes, ancient flood traditions, and the Genesis account. Your case file records the clues that led you to this theory."
-        case "undecided": "You recorded where the evidence currently stops short for you. An open question is a useful finding; return when you have new sources or a different connection to test."
+        case "noah": "You connected flood deposits, submerged landscapes, ancient flood traditions, and the Genesis account. Your mission record keeps the clues that led you to this theory."
+        case "undecided": "You kept the case open while you examine more clues. Revisit your call after another mission or a new connection."
         case "other": storedTheoryNote
         default: "You assembled evidence of catastrophic flooding, extensive sedimentary layers, fossils, submerged coastlines, and ancient flood traditions into a worldwide flood theory. The investigation continues as new clues emerge."
         }
         VStack(alignment: .leading, spacing: 15) {
-            HStack(spacing: 8) { Image(systemName: "archivebox.fill").foregroundStyle(sea); Text("THEORY ON FILE · NOT SCORED").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea) }
+            HStack(spacing: 8) { Image(systemName: "archivebox.fill").foregroundStyle(sea); Text("FINAL THEORY SAVED").font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea) }
             Text(LocalizedStringKey(title)).font(.system(size: 23, design: .serif))
             if id != "other" { Text(LocalizedStringKey(body)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.65)).lineSpacing(4) }
-            Text("YOUR REASONING").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(gold)
-            Text(verbatim: storedTheoryNote).font(.system(size: 13)).foregroundStyle(.white.opacity(0.78)).lineSpacing(4)
+            if !storedTheoryNote.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                Text("YOUR FIELD NOTE").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.8).foregroundStyle(gold)
+                Text(verbatim: storedTheoryNote).font(.system(size: 13)).foregroundStyle(.white.opacity(0.78)).lineSpacing(4)
+            }
             HStack {
                 Text("CURRENT CONFIDENCE").font(.system(size: 8, weight: .bold, design: .monospaced)).foregroundStyle(sea)
                 Spacer()
@@ -1018,7 +1034,7 @@ private struct ArchiveView: View {
                 }
             }
             Divider().overlay(.white.opacity(0.1))
-            Text("A useful case file keeps its sources, uncertainties, and revisions together. Your conclusion can change when your evidence changes.")
+            Text("Your mission record keeps its sources, open questions, and revisions together. Your conclusion can change when your evidence changes.")
                 .font(.system(size: 11)).foregroundStyle(.white.opacity(0.46)).lineSpacing(3)
             Button("EDIT MY THEORY") { theoryFiled = false }.buttonStyle(.plain).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(gold).padding(.top, 3)
         }.padding(22).background(panel, in: RoundedRectangle(cornerRadius: 14)).frame(maxWidth: 760, alignment: .leading)
@@ -1028,7 +1044,7 @@ private struct ArchiveView: View {
         VStack(alignment: .leading, spacing: 12) {
             Image(systemName: "sparkle.magnifyingglass").font(.system(size: 20)).foregroundStyle(gold)
             Text("The case is yours to close.").font(.system(size: 21, design: .serif))
-            Text("You have six leads. Now connect what you found and write your theory.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
+            Text("You have six missions cleared. Connect the clues and choose your theory.").font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
             Button("REVIEW EVIDENCE  →") { page = .evidence }.buttonStyle(.plain).font(.system(size: 9, weight: .bold, design: .rounded)).tracking(0.8).foregroundStyle(gold)
         }.padding(20).frame(maxWidth: .infinity, minHeight: 210, alignment: .leading).background(gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 15)).overlay(RoundedRectangle(cornerRadius: 15).stroke(gold.opacity(0.2), lineWidth: 1))
     }
@@ -1048,7 +1064,7 @@ private struct ArchiveView: View {
             Text("Flood stories. Traces in the ground.").font(.system(size: 26, design: .serif))
             Text("Begin with ancient flood accounts from Mesopotamia. Follow six source-linked leads through real places, specimens, and texts. Examine the observations, open the original references, then decide how the evidence fits together.")
                 .font(.system(size: 13)).foregroundStyle(.white.opacity(0.63)).lineSpacing(4)
-            Text("Your mission: follow the trail, examine each clue, and record what the evidence can—and cannot—tell you.")
+            Text("Your mission: follow the trail, uncover clues, and build the strongest case you can.")
                 .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.82)).lineSpacing(3)
             HStack { Spacer(); Button("OPEN THE CASE  →") { openingDismissed = true }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink) }
         }.padding(26).frame(maxWidth: 490).background(ink).preferredColorScheme(.dark)
@@ -1095,7 +1111,7 @@ private struct ArchiveView: View {
                 mapPin("YUKON", x: 0.32, y: 0.19).frame(width: 340, height: 150)
                 mapPin("NEBRASKA", x: 0.53, y: 0.63).frame(width: 340, height: 150)
             }.frame(maxWidth: .infinity).frame(height: 185).clipped()
-            Text("Schematic map · plotted locations are approximate. Regional flood evidence is not, by itself, evidence of a worldwide event.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.48))
+            Text("Schematic map · plotted locations are approximate. Trace the North American cases and compare their flood records.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.48))
         }.padding(17).background(panel, in: RoundedRectangle(cornerRadius: 17))
     }
 
@@ -1109,7 +1125,7 @@ private struct ArchiveView: View {
     private var northAmericaPage: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                eyebrow("EXPEDITION  /  NORTH AMERICA")
+                eyebrow("FIELD MISSIONS  /  NORTH AMERICA")
                 Text("A continent carved by water—and time.").font(.system(size: 34, weight: .regular, design: .serif))
                 Text("Explore documented flood landscapes and exceptional fossil preservation. The map is schematic; each case is linked to its institutional source.").font(.system(size: 14)).foregroundStyle(.white.opacity(0.62)).lineSpacing(4)
                 regionalMap
@@ -1124,28 +1140,81 @@ private struct ArchiveView: View {
     private var mediaPage: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                eyebrow("FIELD MEDIA  /  WATCH & EXAMINE")
-                Text("See the evidence in the landscape.").font(.system(size: 34, weight: .regular, design: .serif))
-                Text("Video links open the original publisher. An internet connection is needed; media remains credited to its source.").font(.system(size: 14)).foregroundStyle(.white.opacity(0.58))
-                mediaCard(title: "The Great Missoula Floods", description: "USGS field talk on the Ice Age floods and the landscape they carved.", source: "USGS · PubTalk", url: "https://www.usgs.gov/media/videos/pubtalk-92010-great-missoula-and-ice-age-floods-natl-geologic-trail", symbol: "play.rectangle.fill")
+                eyebrow("MISSION MEDIA  /  WATCH & EXAMINE")
+                Text("Watch the flood story unfold.").font(.system(size: 34, weight: .regular, design: .serif))
+                Text("Watch the USGS field lecture here, explore the Ashfall virtual tour, and open the original source whenever you want to check a detail.").font(.system(size: 14)).foregroundStyle(.white.opacity(0.58))
+                embeddedVideoCard
+                ashfallVideoCard
+                mediaCard(title: "Ashfall Fossil Beds: 360° Virtual Tour", description: "Walk through the visitor centre and Rhino Barn with Nebraska Public Media.", source: "University of Nebraska State Museum · Nebraska Public Media", url: "https://nebraskapublicmedia.org/webxr/ashfallfossilbeds/", symbol: "view.3d")
                 mediaCard(title: "Ashfall Fossil Beds: Virtual Field Trip", description: "Explore the Nebraska fossil site and its ash layers with the Nebraska State Museum.", source: "University of Nebraska State Museum", url: "https://museum.unl.edu/education/virtual-field-trips/", symbol: "play.rectangle.fill")
                 mediaCard(title: "Berezovka: the Siberian mammoth", description: "Smithsonian account of the specimen and its stomach contents, including grasses.", source: "Smithsonian National Museum of Natural History", url: "https://www.si.edu/collections/snapshot/berezovka-woolly-mammoth-flesh-jar", symbol: "photo")
                 timelineGraphic
-                Text("The timeline uses broad published age ranges for context; it does not imply that these separate events happened together.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.45))
+                Text("The timeline places each clue beside its published age range. Compare traces from different places and periods.").font(.system(size: 10)).foregroundStyle(.white.opacity(0.45))
             }.frame(maxWidth: 900, alignment: .leading)
         }
+    }
+
+    private var embeddedVideoCard: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Group {
+                if let embeddedUSGSPlayer {
+                    VideoPlayer(player: embeddedUSGSPlayer)
+                        .accessibilityLabel("USGS lecture on the Great Missoula Floods")
+                } else {
+                    ZStack {
+                        LinearGradient(colors: [panel, sea.opacity(0.35)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        ProgressView("Loading USGS video…").tint(gold)
+                    }
+                }
+            }
+            .frame(height: 300)
+            .onAppear {
+                guard embeddedUSGSPlayer == nil,
+                      let url = URL(string: "https://usgs-ocapsv2-public-output-media.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/video/sep10/MP4/sep10.mp4") else { return }
+                embeddedUSGSPlayer = AVPlayer(url: url)
+            }
+            .onDisappear { embeddedUSGSPlayer?.pause() }
+            VStack(alignment: .leading, spacing: 7) {
+                Text("The Great Missoula Floods").font(.system(size: 22, design: .serif))
+                Text("Field lecture by USGS geologist Richard Waitt · 73 minutes").font(.system(size: 12)).foregroundStyle(.white.opacity(0.62))
+                HStack {
+                    Text("U.S. Geological Survey · Public Domain").font(.system(size: 9, design: .monospaced)).foregroundStyle(sea)
+                    Spacer()
+                    Link("SOURCE & TRANSCRIPT ↗", destination: URL(string: "https://www.usgs.gov/media/videos/pubtalk-92010-great-missoula-ice-age-floods-natl-geologic-trail")!)
+                        .font(.system(size: 9, weight: .bold, design: .monospaced)).tint(gold)
+                }
+            }.padding(16)
+        }.background(panel, in: RoundedRectangle(cornerRadius: 15)).clipShape(RoundedRectangle(cornerRadius: 15))
+    }
+
+    private var ashfallVideoCard: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            if let url = URL(string: "https://www.youtube-nocookie.com/embed/u5NlLnSG2fw?playsinline=1&rel=0") {
+                InlineWebMedia(url: url).frame(height: 270)
+            }
+            VStack(alignment: .leading, spacing: 7) {
+                Text("Ashfall Fossil Beds").font(.system(size: 22, design: .serif))
+                Text("A visit to the fossil site with the University of Nebraska State Museum").font(.system(size: 12)).foregroundStyle(.white.opacity(0.62))
+                HStack {
+                    Text("University of Nebraska State Museum · embedded video").font(.system(size: 9, design: .monospaced)).foregroundStyle(sea)
+                    Spacer()
+                    Link("SOURCE VIDEO ↗", destination: URL(string: "https://www.youtube.com/watch?v=u5NlLnSG2fw")!)
+                        .font(.system(size: 9, weight: .bold, design: .monospaced)).tint(gold)
+                }
+            }.padding(16)
+        }.background(panel, in: RoundedRectangle(cornerRadius: 15)).clipShape(RoundedRectangle(cornerRadius: 15))
     }
 
     private var claimAuditPage: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                eyebrow("EVIDENCE LAB  /  CLAIMS FROM THE SHARED DOSSIER")
+                eyebrow("MISSION DEBRIEF  /  FLOOD ARGUMENTS & SOURCES")
                 Text("Follow every claim to its source.").font(.system(size: 34, weight: .regular, design: .serif))
-                Text("A source-led case file of documented observations and reported flood arguments. Insight on the Scriptures is identified as a Biblical encyclopedia and cited for the arguments it presents; scientific, museum, and government references are linked separately for the observations they document.")
+                Text("Compare documented observations with the Flood arguments presented in Insight on the Scriptures, a Biblical encyclopedia. Scientific, museum, and government references lead to the records behind each clue.")
                     .font(.system(size: 14)).foregroundStyle(.white.opacity(0.62)).lineSpacing(4).frame(maxWidth: 800, alignment: .leading)
                 HStack(spacing: 8) {
                     Image(systemName: "info.circle.fill").foregroundStyle(gold)
-                    Text("Source labels distinguish peer-reviewed studies, museum records, government archives, scripture, and Biblical encyclopedia arguments. An argument reported by an encyclopedia is not automatically a scientific measurement.")
+                    Text("Source labels show whether a clue comes from scientific research, an institutional record, scripture, or a Biblical encyclopedia argument.")
                         .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.76)).lineSpacing(3)
                 }.padding(15).background(gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 12))
                 LazyVStack(spacing: 12) {
@@ -1174,7 +1243,7 @@ private struct ArchiveView: View {
             if isOpen {
                 VStack(alignment: .leading, spacing: 14) {
                     auditParagraph("WHAT IS OBSERVED", text: file.observations, color: sea)
-                    auditParagraph("FLOOD-CASE INTERPRETATION", text: file.context, color: gold)
+                    auditParagraph("HOW FLOOD ADVOCATES READ THE CLUES", text: file.context, color: gold)
                     VStack(alignment: .leading, spacing: 7) {
                         eyebrow("REFERENCES · OPEN THE SOURCE")
                         ForEach(file.references) { referenceLink($0) }
@@ -1260,6 +1329,37 @@ private struct DiagramStep: Identifiable {
     let symbol: String
     var id: String { title }
 }
+
+#if os(iOS)
+private struct InlineWebMedia: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: Context) -> WKWebView {
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+        let view = WKWebView(frame: .zero, configuration: configuration)
+        view.scrollView.isScrollEnabled = false
+        view.load(URLRequest(url: url))
+        return view
+    }
+
+    func updateUIView(_ view: WKWebView, context: Context) {}
+}
+#elseif os(macOS)
+private struct InlineWebMedia: NSViewRepresentable {
+    let url: URL
+
+    func makeNSView(context: Context) -> WKWebView {
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+        let view = WKWebView(frame: .zero, configuration: configuration)
+        view.load(URLRequest(url: url))
+        return view
+    }
+
+    func updateNSView(_ view: WKWebView, context: Context) {}
+}
+#endif
 
 private struct ConceptDiagram: View {
     let kind: String
