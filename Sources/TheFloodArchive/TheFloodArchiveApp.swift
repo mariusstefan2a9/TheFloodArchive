@@ -16,7 +16,6 @@ struct TheFloodArchiveApp: App {
 #endif
         }
 #if os(macOS)
-        .windowStyle(.hiddenTitleBar)
         .defaultSize(width: 1180, height: 780)
 #endif
     }
@@ -658,7 +657,7 @@ private struct ArchiveView: View {
     private let sea = Color(red: 0.26, green: 0.58, blue: 0.61)
 
     var body: some View {
-        rootLayout
+        appLayout
             .tint(gold)
             .confirmationDialog("Restart the case?", isPresented: $isResetConfirmationShown, titleVisibility: .visible) {
                 Button("RESTART THE CASE", role: .destructive, action: resetCase)
@@ -667,7 +666,7 @@ private struct ArchiveView: View {
                 Text("This clears cleared missions, challenge answers, opened sources, case-board findings, and your saved theory on this device. Your language choice is kept.")
             }
             .environment(\.locale, Locale(identifier: languageCode))
-            .sheet(isPresented: Binding(
+            .fullScreenModal(isPresented: Binding(
                 get: { !openingDismissed },
                 set: { if !$0 { openingDismissed = true } }
             )) {
@@ -675,74 +674,88 @@ private struct ArchiveView: View {
             }
     }
 
-    @ViewBuilder private var rootLayout: some View {
+    private let barColor = Color(red: 0.075, green: 0.095, blue: 0.108)
+
+    private var contentPadding: CGFloat {
 #if os(iOS)
-        if horizontalSizeClass == .compact {
-            compactLayout
-        } else {
-            splitLayout
-        }
+        return horizontalSizeClass == .compact ? 16 : 32
 #else
-        splitLayout
+        return 32
 #endif
     }
 
-    private var splitLayout: some View {
-        NavigationSplitView {
-            sidebar
-        } detail: {
-            ZStack {
-                ink.ignoresSafeArea()
-                pageContent
-                    .padding(34)
-                    .frame(maxWidth: 1120, maxHeight: .infinity, alignment: .topLeading)
-            }
-#if os(macOS)
-            .toolbar(.hidden, for: .windowToolbar)
-#endif
+    // One layout on every device: section title on top, game sections in a bottom tab bar.
+    private var appLayout: some View {
+        VStack(spacing: 0) {
+            topBar
+            pageContent
+                .padding(.horizontal, contentPadding).padding(.top, 18)
+                .frame(maxWidth: 1120, maxHeight: .infinity, alignment: .topLeading)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            bottomTabBar
         }
+        .background(ink.ignoresSafeArea())
     }
 
-#if os(iOS)
-    // A collapsed NavigationSplitView only pushes its detail column from a List selection, so iPhone gets its own stack:
-    // game sections live in a bottom bar, and the top menu keeps the briefing, language, and reset.
-    private var compactLayout: some View {
-        NavigationStack {
-            ZStack {
-                ink.ignoresSafeArea()
-                pageContent
-                    .padding(.horizontal, 16).padding(.top, 8)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            }
-            .safeAreaInset(edge: .bottom, spacing: 0) { compactTabBar }
-            .navigationTitle(LocalizedStringKey(page.rawValue))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Menu {
-                        Section {
-                            Button { page = .briefing } label: {
-                                Label(LocalizedStringKey(Page.briefing.rawValue), systemImage: Page.briefing.icon)
-                            }
-                        }
-                        Section("MISSIONS CLEARED \(collected.count)/\(clues.count)") {
-                            Picker("Language", selection: $languageCode) {
-                                Text("English").tag("en")
-                                Text("Română").tag("ro")
-                            }
-                            Button(role: .destructive) { isResetConfirmationShown = true } label: {
-                                Label("RESTART THE CASE", systemImage: "arrow.counterclockwise")
-                            }
-                        }
-                    } label: {
-                        Label("Menu", systemImage: "line.3.horizontal")
-                    }
+    private var topBar: some View {
+        HStack(spacing: 8) {
+            settingsMenu
+            Spacer(minLength: 4)
+            Text(LocalizedStringKey(page.rawValue))
+                .font(.system(size: 17, weight: .semibold)).foregroundStyle(.white)
+                .lineLimit(1)
+            Spacer(minLength: 4)
+            Text("\(collected.count)/\(clues.count)")
+                .font(.system(size: 12, weight: .bold, design: .monospaced)).foregroundStyle(gold)
+                .frame(width: 44, alignment: .trailing)
+                .accessibilityLabel(Text("MISSIONS CLEARED \(collected.count)/\(clues.count)"))
+        }
+        .padding(.horizontal, 12)
+        .frame(height: 50)
+        .background(barColor.ignoresSafeArea(edges: .top))
+        .overlay(alignment: .bottom) {
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Rectangle().fill(.white.opacity(0.08))
+                    Rectangle().fill(gold).frame(width: geo.size.width * CGFloat(collected.count) / CGFloat(max(clues.count, 1)))
                 }
             }
+            .frame(height: 2)
         }
     }
 
-    private var compactTabBar: some View {
+    private var settingsMenu: some View {
+        Menu {
+            Section {
+                Button { page = .briefing } label: {
+                    Label(LocalizedStringKey(Page.briefing.rawValue), systemImage: Page.briefing.icon)
+                }
+            }
+            Section("MISSIONS CLEARED \(collected.count)/\(clues.count)") {
+                Picker("Language", selection: $languageCode) {
+                    Text("English").tag("en")
+                    Text("Română").tag("ro")
+                }
+                Button(role: .destructive) { isResetConfirmationShown = true } label: {
+                    Label("RESTART THE CASE", systemImage: "arrow.counterclockwise")
+                }
+            }
+        } label: {
+            Image(systemName: "line.3.horizontal")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
+        }
+        .menuIndicator(.hidden)
+#if os(macOS)
+        .menuStyle(.borderlessButton)
+        .fixedSize()
+#endif
+        .accessibilityLabel("Menu")
+    }
+
+    private var bottomTabBar: some View {
         HStack(spacing: 2) {
             ForEach(compactTabs) { item in
                 let isActive = page == item
@@ -766,83 +779,11 @@ private struct ArchiveView: View {
                 .accessibilityAddTraits(isActive ? .isSelected : [])
             }
         }
+        .frame(maxWidth: 720)
+        .frame(maxWidth: .infinity)
         .padding(.horizontal, 6).padding(.top, 4)
-        .background(Color(red: 0.075, green: 0.095, blue: 0.108).ignoresSafeArea(edges: .bottom))
+        .background(barColor.ignoresSafeArea(edges: .bottom))
         .overlay(alignment: .top) { Rectangle().fill(.white.opacity(0.08)).frame(height: 1) }
-    }
-#endif
-
-    private var sidebar: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack(spacing: 11) {
-                Image(systemName: "water.waves")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundStyle(gold)
-                    .frame(width: 42, height: 42)
-                    .background(gold.opacity(0.12), in: RoundedRectangle(cornerRadius: 12))
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("THE FLOOD ARCHIVE").font(.system(size: 12, weight: .bold, design: .rounded)).tracking(1.2)
-                    Text("FIELD INVESTIGATION 01").font(.system(size: 9, weight: .medium, design: .monospaced)).tracking(0.8).foregroundStyle(.secondary)
-                }
-            }
-            .padding(.horizontal, 18).padding(.top, 24).padding(.bottom, 30)
-
-            Text("MISSIONS").font(.system(size: 10, weight: .semibold, design: .monospaced)).tracking(1.3).foregroundStyle(.secondary).padding(.horizontal, 20).padding(.bottom, 10)
-            ForEach(Page.allCases) { item in
-                Button { page = item } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: item.icon).frame(width: 18).foregroundStyle(page == item ? gold : .white.opacity(0.66))
-                        Text(LocalizedStringKey(item.rawValue))
-                        Spacer()
-                        if item == .evidence, !collected.isEmpty {
-                            Text("\(collected.count)").font(.system(size: 10, weight: .bold, design: .monospaced)).foregroundStyle(gold)
-                        }
-                    }
-                    .font(.system(size: 13, weight: page == item ? .semibold : .regular))
-                    .foregroundStyle(page == item ? .white : .white.opacity(0.66))
-                    .padding(.horizontal, 14).padding(.vertical, 12)
-                    .background(page == item ? gold.opacity(0.18) : .clear, in: RoundedRectangle(cornerRadius: 9))
-                    .overlay(alignment: .leading) {
-                        if page == item { Capsule().fill(gold).frame(width: 3, height: 22) }
-                    }
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain).padding(.horizontal, 10).padding(.vertical, 2)
-            }
-
-            Spacer()
-            Picker("Language", selection: $languageCode) {
-                Text("English").tag("en")
-                Text("Română").tag("ro")
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal, 14)
-            .padding(.bottom, 12)
-            VStack(alignment: .leading, spacing: 9) {
-                HStack { Text("MISSIONS CLEARED"); Spacer(); Text("\(collected.count)/\(clues.count)") }
-                    .font(.system(size: 10, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
-                ProgressView(value: Double(collected.count), total: Double(clues.count)).tint(sea)
-                HStack { Text("CHALLENGES SOLVED"); Spacer(); Text("\(solvedChallengeCount)/\(clues.count)") }
-                    .font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.secondary)
-                ProgressView(value: Double(solvedChallengeCount), total: Double(clues.count)).tint(gold)
-                Text(LocalizedStringKey(solvedChallengeCount == clues.count ? (canFileTheory ? "All challenges solved and two clue pairs have supported findings. Build your theory." : "Challenges solved. Record supported findings for two clue pairs to unlock your theory.") : "Open a source record, then solve each field challenge."))
-                    .font(.system(size: 11)).foregroundStyle(.white.opacity(0.56))
-            }
-            .padding(16).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 12)).padding(14)
-            Button(role: .destructive) { isResetConfirmationShown = true } label: {
-                Label("RESTART THE CASE", systemImage: "arrow.counterclockwise")
-                    .font(.system(size: 9, weight: .bold, design: .monospaced)).tracking(0.7)
-            }
-            .buttonStyle(.plain).foregroundStyle(.white.opacity(0.5))
-            .padding(.horizontal, 22).padding(.bottom, 16)
-        }
-#if os(macOS)
-        .frame(minWidth: 225, idealWidth: 245)
-#endif
-        .background(Color(red: 0.075, green: 0.095, blue: 0.108))
-#if os(macOS)
-        .toolbarBackground(.hidden, for: .windowToolbar)
-#endif
     }
 
     @ViewBuilder private var pageContent: some View {
@@ -907,7 +848,7 @@ private struct ArchiveView: View {
             Spacer()
           }
         }
-        .sheet(item: selectedClueBinding) { clue in clueSheet(clue) }
+        .fullScreenModal(item: selectedClueBinding) { clue in clueSheet(clue) }
     }
 
     private func siteCard(_ clue: Clue) -> some View {
@@ -947,6 +888,23 @@ private struct ArchiveView: View {
     }
 
     private func clueSheet(_ clue: Clue) -> some View {
+      let missionNumber = (clues.firstIndex(where: { $0.id == clue.id }) ?? 0) + 1
+      return VStack(spacing: 0) {
+        HStack(spacing: 8) {
+            Button { selectedClue = nil } label: {
+                Image(systemName: "xmark").font(.system(size: 16, weight: .semibold)).foregroundStyle(.white)
+                    .frame(width: 44, height: 44).contentShape(Rectangle())
+            }
+            .buttonStyle(.plain).accessibilityLabel("CLOSE")
+            Spacer(minLength: 4)
+            Text("MISSION \(String(format: "%02d", missionNumber))").font(.system(size: 15, weight: .semibold)).foregroundStyle(.white)
+            Spacer(minLength: 4)
+            Color.clear.frame(width: 44, height: 44)
+        }
+        .padding(.horizontal, 12)
+        .frame(height: 50)
+        .background(barColor.ignoresSafeArea(edges: .top))
+        .overlay(alignment: .bottom) { Rectangle().fill(.white.opacity(0.08)).frame(height: 1) }
       ScrollView {
         VStack(alignment: .leading, spacing: 18) {
             HStack {
@@ -995,16 +953,19 @@ private struct ArchiveView: View {
                 Text("SOURCE TRAIL PRESERVED").font(.system(size: 8, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.4))
             }.padding(.top, 8)
         }
-        .padding(28).frame(maxWidth: 530).background(ink).preferredColorScheme(.dark)
+        .padding(.horizontal, contentPadding).padding(.vertical, 24)
+        .frame(maxWidth: 760, alignment: .leading)
+        .frame(maxWidth: .infinity)
         .onAppear {
             expandedSourceClueID = clue.id
             challengeDraft = challengeAnswers[clue.id]
             challengeRevealedClueID = challengeAnswers[clue.id] == nil ? nil : clue.id
         }
       }
-#if os(iOS)
-            .presentationDetents([.large])
-#endif
+      }
+      .background(ink.ignoresSafeArea())
+      .preferredColorScheme(.dark)
+      .environment(\.locale, Locale(identifier: languageCode))
     }
 
     private func fieldChallengeCard(for clue: Clue, sourceOpened: Bool) -> some View {
@@ -1532,10 +1493,11 @@ private struct ArchiveView: View {
             Text("Your mission: follow the trail, uncover clues, and build the strongest case you can.")
                 .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.82)).lineSpacing(3)
             HStack { Spacer(); Button("OPEN THE CASE  →") { openingDismissed = true }.buttonStyle(.borderedProminent).tint(gold).foregroundStyle(ink) }
-        }.padding(26).frame(maxWidth: 490).background(ink).preferredColorScheme(.dark)
-#if os(iOS)
-            .presentationDetents([.medium, .large])
-#endif
+        }
+        .padding(26).frame(maxWidth: 560)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(ink.ignoresSafeArea())
+        .preferredColorScheme(.dark)
     }
 
     private func dossierStat(number: String, label: String, icon: String) -> some View {
@@ -1811,6 +1773,25 @@ private struct ArchiveView: View {
             }
             Text("Not to scale. The Siberian Berezovka specimen is a comparison, not a North American site.").font(.system(size: 9)).foregroundStyle(gold.opacity(0.8))
         }.padding(18).background(panel, in: RoundedRectangle(cornerRadius: 15))
+    }
+}
+
+private extension View {
+    // Full-screen on iPhone and iPad, a large sheet on Mac, so screens look the same on every iOS device.
+    @ViewBuilder func fullScreenModal<Content: View>(isPresented: Binding<Bool>, @ViewBuilder content: @escaping () -> Content) -> some View {
+#if os(iOS)
+        fullScreenCover(isPresented: isPresented, content: content)
+#else
+        sheet(isPresented: isPresented) { content().frame(minWidth: 680, minHeight: 720) }
+#endif
+    }
+
+    @ViewBuilder func fullScreenModal<Item: Identifiable, Content: View>(item: Binding<Item?>, @ViewBuilder content: @escaping (Item) -> Content) -> some View {
+#if os(iOS)
+        fullScreenCover(item: item, content: content)
+#else
+        sheet(item: item) { content($0).frame(minWidth: 680, minHeight: 720) }
+#endif
     }
 }
 

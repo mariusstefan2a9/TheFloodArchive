@@ -7,6 +7,12 @@
 "Field Media" = "Media de teren";
 "Claim Audit" = "Verificarea afirmațiilor";
 "Final Theory" = "Teoria finală";
+"Briefing" = "Instructaj";
+"Evidence" = "Dovezi";
+"America" = "America";
+"Media" = "Media";
+"Claims" = "Afirmații";
+"Theory" = "Teorie";
 "Megafloods: Missoula and Altai" = "Mega-inundațiile: Missoula și Altai";
 "STRONG EVIDENCE · REGIONAL EVENTS" = "DOVEZI PUTERNICE · EVENIMENTE REGIONALE";
 "The pro-flood case starts with a sound observation: ordinary rivers cannot explain every landscape. The Missoula floods and Altai outburst floods were immense, fast, and geomorphically transformative." = "Argumentul în favoarea potopului pornește de la o observație solidă: râurile obișnuite nu pot explica orice peisaj. Inundațiile Missoula și viiturile din Altai au fost uriașe, rapide și au remodelat relieful.";
@@ -421,14 +427,6 @@
 "Language" = "Limbă";
 "Română" = "Română";
 "Menu" = "Meniu";
-"THE FLOOD ARCHIVE" = "ARHIVA POTOPULUI";
-"FIELD INVESTIGATION 01" = "INVESTIGAȚIE DE TEREN 01";
-"MISSIONS" = "MISIUNI";
-"MISSIONS CLEARED" = "MISIUNI FINALIZATE";
-"CHALLENGES SOLVED" = "PROVOCĂRI REZOLVATE";
-"All challenges solved and two clue pairs have supported findings. Build your theory." = "Toate provocările sunt rezolvate, iar două perechi de indicii au constatări susținute de surse. Construiește-ți teoria.";
-"Challenges solved. Record supported findings for two clue pairs to unlock your theory." = "Provocări rezolvate. Înregistrează constatări susținute de surse pentru două perechi de indicii ca să-ți deblochezi teoria.";
-"Open a source record, then solve each field challenge." = "Deschide o sursă, apoi rezolvă fiecare provocare de teren.";
 "MISSION BRIEFING  /  01" = "INSTRUCTAJUL MISIUNII  /  01";
 "The water left\nmore than silence." = "Apa a lăsat\nmai mult decât tăcere.";
 "A lost account. A buried city. A story that crossed generations. Follow the evidence behind the flood narrative—and decide what the traces can tell us." = "O relatare pierdută. Un oraș îngropat. O poveste transmisă din generație în generație. Urmărește dovezile din spatele poveștii potopului și hotărăște ce ne spun urmele.";
@@ -447,6 +445,7 @@
 "READY" = "DISPONIBILĂ";
 "REPLAY MISSION" = "REIA MISIUNEA";
 "START MISSION" = "ÎNCEPE MISIUNEA";
+"CLOSE" = "ÎNCHIDE";
 "SOURCE OPENED · CHALLENGE UNLOCKED" = "SURSĂ DESCHISĂ · PROVOCARE DEBLOCATĂ";
 "Opening a source only unlocks the challenge. The challenge checks what the record says." = "Deschiderea unei surse doar deblochează provocarea. Provocarea verifică ce spune sursa.";
 "Select a source above to open it and unlock the challenge." = "Selectează o sursă de mai sus ca s-o deschizi și să deblochezi provocarea.";
@@ -455,7 +454,6 @@
 "OPEN A SOURCE RECORD FIRST" = "DESCHIDE MAI ÎNTÂI O SURSĂ";
 "CLEAR THIS MISSION  →" = "FINALIZEAZĂ MISIUNEA  →";
 "SOLVE THE CHALLENGE FIRST" = "REZOLVĂ MAI ÎNTÂI PROVOCAREA";
-"CLOSE" = "ÎNCHIDE";
 "SOURCE TRAIL PRESERVED" = "TRASEUL SURSELOR ESTE PĂSTRAT";
 "FIELD CHALLENGE" = "PROVOCARE DE TEREN";
 "CHALLENGE SOLVED" = "PROVOCARE REZOLVATĂ";
@@ -631,6 +629,7 @@
 "Follow %lld source-linked missions through real places, specimens, and texts, from Ice Age flood landscapes in North America to ancient flood accounts from Mesopotamia. Examine the observations, open the original references, then decide how the evidence fits together." = "Urmează %lld misiuni legate de surse, prin locuri, exemplare și texte reale, de la peisajele modelate de inundațiile erei glaciare din America de Nord până la relatările străvechi despre potop din Mesopotamia. Examinează observațiile, deschide referințele originale, apoi decide cum se potrivesc dovezile.";
 "Your mission: follow the trail, uncover clues, and build the strongest case you can." = "Misiunea ta: urmează pista, descoperă indicii și construiește cel mai solid caz posibil.";
 "OPEN THE CASE  →" = "DESCHIDE CAZUL  →";
+"THE FLOOD ARCHIVE" = "ARHIVA POTOPULUI";
 "A field investigation across continents" = "O investigație de teren pe mai multe continente";
 "ARTISTIC RECONSTRUCTION" = "RECONSTITUIRE ARTISTICĂ";
 "NORTH AMERICAN FLOOD COUNTRY" = "ȚINUTUL INUNDAȚIILOR DIN AMERICA DE NORD";
@@ -701,9 +700,3 @@
 "SIDE ELEVATION · 300 × 30" = "VEDERE LATERALĂ · 300 × 30";
 "TOP PLAN · 300 × 50" = "VEDERE DE SUS · 300 × 50";
 "A proportional diagram of the biblical description, not an archaeological reconstruction or evidence of a surviving vessel." = "Diagramă proporțională a descrierii biblice, nu o reconstrucție arheologică și nici dovada existenței unei corăbii păstrate.";
-"Briefing" = "Instructaj";
-"Evidence" = "Dovezi";
-"America" = "America";
-"Media" = "Media";
-"Claims" = "Afirmații";
-"Theory" = "Teorie";
