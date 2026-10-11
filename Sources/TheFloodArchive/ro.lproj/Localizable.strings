@@ -1,314 +1,538 @@
-/* Case files */
-"Megafloods: Missoula and Altai" = "Mega-inundațiile: Missoula și Altai";
-"STRONG EVIDENCE · REGIONAL EVENTS" = "DOVEZI PUTERNICE · EVENIMENTE REGIONALE";
-"The pro-flood case starts with a sound observation: ordinary rivers cannot explain every landscape. The Missoula floods and Altai outburst floods were immense, fast, and geomorphically transformative." = "Argumentul în favoarea potopului pornește de la o observație solidă: râurile obișnuite nu pot explica orice peisaj. Inundațiile Missoula și viiturile din Altai au fost uriașe, rapide și au remodelat relieful.";
-"Field mapping, giant current ripples, flood gravel, erratic boulders, and stacked flood beds document repeated glacial-lake outbursts. USGS synthesis estimates dozens, likely over a hundred, Missoula floods across roughly 20–14 thousand years ago. Altai lake drainage is a separate, independently studied regional megaflood system." = "Cartarea terenului, ondulațiile uriașe formate de curenți, pietrișul de viitură, bolovanii transportați și straturile suprapuse documentează revărsări repetate ale lacurilor glaciare. Sinteza USGS estimează zeci, probabil peste o sută, de inundații Missoula între aproximativ 20.000 și 14.000 de ani în urmă. Drenarea lacurilor din Altai este un alt sistem regional de mega-inundații, studiat independent.";
-"These are excellent evidence that catastrophic regional floods happen. Their different basins, glacial dams, deposits, and ages do not combine into evidence for one simultaneous global flood or identify Noah’s event." = "Acestea sunt dovezi excelente că au loc inundații regionale catastrofale. Bazinele, barajele glaciare, depozitele și vârstele diferite nu alcătuiesc, prin ele însele, dovada unui singur potop global simultan și nici nu identifică evenimentul lui Noe.";
+/* Romanian localization. Keys are the English source strings in TheFloodArchiveApp.swift. */
 
-"Black Sea: a candidate flood" = "Marea Neagră: un posibil potop";
-"RAPID-INFLOW HYPOTHESIS" = "IPOTEZA PĂTRUNDERII RAPIDE A APEI";
-"Ryan and Pitman proposed that rising Mediterranean water breached the Bosporus and rapidly flooded a lower Black Sea basin in the early Holocene. They suggested the event could have affected farming communities and inspired flood traditions." = "Ryan și Pitman au propus că nivelul în creștere al Mediteranei a trecut prin Bosfor și a inundat rapid bazinul mai coborât al Mării Negre la începutul Holocenului. Ei au sugerat că evenimentul ar fi putut afecta comunitățile agricole și inspira tradiții despre potop.";
-"Submerged shorelines, marine and freshwater sediments, and changing salinity are documented in the Black Sea basin. Ryan and Pitman used geological and archaeological clues to argue for rapid inflow." = "În bazinul Mării Negre sunt documentate foste țărmuri scufundate, sedimente marine și de apă dulce, precum și schimbări ale salinității. Ryan și Pitman au folosit indicii geologice și arheologice pentru a susține ipoteza pătrunderii rapide a apei.";
-"This is a proposed regional event and one possible setting for ancient flood memories. The original paper presents its evidence and interpretation; the broader connection to Noah is an additional historical interpretation." = "Acesta este un eveniment regional ipotetic și un posibil context pentru amintiri străvechi despre inundații. Articolul original prezintă dovezile și interpretarea autorilor; legătura mai largă cu Noe este o interpretare istorică suplimentară.";
-
-"Drowned coasts after the Ice Age" = "Țărmuri scufundate după ultima eră glaciară";
-"GLOBAL SEA-LEVEL RISE · SUBMERGED LANDSCAPES" = "CREȘTEREA NIVELULUI GLOBAL AL MĂRII · PEISAJE SCUFUNDATE";
-"After the Last Glacial Maximum, global sea level rose by roughly 120 metres as land ice melted. Former coastal plains and human landscapes were submerged; this could help explain why flood memories recur in coastal cultures." = "După maximul ultimei glaciațiuni, nivelul global al mării a crescut cu aproximativ 120 de metri, pe măsură ce gheața continentală s-a topit. Câmpiile de coastă și peisajele locuite de oameni au fost acoperite de ape; acest lucru ar putea explica de ce amintirile despre inundații reapar în culturile de coastă.";
-"Coral terraces, sediment cores, and dated shorelines record a large, multi-stage rise, including shorter meltwater pulses." = "Terasele de corali, carotele de sediment și țărmurile datate înregistrează o creștere amplă, desfășurată în mai multe etape și incluzând episoade mai scurte de topire a gheții.";
-"The evidence includes submerged coastlines around the world. Flood researchers consider how memories of lost coastal landscapes may have travelled through generations; this cultural link is an interpretation built on the physical record." = "Dovezile includ linii de coastă scufundate din întreaga lume. Cercetătorii pot analiza felul în care amintirile unor peisaje de coastă dispărute s-ar fi transmis între generații; această legătură culturală este o interpretare bazată pe urmele fizice.";
-
-"Marine fossils high above today’s sea" = "Fosile marine mult deasupra nivelului actual al mării";
-"OBSERVATION CONFIRMED · PROCESS EXPLAINED" = "OBSERVAȚIE CONFIRMATĂ · PROCESE GEOLOGICE DOCUMENTATE";
-"Marine fossils occur high in the Himalayas, Alps, and Colorado Plateau. Flood advocates point to them as evidence that water once covered land now at great altitude." = "Fosile marine se găsesc la altitudine mare în Himalaya, Alpi și Podișul Colorado. Susținătorii potopului le invocă drept dovezi că apa a acoperit cândva terenuri aflate acum la mare înălțime.";
-"Marine fossils really are found in elevated rock formations. At Grand Canyon, the Kaibab Limestone and other units preserve marine fossils and were deposited in ancient seas." = "Fosile marine se găsesc într-adevăr în formațiuni stâncoase aflate la altitudine. În Marele Canion, calcarul Kaibab și alte unități păstrează fosile marine și s-au depus în mări străvechi.";
-"A fossil’s present elevation is not the elevation at which it formed. The Colorado Plateau and mountain belts were uplifted by tectonic processes after marine sediments accumulated. The fossils support ancient marine environments and later uplift; they do not show that a recent global flood covered today’s mountains." = "Altitudinea actuală a unei fosile nu este neapărat cea la care s-a format. Podișul Colorado și lanțurile muntoase s-au ridicat prin procese tectonice după acumularea sedimentelor marine. Fosilele susțin existența unor medii marine străvechi și a unei ridicări ulterioare; ele nu arată că un potop global recent a acoperit munții actuali.";
-
-"Continental layers: Tapeats and Coconino" = "Straturi continentale: Tapeats și Coconino";
-"REAL ROCKS · DEPOSITIONAL SETTING MATTERS" = "FORMAȚIUNI REALE · MEDIUL DE DEPOZITARE CONTEAZĂ";
-"Flood geologists emphasize extensive sedimentary formations, large cross-beds, and paleocurrent directions. They argue that continent-scale water flows could deposit broad layers quickly." = "Geologii care susțin interpretarea potopului evidențiază formațiuni sedimentare întinse, stratificații oblice mari și direcțiile curenților străvechi. Ei argumentează că fluxuri de apă la scară continentală ar fi putut depune rapid straturi extinse.";
-"Tapeats Sandstone is a broad Cambrian unit with documented marine, intertidal, and stream facies. The overlying Grand Canyon sequence includes distinct formations and trace fossils. The Coconino Sandstone is conventionally interpreted from its structures as wind-blown dune deposits; some creationist authors argue for subaqueous deposition." = "Gresia Tapeats este o unitate cambriană extinsă, cu faciesuri marine, intertidale și de curs de apă documentate. Succesiunea de deasupra din Marele Canion include formațiuni distincte și fosile de urme. Structurile gresiei Coconino sunt interpretate în mod obișnuit ca depozite de dune formate de vânt; unii autori creaționiști susțin o depunere sub apă.";
-"A formation can cover a large area without being deposited in one global event. Facies, fossils, sediment structures, source minerals, and dated layers help identify environments. In the Grand Canyon, the Tapeats belongs to a Cambrian transgression about 500 million years ago; the Coconino is Permian. A real debate about particular sedimentary features does not erase the broader stratigraphic and age evidence." = "O formațiune se poate întinde pe o suprafață mare fără să fi fost depusă într-un singur eveniment global. Faciesurile, fosilele, structurile sedimentare, mineralele-sursă și straturile datate ajută la identificarea mediilor. În Marele Canion, Tapeats face parte dintr-o transgresiune cambriană de acum aproximativ 500 de milioane de ani; Coconino este permiană. O dezbatere despre anumite structuri sedimentare nu anulează ansamblul dovezilor stratigrafice și de datare.";
-
-"Upright trees and rapid burial" = "Copaci verticali și îngropare rapidă";
-"POLYSTRATE FOSSILS · RAPID-BURIAL ARGUMENT" = "FOSILE POLISTRATIFICATE · ARGUMENTUL ÎNGROPĂRII RAPIDE";
-"Some fossil trunks cross multiple beds. Flood proponents argue that sediment must have accumulated quickly enough to bury the standing trees before they decayed." = "Unele trunchiuri fosilizate traversează mai multe straturi. Susținătorii potopului argumentează că sedimentele s-au acumulat suficient de repede pentru a îngropa copacii în picioare înainte să se descompună.";
-"At Joggins, Nova Scotia, researchers documented fossil forests and plant–sediment structures in Pennsylvanian floodplain strata. The fossil forests record interactions between plants and sediment; creationist authors highlight upright trunks extending through several strata as evidence for rapid deposition." = "La Joggins, în Nova Scotia, cercetătorii au documentat păduri fosile și structuri formate prin interacțiunea plantelor cu sedimentele, în straturi de câmpie inundabilă din Pennsylvanian. Pădurile fosile păstrează urmele acestor interacțiuni; autorii creaționiști evidențiază trunchiurile verticale care traversează mai multe straturi ca argument pentru depunerea rapidă.";
-"The flood interpretation treats polystrate trunks as snapshots of fast sedimentation during a large-scale catastrophe. Compare the fossil trunks, surrounding beds, and proposed mechanisms in the linked field and research sources." = "Interpretarea potopului consideră trunchiurile polistratificate instantanee ale sedimentării rapide din timpul unei catastrofe de mari proporții. Compară trunchiurile fosile, straturile din jur și mecanismele propuse în sursele de teren și cercetare.";
-"Dinosaur soft tissue and collagen" = "Țesuturi moi și colagen în fosile de dinozaur";
-"UNUSUAL PRESERVATION · AGE IS INDEPENDENT" = "CONSERVARE NEOBIȘNUITĂ · VÂRSTA SE STABILEȘTE SEPARAT";
-"Researchers have reported flexible vessel-like structures, cell-shaped features, and protein signals in dinosaur fossils. Flood proponents argue that such preservation is difficult to reconcile with great age." = "Cercetătorii au raportat structuri flexibile asemănătoare vaselor, forme celulare și urme de proteine în fosile de dinozaur. Susținătorii potopului argumentează că o asemenea conservare este greu de împăcat cu o vechime foarte mare.";
-"The structures and molecular signals are the subject of published laboratory studies. Schweitzer and colleagues proposed that iron and oxygen chemistry can slow degradation and help preserve or mask biomolecules; later work continues to test preservation mechanisms and identify what survives." = "Structurile și semnalele moleculare au fost studiate în laborator, în lucrări publicate. Schweitzer și colegii au propus că procesele chimice implicând fierul și oxigenul pot încetini degradarea și pot ajuta la conservarea sau mascarea biomoleculelor; studiile ulterioare continuă să testeze mecanismele de conservare și să identifice ce anume a rămas.";
-"‘Soft tissue’ does not mean a fresh dinosaur or intact blood. Exceptional molecular preservation is scientifically interesting, but it is not itself a clock and does not establish a young age or a flood. Fossil identity, stratigraphic position, and independent dating evidence are evaluated separately." = "Termenul «țesut moale» nu înseamnă un dinozaur proaspăt sau sânge intact. Conservarea moleculară excepțională este interesantă științific, dar nu reprezintă în sine un ceas și nu dovedește o vârstă recentă ori un potop. Identificarea fosilei, poziția stratigrafică și dovezile independente de datare sunt evaluate separat.";
-
-"Flat contacts and missing time" = "Contacte plane și timp lipsă";
-"WIDESPREAD LAYERS · RAPID-DEPOSITION ARGUMENT" = "STRATURI EXTINSE · ARGUMENTUL DEPUNERII RAPIDE";
-"Flood advocates point to broad, apparently flat contacts between rock units and argue that they could have been deposited in quick succession, without long gaps for erosion." = "Susținătorii potopului indică suprafețe largi, aparent plane, între unitățile de rocă și argumentează că acestea s-ar fi putut depune succesiv, fără intervale lungi de eroziune.";
-"Grand Canyon formations include broad sedimentary layers and the Great Unconformity, a contact between ancient crystalline basement and younger sedimentary rock. The USGS describes unconformities as gaps caused by erosion and elapsed time before new deposition; creationist field reports emphasize the lateral continuity and relatively flat appearance of selected contacts." = "Formațiunile Marelui Canion includ straturi sedimentare extinse și Marea Discordanță, un contact între fundamentul cristalin străvechi și roca sedimentară mai tânără. USGS descrie discordantele ca intervale create prin eroziune și trecerea timpului înaintea unei noi depuneri; rapoartele de teren creaționiste evidențiază continuitatea laterală și aspectul relativ plan al unor contacte alese.";
-"Flood geologists interpret extensive layers and selected flat contacts as products of successive, high-volume sediment flows during a major catastrophe. The linked field report presents that argument; the USGS source documents the contact and conventional geologic interpretation." = "Geologii care susțin potopul interpretează straturile extinse și anumite contacte plane ca rezultat al unor fluxuri succesive, voluminoase de sedimente în timpul unei catastrofe majore. Raportul de teren legat prezintă acest argument; sursa USGS documentează contactul și interpretarea geologică convențională.";
-
-"Bent strata and the Kaibab fold" = "Straturi îndoite și cuta Kaibab";
-"FOLDING IS REAL · CAUSE REQUIRES STRUCTURAL EVIDENCE" = "CUTAREA ESTE REALĂ · CAUZA NECESITĂ DOVEZI STRUCTURALE";
-"Flood advocates cite sharply bent layers, including near the East Kaibab monocline, and argue that rock could bend without breaking only while sediment was still soft." = "Susținătorii potopului invocă straturi puternic îndoite, inclusiv în apropierea monoclinei East Kaibab, și argumentează că roca s-ar fi putut îndoi fără să se rupă doar cât timp sedimentul era moale.";
-"Soft-sediment deformation is real, but so are tectonic folds and faults. Structural studies of the East Kaibab monocline map faults through the fold and interpret it as fault-propagation folding during later regional compression." = "Deformarea sedimentelor moi este reală, la fel ca faliile și cutarea tectonică. Studiile structurale ale monoclinei East Kaibab cartografiază falii în zona cutei și o interpretează drept cutare prin propagarea faliilor, produsă de compresia regională ulterioară.";
-"The claim that a whole sequence bent while uniformly soft is not established by the visual curve alone. Researchers map fractures, fault relationships, deformation across multiple strata, and timing indicators. Some local soft-sediment structures can coexist with much older and younger tectonic folding." = "Forma curbată, privită singură, nu demonstrează afirmația că întreaga succesiune s-a îndoit când era uniform moale. Cercetătorii cartografiază fracturile, legăturile dintre falii, deformarea mai multor straturi și indiciile de datare. Unele structuri locale formate în sedimente moi pot coexista cu procese tectonice de cutare mult mai vechi sau mai noi.";
-
-"Catastrophic Plate Tectonics" = "Tectonica catastrofală a plăcilor";
-"PROPOSED FLOOD MODEL · NOT MAINSTREAM CONSENSUS" = "MODEL PROPUS PENTRU POTOP · NU ESTE CONSENS ȘTIINȚIFIC";
-"John Baumgardner’s creationist model proposes runaway subduction, rapid movement of plates, seafloor volcanism, rising oceans, and intense rainfall during a Genesis Flood." = "Modelul creaționist al lui John Baumgardner propune subducție accelerată, mișcarea rapidă a plăcilor, vulcanism submarin, creșterea oceanelor și ploi intense în timpul Potopului din Geneza.";
-"The model has been presented in the Proceedings of the International Conference on Creationism. Modern plate tectonics is strongly supported, but that does not automatically validate a rapid, year-long version of plate motion." = "Modelul a fost prezentat în lucrările Conferinței Internaționale despre Creaționism. Tectonica modernă a plăcilor este susținută de dovezi puternice, dar asta nu validează automat o versiune în care plăcile s-ar fi mișcat rapid timp de un an.";
-"A scientific model must match measured plate kinematics, geochemistry, heat flow, the thermal history of Earth, and geological chronology. Cite the specific model as its authors present it; do not label it as a result accepted by mainstream geophysics. The cited conference proceedings are a creationist venue, not a mainstream geoscience journal." = "Un model științific trebuie să corespundă măsurătorilor mișcării plăcilor, geochimiei, fluxului termic, istoriei termice a Pământului și cronologiei geologice. Modelul este prezentat așa cum îl formulează autorii; nu trebuie confundat cu un rezultat acceptat în geofizica actuală. Lucrările citate provin dintr-o conferință creaționistă, nu dintr-o revistă geologică de largă circulație.";
-
-"RATE and helium in zircon" = "RATE și heliul din zircon";
-"PROPONENT CLAIM · METHOD-DEPENDENT INTERPRETATION" = "AFIRMAȚIA SUSȚINĂTORILOR · INTERPRETARE DEPENDENTĂ DE METODĂ";
-"The RATE project reported helium retained in zircons from deep granite and argued that diffusion calculations imply a recent age and accelerated radioactive decay." = "Proiectul RATE a raportat heliu reținut în zirconi din granit aflat la mare adâncime și a susținut că estimările bazate pe difuzie indică o vârstă recentă și dezintegrare radioactivă accelerată.";
-"Helium diffusion in zircon is measurable and is used in thermochronology. Published research shows that diffusion behavior depends on temperature history, crystal properties, and radiation damage; those details matter when interpreting an age." = "Difuzia heliului în zircon poate fi măsurată și este folosită în termocronologie. Cercetările publicate arată că difuzia depinde de istoricul temperaturii, proprietățile cristalului și deteriorarea produsă de radiații; acești factori contează la interpretarea unei vârste.";
-"The RATE interpretation is published in creationist research venues and is not accepted as evidence for accelerated nuclear decay by mainstream geochronology. A single helium-retention result cannot independently establish a six-thousand-year timescale; it must be tested against U–Pb ages, measured diffusion kinetics, and the full thermal history." = "Interpretarea RATE a fost publicată în medii de cercetare creaționiste și nu este acceptată de geocronologia actuală drept dovadă pentru accelerarea dezintegrării nucleare. Un singur rezultat privind reținerea heliului nu poate stabili independent o cronologie de șase mii de ani; el trebuie comparat cu vârstele U–Pb, vitezele de difuzie măsurate și întregul istoric termic.";
-"Fossil order and radiometric ages" = "Succesiunea fosilelor și vârstele radiometrice";
-"MULTIPLE INDEPENDENT LINES OF EVIDENCE" = "MAI MULTE LINII INDEPENDENTE DE DOVEZI";
-"Flood proponents suggest ecological zonation, mobility, habitat, and water transport could influence which organisms were buried first, so fossil order deserves investigation rather than a slogan." = "Susținătorii potopului sugerează că distribuția ecologică, mobilitatea, habitatul și transportul apei ar fi putut influența care organisme au fost îngropate primele; de aceea, succesiunea fosilelor merită cercetată, nu redusă la un slogan.";
-"Across many regions, fossil assemblages occur in a reproducible succession. Radiometric ages from suitable igneous minerals bracket sedimentary strata; fossil succession and isotope dating are related but distinct methods." = "În multe regiuni, ansamblurile de fosile apar într-o succesiune repetabilă. Vârstele radiometrice obținute din minerale magmatice adecvate delimitează vârsta straturilor sedimentare; succesiunea fosilelor și datarea izotopică sunt metode distincte, dar corelate.";
-"A flood model can be compared with the observed fossil order and with independently dated layers. The references below explain both the pro-flood proposal and the methods used to build and cross-check geological sequences." = "Un model al potopului poate fi comparat cu succesiunea observată a fosilelor și cu straturi datate independent. Referințele de mai jos prezintă atât propunerea pro-potop, cât și metodele folosite pentru alcătuirea și verificarea succesiunilor geologice.";
-
-"A fossil caught giving birth" = "O fosilă surprinsă în timpul nașterii";
-"EXCEPTIONAL FOSSIL · CHINA, NOT NORTH AMERICA" = "FOSILĂ EXCEPȚIONALĂ · CHINA, NU AMERICA DE NORD";
-"A Chaohusaurus fossil preserves a mother, two embryos, and a neonate in a birth-position arrangement. Flood advocates point to such snapshots as evidence that organisms could be buried suddenly during catastrophe." = "O fosilă de Chaohusaurus păstrează o mamă, doi embrioni și un pui într-o configurație asociată nașterii. Susținătorii potopului invocă astfel de instantanee drept indicii că organismele puteau fi îngropate brusc în timpul unei catastrofe.";
-"The authors report three associated young: one inside the mother, one partly emerging, and one outside. They conclude that the mother likely died in labor; they also note that the rock is marine and infer that birth most likely occurred underwater." = "Autorii descriu trei pui asociați: unul în interiorul mamei, unul ieșind parțial și unul în exterior. Ei concluzionează că mama a murit probabil în timpul nașterii; observă și că roca este de origine marină și deduc că nașterea a avut loc cel mai probabil sub apă.";
-"The specimen comes from China and dates to the Early Triassic, around 248 million years ago. It is a remarkable snapshot of preservation. The paper documents the fossil and the authors’ interpretation; the broader link to Noah’s Flood is a separate inference." = "Exemplarul provine din China și datează din Triasicul timpuriu, acum aproximativ 248 de milioane de ani. Este un instantaneu remarcabil al conservării fosilelor. Articolul documentează fosila și interpretarea autorilor; legătura mai largă cu Potopul lui Noe este o deducție separată.";
-
-"The mammoth with grass in its mouth" = "Mamutul cu iarbă în gură";
-"BEREZOVKA · SIBERIA · RAPID-PRESERVATION CLUE" = "BEREZOVKA · SIBERIA · INDICIU DE CONSERVARE RAPIDĂ";
-"The Berezovka mammoth was found with vegetation in its mouth and plant material in its stomach. Flood advocates cite this preserved final meal as a striking snapshot of an animal overcome and rapidly buried." = "Mamutul de la Berezovka a fost găsit cu vegetație în gură și resturi vegetale în stomac. Susținătorii potopului invocă această ultimă masă păstrată drept imagine frapantă a unui animal surprins și îngropat rapid.";
-"The Smithsonian documents grasses and other plants in the mammoth’s stomach. Pfizenmayer’s expedition account also describes vegetation preserved in the mouth. The specimen was recovered from Siberian permafrost, which preserved soft tissue and plant material." = "Smithsonianul documentează ierburi și alte plante în stomacul mamutului. Relatarea expediției lui Pfizenmayer descrie și vegetație păstrată în gură. Exemplarul a fost recuperat din permafrostul siberian, care a conservat țesuturi moi și material vegetal.";
-"This is one exceptionally preserved Siberian mammoth. The last meal is directly documented; the cause and speed of burial are interpreted from the carcass and its geological setting. Flood proponents connect the case to a larger catastrophe." = "Acesta este un mamut siberian conservat în mod excepțional. Ultima masă este documentată direct; cauza și viteza îngropării sunt interpretate pe baza carcasei și a contextului geologic. Susținătorii potopului leagă acest caz de o catastrofă mai amplă.";
-/* Expedition clues */
-"The Scablands Scar" = "Cicatricea Scablands";
-"EASTERN WASHINGTON · NORTH AMERICA" = "ESTUL STATULUI WASHINGTON · AMERICA DE NORD";
-"GEOLOGY · CONFIRMED ICE-AGE MEGAFLOODS" = "GEOLOGIE · MEGA-INUNDAȚII GLACIARE CONFIRMATE";
-"Basalt coulees, giant ripple marks, and gravel bars record immense outburst floods." = "Canioanele de bazalt, ondulațiile uriașe și bancurile de pietriș înregistrează viituri de proporții imense.";
-"USGS research links the Channeled Scablands to repeated outburst floods from glacial Lake Missoula during the last Ice Age. These extraordinary floods reshaped a vast region. Could memories of a catastrophe on this scale have traveled far beyond the landscape where it happened?" = "Cercetările USGS leagă Scablands de viiturile repetate provenite din lacul glaciar Missoula, în ultima eră glaciară. Aceste inundații extraordinare au remodelat o regiune vastă. S-ar fi putut transmite amintirea unei catastrofe de o asemenea amploare mult dincolo de locul în care s-a petrecut?";
-
-"YUKON · NORTH AMERICA" = "YUKON · AMERICA DE NORD";
-"PALEONTOLOGY · PERMAFROST PRESERVATION" = "PALEONTOLOGIE · CONSERVARE ÎN PERMAFROST";
-"A remarkably preserved baby mammoth emerged from Yukon permafrost in 2022." = "În 2022, din permafrostul Yukonului a ieșit la iveală un pui de mamut remarcabil conservat.";
-"Nun cho ga is a near-complete mummified woolly mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in Traditional Territory. A quick examination suggested the calf was female; Yukon geologists estimated it died more than 30,000 years ago and was frozen in permafrost. Compare it with the Berezovka mammoth in the Siberian file: different animals, different places, both preserved in frozen ground. What can each specimen tell us about preservation—and what would require further evidence?" = "Nun cho ga este un pui de mamut lânos mumificat, aproape complet, găsit în Yukon în 2022, pe teritoriul tradițional Tr’ondëk Hwëch’in. O examinare rapidă a sugerat că puiul era femelă; geologii din Yukon estimează că a murit cu peste 30.000 de ani în urmă și a înghețat în permafrost. Compară-l cu mamutul Berezovka din dosarul siberian: animale diferite, locuri diferite, ambele păstrate în pământ înghețat. Ce ne poate spune fiecare exemplar despre conservare și ce ar necesita dovezi suplimentare?";
-
-"The Ashfall Nursery" = "Creșa fosilă de la Ashfall";
-"NEBRASKA · NORTH AMERICA" = "NEBRASKA · AMERICA DE NORD";
-"FOSSIL SITE · VOLCANIC ASH" = "SIT FOSILIFER · CENUȘĂ VULCANICĂ";
-"A Nebraska fossil bed preserves articulated animals in a layer of volcanic ash." = "Un strat de cenușă vulcanică din Nebraska păstrează animale cu scheletele articulate.";
-"At Ashfall Fossil Beds, Nebraska, volcanic ash from an eruption in what is now southwestern Idaho fell over a watering hole about 11.93 million years ago. The ash bed preserves many articulated skeletons, including rhinos with unborn young. Compare this ashfall burial with the individual Chaohusaurus birth-position fossil from China: two very different snapshots, each with its own geological setting." = "La Ashfall Fossil Beds din Nebraska, cenușa vulcanică provenită dintr-o erupție din sud-vestul actualului Idaho a căzut peste o adăpătoare în urmă cu aproximativ 11,93 milioane de ani. Stratul de cenușă păstrează multe schelete articulate, inclusiv rinoceri cu pui nenăscuți. Compară această îngropare în cenușă cu fosila individuală de Chaohusaurus surprinsă în poziție de naștere, din China: două instantanee foarte diferite, fiecare cu propriul context geologic.";
-
-"The Silt Line" = "Linia de mâl";
-"MESOPOTAMIA" = "MESOPOTAMIA";
-"ARCHAEOLOGY · MESOPOTAMIA" = "ARHEOLOGIE · MESOPOTAMIA";
-"At Lagash, a dated flood deposit more than a metre thick covered existing architecture." = "La Lagash, un depozit de inundație datat, cu o grosime de peste un metru, a acoperit construcții existente.";
-
-"Wang et al. · Constraints on Tibetan Plateau uplift history" = "Wang și colab. · Constrângeri privind istoria ridicării Podișului Tibetan";
-
-"PEER-REVIEWED PNAS RESEARCH · 2008" = "CERCETARE PNAS EVALUATĂ DE SPECIALIȘTI · 2008";
-
-"Han et al. · Tethys Himalaya marine sedimentary record" = "Han și colab. · Registrul sedimentar marin din Himalaya Tethys";
-
-"PEER-REVIEWED GEOLOGY RESEARCH · 2016" = "CERCETARE GEOLOGICĂ EVALUATĂ DE SPECIALIȘTI · 2016";
-
-"Ryan and Pitman’s 1997 research proposed that rising Mediterranean water breached the Bosporus and rapidly flooded a lower Black Sea basin in the early Holocene. In their later book, they argued that the event may have affected farming communities and inspired flood traditions." = "Cercetarea lui Ryan și Pitman din 1997 a propus că apa Mediteranei, aflată în creștere, a trecut prin Bosfor și a inundat rapid un bazin al Mării Negre cu nivel mai scăzut, la începutul Holocenului. În cartea lor ulterioară, au susținut că evenimentul ar fi putut afecta comunitățile agricole și inspira relatări despre potop.";
-
-"Ryan & Pitman · Noah’s Flood (book, 1998)" = "Ryan și Pitman · Noah’s Flood (carte, 1998)";
-
-"AUTHOR’S SYNTHESIS AND HISTORICAL INTERPRETATION" = "SINTEZA AUTORILOR ȘI INTERPRETARE ISTORICĂ";
-"A 2025 peer-reviewed study reports a flood-deposited silt layer more than a metre thick over architecture at Lagash (modern Tell al-Hiba), dated to the late Early Dynastic period, around 2400–2350 BCE. The authors propose that canal embankments may have been breached during conflict. Other Mesopotamian settlements preserve separate flood deposits from different periods. Compare the sites, dates, sediment, and historical context before linking any of them to a wider story." = "Un studiu din 2025, evaluat de specialiști, raportează un strat de mâl depus de o inundație, gros de peste un metru, peste construcții de la Lagash (Tell al-Hiba de astăzi), datat în perioada Dinastică Timpurie târzie, aproximativ 2400–2350 î.e.n. Autorii propun că digurile canalelor ar fi putut fi rupte în timpul unui conflict. Alte așezări mesopotamiene păstrează depozite distincte de inundație, din perioade diferite. Compară siturile, datele, sedimentele și contextul istoric înainte de a le lega de o relatare mai amplă.";
-
-"The Broken Tablet" = "Tăblița spartă";
-"ANCIENT NEAR EAST" = "ORIENTUL APROPIAT ANTIC";
-"ANCIENT TEXT · CUNEIFORM" = "TEXT ANTIC · CUNEIFORMĂ";
-"A flood survivor tells a story of a warning, a vessel, and a ruined world." = "Un supraviețuitor al potopului povestește despre un avertisment, o corabie și o lume distrusă.";
-"Mesopotamian flood narratives, including the Epic of Gilgamesh and Atrahasis, share themes with the Genesis account. The ancient versions share striking themes: a warning, a vessel, survival, and a changed world. Read the tablet record, then ask what catastrophe or memory could lie behind these accounts." = "Relatările mesopotamiene despre potop, inclusiv Epopeea lui Ghilgameș și povestea lui Atrahasis, au teme comune cu relatarea din Geneza: un avertisment, o corabie, supraviețuirea și o lume schimbată. Citește ce consemnează tăblița și întreabă-te ce catastrofă sau amintire s-ar putea afla în spatele acestor relatări.";
-
-"The Shifting Shore" = "Țărmul schimbător";
-"BLACK SEA" = "MAREA NEAGRĂ";
-"GEOLOGY · ACTIVE DEBATE" = "GEOLOGIE · IPOTEZĂ ÎN DEZBATERE";
-"A submerged ancient shoreline raises a difficult question: how quickly did the water rise?" = "Un țărm străvechi scufundat ridică o întrebare dificilă: cât de repede a crescut nivelul apei?";
-"Ryan and Pitman proposed that Mediterranean water broke through the Bosporus and rapidly entered a lower Black Sea basin. Submerged shorelines and changing sediments preserve a real environmental transition; how fast it happened, and what memories it left, remain questions for the investigator." = "Ryan și Pitman au propus că apele Mediteranei au trecut prin Bosfor și au pătruns rapid în bazinul mai coborât al Mării Negre. Țărmurile scufundate și sedimentele schimbătoare păstrează urmele unei tranziții reale de mediu; cât de repede s-a produs și ce amintiri a lăsat sunt întrebări pentru anchetator.";
-/* Navigation and interface */
-"Case File" = "Dosar";
-"Expedition" = "Expediție";
+"Mission Briefing" = "Instructajul misiunii";
+"Missions" = "Misiuni";
 "Evidence Wall" = "Panoul dovezilor";
 "North America" = "America de Nord";
 "Field Media" = "Media de teren";
 "Claim Audit" = "Verificarea afirmațiilor";
 "Final Theory" = "Teoria finală";
+"Megafloods: Missoula and Altai" = "Mega-inundațiile: Missoula și Altai";
+"STRONG EVIDENCE · REGIONAL EVENTS" = "DOVEZI PUTERNICE · EVENIMENTE REGIONALE";
+"The pro-flood case starts with a sound observation: ordinary rivers cannot explain every landscape. The Missoula floods and Altai outburst floods were immense, fast, and geomorphically transformative." = "Argumentul în favoarea potopului pornește de la o observație solidă: râurile obișnuite nu pot explica orice peisaj. Inundațiile Missoula și viiturile din Altai au fost uriașe, rapide și au remodelat relieful.";
+"Field mapping, giant current ripples, flood gravel, erratic boulders, and stacked flood beds document repeated glacial-lake outbursts. USGS synthesis estimates dozens, likely over a hundred, Missoula floods across roughly 20–14 thousand years ago. Altai lake drainage is a separate, independently studied regional megaflood system." = "Cartarea terenului, ondulațiile uriașe formate de curenți, pietrișul de viitură, bolovanii transportați și straturile suprapuse documentează revărsări repetate ale lacurilor glaciare. Sinteza USGS estimează zeci, probabil peste o sută, de inundații Missoula între aproximativ 20.000 și 14.000 de ani în urmă. Drenarea lacurilor din Altai este un alt sistem regional de mega-inundații, studiat independent.";
+"Flood advocates use these landscapes as real-world examples of how quickly catastrophic water can reshape vast regions, and scale the comparison up when discussing a worldwide Flood." = "Susținătorii potopului folosesc aceste peisaje ca exemple reale ale vitezei cu care apa catastrofală poate remodela regiuni întinse și extind comparația atunci când discută despre un Potop mondial.";
+"The USGS review and the Altai studies describe repeated regional outburst floods from separate ice-dammed lakes, with their own basins, deposits, and ages. The authors treat them as regional Ice Age events, not as parts of one simultaneous worldwide flood." = "Sinteza USGS și studiile din Altai descriu viituri regionale repetate, produse de golirea unor lacuri separate, barate de gheață, fiecare cu bazinul, depozitele și vârstele sale. Autorii le tratează ca evenimente regionale din era glaciară, nu ca părți ale unei singure inundații mondiale simultane.";
+"USGS · Missoula and Bonneville floods review" = "USGS · Sinteză despre inundațiile Missoula și Bonneville";
+"GOVERNMENT GEOLOGY REVIEW" = "SINTEZĂ GEOLOGICĂ GUVERNAMENTALĂ";
+"Agatova et al. · Last ice-dammed lake in the Kuray basin" = "Agatova și colab. · Ultimul lac barat de gheață din bazinul Kuray";
+"PEER-REVIEWED RESEARCH · 2020" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2020";
+"Herget et al. · Altai megafloods—The temporal context" = "Herget și colab. · Altai megafloods—The temporal context";
+"PEER-REVIEWED REVIEW · 2020" = "SINTEZĂ EVALUATĂ DE SPECIALIȘTI · 2020";
+"Rudoy · Altai glacial superfloods" = "Rudoy · Super-inundațiile glaciare din Altai";
+"PEER-REVIEWED RESEARCH · 2002" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2002";
+"Black Sea: a candidate flood" = "Marea Neagră: un posibil potop";
+"RAPID-INFLOW HYPOTHESIS" = "IPOTEZA PĂTRUNDERII RAPIDE A APEI";
+"Ryan and Pitman’s 1997 research proposed that rising Mediterranean water breached the Bosporus and rapidly flooded a lower Black Sea basin in the early Holocene. In their later book, they argued that the event may have affected farming communities and inspired flood traditions." = "Cercetarea lui Ryan și Pitman din 1997 a propus că apa Mediteranei, aflată în creștere, a trecut prin Bosfor și a inundat rapid un bazin al Mării Negre cu nivel mai scăzut, la începutul Holocenului. În cartea lor ulterioară, au susținut că evenimentul ar fi putut afecta comunitățile agricole și inspira relatări despre potop.";
+"Submerged shorelines, marine and freshwater sediments, and changing salinity are documented in the Black Sea basin. Ryan and Pitman used geological and archaeological clues to argue for rapid inflow." = "În bazinul Mării Negre sunt documentate foste țărmuri scufundate, sedimente marine și de apă dulce, precum și schimbări ale salinității. Ryan și Pitman au folosit indicii geologice și arheologice pentru a susține ipoteza pătrunderii rapide a apei.";
+"Ryan and Pitman read the evidence as a rapid regional flood that could lie behind ancient flood memories, including the Genesis account." = "Ryan și Pitman interpretează dovezile ca pe o inundație regională rapidă care ar putea sta la baza unor amintiri străvechi despre potop, inclusiv a relatării din Geneza.";
+"The 1997 paper presents shoreline, sediment, and salinity evidence for a rapid regional inflow into the Black Sea basin. The link to ancient flood traditions appears in the authors’ later book as a historical interpretation; neither source describes a worldwide event." = "Articolul din 1997 prezintă dovezi privind țărmurile, sedimentele și salinitatea în favoarea unei pătrunderi rapide, regionale, a apei în bazinul Mării Negre. Legătura cu tradițiile străvechi despre potop apare în cartea ulterioară a autorilor, ca interpretare istorică; niciuna dintre surse nu descrie un eveniment mondial.";
+"Ryan et al. · Catastrophic flooding of the Black Sea" = "Ryan și colab. · Catastrophic flooding of the Black Sea";
+"ORIGINAL RESEARCH · 1997" = "CERCETARE ORIGINALĂ · 1997";
+"Ryan & Pitman · Noah’s Flood (book, 1998)" = "Ryan și Pitman · Noah’s Flood (carte, 1998)";
+"AUTHOR’S SYNTHESIS AND HISTORICAL INTERPRETATION" = "SINTEZA AUTORILOR ȘI INTERPRETARE ISTORICĂ";
+"Drowned coasts after the Ice Age" = "Țărmuri scufundate după ultima eră glaciară";
+"GLOBAL SEA-LEVEL RISE · SUBMERGED LANDSCAPES" = "CREȘTEREA NIVELULUI GLOBAL AL MĂRII · PEISAJE SCUFUNDATE";
+"After the Last Glacial Maximum, global sea level rose by roughly 120 metres as land ice melted. Former coastal plains and human landscapes were submerged; this could help explain why flood memories recur in coastal cultures." = "După maximul ultimei glaciațiuni, nivelul global al mării a crescut cu aproximativ 120 de metri, pe măsură ce gheața continentală s-a topit. Câmpiile de coastă și peisajele locuite de oameni au fost acoperite de ape; acest lucru ar putea explica de ce amintirile despre inundații reapar în culturile de coastă.";
+"Coral terraces, sediment cores, and dated shorelines record a large, multi-stage rise, including shorter meltwater pulses." = "Terasele de corali, carotele de sediment și țărmurile datate înregistrează o creștere amplă, desfășurată în mai multe etape și incluzând episoade mai scurte de topire a gheții.";
+"Flood-tradition researchers suggest that memories of lost coastal landscapes may have travelled through generations and shaped flood stories in coastal cultures." = "Cercetătorii tradițiilor despre potop sugerează că amintirile unor peisaje de coastă dispărute s-ar fi putut transmite din generație în generație și ar fi putut modela relatările despre potop din culturile de coastă.";
+"The Barbados and global sea-level studies describe a rise of roughly 120 metres in several stages over many thousands of years after the Last Glacial Maximum. They document drowned coastlines, not a single flood event." = "Studiile din Barbados și cele privind nivelul global al mării descriu o creștere de aproximativ 120 de metri, în mai multe etape, pe parcursul multor mii de ani după maximul ultimei glaciațiuni. Ele documentează țărmuri scufundate, nu un singur eveniment de inundație.";
+"Nature Geoscience · Barbados-based LGM ice-volume estimate" = "Nature Geoscience · Estimarea volumului de gheață din ultimul maxim glaciar, pe baza datelor din Barbados";
+"PEER-REVIEWED RESEARCH · 2013" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2013";
+"Peltier · Last Glacial Maximum to Holocene sea-level history" = "Peltier · Istoria nivelului mării de la ultimul maxim glaciar până în Holocen";
+"PEER-REVIEWED REVIEW · 2002" = "SINTEZĂ EVALUATĂ DE SPECIALIȘTI · 2002";
+"Rohling et al. · Extended Barbados sea-level record" = "Rohling și colab. · Înregistrarea extinsă a nivelului mării din Barbados";
+"PEER-REVIEWED RESEARCH · 2007" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2007";
+"Marine fossils high above today’s sea" = "Fosile marine mult deasupra nivelului actual al mării";
+"MARINE FOSSILS · ELEVATED STRATA" = "FOSILE MARINE · STRATURI LA ALTITUDINE";
+"Marine fossils occur high in the Himalayas, Alps, and Colorado Plateau. Flood advocates point to them as evidence that water once covered land now at great altitude." = "Fosile marine se găsesc la altitudine mare în Himalaya, Alpi și Podișul Colorado. Susținătorii potopului le invocă drept dovezi că apa a acoperit cândva terenuri aflate acum la mare înălțime.";
+"Marine fossils really are found in elevated rock formations. At Grand Canyon, the Kaibab Limestone and other units preserve marine fossils and were deposited in ancient seas." = "Fosile marine se găsesc într-adevăr în formațiuni stâncoase aflate la altitudine. În Marele Canion, calcarul Kaibab și alte unități păstrează fosile marine și s-au depus în mări străvechi.";
+"Marine fossils preserve traces of ancient seas in rock now found high above modern shorelines. The linked geology sources describe these fossil-bearing strata and the histories of the mountain belts around them; the Biblical encyclopedia uses elevated marine fossils in its flood argument." = "Fosilele marine păstrează urmele unor mări străvechi în roci aflate astăzi mult deasupra țărmurilor actuale. Sursele geologice legate descriu aceste straturi fosilifere și istoria lanțurilor muntoase din jurul lor; enciclopedia biblică folosește fosilele marine aflate la altitudine în argumentul său despre potop.";
+"The cited geology sources explain that the fossils formed in ancient seas and that the Colorado Plateau and the Himalaya were raised to their present height later by tectonic uplift. In that reading, a fossil’s present elevation is not the elevation at which it formed." = "Sursele geologice citate explică faptul că fosilele s-au format în mări străvechi și că Podișul Colorado și Himalaya au fost ridicate ulterior la înălțimea actuală prin procese tectonice. În această interpretare, altitudinea actuală a unei fosile nu este cea la care s-a format.";
+"National Park Service · Grand Canyon fossils" = "National Park Service · Fosilele din Marele Canion";
+"PARK GEOLOGY RESOURCE" = "RESURSĂ GEOLOGICĂ A PARCULUI";
+"National Park Service · Grand Canyon geology and uplift" = "National Park Service · Geologia și ridicarea Marelui Canion";
+"Han et al. · Tethys Himalaya marine sedimentary record" = "Han și colab. · Registrul sedimentar marin din Himalaya Tethys";
+"PEER-REVIEWED GEOLOGY RESEARCH · 2016" = "CERCETARE GEOLOGICĂ EVALUATĂ DE SPECIALIȘTI · 2016";
+"Wang et al. · Constraints on Tibetan Plateau uplift history" = "Wang și colab. · Constrângeri privind istoria ridicării Podișului Tibetan";
+"PEER-REVIEWED PNAS RESEARCH · 2008" = "CERCETARE PNAS EVALUATĂ DE SPECIALIȘTI · 2008";
+"National Park Service · Kaibab Formation" = "National Park Service · Formațiunea Kaibab";
+"ICR · Marine fossils on today’s mountain ranges" = "ICR · Fosile marine pe lanțurile muntoase de astăzi";
+"CREATIONIST-PERSPECTIVE INTERPRETATION" = "INTERPRETARE DIN PERSPECTIVĂ CREAȚIONISTĂ";
+"Continental layers: Tapeats and Coconino" = "Straturi continentale: Tapeats și Coconino";
+"EXTENSIVE STRATA · FLOOD-GEOLOGY ARGUMENT" = "STRATURI EXTINSE · ARGUMENT AL GEOLOGIEI POTOPULUI";
+"Flood geologists emphasize extensive sedimentary formations, large cross-beds, and paleocurrent directions. They argue that continent-scale water flows could deposit broad layers quickly." = "Geologii care susțin interpretarea potopului evidențiază formațiuni sedimentare întinse, stratificații oblice mari și direcțiile curenților străvechi. Ei argumentează că fluxuri de apă la scară continentală ar fi putut depune rapid straturi extinse.";
+"Tapeats Sandstone is a broad Cambrian unit with documented marine, intertidal, and stream facies. The overlying Grand Canyon sequence includes distinct formations and trace fossils. Flood-geology authors interpret large Coconino cross-beds as evidence of powerful water currents." = "Gresia Tapeats este o unitate cambriană extinsă, cu faciesuri marine, intertidale și de curs de apă documentate. Succesiunea de deasupra din Marele Canion include formațiuni distincte și fosile de urme. Autorii din domeniul geologiei potopului interpretează stratificația oblică de mari dimensiuni din gresia Coconino ca dovadă a unor curenți de apă puternici.";
+"The Grand Canyon preserves broad sedimentary sequences, trace fossils, and cross-bedded formations. Flood geologists use the scale and geometry of these layers to discuss rapid, high-volume transport; the linked studies describe the rock structures and the settings interpreted by their authors." = "Marele Canion păstrează succesiuni sedimentare extinse, fosile de urme și formațiuni cu stratificație oblică. Geologii care susțin potopul folosesc amploarea și geometria acestor straturi pentru a discuta un transport rapid, de mare volum; studiile legate descriu structurile rocilor și mediile interpretate de autorii lor.";
+"Hereford interprets the Tapeats as marine, intertidal, and stream deposits laid down as a Cambrian sea advanced, about 500 million years ago; conventional geology places the Coconino in the Permian and usually reads its cross-beds as wind-blown dunes. The water-laid reading of the Coconino is the creationist paper’s proposal." = "Hereford interpretează gresia Tapeats ca depozite marine, intertidale și de curs de apă, depuse pe măsură ce o mare cambriană înainta, acum aproximativ 500 de milioane de ani; geologia convențională plasează gresia Coconino în Permian și interpretează de obicei stratificația ei oblică drept dune formate de vânt. Interpretarea gresiei Coconino ca depunere sub apă este propunerea lucrării creaționiste.";
+"Hereford · Deposition of the Tapeats Sandstone" = "Hereford · Depunerea gresiei Tapeats";
+"PEER-REVIEWED RESEARCH · GSA BULLETIN" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · GSA BULLETIN";
+"ICR · Global sedimentary sequences and megaflood interpretation" = "ICR · Succesiuni sedimentare globale și interpretarea ca mega-inundație";
+"CREATIONIST-PERSPECTIVE RESEARCH" = "CERCETARE DIN PERSPECTIVĂ CREAȚIONISTĂ";
+"Whitmore & Garner · Coconino subaqueous interpretation" = "Whitmore și Garner · Interpretarea gresiei Coconino ca depunere subacvatică";
+"CREATIONIST-PERSPECTIVE CONFERENCE PAPER · 2023" = "LUCRARE LA CONFERINȚĂ CREAȚIONISTĂ · 2023";
+"Upright trees and rapid burial" = "Copaci verticali și îngropare rapidă";
+"POLYSTRATE FOSSILS · RAPID-BURIAL ARGUMENT" = "FOSILE POLISTRATIFICATE · ARGUMENTUL ÎNGROPĂRII RAPIDE";
+"Some fossil trunks cross multiple beds. Flood proponents argue that sediment must have accumulated quickly enough to bury the standing trees before they decayed." = "Unele trunchiuri fosilizate traversează mai multe straturi. Susținătorii potopului argumentează că sedimentele s-au acumulat suficient de repede pentru a îngropa copacii în picioare înainte să se descompună.";
+"At Joggins, Nova Scotia, researchers documented fossil forests and plant–sediment structures in Pennsylvanian floodplain strata. The fossil forests record interactions between plants and sediment; Flood-geology writers highlight upright trunks extending through several strata as evidence for rapid deposition." = "La Joggins, în Nova Scotia, cercetătorii au documentat păduri fosile și structuri formate prin interacțiunea plantelor cu sedimentele, în straturi de câmpie inundabilă din Pennsylvanian. Pădurile fosile păstrează urmele interacțiunilor dintre plante și sedimente; autorii din domeniul geologiei potopului evidențiază trunchiurile verticale care traversează mai multe straturi drept dovadă a depunerii rapide.";
+"Flood-geology writers read upright trunks crossing several beds as snapshots of rapid sediment accumulation. Compare the fossil trunks, surrounding beds, and proposed mechanisms in the linked field and research sources." = "Autorii din domeniul geologiei potopului interpretează trunchiurile verticale care traversează mai multe straturi drept instantanee ale acumulării rapide de sedimente. Compară trunchiurile fosile, straturile din jur și mecanismele propuse în sursele de teren și de cercetare legate.";
+"The Joggins sedimentology study reads the upright trunks as trees buried in place by repeated flood deposits on a Pennsylvanian floodplain, some of them rapid, with several forest levels growing one above another over time." = "Studiul sedimentologic de la Joggins interpretează trunchiurile verticale drept copaci îngropați pe loc de depuneri repetate de inundație într-o câmpie inundabilă din Pennsylvanian, unele dintre ele rapide, cu mai multe niveluri de pădure crescute unul peste altul în timp.";
+"Rygel, Gibling & Calder · Joggins fossil-forest sediment structures" = "Rygel, Gibling și Calder · Structurile sedimentare ale pădurii fosile de la Joggins";
+"PEER-REVIEWED RESEARCH · SEDIMENTOLOGY" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · SEDIMENTOLOGIE";
+"Joggins Fossil Cliffs · UNESCO World Heritage" = "Joggins Fossil Cliffs · Patrimoniul Mondial UNESCO";
+"INSTITUTIONAL SITE" = "SIT INSTITUȚIONAL";
+"ICR · Polystrate trees at Joggins Fossil Cliffs" = "ICR · Copaci polistratificați la Joggins Fossil Cliffs";
+"Dinosaur soft tissue and collagen" = "Țesuturi moi și colagen în fosile de dinozaur";
+"UNUSUAL PRESERVATION · PROPOSED MECHANISMS" = "CONSERVARE NEOBIȘNUITĂ · MECANISME PROPUSE";
+"Researchers have reported flexible vessel-like structures, cell-shaped features, and protein signals in dinosaur fossils. Flood proponents argue that such preservation is a clue to the history of these remains." = "Cercetătorii au raportat structuri flexibile asemănătoare vaselor, forme celulare și urme de proteine în fosile de dinozaur. Susținătorii potopului argumentează că o asemenea conservare este un indiciu privind istoria acestor rămășițe.";
+"The structures and molecular signals are the subject of published laboratory studies. Schweitzer and colleagues proposed that iron and oxygen chemistry can slow degradation and help preserve or mask biomolecules; later work continues to test preservation mechanisms and identify what survives." = "Structurile și semnalele moleculare au fost studiate în laborator, în lucrări publicate. Schweitzer și colegii au propus că procesele chimice implicând fierul și oxigenul pot încetini degradarea și pot ajuta la conservarea sau mascarea biomoleculelor; studiile ulterioare continuă să testeze mecanismele de conservare și să identifice ce anume a rămas.";
+"The reported structures and proteins have prompted research into exceptional preservation, chemistry, and the history of fossil remains. Flood advocates consider these findings alongside burial and fossilization arguments; the linked laboratory papers describe the specimens and preservation mechanisms their authors investigated." = "Structurile și proteinele raportate au stimulat cercetări privind conservarea excepțională, chimia și istoria rămășițelor fosile. Susținătorii potopului analizează aceste constatări împreună cu argumentele despre îngropare și fosilizare; lucrările de laborator legate descriu exemplarele și mecanismele de conservare investigate de autorii lor.";
+"The cited laboratory studies treat the structures as exceptional preservation and test chemical mechanisms, such as iron-driven cross-linking, that can slow decay. They do not use the finding to revise the specimens’ age, which is set by stratigraphy and independent dating." = "Studiile de laborator citate tratează structurile ca o conservare excepțională și testează mecanisme chimice, precum legăturile încrucișate produse de fier, care pot încetini descompunerea. Ele nu folosesc descoperirea pentru a revizui vârsta exemplarelor, stabilită prin stratigrafie și datare independentă.";
+"Schweitzer et al. · T. rex soft-tissue structures" = "Schweitzer și colab. · Structuri de țesut moale la T. rex";
+"SCIENCE · ORIGINAL RESEARCH · 2005" = "SCIENCE · CERCETARE ORIGINALĂ · 2005";
+"Schweitzer et al. · Iron and deep-time preservation" = "Schweitzer și colab. · Fierul și conservarea în timpul geologic profund";
+"PROCEEDINGS OF THE ROYAL SOCIETY B · 2014" = "PROCEEDINGS OF THE ROYAL SOCIETY B · 2014";
+"Wiemann et al. · Mechanisms of soft-tissue preservation" = "Wiemann și colab. · Mecanismele de conservare a țesuturilor moi";
+"PEER-REVIEWED RESEARCH · 2019" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2019";
+"Flat contacts and missing time" = "Contacte plane și timp lipsă";
+"WIDESPREAD LAYERS · RAPID-DEPOSITION ARGUMENT" = "STRATURI EXTINSE · ARGUMENTUL DEPUNERII RAPIDE";
+"Flood advocates point to broad, apparently flat contacts between rock units and argue that they could have been deposited in quick succession, without long gaps for erosion." = "Susținătorii potopului indică suprafețe largi, aparent plane, între unitățile de rocă și argumentează că acestea s-ar fi putut depune succesiv, fără intervale lungi de eroziune.";
+"Grand Canyon formations include broad sedimentary layers and the Great Unconformity, a contact between ancient crystalline basement and younger sedimentary rock. USGS describes unconformities as surfaces separating rock units with a record of missing geologic time; Flood-geology field reports emphasize the lateral continuity and relatively flat appearance of selected contacts." = "Formațiunile Marelui Canion includ straturi sedimentare extinse și Marea Discordanță, un contact între fundamentul cristalin străvechi și roca sedimentară mai tânără. USGS descrie discordanțele ca suprafețe care separă unități de rocă și consemnează o perioadă de timp geologic lipsă; rapoartele de teren din domeniul geologiei potopului evidențiază continuitatea laterală și aspectul relativ plan al unor contacte alese.";
+"Flood geologists interpret extensive layers and selected flat contacts as products of successive, high-volume sediment flows during a major catastrophe. The linked sources document the contacts and present the Flood-geology interpretation." = "Geologii care susțin potopul interpretează straturile extinse și anumite contacte plane ca rezultat al unor fluxuri succesive, voluminoase de sedimente în timpul unei catastrofe majore. Sursele legate documentează contactele și prezintă interpretarea geologiei potopului.";
+"The USGS describes the Great Unconformity as a surface where a long interval of the rock record is missing, removed by erosion before younger sediments were laid down. In that interpretation, the contact marks elapsed time rather than continuous rapid deposition." = "USGS descrie Marea Discordanță ca o suprafață unde lipsește un interval lung din succesiunea de roci, îndepărtat prin eroziune înainte de depunerea sedimentelor mai tinere. În această interpretare, contactul marchează timp scurs, nu o depunere rapidă și continuă.";
+"ICR · Grand Canyon: Exposing the Flood" = "ICR · Grand Canyon: Exposing the Flood";
+"CREATIONIST-PERSPECTIVE FIELD REPORT" = "RAPORT DE TEREN DIN PERSPECTIVĂ CREAȚIONISTĂ";
+"USGS · Stratified Rocks of the Grand Canyon" = "USGS · Stratified Rocks of the Grand Canyon";
+"GOVERNMENT GEOLOGY MONOGRAPH" = "MONOGRAFIE GEOLOGICĂ GUVERNAMENTALĂ";
+"USGS · Geology of Grand Canyon National Park" = "USGS · Geologia Parcului Național Grand Canyon";
+"GOVERNMENT GEOLOGY RESOURCE" = "RESURSĂ GEOLOGICĂ GUVERNAMENTALĂ";
+"Bent strata and the Kaibab fold" = "Straturi îndoite și cuta Kaibab";
+"BENT ROCK LAYERS · FOLDING ARGUMENT" = "STRATURI DE ROCĂ ÎNDOITE · ARGUMENTUL CUTĂRII";
+"Flood advocates cite sharply bent layers, including near the East Kaibab monocline, and argue that rock could bend without breaking only while sediment was still soft." = "Susținătorii potopului invocă straturi puternic îndoite, inclusiv în apropierea monoclinei East Kaibab, și argumentează că roca s-ar fi putut îndoi fără să se rupă doar cât timp sedimentul era moale.";
+"The East Kaibab monocline is a prominent fold in Grand Canyon strata. Structural studies map faults through the fold and interpret it as fault-propagation folding during regional compression; Flood-geology writers discuss bent strata as part of their rapid-deformation argument." = "Monoclina East Kaibab este o cută proeminentă în straturile Marelui Canion. Studiile structurale cartografiază falii în zona cutei și o interpretează drept cutare prin propagarea faliilor, produsă în timpul compresiei regionale; autorii din domeniul geologiei potopului discută straturile îndoite ca parte a argumentului lor despre deformarea rapidă.";
+"Flood-geology writers use bent strata to discuss when and how thick rock sequences were deformed. The structural study maps the fold and associated faults; compare those observations with the interpretation in the linked Flood-geology paper." = "Autorii din domeniul geologiei potopului folosesc straturile îndoite pentru a discuta când și cum au fost deformate succesiuni groase de roci. Studiul structural cartografiază cuta și faliile asociate; compară aceste observații cu interpretarea din lucrarea de geologia potopului legată aici.";
+"Tindall and Davis map faults beneath the East Kaibab monocline and interpret the fold as forming when deeper faults moved during later regional compression. In their reading, the layers were already rock when they bent, with fractures and faults accommodating the fold." = "Tindall și Davis cartografiază faliile de sub monoclina East Kaibab și interpretează cuta ca formată atunci când falii mai adânci s-au deplasat în timpul unei compresii regionale ulterioare. În interpretarea lor, straturile erau deja rocă atunci când s-au îndoit, iar fracturile și faliile au preluat deformarea.";
+"Tindall & Davis · East Kaibab monocline fault-propagation folding" = "Tindall și Davis · Cutarea prin propagarea faliilor la monoclina East Kaibab";
+"PEER-REVIEWED STRUCTURAL GEOLOGY · 1999" = "GEOLOGIE STRUCTURALĂ EVALUATĂ DE SPECIALIȘTI · 1999";
+"Snelling · Flood interpretation of Grand Canyon folds" = "Snelling · Interpretarea cutelor din Marele Canion prin prisma Potopului";
+"CREATIONIST-PERSPECTIVE PAPER" = "LUCRARE DIN PERSPECTIVĂ CREAȚIONISTĂ";
+"Catastrophic Plate Tectonics" = "Tectonica catastrofală a plăcilor";
+"FLOOD-MODEL PROPOSAL · RAPID PLATE MOTION" = "MODEL PROPUS PENTRU POTOP · MIȘCAREA RAPIDĂ A PLĂCILOR";
+"John Baumgardner’s model proposes runaway subduction, rapid movement of plates, seafloor volcanism, rising oceans, and intense rainfall during a Genesis Flood." = "Modelul lui John Baumgardner propune subducție accelerată, mișcarea rapidă a plăcilor, vulcanism submarin, creșterea oceanelor și ploi intense în timpul Potopului din Geneza.";
+"The model has been presented in the Proceedings of the International Conference on Creationism and combines plate-motion, volcanic, ocean, and atmospheric processes into one proposed Flood mechanism." = "Modelul a fost prezentat în lucrările Conferinței Internaționale despre Creaționism și combină procese legate de mișcarea plăcilor, vulcanism, oceane și atmosferă într-un singur mecanism propus pentru Potop.";
+"Follow the authors’ proposed chain of events through the cited model and compare its predicted effects with the geological clues elsewhere in the archive." = "Urmărește în modelul citat succesiunea de evenimente propusă de autori și compară efectele prezise de acesta cu indiciile geologice din restul arhivei.";
+"The model is published in creationist conference proceedings, not in a mainstream geophysics journal. Measured present-day plate motions are a few centimetres per year, and the runaway-subduction model has not been adopted outside Flood geology." = "Modelul este publicat în lucrările unei conferințe creaționiste, nu într-o revistă de geofizică de largă circulație. Mișcările actuale măsurate ale plăcilor sunt de câțiva centimetri pe an, iar modelul subducției accelerate nu a fost adoptat în afara geologiei potopului.";
+"Baumgardner · Catastrophic Plate Tectonics: physics behind the model" = "Baumgardner · Tectonica catastrofală a plăcilor: fizica din spatele modelului";
+"CREATIONIST-PERSPECTIVE RESEARCH · 2003" = "CERCETARE DIN PERSPECTIVĂ CREAȚIONISTĂ · 2003";
+"RATE and helium in zircon" = "RATE și heliul din zircon";
+"HELIUM-DIFFUSION ARGUMENT · RATE PROJECT" = "ARGUMENTUL DIFUZIEI HELIULUI · PROIECTUL RATE";
+"The RATE project reported helium retained in zircons from deep granite and argued that diffusion calculations imply a recent age and accelerated radioactive decay." = "Proiectul RATE a raportat heliu reținut în zirconi din granit aflat la mare adâncime și a susținut că estimările bazate pe difuzie indică o vârstă recentă și dezintegrare radioactivă accelerată.";
+"Helium diffusion in zircon is measurable and is used in thermochronology. The RATE project reported retained helium and used diffusion calculations as part of its young-age argument." = "Difuzia heliului în zircon poate fi măsurată și este folosită în termocronologie. Proiectul RATE a raportat heliu reținut și a folosit calcule de difuzie ca parte a argumentului său pentru o vârstă recentă.";
+"The RATE team’s argument links measured helium retention, crystal properties, radiation damage, and a proposed temperature history. Compare their published calculations with the laboratory research linked here as you assess this line of evidence." = "Argumentul echipei RATE leagă reținerea măsurată a heliului, proprietățile cristalului, deteriorarea produsă de radiații și un istoric propus al temperaturii. Compară calculele publicate de echipă cu cercetările de laborator legate aici când evaluezi această linie de dovezi.";
+"The cited thermochronology studies show that helium diffusion in zircon depends strongly on radiation damage and temperature history. Mainstream geochronology does not accept the RATE results as evidence of accelerated radioactive decay." = "Studiile de termocronologie citate arată că difuzia heliului în zircon depinde puternic de deteriorarea produsă de radiații și de istoricul temperaturii. Geocronologia actuală nu acceptă rezultatele RATE drept dovadă a unei dezintegrări radioactive accelerate.";
+"Humphreys · RATE zircon helium diffusion study" = "Humphreys · Studiul RATE privind difuzia heliului în zircon";
+"CREATIONIST-PERSPECTIVE RESEARCH · RATE II · 2005" = "CERCETARE CREAȚIONISTĂ · RATE II · 2005";
+"Guenthner et al. · Radiation damage and helium diffusion in zircon" = "Guenthner și colab. · Deteriorarea produsă de radiații și difuzia heliului în zircon";
+"PEER-REVIEWED THERMOCHRONOLOGY · 2013" = "TERMOCRONOLOGIE EVALUATĂ DE SPECIALIȘTI · 2013";
+"Guenthner et al. · Zircon damage-annealing model" = "Guenthner și colab. · Modelul de deteriorare și recoacere a zirconului";
+"PEER-REVIEWED RESEARCH · 2021" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2021";
+"Fossil order and radiometric ages" = "Succesiunea fosilelor și vârstele radiometrice";
+"MULTIPLE INDEPENDENT LINES OF EVIDENCE" = "MAI MULTE LINII INDEPENDENTE DE DOVEZI";
+"Flood proponents suggest ecological zonation, mobility, habitat, and water transport could influence which organisms were buried first, so fossil order deserves investigation rather than a slogan." = "Susținătorii potopului sugerează că distribuția ecologică, mobilitatea, habitatul și transportul apei ar fi putut influența care organisme au fost îngropate primele; de aceea, succesiunea fosilelor merită cercetată, nu redusă la un slogan.";
+"Across many regions, fossil assemblages occur in a reproducible succession. Radiometric ages from suitable igneous minerals bracket sedimentary strata; fossil succession and isotope dating are related but distinct methods." = "În multe regiuni, ansamblurile de fosile apar într-o succesiune repetabilă. Vârstele radiometrice obținute din minerale magmatice adecvate delimitează vârsta straturilor sedimentare; succesiunea fosilelor și datarea izotopică sunt metode distincte, dar corelate.";
+"Flood-geology authors propose that the order of burial followed ecological zones, habitat elevation, mobility, and sorting by moving water during the Flood, rather than a long succession of ages." = "Autorii din domeniul geologiei potopului propun că ordinea îngropării a urmat zonele ecologice, altitudinea habitatului, mobilitatea și sortarea de către apa în mișcare în timpul Potopului, nu o succesiune lungă de epoci.";
+"The Smithsonian and the International Commission on Stratigraphy describe a consistent fossil succession cross-checked against radiometric dates from volcanic layers. Together they are used to build a geologic time scale spanning hundreds of millions of years." = "Smithsonian și International Commission on Stratigraphy descriu o succesiune constantă a fosilelor, verificată prin datări radiometrice ale straturilor vulcanice. Împreună, acestea sunt folosite pentru a construi o scară a timpului geologic care se întinde pe sute de milioane de ani.";
+"ICR · The five rules of Flood paleontology" = "ICR · Cele cinci reguli ale paleontologiei potopului";
+"Smithsonian · Stratigraphy, fossil succession, and dating" = "Smithsonian · Stratigrafie, succesiunea fosilelor și datare";
+"MUSEUM SCIENCE RESOURCE" = "RESURSĂ ȘTIINȚIFICĂ MUZEALĂ";
+"International Commission on Stratigraphy · Geologic time scale" = "International Commission on Stratigraphy · Scara timpului geologic";
+"INTERNATIONAL SCIENTIFIC STANDARD" = "STANDARD ȘTIINȚIFIC INTERNAȚIONAL";
+"A fossil caught giving birth" = "O fosilă surprinsă în timpul nașterii";
+"EXCEPTIONAL FOSSIL · CHINA" = "FOSILĂ EXCEPȚIONALĂ · CHINA";
+"A Chaohusaurus fossil preserves a mother, two embryos, and a neonate in a birth-position arrangement. Flood advocates include such snapshots among examples of rapid burial during catastrophe." = "O fosilă de Chaohusaurus păstrează o mamă, doi embrioni și un pui nou-născut într-o configurație asociată nașterii. Susținătorii potopului includ astfel de instantanee printre exemplele de îngropare rapidă în timpul unei catastrofe.";
+"The authors report three associated young: one inside the mother, one partly emerging, and one outside. They conclude that the mother likely died in labor; they also note that the rock is marine and infer that birth most likely occurred underwater." = "Autorii descriu trei pui asociați: unul în interiorul mamei, unul ieșind parțial și unul în exterior. Ei concluzionează că mama a murit probabil în timpul nașterii; observă și că roca este de origine marină și deduc că nașterea a avut loc cel mai probabil sub apă.";
+"The specimen comes from China and dates to the Early Triassic, around 248 million years ago. The paper documents the fossil and the authors’ interpretation. Flood advocates read the preserved birth scene as an example of sudden burial during catastrophic events." = "Exemplarul provine din China și datează din Triasicul timpuriu, acum aproximativ 248 de milioane de ani. Articolul documentează fosila și interpretarea autorilor. Susținătorii potopului interpretează scena nașterii păstrată în fosilă drept exemplu de îngropare bruscă în timpul unor evenimente catastrofale.";
+"Motani and colleagues interpret the fossil as a mother that died while giving birth in an Early Triassic sea, about 248 million years ago. The paper documents one burial event and does not discuss Noah’s Flood." = "Motani și colegii interpretează fosila ca o mamă care a murit în timpul nașterii, într-o mare din Triasicul timpuriu, acum aproximativ 248 de milioane de ani. Articolul documentează un singur eveniment de îngropare și nu discută Potopul lui Noe.";
+"Motani et al. · Chaohusaurus embryos and birth position" = "Motani și colab. · Embrionii de Chaohusaurus și poziția de naștere";
+"PEER-REVIEWED RESEARCH · PLOS ONE · 2014" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · PLOS ONE · 2014";
+"PLOS ONE · Full article and figures" = "PLOS ONE · Articolul complet și figurile";
+"OPEN-ACCESS ORIGINAL PAPER" = "ARTICOL ORIGINAL CU ACCES DESCHIS";
+"The mammoth with grass in its mouth" = "Mamutul cu iarbă în gură";
+"BEREZOVKA · SIBERIA · PRESERVED LAST MEAL" = "BEREZOVKA · SIBERIA · ULTIMA MASĂ PĂSTRATĂ";
+"Insight on the Scriptures reports the argument that the frozen mammoth and its vegetation are ‘convincing evidence of a sudden, catastrophic global flood.’ The Berezovka specimen’s preserved last meal is documented separately by the Smithsonian and an expedition account." = "Insight on the Scriptures menționează argumentul că mamutul înghețat și vegetația găsită la el sunt „dovezi convingătoare ale unui potop global brusc și catastrofal”. Ultima masă păstrată a exemplarului Berezovka este documentată separat de Smithsonian și de o relatare de expediție.";
+"The Smithsonian documents grasses and other plants in the mammoth’s stomach. Pfizenmayer’s expedition account also describes vegetation preserved in the mouth. The specimen was recovered from Siberian permafrost, which preserved soft tissue and plant material." = "Smithsonianul documentează ierburi și alte plante în stomacul mamutului. Relatarea expediției lui Pfizenmayer descrie și vegetație păstrată în gură. Exemplarul a fost recuperat din permafrostul siberian, care a conservat țesuturi moi și material vegetal.";
+"The Biblical encyclopedia reports this as a Flood argument. The Smithsonian and expedition sources describe the specimen and its preserved vegetation; compare those records with the interpretation presented in *Insight on the Scriptures*." = "Enciclopedia biblică prezintă acest lucru ca argument în favoarea Potopului. Sursele Smithsonian și cele ale expediției descriu exemplarul și vegetația păstrată; compară aceste înregistrări cu interpretarea prezentată în *Insight on the Scriptures*.";
+"The Smithsonian record documents the preserved stomach contents of one Siberian mammoth. How quickly the animal died and was buried is interpreted from the carcass and its setting; the specimen record does not describe a worldwide flood." = "Fișa Smithsonian documentează conținutul gastric păstrat al unui singur mamut din Siberia. Cât de repede a murit și a fost îngropat animalul se deduce din carcasă și din contextul ei; fișa exemplarului nu descrie o inundație mondială.";
+"Insight on the Scriptures · ‘Flood of Noah’s Day’" = "Insight on the Scriptures · „Flood of Noah’s Day”";
+"BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE" = "ENCICLOPEDIE BIBLICĂ · SURSĂ A ARGUMENTULUI";
+"Smithsonian · Berezovka woolly mammoth and stomach contents" = "Smithsonian · Mamutul lânos Berezovka și conținutul stomacului său";
+"MUSEUM RESEARCH NOTE" = "NOTĂ DE CERCETARE MUZEALĂ";
+"Pfizenmayer · Siberian mammoths and the Berezovka expedition" = "Pfizenmayer · Mamuții siberieni și expediția Berezovka";
+"HISTORICAL EXPEDITION ACCOUNT · 1939" = "RELATARE ISTORICĂ A EXPEDIȚIEI · 1939";
+"ICR · Mammoths and rapid burial in the Flood model" = "ICR · Mamuții și îngroparea rapidă în modelul Potopului";
+"The mammoth die-off argument" = "Argumentul dispariției mamuților";
+"MAMMOTH REMAINS · SUDDEN-CATASTROPHE ARGUMENT" = "RĂMĂȘIȚE DE MAMUȚI · ARGUMENTUL CATASTROFEI BRUȘTE";
+"Insight on the Scriptures reports mammoths and other animals found frozen with undigested stomach contents and presents a sudden catastrophe as an interpretation of these remains." = "Insight on the Scriptures relatează descoperirea unor mamuți și a altor animale înghețate, cu conținut gastric nedigerat, și prezintă o catastrofă bruscă drept interpretare a acestor rămășițe.";
+"Permafrost preserves mammoth remains and plant material. Yukon sedimentary ancient-DNA records document ecological change across thousands of years, while fossil specimens provide local snapshots of animals and their environments." = "Permafrostul conservă rămășițe de mamuți și material vegetal. Înregistrările ADN-ului antic din sedimentele Yukonului documentează schimbări ecologice de-a lungul a mii de ani, iar fosilele oferă instantanee locale ale animalelor și ale mediului lor de viață.";
+"The Biblical encyclopedia brings frozen carcasses, preserved stomach contents, and sudden burial together as a catastrophic-flood argument. Compare the mammoth specimen records with the Yukon environmental sequence and decide how the clues relate." = "Enciclopedia biblică reunește carcasele înghețate, conținutul stomacal păstrat și îngroparea bruscă într-un argument pentru un potop catastrofal. Compară înregistrările despre exemplarele de mamut cu succesiunea de mediu din Yukon și hotărăște cum se leagă indiciile.";
+"The Yukon ancient-DNA study describes the mammoth steppe changing, and mammoths declining, over thousands of years at the end of the Ice Age rather than in a single sudden event." = "Studiul ADN-ului străvechi din Yukon descrie schimbarea stepei mamuților și declinul mamuților pe parcursul a mii de ani, la sfârșitul erei glaciare, nu într-un singur eveniment brusc.";
+"Insight on the Scriptures · ‘Deluge’" = "Insight on the Scriptures · „Deluge”";
+"Smithsonian · Berezovka mammoth stomach contents" = "Smithsonian · Conținutul stomacului mamutului Berezovka";
+"MUSEUM SPECIMEN RECORD" = "FIȘĂ MUZEALĂ A EXEMPLARULUI";
+"Murchie et al. · Mammoth-steppe change in Yukon" = "Murchie și colab. · Schimbările stepei mamuților din Yukon";
+"PEER-REVIEWED RESEARCH · NATURE COMMUNICATIONS · 2021" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · NATURE COMMUNICATIONS · 2021";
+"Flood stories across cultures" = "Relatări despre potop în diferite culturi";
+"HUNDREDS OF ACCOUNTS · SHARED-MEMORY ARGUMENT" = "SUTE DE RELATĂRI · ARGUMENTUL MEMORIEI COMUNE";
+"Insight on the Scriptures, a Biblical encyclopedia, notes that ‘hundreds of such legends are known’ and presents their shared features as an argument for a common ancestral memory." = "Insight on the Scriptures, o enciclopedie biblică, menționează că „se cunosc sute de astfel de legende” și prezintă trăsăturile comune ca argument pentru o amintire ancestrală comună.";
+"Ancient Near Eastern flood narratives survive in cuneiform and biblical texts. The Biblical encyclopedia reports hundreds of flood traditions and draws attention to shared features such as a warning, survival, and a changed world." = "Relatările antice despre potop din Orientul Apropiat s-au păstrat în texte cuneiforme și biblice. Enciclopedia biblică menționează sute de tradiții despre potop și atrage atenția asupra trăsăturilor comune, precum un avertisment, supraviețuirea și o lume schimbată.";
+"The encyclopedia presents widespread flood traditions and their shared elements as clues to a common ancestral memory. Compare those motifs with the ancient texts and geological cases assembled elsewhere in the archive." = "Enciclopedia prezintă tradițiile larg răspândite despre potop și elementele lor comune ca indicii ale unei amintiri ancestrale comune. Compară aceste motive cu textele antice și cazurile geologice adunate în restul arhivei.";
+"The comparative studies document many flood traditions and examine their similarities and differences. They weigh several explanations, including local floods, the transmission of texts between cultures, and shared literary motifs, and do not treat the traditions as proof of one worldwide event." = "Studiile comparative documentează numeroase tradiții despre potop și le examinează asemănările și diferențele. Ele cântăresc mai multe explicații, între care inundații locale, transmiterea textelor între culturi și motive literare comune, și nu tratează tradițiile ca dovadă a unui singur eveniment mondial.";
+"Chen · The Primeval Flood Catastrophe in Mesopotamian Traditions" = "Chen · The Primeval Flood Catastrophe in Mesopotamian Traditions";
+"OXFORD ACADEMIC · ANCIENT NEAR EASTERN STUDIES" = "OXFORD ACADEMIC · STUDII DESPRE ORIENTUL APROPIAT ANTIC";
+"Magnone · Floodlighting the Deluge: Traditions in Comparison" = "Magnone · Floodlighting the Deluge: Traditions in Comparison";
+"PEER-REVIEWED COMPARATIVE STUDY" = "STUDIU COMPARATIV EVALUAT DE SPECIALIȘTI";
+"Oxford Academic · Genesis and ancient Near Eastern flood accounts" = "Oxford Academic · Geneza și relatările despre potop din Orientul Apropiat antic";
+"SCHOLARLY COMPARATIVE STUDY" = "STUDIU COMPARATIV ACADEMIC";
+"Could today’s water cover a smoothed Earth?" = "Ar putea apa de azi să acopere un Pământ netezit?";
+"REPORTED ARGUMENT · MATHEMATICAL THOUGHT EXPERIMENT" = "ARGUMENT RAPORTAT · EXPERIMENT MATEMATIC DE GÂNDIRE";
+"Insight on the Scriptures frames the calculation with the phrase ‘If the earth’s surface was smoothed out’; it says the resulting water layer would be about 2,400 metres deep." = "Insight on the Scriptures formulează calculul astfel: „Dacă suprafața pământului ar fi nivelată”; afirmă că stratul de apă rezultat ar avea aproximativ 2.400 de metri adâncime.";
+"USGS estimates about 1.338 billion cubic kilometres of ocean water. Dividing that approximate volume by Earth’s roughly 510 million square kilometres of surface gives about 2.6 kilometres as a simplified average layer." = "USGS estimează volumul apei oceanice la aproximativ 1,338 miliarde de kilometri cubi. Împărțirea acestui volum aproximativ la suprafața Pământului, de circa 510 milioane de kilometri pătrați, dă un strat mediu simplificat de aproximativ 2,6 kilometri.";
+"This thought experiment compares the total volume of ocean water with Earth’s surface area after smoothing its topography. The Biblical encyclopedia uses the resulting depth as one argument in its discussion of the Flood’s water supply." = "Acest experiment de gândire compară volumul total al apei oceanice cu suprafața Pământului, după netezirea reliefului. Enciclopedia biblică folosește adâncimea rezultată ca unul dintre argumentele din discuția sa despre rezerva de apă a Potopului.";
+"The calculation is a scale comparison. NOAA’s hypsographic data show that Earth’s surface is not smooth: ocean basins lie kilometres below sea level and continents rise above it, so the thought experiment removes today’s topography by assumption." = "Calculul este o comparație de ordin de mărime. Datele hipsografice NOAA arată că suprafața Pământului nu este netedă: bazinele oceanice se află la kilometri sub nivelul mării, iar continentele se ridică deasupra lui, așa că experimentul de gândire elimină prin ipoteză relieful actual.";
+"USGS · How much natural water is there?" = "USGS · How much natural water is there?";
+"GOVERNMENT DATA SUMMARY" = "SINTEZĂ DE DATE GUVERNAMENTALE";
+"NOAA NCEI · Earth surface hypsographic curve" = "NOAA NCEI · Curba hipsografică a suprafeței Pământului";
+"GOVERNMENT BATHYMETRY AND TOPOGRAPHY DATA" = "DATE GUVERNAMENTALE BATIMETRICE ȘI TOPOGRAFICE";
+"The Ark’s dimensions and capacity" = "Dimensiunile și capacitatea arcei";
+"SCRIPTURAL DIMENSIONS · CAPACITY ARGUMENT" = "DIMENSIUNI SCRIPTURALE · ARGUMENTUL CAPACITĂȚII";
+"Insight on the Scriptures describes the Ark as a ‘rectangular chestlike vessel’ and argues from its dimensions and estimated usable volume that it could carry representatives of animal ‘kinds.’" = "Insight on the Scriptures descrie arca drept „o ladă dreptunghiulară” și argumentează, pe baza dimensiunilor și volumului util estimat, că aceasta putea transporta reprezentanți ai „felurilor” de animale.";
+"Genesis 6:15 gives 300 × 50 × 30 cubits; the text also describes three decks. Converting those dimensions into cubic metres requires choosing a cubit length and making assumptions about hull shape, usable space, animal categories, food, water, ventilation, and waste." = "Geneza 6:15 indică 300 × 50 × 30 de coți; textul descrie și trei punți. Conversia dimensiunilor în metri cubi cere alegerea lungimii cotului și formularea unor ipoteze despre forma corpului navei, spațiul util, categoriile de animale, hrană, apă, ventilație și deșeuri.";
+"The Biblical encyclopedia uses the Ark’s stated dimensions, estimated interior volume, and animal ‘kinds’ to discuss capacity. Follow the calculation and its assumptions alongside the textual description in Genesis." = "Enciclopedia biblică folosește dimensiunile arcei indicate în text, volumul interior estimat și „felurile” de animale pentru a discuta capacitatea. Urmărește calculul și ipotezele lui alături de descrierea textuală din Geneza.";
+"The dimensions come from the biblical text; no excavated vessel has been measured. Capacity figures depend on the chosen cubit, hull shape, and animal categories, and no independent study cited here tests the encyclopedia’s estimates." = "Dimensiunile provin din textul biblic; nu a fost măsurată nicio ambarcațiune descoperită prin săpături. Cifrele privind capacitatea depind de cotul ales, de forma corpului și de categoriile de animale, iar niciun studiu independent citat aici nu testează estimările enciclopediei.";
+"Insight on the Scriptures · ‘Ark’" = "Insight on the Scriptures · „Ark”";
+"Genesis 6 · Ark dimensions in the biblical text" = "Geneza 6 · Dimensiunile arcei în textul biblic";
+"PRIMARY SCRIPTURAL TEXT" = "TEXT SCRIPTURAL PRIMAR";
+"The proposed source of the Flood’s water" = "Sursa propusă a apei potopului";
+"REPORTED ARGUMENT · SCRIPTURAL COSMOLOGY" = "ARGUMENT RAPORTAT · COSMOLOGIE SCRIPTURALĂ";
+"Insight on the Scriptures describes proposed explanations for the waters above and below as ‘only speculative.’ The encyclopedia presents the Genesis account’s water source while acknowledging that the mechanism is not explained in the text." = "Insight on the Scriptures spune că explicațiile propuse pentru apele de deasupra și de dedesubt sunt „doar speculative”. Enciclopedia prezintă sursa apei din relatarea Genezei și recunoaște că mecanismul nu este explicat în text.";
+"The cited passages are part of the Genesis creation and Flood account. The encyclopedia reports the biblical description; it does not provide an independently measured physical reservoir for the water." = "Pasajele citate fac parte din relatarea Genezei despre creație și Potop. Enciclopedia prezintă descrierea biblică; nu indică un rezervor fizic de apă măsurat independent.";
+"‘Only speculative’ is the Biblical encyclopedia’s own characterization of proposed mechanisms, not a claim that the Flood account itself is speculative. This entry records the scriptural argument and the publication’s stated limit without presenting an unmeasured water source as a scientific finding." = "„Doar speculative” este caracterizarea pe care enciclopedia biblică însăși o dă mecanismelor propuse, nu o afirmație că relatarea despre Potop ar fi ea însăși speculativă. Această fișă consemnează argumentul scriptural și limita declarată de publicație, fără a prezenta o sursă de apă nemăsurată drept constatare științifică.";
+"The encyclopedia itself calls the proposed mechanisms ‘only speculative.’ No cited scientific source identifies a physical reservoir for this water, so the entry remains a scriptural argument rather than a measured observation." = "Enciclopedia însăși numește mecanismele propuse „doar speculative”. Nicio sursă științifică citată nu identifică un rezervor fizic pentru această apă, așa că intrarea rămâne un argument scriptural, nu o observație măsurată.";
+"Genesis 1 · The expanse and waters" = "Geneza 1 · Întinderea și apele";
+"Genesis 7 · The Flood begins" = "Geneza 7 · Începe Potopul";
+"The Bible’s later witnesses to the Flood" = "Mărturiile biblice ulterioare despre potop";
+"REPORTED ARGUMENT · BIBLICAL TESTIMONY" = "ARGUMENT RAPORTAT · MĂRTURIE BIBLICĂ";
+"Insight on the Scriptures argues that later Bible writers, including Jesus, treated Noah and the Flood as historical and used the account in teaching. This is the encyclopedia’s scriptural argument for the Flood’s historicity." = "Insight on the Scriptures argumentează că scriitorii biblici de mai târziu, inclusiv Isus, au tratat relatarea despre Noe și potop ca istorică și au folosit-o în învățăturile lor. Acesta este argumentul scriptural al enciclopediei pentru caracterul istoric al potopului.";
+"The Deluge article cites Psalm 29, Isaiah 54, Ezekiel 14, Luke 3, Matthew 24, Luke 17, Hebrews 11, 1 Peter 3, and 2 Peter 2–3. The Flood of Noah’s Day article also refers to John 8:58 in support of its claim that Jesus was an eyewitness in heaven. These are textual and theological arguments in the encyclopedia, not geological measurements." = "Articolul „Deluge” citează Psalmul 29, Isaia 54, Ezechiel 14, Luca 3, Matei 24, Luca 17, Evrei 11, 1 Petru 3 și 2 Petru 2–3. Articolul „Flood of Noah’s Day” face trimitere și la Ioan 8:58 pentru a susține afirmația că Isus a fost martor ocular în cer. Acestea sunt argumente textuale și teologice din enciclopedie, nu măsurători geologice.";
+"The Biblical encyclopedia presents the later Bible references as confirmation of the Genesis account. This is a theological and textual argument, distinct from physical evidence such as dated deposits or fossils." = "Enciclopedia biblică prezintă referințele biblice ulterioare drept confirmare a relatării din Geneza. Acesta este un argument teologic și textual, distinct de dovezile fizice precum depozitele datate sau fosilele.";
+"These passages show how later Bible writers used the account. They are textual and theological evidence; they do not provide dated deposits or other physical measurements." = "Aceste pasaje arată cum au folosit relatarea scriitorii de mai târziu ai Bibliei. Sunt dovezi textuale și teologice; nu oferă depozite datate sau alte măsurători fizice.";
+"BIBLICAL ENCYCLOPEDIA · SCRIPTURAL ARGUMENT" = "ENCICLOPEDIE BIBLICĂ · ARGUMENT SCRIPTURAL";
+"Insight on the Scriptures · ‘Noah’" = "Insight on the Scriptures · „Noah”";
+"Isaiah 54 · Noah reference" = "Isaia 54 · Referire la Noe";
+"Psalm 29 · Jehovah over the Deluge" = "Psalmul 29 · Iehova deasupra Potopului";
+"John 8 · Jesus’ statement about his prehuman existence" = "Ioan 8 · Afirmația lui Isus despre existența sa preumană";
+"Ezekiel 14 · Noah, Daniel, and Job" = "Ezechiel 14 · Noe, Daniel și Iov";
+"Matthew 24 · Jesus refers to Noah" = "Matei 24 · Isus îl menționează pe Noe";
+"Luke 17 · Jesus refers to Noah" = "Luca 17 · Isus îl menționează pe Noe";
+"Luke 3 · Noah in Jesus’ genealogy" = "Luca 3 · Noe în genealogia lui Isus";
+"Hebrews 11 · Noah’s faith" = "Evrei 11 · Credința lui Noe";
+"1 Peter 3 · Noah and the Flood" = "1 Petru 3 · Noe și potopul";
+"2 Peter 2 · Noah as a preacher" = "2 Petru 2 · Noe ca predicator";
+"2 Peter 3 · The Flood account" = "2 Petru 3 · Relatarea potopului";
+"Could water pressure fossilize organisms quickly?" = "Ar putea presiunea apei să fosilizeze rapid organismele?";
+"REPORTED ARGUMENT · HISTORICAL ESTIMATE" = "ARGUMENT RAPORTAT · ESTIMARE ISTORICĂ";
+"Insight on the Scriptures reports a pressure estimate of two tons per square inch and cites Donald W. Patten’s 1966 book when discussing rapid fossilization under catastrophic conditions." = "Insight on the Scriptures menționează o estimare a presiunii de două tone pe inch pătrat și citează cartea lui Donald W. Patten din 1966 în discuția despre fosilizarea rapidă în condiții catastrofale.";
+"The Biblical encyclopedia cites Donald W. Patten’s 1966 book for the pressure estimate and its proposed role in rapid fossilization." = "Enciclopedia biblică citează cartea lui Donald W. Patten din 1966 pentru estimarea presiunii și pentru rolul propus al acesteia în fosilizarea rapidă.";
+"Read Patten’s estimate in its original source and compare it with the fossil specimens and rapid-burial clues discussed throughout the archive." = "Citește estimarea lui Patten în sursa originală și compar-o cu exemplarele fosile și indiciile de îngropare rapidă discutate în întreaga arhivă.";
+"No modern experimental study is cited for the pressure estimate. Researchers study fossilization as a combination of burial, chemistry, and time; the figure remains a historical argument, not a measured fossil-forming mechanism." = "Pentru estimarea presiunii nu este citat niciun studiu experimental modern. Cercetătorii studiază fosilizarea ca o combinație de îngropare, procese chimice și timp; cifra rămâne un argument istoric, nu un mecanism de fosilizare măsurat.";
+"Patten · The Biblical Flood and the Ice Epoch (1966), p. 62" = "Patten · The Biblical Flood and the Ice Epoch (1966), p. 62";
+"HISTORICAL FLOOD-GEOLOGY BOOK · CLAIM SOURCE" = "CARTE ISTORICĂ DE GEOLOGIE A POTOPULUI · SURSA AFIRMAȚIEI";
+"The Scablands Scar" = "Cicatricea Scablands";
+"EASTERN WASHINGTON · NORTH AMERICA" = "ESTUL STATULUI WASHINGTON · AMERICA DE NORD";
+"GEOLOGY · CONFIRMED ICE-AGE MEGAFLOODS" = "GEOLOGIE · MEGA-INUNDAȚII GLACIARE CONFIRMATE";
+"Basalt coulees, giant ripple marks, and gravel bars record immense outburst floods." = "Canioanele de bazalt, ondulațiile uriașe și bancurile de pietriș înregistrează viituri de proporții imense.";
+"USGS research links the Channeled Scablands to repeated outburst floods from glacial Lake Missoula during the last Ice Age. These extraordinary floods reshaped a vast region. Could memories of a catastrophe on this scale have traveled far beyond the landscape where it happened?" = "Cercetările USGS leagă Scablands de viiturile repetate provenite din lacul glaciar Missoula, în ultima eră glaciară. Aceste inundații extraordinare au remodelat o regiune vastă. S-ar fi putut transmite amintirea unei catastrofe de o asemenea amploare mult dincolo de locul în care s-a petrecut?";
+"Nun cho ga" = "Nun cho ga";
+"YUKON · NORTH AMERICA" = "YUKON · AMERICA DE NORD";
+"PALEONTOLOGY · PERMAFROST PRESERVATION" = "PALEONTOLOGIE · CONSERVARE ÎN PERMAFROST";
+"A remarkably preserved baby mammoth emerged from Yukon permafrost in 2022." = "În 2022, din permafrostul Yukonului a ieșit la iveală un pui de mamut remarcabil conservat.";
+"Nun cho ga is a near-complete mummified woolly mammoth calf found in Yukon in 2022, in Tr’ondëk Hwëch’in Traditional Territory. A quick examination suggested the calf was female; Yukon geologists estimated it died more than 30,000 years ago and was frozen in permafrost. Compare it with the Berezovka mammoth in the Siberian file: different animals, different places, both preserved in frozen ground. What can each specimen tell us about preservation—and what would require further evidence?" = "Nun cho ga este un pui de mamut lânos mumificat, aproape complet, găsit în Yukon în 2022, pe teritoriul tradițional Tr’ondëk Hwëch’in. O examinare rapidă a sugerat că puiul era femelă; geologii din Yukon estimează că a murit cu peste 30.000 de ani în urmă și a înghețat în permafrost. Compară-l cu mamutul Berezovka din dosarul siberian: animale diferite, locuri diferite, ambele păstrate în pământ înghețat. Ce ne poate spune fiecare exemplar despre conservare și ce ar necesita dovezi suplimentare?";
+"The Ashfall Nursery" = "Creșa fosilă de la Ashfall";
+"NEBRASKA · NORTH AMERICA" = "NEBRASKA · AMERICA DE NORD";
+"FOSSIL SITE · VOLCANIC ASH" = "SIT FOSILIFER · CENUȘĂ VULCANICĂ";
+"A Nebraska fossil bed preserves articulated animals in a layer of volcanic ash." = "Un strat de cenușă vulcanică din Nebraska păstrează animale cu scheletele articulate.";
+"At Ashfall Fossil Beds, Nebraska, volcanic ash from an eruption in what is now southwestern Idaho fell over a watering hole about 11.93 million years ago. The ash bed preserves many articulated skeletons, including rhinos with unborn young. Compare this ashfall burial with the individual Chaohusaurus birth-position fossil from China: two very different snapshots, each with its own geological setting." = "La Ashfall Fossil Beds din Nebraska, cenușa vulcanică provenită dintr-o erupție din sud-vestul actualului Idaho a căzut peste o adăpătoare în urmă cu aproximativ 11,93 milioane de ani. Stratul de cenușă păstrează multe schelete articulate, inclusiv rinoceri cu pui nenăscuți. Compară această îngropare în cenușă cu fosila individuală de Chaohusaurus surprinsă în poziție de naștere, din China: două instantanee foarte diferite, fiecare cu propriul context geologic.";
+"The Silt Line" = "Linia de mâl";
+"MESOPOTAMIA" = "MESOPOTAMIA";
+"ARCHAEOLOGY · MESOPOTAMIA" = "ARHEOLOGIE · MESOPOTAMIA";
+"At Lagash, a dated flood deposit more than a metre thick covered existing architecture." = "La Lagash, un depozit de inundație datat, cu o grosime de peste un metru, a acoperit construcții existente.";
+"A 2025 peer-reviewed study reports a flood-deposited silt layer more than a metre thick over architecture at Lagash (modern Tell al-Hiba), dated to the late Early Dynastic period, around 2400–2350 BCE. The authors propose that canal embankments may have been breached during conflict. Other Mesopotamian settlements preserve separate flood deposits from different periods. Compare the sites, dates, sediment, and historical context before linking any of them to a wider story." = "Un studiu din 2025, evaluat de specialiști, raportează un strat de mâl depus de o inundație, gros de peste un metru, peste construcții de la Lagash (Tell al-Hiba de astăzi), datat în perioada Dinastică Timpurie târzie, aproximativ 2400–2350 î.e.n. Autorii propun că digurile canalelor ar fi putut fi rupte în timpul unui conflict. Alte așezări mesopotamiene păstrează depozite distincte de inundație, din perioade diferite. Compară siturile, datele, sedimentele și contextul istoric înainte de a le lega de o relatare mai amplă.";
+"The Broken Tablet" = "Tăblița spartă";
+"ANCIENT NEAR EAST" = "ORIENTUL APROPIAT ANTIC";
+"ANCIENT TEXT · CUNEIFORM" = "TEXT ANTIC · CUNEIFORMĂ";
+"A flood survivor tells a story of a warning, a vessel, and a ruined world." = "Un supraviețuitor al potopului povestește despre un avertisment, o corabie și o lume distrusă.";
+"Mesopotamian flood narratives, including the Epic of Gilgamesh and Atrahasis, share themes with the Genesis account. The ancient versions share striking themes: a warning, a vessel, survival, and a changed world. Read the tablet record, then ask what catastrophe or memory could lie behind these accounts." = "Relatările mesopotamiene despre potop, inclusiv Epopeea lui Ghilgameș și povestea lui Atrahasis, au teme comune cu relatarea din Geneza: un avertisment, o corabie, supraviețuirea și o lume schimbată. Citește ce consemnează tăblița și întreabă-te ce catastrofă sau amintire s-ar putea afla în spatele acestor relatări.";
+"The Biblical Record" = "Relatarea biblică";
+"GENESIS & LATER BIBLE REFERENCES" = "GENEZA ȘI REFERINȚELE BIBLICE ULTERIOARE";
+"SCRIPTURE · TEXTUAL TESTIMONY" = "SCRIPTURA · MĂRTURIE TEXTUALĂ";
+"Trace the Flood account from Genesis to later references in the Bible." = "Urmărește relatarea despre Potop de la Geneza până la referințele ulterioare din Biblie.";
+"Genesis 6–9 recounts the Flood in Noah’s day, the Ark, the waters receding, and the covenant. Later Bible passages refer to Noah or the Flood for different scriptural purposes. Read each passage in context, then compare how the Biblical encyclopedia assembles them as testimony." = "Geneza 6–9 relatează Potopul din zilele lui Noe, arca, retragerea apelor și legământul. Pasaje biblice ulterioare se referă la Noe sau la Potop cu diferite scopuri scripturale. Citește fiecare pasaj în context, apoi compară felul în care enciclopedia biblică le reunește ca mărturie.";
+"The Shifting Shore" = "Țărmul schimbător";
+"BLACK SEA" = "MAREA NEAGRĂ";
+"GEOLOGY · ACTIVE DEBATE" = "GEOLOGIE · IPOTEZĂ ÎN DEZBATERE";
+"A submerged ancient shoreline raises a difficult question: how quickly did the water rise?" = "Un țărm străvechi scufundat ridică o întrebare dificilă: cât de repede a crescut nivelul apei?";
+"Ryan and Pitman proposed that Mediterranean water broke through the Bosporus and rapidly entered a lower Black Sea basin. Submerged shorelines and changing sediments preserve a real environmental transition; how fast it happened, and what memories it left, remain questions for the investigator." = "Ryan și Pitman au propus că apele Mediteranei au trecut prin Bosfor și au pătruns rapid în bazinul mai coborât al Mării Negre. Țărmurile scufundate și sedimentele schimbătoare păstrează urmele unei tranziții reale de mediu; cât de repede s-a produs și ce amintiri a lăsat sunt întrebări pentru anchetator.";
+"In the glacial-lake deposits, what separates successive Missoula flood beds?" = "În depozitele lacurilor glaciare, ce separă straturile succesive lăsate de inundațiile Missoula?";
+"Giant current ripples and transported boulders in a single flood deposit." = "Ondulații uriașe formate de curenți și bolovani transportați, într-un singur depozit de inundație.";
+"These features show great flow power. A single deposit by itself does not establish how many floods passed through." = "Aceste trăsături arată o mare forță a curgerii. Un singur depozit nu stabilește, de unul singur, câte inundații au trecut pe acolo.";
+"Sequences of varves: fine lake sediments that accumulated between gravel or sand flood beds." = "Succesiuni de varve: sedimente lacustre fine, acumulate între straturile de pietriș sau nisip depuse de inundații.";
+"Correct. The varves are lake deposits between floods; they record intervals between outbursts, not evidence that the landscape was exposed." = "Corect. Varvele sunt depozite lacustre formate între inundații; ele consemnează intervalele dintre revărsări, nu sunt dovezi că peisajul a fost expus la uscat.";
+"A deep channel cut through basalt, with no sequence of flood deposits preserved." = "Un canal adânc tăiat în bazalt, fără o succesiune păstrată de depozite de inundație.";
+"A channel records erosion and a route for water; the varve sequences are the evidence for intervals between repeated lake outbursts." = "Un canal consemnează eroziunea și traseul apei; succesiunile de varve sunt dovada intervalelor dintre revărsările repetate ale lacului.";
+"Waitt describes gravel or sand beds emplaced by floods, separated by 20–55 varves in glacial-lake deposits. Varves are sediment layers, not dry-land exposure surfaces." = "Waitt descrie straturi de pietriș sau nisip depuse de inundații, separate de 20–55 de varve în depozitele lacurilor glaciare. Varvele sunt straturi de sedimente, nu suprafețe expuse la uscat.";
+"Read the deposit in its setting: the intervals accumulated in glacial lakes between outbursts." = "Citește depozitul în contextul lui: intervalele s-au acumulat în lacuri glaciare, între revărsări.";
+"Which observation does Nun cho ga preserve most directly?" = "Ce observație păstrează cel mai direct Nun cho ga?";
+"Grasses recorded in the mouth and stomach of a mammoth from Siberia." = "Ierburi consemnate în gura și stomacul unui mamut din Siberia.";
+"That clue belongs to the separate Berezovka mammoth in the Smithsonian record, not to Nun cho ga." = "Acest indiciu aparține mamutului Berezovka, un exemplar separat din înregistrarea Smithsonian, nu lui Nun cho ga.";
+"A marine reptile fossil preserving a mother and young in a birth-position arrangement." = "O fosilă de reptilă marină care păstrează o mamă și pui într-o configurație asociată nașterii.";
+"That fossil is Chaohusaurus from China. It is a different specimen, place, and geological period." = "Fosila aceea este Chaohusaurus din China. Este un exemplar, un loc și o perioadă geologică diferite.";
+"A near-complete mammoth calf with preserved tissue, recovered from Yukon permafrost." = "Un pui de mamut aproape complet, cu țesuturi conservate, recuperat din permafrostul Yukonului.";
+"That is the direct specimen and find-context record for Nun cho ga." = "Aceasta este înregistrarea directă a exemplarului Nun cho ga și a contextului descoperirii lui.";
+"The Yukon discovery documents an unusually complete frozen mammoth calf. Its tissues and permafrost setting are direct observations; the wider burial story is reconstructed from additional clues." = "Descoperirea din Yukon documentează un pui de mamut înghețat, neobișnuit de complet. Țesuturile și contextul de permafrost sunt observații directe; povestea mai amplă a îngropării este reconstituită din indicii suplimentare.";
+"A specimen is a time capsule. Its contents and surrounding ground are separate parts of the record." = "Un exemplar este o capsulă a timpului. Conținutul său și solul din jur sunt părți separate ale înregistrării.";
+"What would help reconstruct how animals died at Ashfall?" = "Ce te-ar ajuta să reconstitui cum au murit animalele la Ashfall?";
+"Use the number of species as a timeline for when each animal died." = "Folosește numărul de specii drept cronologie a momentului în care a murit fiecare animal.";
+"Species diversity describes the community, but the count alone does not establish the order or timing of deaths." = "Diversitatea speciilor descrie comunitatea, dar numărul lor, singur, nu stabilește ordinea sau momentul morții animalelor.";
+"Compare which animals occur in lower and upper ash layers with evidence of lung damage." = "Compară ce animale apar în straturile de cenușă inferioare și superioare cu dovezile de leziuni pulmonare.";
+"The layer sequence and bone pathology together help reconstruct the order and duration of deaths." = "Succesiunea straturilor și patologia osoasă ajută împreună la reconstituirea ordinii în care au murit animalele și a duratei acestui proces.";
+"Use the watering-hole setting alone to decide what killed the animals." = "Folosește doar contextul adăpătorii ca să decizi ce a ucis animalele.";
+"The setting explains why animals gathered there. The ash layers and signs of lung damage provide evidence about cause and sequence." = "Contextul explică de ce s-au adunat animalele acolo. Straturile de cenușă și semnele de leziuni pulmonare oferă dovezi despre cauză și succesiune.";
+"Researchers use the vertical sequence of skeletons, preservation, and bone evidence to reconstruct a series of deaths during ashfall at the watering hole." = "Cercetătorii folosesc succesiunea verticală a scheletelor, starea de conservare și dovezile osoase pentru a reconstitui o serie de decese petrecute la adăpătoare în timpul căderii de cenușă.";
+"The bed preserves a sequence. Read the layers as well as the dramatic final scene." = "Stratul păstrează o succesiune. Citește atât straturile, cât și scena finală dramatică.";
+"How would an investigator compare flood deposits at two settlements?" = "Cum ar compara un investigator depozitele de inundație din două așezări?";
+"Compare colour, thickness, and grain size before checking whether the dates agree." = "Compară culoarea, grosimea și granulația înainte să verifici dacă datările concordă.";
+"Physical similarity is useful for comparison, but matching appearance does not establish that two layers are the same age." = "Asemănarea fizică este utilă pentru comparație, dar aspectul asemănător nu stabilește că două straturi au aceeași vârstă.";
+"Begin with a nearby flood story and use it to date the archaeological layer." = "Pornește de la o relatare locală despre potop și folosește-o ca să datezi stratul arheologic.";
+"Texts can add historical context; the layer itself needs archaeological and geological dating evidence." = "Textele pot adăuga context istoric; stratul în sine are nevoie de dovezi de datare arheologice și geologice.";
+"Compare their independent dates, sediment signatures, and archaeological layers." = "Compară datările lor independente, semnăturile sedimentelor și straturile arheologice.";
+"Those independent site records let investigators test whether deposits could belong to the same episode." = "Aceste înregistrări independente ale siturilor le permit investigatorilor să verifice dacă depozitele ar putea aparține aceluiași episod.";
+"Lagash’s layer is dated using several archaeological and geological clues. Similar deposits at other sites can be compared against that independent evidence." = "Stratul de la Lagash este datat cu ajutorul mai multor indicii arheologice și geologice. Depozite asemănătoare din alte situri pot fi comparate cu aceste dovezi independente.";
+"Site-by-site dating lets you test whether separate traces belong to a shared episode." = "Datarea fiecărui sit în parte îți permite să verifici dacă urme separate aparțin unui episod comun.";
+"Two ancient flood accounts share a vessel and a survivor. What is the strongest next clue to examine?" = "Două relatări străvechi despre potop au în comun o corabie și un supraviețuitor. Care este cel mai puternic indiciu de examinat în continuare?";
+"Compare wording, event order, historical setting, dates, and possible transmission." = "Compară formularea, ordinea evenimentelor, contextul istoric, datarea și posibila transmitere.";
+"That comparison weighs both the shared elements and differences while keeping the texts in historical context." = "Această comparație cântărește atât elementele comune, cât și diferențele, păstrând textele în contextul lor istoric.";
+"Treat the shared vessel and survivor as proof that both texts describe the same event." = "Consideră corabia și supraviețuitorul comune drept dovadă că ambele texte descriu același eveniment.";
+"Shared motifs invite comparison, but by themselves they do not establish identity of event or a route of transmission." = "Motivele comune invită la comparație, dar, prin ele însele, nu stabilesc că este vorba de același eveniment și nici o cale de transmitere.";
+"Compare each account’s setting and distinctive details, without examining chronology." = "Compară contextul și detaliile distinctive ale fiecărei relatări, fără să examinezi cronologia.";
+"Setting and distinctive details matter; chronology is also needed to assess possible relationships between the texts." = "Contextul și detaliile distinctive contează; este nevoie și de cronologie pentru a evalua posibilele legături dintre texte.";
+"A careful comparison looks at shared and distinctive details, historical setting, chronology, and possible transmission. These clues help weigh whether the accounts are related." = "O comparație atentă ia în calcul detaliile comune și distinctive, contextul istoric, cronologia și posibila transmitere. Aceste indicii ajută la a cântări dacă relatările sunt înrudite.";
+"The strongest connections account for both the parallels and the differences." = "Cele mai solide legături țin cont atât de paralele, cât și de diferențe.";
+"How can you examine the Bible’s later references to Noah?" = "Cum poți examina referințele ulterioare ale Bibliei la Noe?";
+"Treat every later reference as a separate eyewitness account of the event." = "Consideră fiecare referință ulterioară o relatare separată a unui martor ocular al evenimentului.";
+"These are later scriptural references, not separate contemporaneous field reports. Read what each passage actually says." = "Acestea sunt referințe scripturale ulterioare, nu rapoarte de teren separate, contemporane cu evenimentul. Citește ce spune de fapt fiecare pasaj.";
+"Read each passage in context and compare what it says about Noah and the Flood." = "Citește fiecare pasaj în context și compară ce spune despre Noe și Potop.";
+"Reading the passages in context shows how the Bible’s later writers use Noah and the Flood in their own arguments." = "Citirea pasajelor în context arată cum se folosesc scriitorii biblici de mai târziu de Noe și de Potop în propriile argumente.";
+"Count the references and use the total to date the Flood." = "Numără referințele și folosește totalul ca să datezi Potopul.";
+"A count tells you how often the account is recalled; it does not give a date. Compare each reference’s content and context." = "Numărătoarea îți arată cât de des este amintită relatarea; nu oferă o dată. Compară conținutul și contextul fiecărei referințe.";
+"Genesis gives the main narrative; later passages refer to Noah and the Flood for different scriptural purposes. The Biblical encyclopedia presents those passages as testimony supporting the account." = "Geneza conține relatarea principală; pasajele ulterioare fac referire la Noe și la Potop cu diferite scopuri scripturale. Enciclopedia biblică prezintă aceste pasaje drept mărturii care susțin relatarea.";
+"Keep the Biblical text, the encyclopedia’s argument, and geological records identifiable as different kinds of evidence." = "Păstrează distincția dintre textul biblic, argumentul enciclopediei și înregistrările geologice, ca tipuri diferite de dovezi.";
+"Which record could best test the timing of a proposed Black Sea inflow?" = "Ce înregistrare ar putea testa cel mai bine momentul pătrunderii propuse a apei în Marea Neagră?";
+"Submerged shorelines mapped across the basin, with no dates for when they formed." = "Țărmuri scufundate cartografiate în tot bazinul, fără datări ale momentului în care s-au format.";
+"Shorelines reveal former water levels and are valuable evidence; dating them is needed to test when the changes occurred." = "Țărmurile arată nivelurile de odinioară ale apei și sunt dovezi valoroase; datarea lor este necesară pentru a verifica momentul în care s-au produs schimbările.";
+"A modern coastline map used to infer the timing of the ancient change." = "O hartă modernă a liniei de coastă, folosită pentru a deduce momentul schimbării străvechi.";
+"A present-day map gives a reference for the basin, but it does not record the ancient environmental transition or its date." = "O hartă actuală oferă un reper pentru bazin, dar nu înregistrează tranziția de mediu străveche și nici data ei.";
+"Dated cores showing a transition from freshwater to marine conditions." = "Carote datate care arată trecerea de la condiții de apă dulce la condiții marine.";
+"Dated cores preserve both a sequence and environmental change, which can be used to constrain timing." = "Carotele datate păstrează atât o succesiune, cât și schimbarea mediului, care pot fi folosite pentru a delimita momentul.";
+"Researchers test the rapid-inflow proposal against dated sediment sequences, salinity changes, and submerged shorelines. Together, these records help constrain timing and scale." = "Cercetătorii testează propunerea privind pătrunderea rapidă a apei pe baza succesiunilor de sedimente datate, a schimbărilor de salinitate și a țărmurilor scufundate. Împreună, aceste înregistrări ajută la delimitarea momentului și a amplorii.";
+"Several independent traces from the basin make a stronger case than one striking clue." = "Mai multe urme independente din bazin susțin mai bine cazul decât un singur indiciu izbitor.";
+"Eastern Washington, USA" = "Estul statului Washington, SUA";
+"About 20,000–14,000 years ago" = "Acum aproximativ 20.000–14.000 de ani";
+"Physical flood record" = "Înregistrare fizică a unei inundații";
+"Klondike, Yukon, Canada" = "Klondike, Yukon, Canada";
+"More than 30,000 years ago (preliminary estimate)" = "Acum peste 30.000 de ani (estimare preliminară)";
+"Preserved animal remains" = "Rămășițe animale conservate";
+"Northeastern Nebraska, USA" = "Nord-estul statului Nebraska, SUA";
+"About 11.93 million years ago" = "Acum aproximativ 11,93 milioane de ani";
+"Lagash, southern Mesopotamia (Iraq)" = "Lagash, sudul Mesopotamiei (Irak)";
+"About 2400–2350 BCE" = "Aproximativ 2400–2350 î.e.n.";
+"Mesopotamia · cuneiform tablet" = "Mesopotamia · tăbliță cuneiformă";
+"Written account · the tablet does not measure the event’s date" = "Relatare scrisă · tăblița nu măsoară data evenimentului";
+"Written flood account" = "Relatare scrisă despre potop";
+"Biblical text · no excavated location" = "Text biblic · niciun loc excavat";
+"Biblical chronology in Insight: 2370 BCE · computed from the text, not a physical measurement" = "Cronologia biblică din Insight: 2370 î.e.n. · calculată pe baza textului, nu printr-o măsurătoare fizică";
+"Black Sea basin" = "Bazinul Mării Negre";
+"Holocene · date proposed by Ryan and colleagues" = "Holocen · dată propusă de Ryan și colegii săi";
+"SAME REGION" = "ACEEAȘI REGIUNE";
+"DATES OVERLAP" = "DATELE SE SUPRAPUN";
+"SAME KIND OF RECORD" = "ACELAȘI TIP DE ÎNREGISTRARE";
+"DIFFERENT REGIONS" = "REGIUNI DIFERITE";
+"DATES DO NOT OVERLAP" = "DATELE NU SE SUPRAPUN";
+"Both records come from the same region. A shared region does not make them one event; compare their dates and deposits." = "Ambele înregistrări provin din aceeași regiune. O regiune comună nu le face un singur eveniment; compară datele și depozitele lor.";
+"The records do not share a location." = "Înregistrările nu provin din același loc.";
+"The dates overlap. Check whether each date was measured or computed from a text; overlap alone does not make the records one event." = "Datele se suprapun. Verifică dacă fiecare dată a fost măsurată sau calculată pe baza unui text; suprapunerea singură nu face din cele două înregistrări un singur eveniment.";
+"The dates do not overlap, or one record has no date to compare." = "Datele nu se suprapun sau una dintre înregistrări nu are o dată care să poată fi comparată.";
+"Both are the same kind of record, so they can be compared directly. That alone does not make them one event." = "Ambele sunt același tip de înregistrare, deci pot fi comparate direct. Doar acest lucru nu le face un singur eveniment.";
+"These are different kinds of record; each answers a different question." = "Acestea sunt tipuri diferite de înregistrări; fiecare răspunde la o altă întrebare.";
+"Confirmed: the records come from different regions." = "Confirmat: înregistrările provin din regiuni diferite.";
+"Not confirmed: the records share a region, or one has no measured location." = "Neconfirmat: înregistrările au o regiune comună sau una dintre ele nu are o localizare măsurată.";
+"Confirmed: the dates do not overlap." = "Confirmat: datele nu se suprapun.";
+"Not confirmed: the dates overlap, or one record has no date to compare." = "Neconfirmat: datele se suprapun sau una dintre înregistrări nu are o dată care să poată fi comparată.";
+"Waitt · Tens of successive, colossal Missoula floods" = "Waitt · Tens of successive, colossal Missoula floods";
+"USGS FIELD REPORT · 1983" = "RAPORT DE TEREN USGS · 1983";
+"NASA Earth Observatory · Channeled Scablands imagery" = "NASA Earth Observatory · imagini cu Channeled Scablands";
+"SATELLITE IMAGERY & GEOLOGY" = "IMAGINI SATELITARE ȘI GEOLOGIE";
+"Government of Yukon · Nun cho ga discovery" = "Government of Yukon · descoperirea Nun cho ga";
+"OFFICIAL DISCOVERY RELEASE" = "COMUNICAT OFICIAL DESPRE DESCOPERIRE";
+"Yukon Geological Survey · 2022 overview" = "Yukon Geological Survey · sinteză din 2022";
+"GOVERNMENT GEOLOGICAL RESEARCH" = "CERCETARE GEOLOGICĂ GUVERNAMENTALĂ";
+"MUSEUM RESEARCH NOTE · SIBERIA" = "NOTĂ DE CERCETARE MUZEALĂ · SIBERIA";
+"National Park Service · Ashfall paleontology and burial sequence" = "National Park Service · Paleontologia și succesiunea îngropării de la Ashfall";
+"GOVERNMENT PALEONTOLOGY RESOURCE" = "RESURSĂ GUVERNAMENTALĂ DE PALEONTOLOGIE";
+"University of Nebraska · About Ashfall" = "Universitatea din Nebraska · Despre Ashfall";
+"MUSEUM GEOLOGY RESOURCE" = "RESURSĂ GEOLOGICĂ MUZEALĂ";
+"American Museum of Natural History · Ashfall fossils, including unborn young" = "American Museum of Natural History · Fosilele de la Ashfall, inclusiv pui nenăscuți";
+"MUSEUM PALEONTOLOGY RESOURCE" = "RESURSĂ PALEONTOLOGICĂ MUZEALĂ";
+"Goodman et al. · Flooding of Lagash, Iraq" = "Goodman și colab. · Inundarea orașului Lagash, Irak";
+"PEER-REVIEWED GEOARCHAEOLOGY · 2025" = "GEOARHEOLOGIE EVALUATĂ DE SPECIALIȘTI · 2025";
+"Jotheri et al. · Holocene rivers and Uruk" = "Jotheri și colab. · Râurile holocene și Uruk";
+"GEOARCHAEOLOGY RESEARCH" = "CERCETARE GEOARHEOLOGICĂ";
+"Woolley · Ur flood deposit in archaeological context" = "Woolley · Depozitul de inundație de la Ur în context arheologic";
+"RESEARCH HISTORY & DISCUSSION" = "ISTORICUL CERCETĂRII ȘI DISCUȚIE";
+"British Museum · Flood Tablet (K.2252)" = "British Museum · Tăblița potopului (K.2252)";
+"PRIMARY ARTEFACT CATALOGUE" = "CATALOGUL PRIMAR AL ARTEFACTELOR";
+"Genesis 6 · Noah commissioned to build the Ark" = "Geneza 6 · Noe primește însărcinarea de a construi arca";
+"BIBLE TEXT · NEW WORLD TRANSLATION" = "TEXT BIBLIC · TRADUCEREA LUMII NOI";
+"Genesis 8 · The waters recede" = "Geneza 8 · Apele se retrag";
+"Genesis 9 · The covenant" = "Geneza 9 · Legământul";
+"Oxford Academic · Precursors to Genesis flood narrative" = "Oxford Academic · Precursori ai relatării despre potop din Geneza";
+"SCHOLARLY BIBLICAL STUDIES · 2020" = "STUDII ACADEMICE BIBLICE · 2020";
+"NEW WORLD TRANSLATION · PRIMARY SCRIPTURAL TEXT" = "TRADUCEREA LUMII NOI · TEXT SCRIPTURAL PRIMAR";
+"Matthew 24 · Noah in Jesus’ warning" = "Matei 24 · Noe în avertismentul lui Isus";
+"Luke 17 · The days of Noah" = "Luca 17 · Zilele lui Noe";
+"BIBLICAL ENCYCLOPEDIA · REPORTED ARGUMENT" = "ENCICLOPEDIE BIBLICĂ · ARGUMENT RAPORTAT";
+"Ryan et al. · Black Sea flooding hypothesis" = "Ryan și colab. · Ipoteza inundării Mării Negre";
+"Open question saved. It does not count until you record a finding the records support." = "Întrebarea deschisă a fost salvată. Nu se ia în calcul până nu înregistrezi o constatare susținută de înregistrări.";
+"Saved before findings needed a basis. Remove it and record the pair again to count it." = "Constatare salvată înainte ca temeiul să devină obligatoriu. Elimin-o și înregistrează din nou perechea ca să fie luată în calcul.";
+"Restart the case?" = "Reiei cazul de la început?";
+"RESTART THE CASE" = "REIA CAZUL DE LA ÎNCEPUT";
+"Cancel" = "Anulează";
+"This clears cleared missions, challenge answers, opened sources, case-board findings, and your saved theory on this device. Your language choice is kept." = "Se vor șterge de pe acest dispozitiv misiunile finalizate, răspunsurile la provocări, sursele deschise, constatările de pe panoul de conexiuni și teoria salvată. Limba aleasă se păstrează.";
+"MISSIONS CLEARED %lld/%lld" = "MISIUNI FINALIZATE %lld/%lld";
+"Language" = "Limbă";
+"Română" = "Română";
+"Menu" = "Meniu";
 "THE FLOOD ARCHIVE" = "ARHIVA POTOPULUI";
 "FIELD INVESTIGATION 01" = "INVESTIGAȚIE DE TEREN 01";
-"YOUR DOSSIER" = "DOSARUL TĂU";
-"FIELD NOTES" = "NOTE DE TEREN";
-"Language" = "Limbă";
-"English" = "English";
-"Română" = "Română";
-"ORIGINAL INVESTIGATION MOTTO" = "MOTTO ORIGINAL AL INVESTIGAȚIEI";
-"DOCUMENTED CASES · ORIGINAL SOURCES" = "CAZURI DOCUMENTATE · SURSE ORIGINALE";
-"Flood stories. Traces in the ground." = "Relatări despre potop. Urme în pământ.";
-"Begin with ancient flood accounts from Mesopotamia. Follow six source-linked leads through real places, specimens, and texts. Examine the observations, open the original references, then decide how the evidence fits together." = "Începe cu relatările străvechi despre potop din Mesopotamia. Urmărește șase indicii documentate, legate de locuri, fosile și texte reale. Examinează observațiile, deschide sursele originale, apoi hotărăște cum se leagă dovezile între ele.";
-"EXPEDITION  /  NORTH AMERICA" = "EXPEDIȚIE  /  AMERICA DE NORD";
-"All leads collected. Form your theory." = "Ai adunat toate indiciile. Formulează-ți teoria.";
-"Follow each lead to build the case." = "Urmărește fiecare indiciu pentru a construi cazul.";
-"CONFIDENTIAL FIELD DOSSIER  /  01" = "DOSAR CONFIDENȚIAL DE TEREN  /  01";
+"MISSIONS" = "MISIUNI";
+"MISSIONS CLEARED" = "MISIUNI FINALIZATE";
+"CHALLENGES SOLVED" = "PROVOCĂRI REZOLVATE";
+"All challenges solved and two clue pairs have supported findings. Build your theory." = "Toate provocările sunt rezolvate, iar două perechi de indicii au constatări susținute de surse. Construiește-ți teoria.";
+"Challenges solved. Record supported findings for two clue pairs to unlock your theory." = "Provocări rezolvate. Înregistrează constatări susținute de surse pentru două perechi de indicii ca să-ți deblochezi teoria.";
+"Open a source record, then solve each field challenge." = "Deschide o sursă, apoi rezolvă fiecare provocare de teren.";
+"MISSION BRIEFING  /  01" = "INSTRUCTAJUL MISIUNII  /  01";
 "The water left\nmore than silence." = "Apa a lăsat\nmai mult decât tăcere.";
 "A lost account. A buried city. A story that crossed generations. Follow the evidence behind the flood narrative—and decide what the traces can tell us." = "O relatare pierdută. Un oraș îngropat. O poveste transmisă din generație în generație. Urmărește dovezile din spatele poveștii potopului și hotărăște ce ne spun urmele.";
-"LEADS TO FOLLOW" = "INDICII DE URMĂRIT";
-"OPEN CASE" = "CAZ DESCHIS";
+"%02d" = "%02d";
+"MISSIONS TO CLEAR" = "MISIUNI DE FINALIZAT";
+"ACTIVE INVESTIGATION" = "INVESTIGAȚIE ACTIVĂ";
 "QUESTIONS" = "ÎNTREBĂRI";
 "BEGIN INVESTIGATION" = "ÎNCEPE INVESTIGAȚIA";
-"“The past is never buried as deep as it seems.”" = "„Trecutul nu este îngropat niciodată atât de adânc pe cât pare.”";
-"EXPEDITION MAP  /  SIX ACTIVE LEADS" = "HARTA EXPEDIȚIEI  /  ȘASE INDICII ACTIVE";
+"ORIGINAL INVESTIGATION MOTTO" = "MOTTO ORIGINAL AL INVESTIGAȚIEI";
+"The past is never buried as deep as it seems." = "Trecutul nu este niciodată îngropat atât de adânc pe cât pare.";
+"EXPEDITION MAP  /  %lld ACTIVE MISSIONS" = "HARTA EXPEDIȚIEI  /  %lld MISIUNI ACTIVE";
 "Choose your next lead." = "Alege următorul indiciu.";
-"Each location holds a fragment of the case. Examine the evidence and add it to your field notes." = "Fiecare loc păstrează un fragment al cazului. Examinează dovezile și adaugă-le în notele tale de teren.";
-"LOGGED" = "ÎNREGISTRAT";
-"UNEXPLORED" = "NEEXPLORAT";
-"REVIEW EVIDENCE" = "EXAMINEAZĂ DOVEZILE";
-"INVESTIGATE LEAD" = "INVESTIGHEAZĂ INDICIUL";
-"REFERENCES · OPEN ORIGINAL SOURCES" = "REFERINȚE · DESCHIDE SURSELE ORIGINALE";
+"Each mission sends you to a real place, specimen, or historical record. Examine the evidence, then make your call." = "Fiecare misiune te trimite la un loc, un exemplar sau un document istoric real. Examinează dovezile, apoi ia-ți decizia.";
+"MISSION %@" = "MISIUNEA %@";
+"CLEARED" = "FINALIZATĂ";
+"READY" = "DISPONIBILĂ";
+"REPLAY MISSION" = "REIA MISIUNEA";
+"START MISSION" = "ÎNCEPE MISIUNEA";
+"SOURCE OPENED · CHALLENGE UNLOCKED" = "SURSĂ DESCHISĂ · PROVOCARE DEBLOCATĂ";
+"Opening a source only unlocks the challenge. The challenge checks what the record says." = "Deschiderea unei surse doar deblochează provocarea. Provocarea verifică ce spune sursa.";
+"Select a source above to open it and unlock the challenge." = "Selectează o sursă de mai sus ca s-o deschizi și să deblochezi provocarea.";
+"SOURCE RECORDS · OPEN ONE TO UNLOCK THE CHALLENGE" = "SURSE · DESCHIDE UNA CA SĂ DEBLOCHEZI PROVOCAREA";
+"MISSION CLEARED ✓" = "MISIUNE FINALIZATĂ ✓";
+"OPEN A SOURCE RECORD FIRST" = "DESCHIDE MAI ÎNTÂI O SURSĂ";
+"CLEAR THIS MISSION  →" = "FINALIZEAZĂ MISIUNEA  →";
+"SOLVE THE CHALLENGE FIRST" = "REZOLVĂ MAI ÎNTÂI PROVOCAREA";
 "CLOSE" = "ÎNCHIDE";
-"IN FIELD NOTES ✓" = "ADAUGAT LA NOTELE DE TEREN ✓";
-"ADD TO FIELD NOTES  →" = "ADAUGĂ LA NOTELE DE TEREN  →";
-"EVIDENCE WALL  /  FIELD NOTES" = "PANOU DE DOVEZI  /  NOTE DE TEREN";
+"SOURCE TRAIL PRESERVED" = "TRASEUL SURSELOR ESTE PĂSTRAT";
+"FIELD CHALLENGE" = "PROVOCARE DE TEREN";
+"CHALLENGE SOLVED" = "PROVOCARE REZOLVATĂ";
+"TRY AGAIN" = "ÎNCEARCĂ DIN NOU";
+"Open a source record above to activate this evidence challenge." = "Deschide o sursă de mai sus ca să activezi această provocare bazată pe dovezi.";
+"OPEN A SOURCE TO BEGIN" = "DESCHIDE O SURSĂ CA SĂ ÎNCEPI";
+"CHALLENGE SOLVED ✓" = "PROVOCARE REZOLVATĂ ✓";
+"CHECK MY ANSWER  →" = "VERIFICĂ RĂSPUNSUL  →";
+"TRY AGAIN  →" = "ÎNCEARCĂ DIN NOU  →";
+"YOU FOUND THE KEY DETAIL" = "AI GĂSIT DETALIUL-CHEIE";
+"HERE’S WHAT THE RECORD SHOWS" = "IATĂ CE ARATĂ ÎNREGISTRAREA";
+"Reread the source record, then choose again." = "Recitește sursa, apoi alege din nou.";
+"Open the source records first. Then compare your interpretation with the evidence." = "Deschide mai întâi sursele. Apoi compară interpretarea ta cu dovezile.";
+"EVIDENCE WALL  /  MISSIONS CLEARED" = "PANOUL DOVEZILOR  /  MISIUNI FINALIZATE";
 "The clues, connected." = "Indiciile, puse cap la cap.";
 "Every clue enters the archive with a source. Decide which traces belong together, and what kind of event could leave them behind." = "Fiecare indiciu intră în arhivă cu sursa lui. Hotărăște care urme se leagă și ce fel de eveniment le-ar fi putut lăsa.";
-"No evidence logged yet" = "Încă nu ai înregistrat dovezi";
-"Visit the expedition to examine your first lead." = "Mergi la expediție ca să examinezi primul indiciu.";
-"GO TO EXPEDITION" = "MERGI LA EXPEDIȚIE";
-"Working question: what event could connect these flood deposits, fossils, coastlines, and ancient accounts?" = "Întrebarea de lucru: ce eveniment ar putea lega aceste depozite de inundație, fosile, țărmuri și relatări străvechi?";
+"No missions cleared yet" = "Nicio misiune finalizată încă";
+"Start a mission to examine your first lead." = "Începe o misiune ca să examinezi prima pistă.";
+"GO TO MISSIONS" = "MERGI LA MISIUNI";
+"Case question: which clues converge, and what might they reveal together?" = "Întrebarea cazului: ce indicii converg și ce ar putea dezvălui împreună?";
 "FORM YOUR THEORY  →" = "FORMULEAZĂ-ȚI TEORIA  →";
-"Explore all six leads to unlock the case conclusion." = "Explorează toate cele șase indicii pentru a debloca concluzia cazului.";
+"Clear three missions to unlock the final theory." = "Finalizează trei misiuni ca să deblochezi teoria finală.";
+"Record supported findings for two different clue pairs on your case board before filing a theory." = "Notează pe panoul de conexiuni constatări susținute de surse pentru două perechi diferite de indicii înainte să înregistrezi o teorie.";
+"CASE BOARD" = "PANOU DE CONEXIUNI";
+"PAIRS WITH SUPPORTED FINDINGS" = "PERECHI CU CONSTATĂRI SUSȚINUTE DE SURSE";
+"Choose two cleared clues and a finding. A link or a difference needs a basis that the source records support; an open question is saved for later and does not count." = "Alege două indicii din misiuni finalizate și o constatare. O legătură sau o diferență are nevoie de un temei susținut de surse; o întrebare deschisă este salvată pentru mai târziu și nu se ia în calcul.";
+"MAY CONNECT" = "POSIBILĂ LEGĂTURĂ";
+"DIFFERENT TIMES / PLACES" = "PERIOADE / LOCURI DIFERITE";
+"NEEDS MORE EVIDENCE" = "NECESITĂ MAI MULTE DOVEZI";
+"BASIS FOR THIS FINDING" = "TEMEIUL ACESTEI CONSTATĂRI";
+"SAVE OPEN QUESTION" = "SALVEAZĂ ÎNTREBAREA DESCHISĂ";
+"ADD FINDING TO CASE BOARD" = "ADAUGĂ CONSTATAREA PE PANOUL DE CONEXIUNI";
+"Links are saved as working ideas. You can revise or remove them as you explore more clues." = "Legăturile sunt salvate ca idei de lucru. Le poți revizui sau elimina pe măsură ce explorezi alte indicii.";
+"REMOVE CONNECTION" = "ELIMINĂ LEGĂTURA";
+"NOT SUPPORTED BY THE RECORDS · DOES NOT COUNT" = "NESUSȚINUTĂ DE SURSE · NU SE PUNE LA SOCOTEALĂ";
+"An open question is saved for later. It does not count toward your theory." = "O întrebare deschisă este salvată pentru mai târziu. Nu se ia în calcul pentru teoria ta.";
+"Choose the basis for this finding." = "Alege temeiul acestei constatări.";
+"Read both clues on the evidence wall first. The source records are checked when you pin the finding; only supported findings count." = "Citește mai întâi ambele indicii pe panoul dovezilor. Sursele sunt verificate când fixezi constatarea; se pun la socoteală doar constatările susținute de surse.";
+"WHAT YOUR THEORY HAS TO ACCOUNT FOR" = "CE TREBUIE SĂ EXPLICE TEORIA TA";
+"Your case board: %lld clue pairs with supported findings, %lld open questions." = "Panoul tău de conexiuni — perechi de indicii cu constatări susținute de surse: %lld; întrebări deschise: %lld.";
 "CASE REVIEW  /  YOUR INTERPRETATION" = "REVIZUIREA CAZULUI  /  INTERPRETAREA TA";
-"What is your final theory?" = "Care este teoria ta finală?";
 "Theory entered into the archive." = "Teoria a fost adăugată în arhivă.";
-"Lay the clues beside one another. Consider the landscapes, the sudden burials, the stories, and the account of Noah. What is the strongest explanation you can make from the case?" = "Pune indiciile unul lângă altul. Gândește-te la peisaje, îngropările neașteptate, povești și relatarea despre Noe. Care este cea mai puternică explicație pe care o poți formula?";
-"The case is still open" = "Cazul este încă deschis";
-"Collect all six leads before writing your theory." = "Adună toate cele șase indicii înainte să-ți formulezi teoria.";
-"RETURN TO EXPEDITION" = "ÎNTOARCE-TE LA EXPEDIȚIE";
+"What is your working theory?" = "Care este teoria ta de lucru?";
+"Lay the clues beside one another. Decide what your explanation accounts for, what it leaves unanswered, and how strongly you hold it." = "Pune indiciile unul lângă altul. Hotărăște ce explică teoria ta, ce întrebări lasă deschise și câtă încredere ai în ea.";
+"The investigation is still unfolding" = "Investigația este încă în desfășurare";
+"Clear three missions to unlock the final theory. More clues can be added later." = "Finalizează trei misiuni ca să deblochezi teoria finală. Pot fi adăugate și alte indicii mai târziu.";
+"RETURN TO MISSIONS" = "ÎNTOARCE-TE LA MISIUNI";
+"Connect the evidence" = "Leagă dovezile";
+"On the case board, record findings for two different clue pairs. Each finding needs a basis that the source records support; open questions are saved but do not count." = "Pe panoul de conexiuni, notează constatări pentru două perechi diferite de indicii. Fiecare constatare are nevoie de un temei susținut de surse; întrebările deschise sunt salvate, dar nu se iau în calcul.";
+"OPEN THE CASE BOARD" = "DESCHIDE PANOUL DE CONEXIUNI";
+"CHOOSE A WORKING POSITION · YOU CAN REVISE IT LATER" = "ALEGE O POZIȚIE PROVIZORIE · O POȚI SCHIMBA";
 "A great regional catastrophe began the story." = "O mare catastrofă regională a dat naștere poveștii.";
 "One landscape, one disaster, remembered for generations." = "Un peisaj, un dezastru, păstrat în amintire generații la rând.";
 "Many disasters became one shared memory." = "Mai multe dezastre au devenit o amintire comună.";
 "Separate floods, carried together through ancient stories." = "Inundații diferite, transmise împreună prin povești străvechi.";
 "Noah’s account preserves the memory of a real Flood." = "Relatarea lui Noe păstrează amintirea unui Potop real.";
-"Connect the geological and historical clues to Genesis." = "Leagă indiciile geologice și istorice de Geneza.";
+"Explain how the geological and historical clues relate to Genesis." = "Explică în ce fel se leagă indiciile geologice și istorice de Geneza.";
 "One worldwide cataclysm connects the clues." = "O catastrofă mondială leagă indiciile.";
-"The scattered traces are fragments of one event." = "Urmele răspândite sunt fragmentele unui singur eveniment.";
-"A regional disaster can become a world-changing story." = "Un dezastru regional poate deveni o poveste care schimbă lumea.";
-"Many waters. Many memories. One enduring mystery." = "Multe ape. Multe amintiri. Un mister care dăinuie.";
-"You connected the geological and historical clues to Noah’s account. Your theory is now part of the archive." = "Ai legat indiciile geologice și istorice de relatarea despre Noe. Teoria ta face acum parte din arhivă.";
-"One catastrophe. A world reshaped by water. Your theory connects the scattered clues to a global event." = "O catastrofă. O lume remodelată de ape. Teoria ta leagă indiciile răspândite de un eveniment global.";
-"Flood deposits and old narratives make regional disasters a compelling possibility. You connected a documented landscape with a story carried through generations." = "Depozitele de inundație și relatările străvechi fac din dezastrele regionale o ipoteză convingătoare. Ai legat un peisaj documentat de o poveste transmisă din generație în generație.";
-"The layers belong to different places and times. That leaves room for more than one disaster to echo through stories passed between generations." = "Straturile provin din locuri și perioade diferite. Este posibil ca mai multe dezastre să fi răsunat în povești transmise între generații.";
-"You connected flood deposits, submerged landscapes, ancient flood traditions, and the Genesis account. Your case file records the clues that led you to this theory." = "Ai legat depozitele de inundație, peisajele scufundate, tradițiile străvechi despre potop și relatarea din Geneza. Dosarul tău consemnează indiciile care te-au condus la această teorie.";
-"You assembled evidence of catastrophic flooding, extensive sedimentary layers, fossils, submerged coastlines, and ancient flood traditions into a worldwide flood theory. The investigation continues as new clues emerge." = "Ai adunat dovezi despre inundații catastrofale, straturi sedimentare extinse, fosile, țărmuri scufundate și tradiții străvechi despre potop într-o teorie despre un potop mondial. Investigația continuă pe măsură ce apar indicii noi.";
-"INVESTIGATION COMPLETE" = "INVESTIGAȚIE ÎNCHEIATĂ";
-"A good investigator records both the clues and the theory they support. Reopen the archive whenever you want to examine a source again." = "Un investigator bun consemnează atât indiciile, cât și teoria pe care o susțin. Redeschide arhiva oricând dorești să verifici din nou o sursă.";
-"REOPEN CASE" = "REDESCHIDE CAZUL";
-"The case is yours to close." = "Tu hotărăști cum se încheie cazul.";
-"You have six leads. Now connect what you found and write your theory." = "Ai șase indicii. Acum leagă descoperirile și formulează-ți teoria.";
-"REVIEW EVIDENCE  →" = "REVIZUIEȘTE DOVEZILE  →";
-
-"CASE 001" = "CAZUL 001";
-"A message beneath the mud." = "Un mesaj sub mâl.";
-"The expedition begins in southern Mesopotamia. A field team has uncovered a sealed archive near an old river channel. Inside: fragments of a flood story and a dossier pointing to six locations across two continents." = "Expediția începe în sudul Mesopotamiei. O echipă de teren a descoperit o arhivă sigilată lângă un vechi curs de râu. Înăuntru: fragmente dintr-o poveste despre potop și un dosar care indică șase locuri de pe două continente.";
-"Your mission: follow the trail, examine each clue, and record what the evidence can—and cannot—tell you." = "Misiunea ta: urmează pista, examinează fiecare indiciu și notează ce pot — și ce nu pot — să-ți spună dovezile.";
-"OPEN THE CASE  →" = "DESCHIDE CAZUL  →";
-
-"A field investigation across continents" = "O investigație de teren pe mai multe continente";
-"ARTISTIC RECONSTRUCTION" = "RECONSTITUIRE ARTISTICĂ";
-"NORTH AMERICAN FLOOD COUNTRY" = "ȚINUTUL INUNDAȚIILOR DIN AMERICA DE NORD";
-"ICE AGE" = "ERĂ GLACIARĂ";
-"SCABLANDS" = "SCABLANDS";
-"YUKON" = "YUKON";
-"NEBRASKA" = "NEBRASKA";
-"Schematic map · plotted locations are approximate. Regional flood evidence is not, by itself, evidence of a worldwide event." = "Hartă schematică · locurile indicate sunt aproximative. Dovezile despre inundații regionale nu dovedesc, singure, un eveniment mondial.";
-"A continent carved by water—and time." = "Un continent sculptat de apă — și de timp.";
-"Explore documented flood landscapes and exceptional fossil preservation. The map is schematic; each case is linked to its institutional source." = "Explorează peisaje modelate de inundații documentate și fosile conservate excepțional. Harta este schematică; fiecare caz trimite la sursa instituțională.";
-"Washington · repeated Ice Age outburst floods" = "Washington · viituri glaciare repetate";
-"Yukon · a baby mammoth preserved in permafrost" = "Yukon · pui de mamut conservat în permafrost";
-"Government of Yukon · photo credit: Treadstone Gold" = "Guvernul Yukonului · credit foto: Treadstone Gold";
-"Nebraska · articulated fossils in volcanic ash" = "Nebraska · fosile articulate în cenușă vulcanică";
-"Cross-check: the grass-filled Berezovka mammoth was excavated in northeastern Siberia. The famous fossil of a marine reptile giving birth was discovered in China. Both are comparative clues, not North American finds." = "Verificare: mamutul Berezovka, cu iarbă în gură, a fost excavat în nord-estul Siberiei. Celebra fosilă a reptilei marine surprinse în timpul nașterii a fost descoperită în China. Sunt indicii comparative, nu descoperiri din America de Nord.";
-"FIELD MEDIA  /  WATCH & EXAMINE" = "MEDIA DE TEREN  /  PRIVEȘTE ȘI EXAMINEAZĂ";
-"See the evidence in the landscape." = "Privește dovezile în peisaj.";
-"Video links open the original publisher. An internet connection is needed; media remains credited to its source." = "Linkurile video deschid pagina editorului original. Este necesară conexiune la internet; materialele sunt atribuite surselor lor.";
-"USGS field talk on the Ice Age floods and the landscape they carved." = "Prezentare USGS de teren despre inundațiile din era glaciară și peisajul pe care l-au sculptat.";
-"Explore the Nebraska fossil site and its ash layers with the Nebraska State Museum." = "Explorează situl fosilifer din Nebraska și straturile de cenușă împreună cu Muzeul de Stat din Nebraska.";
-"Smithsonian account of the specimen and its stomach contents, including grasses." = "Relatarea Smithsonianului despre exemplar și conținutul stomacului său, inclusiv ierburi.";
-"The timeline uses broad published age ranges for context; it does not imply that these separate events happened together." = "Cronologia folosește intervale de vârstă generale, publicate, pentru context; nu sugerează că aceste evenimente separate au avut loc simultan.";
-
-"EVIDENCE LAB  /  CLAIMS FROM THE SHARED DOSSIER" = "LABORATORUL DOVEZILOR  /  AFIRMAȚII DIN DOSAR";
-"Follow every claim to its source." = "Urmărește fiecare afirmație până la sursa ei.";
-"A source-led case file of evidence and arguments cited by flood proponents. Each entry links to scientific, museum, or government records and to published flood-geology interpretations. Source labels identify the publication type." = "Un dosar bazat pe surse, cu dovezi și argumente invocate de susținătorii potopului. Fiecare fișă trimite la înregistrări științifice, muzeale sau guvernamentale și la interpretări publicate în geologia potopului. Etichetele indică tipul publicației.";
-"Every item links to its source. Publication labels distinguish peer-reviewed studies, museum records, government archives, and creationist-perspective papers." = "Fiecare element trimite la sursa sa. Etichetele disting studiile evaluate de specialiști, înregistrările muzeale, arhivele guvernamentale și lucrările din perspectiva creaționistă.";
-"Take the claims into the field" = "Du afirmațiile pe teren";
-"NASA satellite imagery of the Channeled Scablands, alongside the peer-reviewed flood review." = "Imagini satelitare NASA cu Scablands, alături de analiza evaluată de specialiști despre inundații.";
-"WHAT IS OBSERVED" = "CE SE OBSERVĂ";
-"FLOOD-CASE INTERPRETATION" = "INTERPRETAREA CAZULUI POTOPULUI";
-"REFERENCES · OPEN THE SOURCE" = "REFERINȚE · DESCHIDE SURSA";
-"OPEN SOURCE ↗" = "DESCHIDE SURSA ↗";
-"EVIDENCE SPANS VERY DIFFERENT AGES" = "DOVEZILE ACOPERĂ PERIOADE FOARTE DIFERITE";
-"~12 million years ago" = "~12 milioane de ani în urmă";
-"Ashfall · Nebraska · volcanic ash fossil bed" = "Ashfall · Nebraska · strat fosilifer în cenușă vulcanică";
-"~30,000 to ~14,000 years ago" = "~30.000–~14.000 de ani în urmă";
-"Nun cho ga · Yukon · preliminary estimate >30,000 years; Missoula floods · Washington · broad interval often given as ~20,000–14,000 years" = "Nun cho ga · Yukon · estimare preliminară de peste 30.000 de ani; inundațiile Missoula · Washington · interval general de ~20.000–14.000 de ani";
-"Not to scale. The Siberian Berezovka specimen is a comparison, not a North American site." = "Nescalată. Exemplarul Berezovka din Siberia este pentru comparație, nu este un sit din America de Nord.";
-"Nun cho ga" = "Nun cho ga";
-
-/* Reference classifications; original publication titles remain in their source language. */
-"GOVERNMENT GEOLOGY REVIEW" = "SINTEZĂ GEOLOGICĂ GUVERNAMENTALĂ";
-"PEER-REVIEWED RESEARCH · 2020" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2020";
-"PEER-REVIEWED REVIEW · 2020" = "SINTEZĂ EVALUATĂ DE SPECIALIȘTI · 2020";
-"PEER-REVIEWED RESEARCH · 2002" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2002";
-"ORIGINAL RESEARCH · 1997" = "CERCETARE ORIGINALĂ · 1997";
-"PEER-REVIEWED RESEARCH · 2013" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2013";
-"PEER-REVIEWED REVIEW · 2002" = "SINTEZĂ EVALUATĂ DE SPECIALIȘTI · 2002";
-"PEER-REVIEWED RESEARCH · 2007" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2007";
-"PARK GEOLOGY RESOURCE" = "RESURSĂ GEOLOGICĂ A PARCULUI";
-"CREATIONIST-PERSPECTIVE INTERPRETATION" = "INTERPRETARE DIN PERSPECTIVĂ CREAȚIONISTĂ";
-"PEER-REVIEWED RESEARCH · GSA BULLETIN" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · GSA BULLETIN";
-"CREATIONIST-PERSPECTIVE RESEARCH" = "CERCETARE DIN PERSPECTIVĂ CREAȚIONISTĂ";
-"CREATIONIST-PERSPECTIVE CONFERENCE PAPER · 2023" = "LUCRARE LA CONFERINȚĂ CREAȚIONISTĂ · 2023";
-"PEER-REVIEWED RESEARCH · SEDIMENTOLOGY" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · SEDIMENTOLOGIE";
-"INSTITUTIONAL SITE" = "SIT INSTITUȚIONAL";
-"SCIENCE · ORIGINAL RESEARCH · 2005" = "SCIENCE · CERCETARE ORIGINALĂ · 2005";
-"PROCEEDINGS OF THE ROYAL SOCIETY B · 2014" = "PROCEEDINGS OF THE ROYAL SOCIETY B · 2014";
-"PEER-REVIEWED RESEARCH · 2019" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2019";
-"CREATIONIST-PERSPECTIVE FIELD REPORT" = "RAPORT DE TEREN DIN PERSPECTIVĂ CREAȚIONISTĂ";
-"GOVERNMENT GEOLOGY MONOGRAPH" = "MONOGRAFIE GEOLOGICĂ GUVERNAMENTALĂ";
-"GOVERNMENT GEOLOGY RESOURCE" = "RESURSĂ GEOLOGICĂ GUVERNAMENTALĂ";
-"PEER-REVIEWED STRUCTURAL GEOLOGY · 1999" = "GEOLOGIE STRUCTURALĂ EVALUATĂ DE SPECIALIȘTI · 1999";
-"CREATIONIST-PERSPECTIVE PAPER" = "LUCRARE DIN PERSPECTIVĂ CREAȚIONISTĂ";
-"CREATIONIST-PERSPECTIVE RESEARCH · 2003" = "CERCETARE DIN PERSPECTIVĂ CREAȚIONISTĂ · 2003";
-"CREATIONIST-PERSPECTIVE RESEARCH · RATE II · 2005" = "CERCETARE CREAȚIONISTĂ · RATE II · 2005";
-"PEER-REVIEWED THERMOCHRONOLOGY · 2013" = "TERMOCRONOLOGIE EVALUATĂ DE SPECIALIȘTI · 2013";
-"PEER-REVIEWED RESEARCH · 2021" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · 2021";
-"MUSEUM SCIENCE RESOURCE" = "RESURSĂ ȘTIINȚIFICĂ MUZEALĂ";
-"INTERNATIONAL SCIENTIFIC STANDARD" = "STANDARD ȘTIINȚIFIC INTERNAȚIONAL";
-"PEER-REVIEWED RESEARCH · PLOS ONE · 2014" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · PLOS ONE · 2014";
-"OPEN-ACCESS ORIGINAL PAPER" = "ARTICOL ORIGINAL CU ACCES DESCHIS";
-"MUSEUM RESEARCH NOTE" = "NOTĂ DE CERCETARE MUZEALĂ";
-"HISTORICAL EXPEDITION ACCOUNT · 1939" = "RELATARE ISTORICĂ A EXPEDIȚIEI · 1939";
-"SATELLITE IMAGERY & GEOLOGY" = "IMAGINI SATELITARE ȘI GEOLOGIE";
-"OFFICIAL DISCOVERY RELEASE" = "COMUNICAT OFICIAL DESPRE DESCOPERIRE";
-"GOVERNMENT GEOLOGICAL RESEARCH" = "CERCETARE GEOLOGICĂ GUVERNAMENTALĂ";
-"MUSEUM RESEARCH NOTE · SIBERIA" = "NOTĂ DE CERCETARE MUZEALĂ · SIBERIA";
-"MUSEUM RESEARCH SITE" = "SIT DE CERCETARE MUZEALĂ";
-"MUSEUM GEOLOGY RESOURCE" = "RESURSĂ GEOLOGICĂ MUZEALĂ";
-"PEER-REVIEWED GEOARCHAEOLOGY · 2025" = "GEOARHEOLOGIE EVALUATĂ DE SPECIALIȘTI · 2025";
-"GEOARCHAEOLOGY RESEARCH" = "CERCETARE GEOARHEOLOGICĂ";
-"RESEARCH HISTORY & DISCUSSION" = "ISTORICUL CERCETĂRII ȘI DISCUȚIE";
-"PRIMARY ARTEFACT CATALOGUE" = "CATALOGUL PRIMAR AL ARTEFACTELOR";
-"BIBLE TEXT · NEW WORLD TRANSLATION" = "TEXT BIBLIC · TRADUCEREA LUMII NOI";
-"SCHOLARLY BIBLICAL STUDIES · 2020" = "STUDII ACADEMICE BIBLICE · 2020";
-
-// Original visual explainers
-"VISUAL EXPLAINER" = "EXPLICAȚIE VIZUALĂ";
-"SCHEMATIC · NOT TO SCALE" = "SCHEMĂ · FĂRĂ SCARĂ";
+"Explain how clues from different places and periods fit one event." = "Explică în ce fel indiciile din locuri și perioade diferite se potrivesc cu un singur eveniment.";
+"The evidence is not enough for me to decide yet." = "Încă nu am suficiente dovezi pentru a decide.";
+"Keep the investigation open; revisit your call after another mission." = "Lasă investigația deschisă; reevaluează-ți decizia după încă o misiune.";
+"I have another explanation." = "Am o altă explicație.";
+"Describe it and the clues that support it." = "Descrie-o, împreună cu indiciile care o susțin.";
+"EXPLAIN YOUR THEORY · REQUIRED" = "EXPLICĂ-ȚI TEORIA · OBLIGATORIU";
+"ADD AN OPTIONAL FIELD NOTE" = "ADAUGĂ O NOTĂ DE TEREN OPȚIONALĂ";
+"Explain how the clues’ places and periods fit your theory…" = "Explică în ce fel locurile și perioadele indiciilor se potrivesc cu teoria ta…";
+"Optional: add a note about the clue that matters most to you…" = "Opțional: adaugă o notă despre indiciul cel mai important pentru tine…";
+"YOUR CASE REASONING" = "RAȚIONAMENTUL TĂU";
+"HOW CONFIDENT ARE YOU?" = "CÂTĂ ÎNCREDERE AI?";
+"YOUR ESTIMATE" = "ESTIMAREA TA";
+"Your confidence is a snapshot. Change it whenever a new clue shifts your view." = "Nivelul tău de încredere este o imagine de moment. Modifică-l oricând un indiciu nou îți schimbă perspectiva.";
+"SAVE MY THEORY" = "SALVEAZĂ TEORIA";
+"This theory needs your explanation before it can be saved." = "Această teorie are nevoie de explicația ta înainte de a putea fi salvată.";
+"Your theory is saved. Replay missions and change your call whenever new evidence shifts your view." = "Teoria ta este salvată. Reia misiunile și modifică-ți decizia oricând dovezi noi îți schimbă perspectiva.";
 "One lake. Repeated regional floods." = "Un lac. Viituri regionale repetate.";
 "Imagine a plug holding back a bathtub: when it opens, water rushes out. Lake Missoula was vastly larger, and the real ice-dam mechanics were more complex." = "Imaginează-ți un dop care ține apa într-o cadă: când se deschide, apa se revarsă. Lacul Missoula era incomparabil mai mare, iar mecanismul real al barajului de gheață era mai complex.";
-"USGS research links the Scablands to repeated glacial-lake outbursts. This is evidence for regional megafloods; it does not by itself establish a worldwide flood." = "Cercetările USGS leagă Scablands de revărsări repetate ale unui lac glaciar. Aceasta este o dovadă a megaviiturilor regionale; de una singură, nu demonstrează un potop mondial.";
+"USGS research links the Scablands to repeated glacial-lake outbursts. The enormous flows make a striking comparison point for the other flood records in this archive." = "Cercetările USGS leagă Scablands de revărsări repetate ale lacurilor glaciare. Uriașele curgeri de apă oferă un punct de comparație remarcabil pentru celelalte înregistrări despre inundații din această arhivă.";
 "ICE DAM" = "BARAJ DE GHEAȚĂ";
 "A glacier blocks the river." = "Un ghețar blochează râul.";
 "LAKE FILLS" = "LACUL SE UMPLE";
@@ -352,7 +576,7 @@
 "Other sites are dated separately." = "Alte situri sunt datate separat.";
 "Compare flood accounts, detail by detail." = "Compară relatările despre potop, detaliu cu detaliu.";
 "Two reports of a storm may both mention rain and rescue without being identical. Compare the wording, setting, date, and transmission before drawing a connection." = "Două relatări despre o furtună pot menționa amândouă ploaia și salvarea fără să fie identice. Compară formularea, contextul, datarea și transmiterea înainte de a trage o legătură.";
-"The game places the Genesis account beside Mesopotamian texts. Shared themes invite comparison; the texts themselves do not prove that every account describes the same event." = "Jocul pune relatarea din Geneza alături de texte mesopotamiene. Temele comune invită la comparație; textele nu dovedesc prin ele însele că toate relatările descriu același eveniment.";
+"Read Genesis beside Mesopotamian flood accounts. Shared details and distinctive features help investigators trace the history behind the stories." = "Citește Geneza alături de relatările mesopotamiene despre potop. Detaliile comune și trăsăturile distinctive îi ajută pe investigatori să reconstituie istoria din spatele acestor povești.";
 "GENESIS" = "GENEZA";
 "Read the account in context." = "Citește relatarea în context.";
 "TABLET" = "TĂBLIȚĂ";
@@ -360,9 +584,18 @@
 "Mark shared and different details." = "Notează detaliile comune și diferite.";
 "INTERPRET" = "INTERPRETEAZĂ";
 "Weigh possible connections." = "Evaluează posibilele legături.";
+"Follow the account through the text." = "Urmărește relatarea de-a lungul textului.";
+"Think of later references as cross-links in a case file: each one recalls Noah for its own purpose. Read the surrounding passage to see exactly what it contributes." = "Gândește-te la referințele ulterioare ca la trimiteri încrucișate într-un dosar: fiecare îl amintește pe Noe cu un scop propriu. Citește pasajul din jur ca să vezi exact ce aduce fiecare.";
+"Genesis 6–9 contains the main narrative. Later passages are scriptural references, not separate geological observations or independent eyewitness reports." = "Geneza 6–9 conține relatarea principală. Pasajele ulterioare sunt referințe scripturale, nu observații geologice separate sau mărturii independente ale unor martori oculari.";
+"Read the Flood narrative in chapters 6–9." = "Citește relatarea despre Potop din capitolele 6–9.";
+"TRACE" = "URMĂREȘTE";
+"Find later passages that mention Noah." = "Găsește pasajele ulterioare care îl menționează pe Noe.";
+"CONTEXT" = "CONTEXT";
+"Read each passage around the reference." = "Citește textul din jurul fiecărei referințe.";
+"Separate the text from the encyclopedia’s argument." = "Deosebește textul de argumentul enciclopediei.";
 "The Black Sea rapid-inflow hypothesis." = "Ipoteza afluxului rapid în Marea Neagră.";
 "Picture water spilling over a low divider between two basins. The Bosporus proposal applies that idea to ancient shorelines and changing salinity; the rate and scale remain part of the hypothesis." = "Imaginează-ți apa revărsându-se peste un prag jos dintre două bazine. Propunerea privind Bosforul aplică ideea la țărmurile antice și schimbarea salinității; viteza și amploarea rămân parte din ipoteză.";
-"Ryan and Pitman proposed rapid inflow from the Mediterranean into a lower Black Sea basin. Label this as a hypothesis, not an established global flood." = "Ryan și Pitman au propus un aflux rapid din Mediterană într-un bazin al Mării Negre cu nivel mai scăzut. Aceasta este o ipoteză, nu dovada stabilită a unui potop global.";
+"Ryan and Pitman proposed that rapid Mediterranean inflow transformed the Black Sea basin. Compare their geological case with the other flood clues in the archive." = "Ryan și Pitman au propus că un aflux rapid din Mediterană a transformat bazinul Mării Negre. Compară argumentația lor geologică cu celelalte indicii despre inundații din arhivă.";
 "BASIN" = "BAZIN";
 "The Black Sea level is lower." = "Nivelul Mării Negre este mai scăzut.";
 "THRESHOLD" = "PRAG";
@@ -371,298 +604,100 @@
 "The basin receives seawater." = "Apa marină pătrunde în bazin.";
 "TEST" = "VERIFICARE";
 "Study shorelines and sediments." = "Studiază țărmurile și sedimentele.";
+"A regional disaster can become a world-changing story." = "Un dezastru regional poate deveni o poveste care schimbă lumea.";
+"Many waters. Many memories. One enduring mystery." = "Multe ape. Multe amintiri. Un mister care dăinuie.";
+"Your theory: Noah’s account preserves the memory of a real Flood." = "Teoria ta: relatarea despre Noe păstrează amintirea unui Potop real.";
+"You left the case open while the evidence is still incomplete." = "Ai lăsat cazul deschis cât timp dovezile sunt incomplete.";
+"Your explanation is on file. Keep testing it against the evidence." = "Explicația ta este înregistrată. Continuă să o verifici în raport cu dovezile.";
+"Your theory: one worldwide cataclysm connects the clues." = "Teoria ta: un singur cataclism mondial leagă indiciile.";
+"Your explanation of how one regional disaster could lie behind the story is saved below, beside the places, periods, and case-board findings it has to account for." = "Explicația ta despre felul în care un singur dezastru regional ar putea sta la baza relatării este salvată mai jos, alături de locurile, perioadele și constatările din panoul de conexiuni pe care trebuie să le explice.";
+"Your explanation of how separate floods could have merged into one shared memory is saved below, beside the places, periods, and case-board findings it has to account for." = "Explicația ta despre felul în care inundații separate s-ar fi putut contopi într-o singură amintire comună este salvată mai jos, alături de locurile, perioadele și constatările din panoul de conexiuni pe care trebuie să le explice.";
+"Your explanation of how the clues relate to the Genesis account is saved below, beside the places, periods, and case-board findings it has to account for." = "Explicația ta despre legătura dintre indicii și relatarea din Geneza este salvată mai jos, alături de locurile, perioadele și constatările de pe panoul de conexiuni pe care trebuie să le explice.";
+"You kept the case open while you examine more clues. Revisit your call after another mission or a new connection." = "Ai lăsat cazul deschis cât timp examinezi alte indicii. Reevaluează-ți decizia după încă o misiune sau după o nouă legătură.";
+"Your explanation of how clues from different places and periods fit one event is saved below, beside the case-board findings it has to account for." = "Explicația ta despre felul în care indiciile din locuri și perioade diferite se potrivesc cu un singur eveniment este salvată mai jos, alături de constatările de pe panoul de conexiuni pe care trebuie să le explice.";
+"FINAL THEORY SAVED" = "TEORIE FINALĂ SALVATĂ";
+"YOUR EXPLANATION" = "EXPLICAȚIA TA";
+"YOUR FIELD NOTE" = "NOTA TA DE TEREN";
+"CURRENT CONFIDENCE" = "NIVEL ACTUAL DE ÎNCREDERE";
+"SELF-ESTIMATE" = "AUTOEVALUARE";
+"FINDINGS YOU RECORDED" = "CONSTATĂRILE ÎNREGISTRATE";
+"Your mission record keeps its sources, open questions, and revisions together. Your conclusion can change when your evidence changes." = "Registrul misiunilor tale păstrează împreună sursele, întrebările deschise și revizuirile. Concluzia ta se poate schimba atunci când se schimbă dovezile.";
+"EDIT MY THEORY" = "MODIFICĂ TEORIA";
+"The case is yours to close." = "Tu hotărăști cum se încheie cazul.";
+"You have %lld missions cleared. Connect the clues and choose your theory." = "Ai finalizat %lld misiuni. Leagă indiciile și alege-ți teoria.";
+"REVIEW EVIDENCE  →" = "REVIZUIEȘTE DOVEZILE  →";
+"DOCUMENTED CASES · ORIGINAL SOURCES" = "CAZURI DOCUMENTATE · SURSE ORIGINALE";
+"Flood stories. Traces in the ground." = "Relatări despre potop. Urme în pământ.";
+"Follow %lld source-linked missions through real places, specimens, and texts, from Ice Age flood landscapes in North America to ancient flood accounts from Mesopotamia. Examine the observations, open the original references, then decide how the evidence fits together." = "Urmează %lld misiuni legate de surse, prin locuri, exemplare și texte reale, de la peisajele modelate de inundațiile erei glaciare din America de Nord până la relatările străvechi despre potop din Mesopotamia. Examinează observațiile, deschide referințele originale, apoi decide cum se potrivesc dovezile.";
+"Your mission: follow the trail, uncover clues, and build the strongest case you can." = "Misiunea ta: urmează pista, descoperă indicii și construiește cel mai solid caz posibil.";
+"OPEN THE CASE  →" = "DESCHIDE CAZUL  →";
+"A field investigation across continents" = "O investigație de teren pe mai multe continente";
+"ARTISTIC RECONSTRUCTION" = "RECONSTITUIRE ARTISTICĂ";
+"NORTH AMERICAN FLOOD COUNTRY" = "ȚINUTUL INUNDAȚIILOR DIN AMERICA DE NORD";
+"ICE AGE" = "ERĂ GLACIARĂ";
+"SCABLANDS" = "SCABLANDS";
+"YUKON" = "YUKON";
+"NEBRASKA" = "NEBRASKA";
+"Schematic map · plotted locations are approximate. Trace the North American cases and compare their flood records." = "Hartă schematică · locurile indicate sunt aproximative. Urmărește cazurile din America de Nord și compară înregistrările lor despre inundații.";
+"FIELD MISSIONS  /  NORTH AMERICA" = "MISIUNI DE TEREN  /  AMERICA DE NORD";
+"A continent carved by water—and time." = "Un continent sculptat de apă — și de timp.";
+"Explore documented flood landscapes and exceptional fossil preservation. The map is schematic; each case is linked to its institutional source." = "Explorează peisaje modelate de inundații documentate și fosile conservate excepțional. Harta este schematică; fiecare caz trimite la sursa instituțională.";
+"The Channeled Scablands" = "Channeled Scablands";
+"Washington · repeated Ice Age outburst floods" = "Washington · viituri glaciare repetate";
+"NASA Earth Observatory · USGS review" = "NASA Earth Observatory · analiză USGS";
+"Yukon · a baby mammoth preserved in permafrost" = "Yukon · pui de mamut conservat în permafrost";
+"Government of Yukon · photos at the source" = "Government of Yukon · fotografii la sursă";
+"Ashfall Fossil Beds" = "Ashfall Fossil Beds";
+"Nebraska · articulated fossils in volcanic ash" = "Nebraska · fosile articulate în cenușă vulcanică";
+"University of Nebraska State Museum" = "University of Nebraska State Museum";
+"Cross-check: the grass-filled Berezovka mammoth was excavated in northeastern Siberia. The famous fossil of a marine reptile giving birth was discovered in China. Both are comparative clues, not North American finds." = "Verificare: mamutul Berezovka, cu iarbă în gură, a fost excavat în nord-estul Siberiei. Celebra fosilă a reptilei marine surprinse în timpul nașterii a fost descoperită în China. Sunt indicii comparative, nu descoperiri din America de Nord.";
+"MISSION MEDIA  /  WATCH & EXAMINE" = "MEDIA MISIUNILOR  /  PRIVEȘTE ȘI EXAMINEAZĂ";
+"Watch the flood story unfold." = "Urmărește cum se desfășoară povestea inundației.";
+"Watch the USGS field lecture here, explore the Ashfall virtual tour, and open the original source whenever you want to check a detail." = "Urmărește aici prelegerea de teren USGS, explorează turul virtual de la Ashfall și deschide sursa originală oricând vrei să verifici un detaliu.";
+"Ashfall Fossil Beds: 360° Virtual Tour" = "Ashfall Fossil Beds: tur virtual 360°";
+"Walk through the visitor centre and Rhino Barn with Nebraska Public Media." = "Vizitează centrul pentru vizitatori și Rhino Barn împreună cu Nebraska Public Media.";
+"UNIVERSITY OF NEBRASKA STATE MUSEUM · NEBRASKA PUBLIC MEDIA" = "UNIVERSITY OF NEBRASKA STATE MUSEUM · NEBRASKA PUBLIC MEDIA";
+"Ashfall: Mysteries in the Dust" = "Ashfall: Mysteries in the Dust";
+"Explore the Nebraska Studies story with archival NET Television footage and images from Ashfall." = "Explorează materialul Nebraska Studies, cu filmări de arhivă NET Television și imagini de la Ashfall.";
+"NEBRASKA STUDIES · NEBRASKA PUBLIC MEDIA" = "NEBRASKA STUDIES · NEBRASKA PUBLIC MEDIA";
+"Berezovka: the Siberian mammoth" = "Berezovka: mamutul siberian";
+"Smithsonian account of the specimen and its stomach contents, including grasses." = "Relatarea Smithsonianului despre exemplar și conținutul stomacului său, inclusiv ierburi.";
+"SMITHSONIAN NATIONAL MUSEUM OF NATURAL HISTORY" = "SMITHSONIAN NATIONAL MUSEUM OF NATURAL HISTORY";
+"The timeline places each clue beside its published age range. Compare traces from different places and periods." = "Cronologia așază fiecare indiciu lângă intervalul de vârstă publicat pentru el. Compară urme din locuri și perioade diferite.";
+"USGS lecture on the Great Missoula Floods" = "Prelegere USGS despre marile inundații Missoula";
+"Loading USGS video…" = "Se încarcă videoclipul USGS…";
+"The Great Missoula Floods" = "Marile inundații Missoula";
+"Field lecture by USGS geologist Richard Waitt · 73 minutes" = "Prelegere de teren a geologului USGS Richard Waitt · 73 de minute";
+"U.S. Geological Survey · Public Domain" = "U.S. Geological Survey · domeniu public";
+"SOURCE & TRANSCRIPT ↗" = "SURSĂ ȘI TRANSCRIERE ↗";
+"A visit to the fossil site with the University of Nebraska State Museum" = "O vizită la situl fosilifer împreună cu University of Nebraska State Museum";
+"University of Nebraska State Museum · embedded video" = "University of Nebraska State Museum · videoclip încorporat";
+"SOURCE VIDEO ↗" = "VIDEOCLIPUL SURSĂ ↗";
+"MISSION DEBRIEF  /  FLOOD ARGUMENTS & SOURCES" = "BILANȚUL MISIUNII  /  ARGUMENTE ȘI SURSE DESPRE POTOP";
+"Follow every claim to its source." = "Urmărește fiecare afirmație până la sursa ei.";
+"Compare documented observations with the Flood arguments presented in Insight on the Scriptures, a Biblical encyclopedia. Scientific, museum, and government references lead to the records behind each clue." = "Compară observațiile documentate cu argumentele despre Potop prezentate în Insight on the Scriptures, o enciclopedie biblică. Referințele științifice, muzeale și guvernamentale duc la înregistrările din spatele fiecărui indiciu.";
+"Source labels show whether a clue comes from scientific research, an institutional record, scripture, or a Biblical encyclopedia argument." = "Etichetele surselor arată dacă un indiciu provine din cercetarea științifică, dintr-o înregistrare instituțională, din Scripturi sau dintr-un argument al unei enciclopedii biblice.";
+"Take the claims into the field" = "Du afirmațiile pe teren";
+"NASA satellite imagery of the Channeled Scablands, alongside the peer-reviewed flood review." = "Imagini satelitare NASA cu Scablands, alături de analiza evaluată de specialiști despre inundații.";
+"NASA EARTH OBSERVATORY · USGS" = "NASA EARTH OBSERVATORY · USGS";
+"WHAT IS OBSERVED" = "CE SE OBSERVĂ";
+"THE ARGUMENT BUILT ON THESE CLUES" = "ARGUMENTUL CONSTRUIT PE ACESTE INDICII";
+"WHAT THE CITED RESEARCH CONCLUDES" = "CE CONCLUZIONEAZĂ CERCETAREA CITATĂ";
+"REFERENCES · OPEN THE SOURCE" = "REFERINȚE · DESCHIDE SURSA";
+"Opens the cited source in your browser." = "Deschide sursa citată în browser.";
+"English edition" = "Ediția în engleză";
+"Romanian edition" = "Ediția în română";
+"OPEN SOURCE ↗" = "DESCHIDE SURSA ↗";
+"EVIDENCE SPANS VERY DIFFERENT AGES" = "DOVEZILE ACOPERĂ PERIOADE FOARTE DIFERITE";
+"~12 million years ago" = "~12 milioane de ani în urmă";
+"Ashfall · Nebraska · volcanic ash fossil bed" = "Ashfall · Nebraska · strat fosilifer în cenușă vulcanică";
+"~30,000 to ~14,000 years ago" = "~30.000–~14.000 de ani în urmă";
+"Nun cho ga · Yukon · preliminary estimate >30,000 years; Missoula floods · Washington · broad interval often given as ~20,000–14,000 years" = "Nun cho ga · Yukon · estimare preliminară de peste 30.000 de ani; inundațiile Missoula · Washington · interval general de ~20.000–14.000 de ani";
+"Not to scale. The Siberian Berezovka specimen is a comparison, not a North American site." = "Nescalată. Exemplarul Berezovka din Siberia este pentru comparație, nu este un sit din America de Nord.";
+"VISUAL EXPLAINER" = "EXPLICAȚIE VIZUALĂ";
+"SCHEMATIC · NOT TO SCALE" = "SCHEMĂ · FĂRĂ SCARĂ";
 "TEXTUAL DIAGRAM · GENESIS 6:15–16" = "SCHEMĂ TEXTUALĂ · GENEZA 6:15–16";
 "Dimensions stated in the text: 300 × 50 × 30 cubits" = "Dimensiunile indicate în text: 300 × 50 × 30 de coți";
 "SIDE ELEVATION · 300 × 30" = "VEDERE LATERALĂ · 300 × 30";
 "TOP PLAN · 300 × 50" = "VEDERE DE SUS · 300 × 50";
 "A proportional diagram of the biblical description, not an archaeological reconstruction or evidence of a surviving vessel." = "Diagramă proporțională a descrierii biblice, nu o reconstrucție arheologică și nici dovada existenței unei corăbii păstrate.";
-
-// Reported argument inventory
-"A source-led case file of documented observations and reported flood arguments. Each entry separates the observation from its interpretation, links available scientific, museum, or government records, and marks arguments for which no independent scientific source was identified." = "Dosar bazat pe surse, cu observații documentate și argumente raportate despre potop. Fiecare fișă separă observația de interpretare, trimite la înregistrări științifice, muzeale sau guvernamentale disponibile și marchează argumentele pentru care nu am identificat o sursă științifică independentă.";
-"The mammoth die-off argument" = "Argumentul dispariției mamuților";
-"REPORTED ARGUMENT · MASS DEATH AND FREEZING" = "ARGUMENT RAPORTAT · MOARTE ÎN MASĂ ȘI ÎNGHEȚARE";
-"Flood proponents interpret frozen mammoth remains and the disappearance of Ice Age mammals as signs of a sudden, widespread catastrophe." = "Susținătorii potopului interpretează rămășițele mamuților înghețați și dispariția mamiferelor din Epoca de Gheață ca indicii ale unei catastrofe bruște și întinse.";
-"Permafrost preserves mammoth remains and plant material. Yukon sedimentary ancient-DNA records document ecological change across thousands of years, while fossil specimens provide separate local snapshots." = "Permafrostul conservă rămășițe de mamuți și material vegetal. Înregistrările ADN-ului antic din sedimentele Yukonului documentează schimbări ecologice de-a lungul a mii de ani, iar fosilele oferă instantanee locale distincte.";
-"A carcass with stomach contents records its last meal and burial setting. It does not by itself establish a precise freezing time or a worldwide flood. The game treats a sudden global catastrophe as the proponents’ interpretation of the evidence, rather than as a measured property of the specimen." = "Un cadavru cu conținut stomacal consemnează ultima masă și contextul îngropării. Singur, nu stabilește timpul exact al înghețării și nici un potop mondial. Jocul prezintă catastrofa globală bruscă drept interpretarea susținătorilor, nu drept o proprietate măsurată a exemplarului.";
-"PEER-REVIEWED RESEARCH · NATURE COMMUNICATIONS · 2021" = "CERCETARE EVALUATĂ DE SPECIALIȘTI · NATURE COMMUNICATIONS · 2021";
-"Flood stories across cultures" = "Relatări despre potop în diferite culturi";
-"REPORTED ARGUMENT · SHARED MEMORY" = "ARGUMENT RAPORTAT · MEMORIE COMUNĂ";
-"Flood proponents argue that accounts from many peoples preserve memories of one ancestral catastrophe. The stories are real cultural records and can be compared for shared details." = "Susținătorii potopului argumentează că relatările multor popoare păstrează amintirea unei singure catastrofe ancestrale. Poveștile sunt documente culturale reale și pot fi comparate pentru a găsi detalii comune.";
-"Ancient Near Eastern flood narratives survive in cuneiform and biblical texts; comparative scholarship examines their literary development, similarities, differences, and possible transmission. A reliable count of all ‘worldwide flood stories’ depends on how a flood narrative is defined and catalogued." = "Relatările antice despre potop din Orientul Apropiat s-au păstrat în texte cuneiforme și biblice; studiile comparative analizează dezvoltarea lor literară, asemănările, diferențele și posibila transmitere. Un număr sigur al tuturor „poveștilor despre potop din lume” depinde de definiția și catalogarea unei asemenea relatări.";
-"The existence of flood traditions is documented; their spread does not, by itself, establish one shared global event. Similar motifs can be investigated through local flood histories, textual borrowing, migration, and independent storytelling. The game treats a shared ancestral memory as an interpretation to weigh." = "Existența tradițiilor despre potop este documentată; răspândirea lor nu stabilește, de una singură, un singur eveniment global comun. Motivele asemănătoare pot fi cercetate prin istoriile inundațiilor locale, împrumuturi textuale, migrație și apariția independentă a poveștilor. Jocul prezintă memoria ancestrală comună ca interpretare de evaluat.";
-"OXFORD ACADEMIC · ANCIENT NEAR EASTERN STUDIES" = "OXFORD ACADEMIC · STUDII DESPRE ORIENTUL APROPIAT ANTIC";
-"PEER-REVIEWED COMPARATIVE STUDY" = "STUDIU COMPARATIV EVALUAT DE SPECIALIȘTI";
-"SCHOLARLY COMPARATIVE STUDY" = "STUDIU COMPARATIV ACADEMIC";
-"Could today’s water cover a smoothed Earth?" = "Ar putea apa de azi să acopere un Pământ netezit?";
-"REPORTED ARGUMENT · MATHEMATICAL THOUGHT EXPERIMENT" = "ARGUMENT RAPORTAT · EXPERIMENT MATEMATIC DE GÂNDIRE";
-"A familiar flood argument divides Earth’s ocean-water volume by the planet’s surface area: if topography were smoothed, the result is a water layer a few kilometres deep." = "Un argument cunoscut împarte volumul apei oceanice la suprafața planetei: dacă relieful ar fi netezit, rezultatul ar fi un strat de apă de câțiva kilometri adâncime.";
-"USGS estimates about 1.338 billion cubic kilometres of ocean water. Dividing that approximate volume by Earth’s roughly 510 million square kilometres of surface gives about 2.6 kilometres as a simplified average layer." = "USGS estimează volumul apei oceanice la aproximativ 1,338 miliarde de kilometri cubi. Împărțirea acestui volum aproximativ la suprafața Pământului, de circa 510 milioane de kilometri pătrați, dă un strat mediu simplificat de aproximativ 2,6 kilometri.";
-"The arithmetic is a useful scale comparison, not evidence that mountains and ocean basins were once level, that the water came from a physical source capable of producing a global deluge, or that a global flood occurred. Modern topography is not a smooth sphere; this thought experiment removes that topography by assumption." = "Calculul oferă o comparație utilă de scară, nu o dovadă că munții și bazinele oceanice au fost cândva nivelate, că apa a provenit dintr-o sursă fizică în stare să producă un potop global sau că acesta a avut loc. Relieful actual nu este o sferă netedă; experimentul elimină relieful prin ipoteză.";
-"GOVERNMENT DATA SUMMARY" = "SINTEZĂ DE DATE GUVERNAMENTALE";
-"GOVERNMENT BATHYMETRY AND TOPOGRAPHY DATA" = "DATE GUVERNAMENTALE BATIMETRICE ȘI TOPOGRAFICE";
-"The Ark’s dimensions and capacity" = "Dimensiunile și capacitatea arcei";
-"REPORTED ARGUMENT · SCRIPTURAL DIMENSIONS" = "ARGUMENT RAPORTAT · DIMENSIUNI SCRIPTURALE";
-"The Genesis dimensions can be used to estimate the Ark’s theoretical volume. Flood proponents argue that this space could hold the family and representatives of animal ‘kinds.’" = "Dimensiunile din Geneza pot fi folosite pentru a estima volumul teoretic al arcei. Susținătorii potopului argumentează că spațiul ar fi încăput familia și reprezentanți ai „felurilor” de animale.";
-"Genesis 6:15 gives 300 × 50 × 30 cubits; the text also describes three decks. Converting those dimensions into cubic metres requires choosing a cubit length and making assumptions about hull shape, usable space, animal categories, food, water, ventilation, and waste." = "Geneza 6:15 indică 300 × 50 × 30 de coți; textul descrie și trei punți. Conversia dimensiunilor în metri cubi cere alegerea lungimii cotului și formularea unor ipoteze despre forma corpului navei, spațiul util, categoriile de animale, hrană, apă, ventilație și deșeuri.";
-"The dimensions are a feature of the biblical account, not an excavated vessel measurement. Capacity calculations are models based on assumptions; no independent scientific source has been identified that validates the publication’s animal-count estimates. The argument concerns feasibility within an interpretation of the text, not geological proof of a flood." = "Dimensiunile aparțin relatării biblice; nu sunt măsurători ale unei nave excavate. Calculele capacității sunt modele bazate pe ipoteze; nu am identificat o sursă științifică independentă care să confirme estimările publicației privind numărul animalelor. Argumentul privește fezabilitatea unei interpretări a textului, nu dovada geologică a unui potop.";
-"PRIMARY SCRIPTURAL TEXT" = "TEXT SCRIPTURAL PRIMAR";
-"The proposed source of the Flood’s water" = "Sursa propusă a apei potopului";
-"REPORTED ARGUMENT · SCRIPTURAL COSMOLOGY" = "ARGUMENT RAPORTAT · COSMOLOGIE SCRIPTURALĂ";
-"One interpretation of Genesis proposes that the Flood involved water described as being ‘above the expanse,’ in addition to water from the ‘vast watery deep.’ This is a scriptural argument about the narrative’s water source." = "O interpretare a Genezei propune că potopul a implicat apa descrisă ca fiind „deasupra întinderii”, pe lângă apa din „vastul adânc”. Acesta este un argument scriptural despre sursa apei din relatare.";
-"The cited passage is part of the Genesis creation and Flood account. No independently testable physical reservoir or mechanism has been identified in the scientific sources reviewed for this inventory that could supply enough water to cover present-day high mountains and then remove it." = "Pasajul citat face parte din relatarea Genezei despre creație și potop. În sursele științifice cercetate pentru acest inventar nu am identificat un rezervor fizic sau un mecanism testabil independent care să poată furniza suficientă apă pentru a acoperi munții actuali și apoi s-o retragă.";
-"This item is included as a reported scriptural argument, not as a measured geological observation. The app does not present the proposed water reservoir as an established scientific finding; the proposed mechanism remains a religious interpretation unless a testable model and evidence are supplied." = "Acest element este inclus ca argument scriptural raportat, nu ca observație geologică măsurată. Aplicația nu prezintă rezervorul de apă propus drept descoperire științifică stabilită; mecanismul rămâne o interpretare religioasă în lipsa unui model testabil și a dovezilor aferente.";
-
-// Reported historical pressure argument
-"Source labels distinguish peer-reviewed studies, museum records, government archives, scripture, and reported interpretations. A reported argument is not automatically a verified scientific result." = "Etichetele surselor disting studiile evaluate de specialiști, înregistrările muzeale, arhivele guvernamentale, textele scripturale și interpretările raportate. Un argument raportat nu este automat un rezultat științific verificat.";
-"Could water pressure fossilize organisms quickly?" = "Ar putea presiunea apei să fosilizeze rapid organismele?";
-"REPORTED ARGUMENT · HISTORICAL ESTIMATE" = "ARGUMENT RAPORTAT · ESTIMARE ISTORICĂ";
-"A flood-geology argument proposes that immense water pressure could speed fossilization. The argument is associated with an estimate of two tons per square inch." = "Un argument din geologia potopului propune că o presiune enormă a apei ar putea accelera fosilizarea. Argumentul este asociat cu o estimare de două tone pe inch pătrat.";
-"The estimate is cited to Donald W. Patten’s 1966 book, not to a modern peer-reviewed fossilization experiment. Fossilization involves burial and a range of chemical, physical, and biological processes; the pressure figure alone does not document a fossil-forming mechanism." = "Estimarea este atribuită cărții lui Donald W. Patten din 1966, nu unui experiment modern despre fosilizare evaluat de specialiști. Fosilizarea implică îngropare și o varietate de procese chimice, fizice și biologice; cifra presiunii, singură, nu documentează un mecanism de formare a fosilelor.";
-"This is included as a reported historical argument, with its traceable book reference. I found no independent scientific study validating that pressure estimate as a general explanation for rapid fossilization. The claim should not be presented as an established measurement or as proof of a global flood." = "Elementul este inclus ca argument istoric raportat, cu trimitere la cartea identificabilă. Nu am găsit un studiu științific independent care să valideze acea estimare a presiunii ca explicație generală pentru fosilizarea rapidă. Afirmația nu trebuie prezentată ca măsurătoare stabilită sau ca dovadă a unui potop global.";
-"HISTORICAL FLOOD-GEOLOGY BOOK · CLAIM SOURCE" = "CARTE ISTORICĂ DE GEOLOGIE A POTOPULUI · SURSA AFIRMAȚIEI";
-
-"A source-led case file of documented observations and reported flood arguments. Insight on the Scriptures is identified as a Biblical encyclopedia and cited for the arguments it presents; scientific, museum, and government references are linked separately for the observations they document." = "Dosar bazat pe surse, cu observații documentate și argumente raportate despre potop. Insight on the Scriptures este identificată drept enciclopedie biblică și citată pentru argumentele pe care le prezintă; sursele științifice, muzeale și guvernamentale sunt legate separat de observațiile pe care le documentează.";
-
-"Source labels distinguish peer-reviewed studies, museum records, government archives, scripture, and Biblical encyclopedia arguments. An argument reported by an encyclopedia is not automatically a scientific measurement." = "Etichetele disting studiile evaluate de specialiști, înregistrările muzeale, arhivele guvernamentale, Scripturile și argumentele enciclopediei biblice. Un argument prezentat de o enciclopedie nu este automat o măsurătoare științifică.";
-
-"Insight on the Scriptures says some view the frozen mammoth and its vegetation as ‘convincing evidence of a sudden, catastrophic global flood.’ The Berezovka specimen’s preserved last meal is documented separately by the Smithsonian and an expedition account." = "Insight on the Scriptures spune că unii consideră mamutul înghețat și vegetația găsită la el drept „dovezi convingătoare ale unui potop global brusc și catastrofal”. Ultima masă păstrată a exemplarului Berezovka este documentată separat de Smithsonian și de o relatare de expediție.";
-
-"Insight on the Scriptures reports mammoths and other animals found frozen with undigested stomach contents and presents a sudden catastrophe as one interpretation of these remains." = "Insight on the Scriptures relatează descoperirea unor mamuți și a altor animale înghețate, cu conținut gastric nedigerat, și prezintă catastrofa bruscă drept una dintre interpretările acestor rămășițe.";
-
-"Insight on the Scriptures, a Biblical encyclopedia, notes that ‘hundreds of such legends are known’ and presents their shared features as an argument for a common ancestral memory." = "Insight on the Scriptures, o enciclopedie biblică, menționează că „se cunosc sute de astfel de legende” și prezintă trăsăturile comune ca argument pentru o amintire ancestrală comună.";
-
-"Insight on the Scriptures frames the calculation with the phrase ‘If the earth’s surface was smoothed out’; it says the resulting water layer would be about 2,400 metres deep." = "Insight on the Scriptures formulează calculul astfel: „Dacă suprafața pământului ar fi nivelată”; afirmă că stratul de apă rezultat ar avea aproximativ 2.400 de metri adâncime.";
-
-"Insight on the Scriptures describes the Ark as a ‘rectangular chestlike vessel’ and argues from its dimensions and estimated usable volume that it could carry representatives of animal ‘kinds.’" = "Insight on the Scriptures descrie arca drept „o ladă dreptunghiulară” și argumentează, pe baza dimensiunilor și volumului util estimat, că aceasta putea transporta reprezentanți ai „felurilor” de animale.";
-
-"Insight on the Scriptures describes proposed explanations for the waters above and below as ‘only speculative.’ The encyclopedia presents the Genesis account’s water source while acknowledging that the mechanism is not explained in the text." = "Insight on the Scriptures spune că explicațiile propuse pentru apele de deasupra și de dedesubt sunt „doar speculative”. Enciclopedia prezintă sursa apei din relatarea Genezei și recunoaște că mecanismul nu este explicat în text.";
-
-"Insight on the Scriptures reports a pressure estimate of two tons per square inch and cites Donald W. Patten’s 1966 book when discussing rapid fossilization under catastrophic conditions." = "Insight on the Scriptures menționează o estimare a presiunii de două tone pe inch pătrat și citează cartea lui Donald W. Patten din 1966 în discuția despre fosilizarea rapidă în condiții catastrofale.";
-
-"The Bible’s later witnesses to the Flood" = "Mărturiile biblice ulterioare despre potop";
-
-"REPORTED ARGUMENT · BIBLICAL TESTIMONY" = "ARGUMENT RAPORTAT · MĂRTURIE BIBLICĂ";
-
-"Insight on the Scriptures argues that later Bible writers, including Jesus, treated Noah and the Flood as historical and used the account in teaching. This is the encyclopedia’s scriptural argument for the Flood’s historicity." = "Insight on the Scriptures argumentează că scriitorii biblici de mai târziu, inclusiv Isus, au tratat relatarea despre Noe și potop ca istorică și au folosit-o în învățăturile lor. Acesta este argumentul scriptural al enciclopediei pentru caracterul istoric al potopului.";
-
-"The cited passages include references to Noah and the Flood in Isaiah, Ezekiel, the Gospels, Hebrews, and 2 Peter. These are primary textual witnesses to how later biblical authors used the account; they are not geological measurements." = "Pasajele citate includ referiri la Noe și potop în Isaia, Ezechiel, Evanghelii, Evrei și 2 Petru. Acestea sunt mărturii textuale primare despre felul în care autorii biblici ulteriori au folosit relatarea; nu sunt măsurători geologice.";
-
-"The Biblical encyclopedia presents the later Bible references as confirmation of the Genesis account. This is a theological and textual argument, distinct from physical evidence such as dated deposits or fossils." = "Enciclopedia biblică prezintă referințele biblice ulterioare drept confirmare a relatării din Geneza. Acesta este un argument teologic și textual, distinct de dovezile fizice precum depozitele datate sau fosilele.";
-
-"BIBLICAL ENCYCLOPEDIA · SCRIPTURAL ARGUMENT" = "ENCICLOPEDIE BIBLICĂ · ARGUMENT SCRIPTURAL";
-
-"Isaiah 54 · Noah reference" = "Isaia 54 · Referire la Noe";
-
-"Matthew 24 · Jesus refers to Noah" = "Matei 24 · Isus îl menționează pe Noe";
-
-"2 Peter 3 · The Flood account" = "2 Petru 3 · Relatarea potopului";
-
-"BIBLICAL ENCYCLOPEDIA · ARGUMENT SOURCE" = "ENCICLOPEDIE BIBLICĂ · SURSĂ A ARGUMENTULUI";
-
-"The Deluge article cites Psalm 29, Isaiah 54, Ezekiel 14, Luke 3, Matthew 24, Luke 17, Hebrews 11, 1 Peter 3, and 2 Peter 2–3. The Flood of Noah’s Day article also refers to John 8:58 in support of its claim that Jesus was an eyewitness in heaven. These are textual and theological arguments in the encyclopedia, not geological measurements." = "Articolul „Deluge” citează Psalmul 29, Isaia 54, Ezechiel 14, Luca 3, Matei 24, Luca 17, Evrei 11, 1 Petru 3 și 2 Petru 2–3. Articolul „Flood of Noah’s Day” face trimitere și la Ioan 8:58 pentru a susține afirmația că Isus a fost martor ocular în cer. Acestea sunt argumente textuale și teologice din enciclopedie, nu măsurători geologice.";
-
-"Ezekiel 14 · Noah, Daniel, and Job" = "Ezechiel 14 · Noe, Daniel și Iov";
-
-"Luke 17 · Jesus refers to Noah" = "Luca 17 · Isus îl menționează pe Noe";
-
-"Hebrews 11 · Noah’s faith" = "Evrei 11 · Credința lui Noe";
-
-"1 Peter 3 · Noah and the Flood" = "1 Petru 3 · Noe și potopul";
-
-"2 Peter 2 · Noah as a preacher" = "2 Petru 2 · Noe ca predicator";
-
-"REASONING CHECKS" = "EXERCIȚII DE RAȚIONAMENT";
-
-"Every lead examined. Build your case." = "Ai examinat fiecare indiciu. Construiește-ți cazul.";
-
-"Examine each clue; record what it can show." = "Examinează fiecare indiciu și notează ce poate arăta.";
-
-"FIELD CHALLENGE" = "PROVOCARE DE TEREN";
-
-"PREDICTION LOGGED" = "PREDICȚIE ÎNREGISTRATĂ";
-
-"Which pattern points to repeated outburst floods?" = "Ce tipar indică mai multe viituri glaciare?";
-
-"Stacked flood beds and giant current ripples." = "Straturi succesive de aluviuni și ondulații uriașe formate de curenți.";
-
-"One shoreline with no flood deposits." = "Un singur țărm, fără depozite de inundație.";
-
-"A single isolated fossil." = "O singură fosilă izolată.";
-
-"The USGS synthesis describes repeated Lake Missoula outbursts. Successive deposits and giant current ripples are clues to repeated flows." = "Sinteza USGS descrie viituri repetate din lacul Missoula. Depozitele succesive și ondulațiile uriașe formate de curenți indică mai multe curgeri.";
-
-"This supports repeated regional floods. By itself it does not connect separate continents to one event." = "Acest lucru susține existența unor viituri regionale repetate. Singur, nu leagă continente diferite de un singur eveniment.";
-
-"What can the preserved calf show directly?" = "Ce poate arăta direct puiul de mamut conservat?";
-
-"Permafrost can preserve a carcass and soft tissue." = "Permafrostul poate conserva o carcasă și țesuturi moi.";
-
-"The exact hour and speed of burial." = "Ora exactă și viteza îngropării.";
-
-"That a worldwide flood caused its death." = "Că un potop mondial i-a provocat moartea.";
-
-"The Yukon discovery documents exceptional preservation in frozen ground. The specimen alone does not give an exact burial clock or identify a global cause." = "Descoperirea din Yukon documentează conservarea excepțională în sol înghețat. Exemplarul singur nu indică ora exactă a îngropării și nici o cauză globală.";
-
-"Separate what the specimen preserves from the larger explanation proposed for how it was buried." = "Deosebește ce s-a păstrat în exemplar de explicația mai amplă despre felul în care a fost îngropat.";
-
-"What buried the Ashfall animals?" = "Ce a îngropat animalele de la Ashfall?";
-
-"Volcanic ash reached Nebraska from an eruption to the west." = "Cenușa vulcanică a ajuns în Nebraska după o erupție produsă la vest.";
-
-"A river flood from the Black Sea." = "O viitură pornită din Marea Neagră.";
-
-"A glacier carrying the animals south." = "Un ghețar care a transportat animalele spre sud.";
-
-"The Nebraska State Museum describes volcanic ash from an eruption in what is now Idaho. The site is a local ashfall deposit, not a water-laid flood bed." = "Muzeul de Stat din Nebraska descrie cenușă vulcanică provenită dintr-o erupție din zona actualului stat Idaho. Situl este un depozit local de cenușă, nu un strat depus de o viitură.";
-
-"A mass burial can have different causes. Check the deposit itself before using it in a flood argument." = "O îngropare în masă poate avea cauze diferite. Examinează depozitul înainte să-l folosești ca argument pentru potop.";
-
-"Two cities have flood layers. What would help test whether they record the same event?" = "Două orașe au straturi de inundație. Ce ar ajuta să verifici dacă provin din același eveniment?";
-
-"Compare dates, layer properties, and archaeological context." = "Compară datele, proprietățile straturilor și contextul arheologic.";
-
-"Assume similar-looking mud means the same flood." = "Presupune că mâlul asemănător provine din aceeași inundație.";
-
-"Use a later story as the only dating method." = "Folosește o relatare ulterioară drept singura metodă de datare.";
-
-"Each excavated layer has a site context. Correlating separate deposits requires comparing their age and sediment evidence; similarity alone is not enough." = "Fiecare strat excavat are un context propriu. Pentru a corela depozite diferite, trebuie comparate vârsta și dovezile sedimentare; asemănarea singură nu ajunge.";
-
-"A connection between sites is a hypothesis to test, not a property of the word ‘flood’ alone." = "Legătura dintre situri este o ipoteză de verificat; simplul fapt că ambele au avut inundații nu o dovedește.";
-
-"If two flood narratives share themes, what is the strongest next step?" = "Dacă două relatări despre potop au teme comune, care este următorul pas util?";
-
-"Compare wording, setting, dates, and possible transmission." = "Compară formularea, contextul, datarea și posibila transmitere.";
-
-"Treat every shared theme as proof of one identical event." = "Consideră fiecare temă comună drept dovadă că a fost același eveniment.";
-
-"Ignore differences between the accounts." = "Ignoră diferențele dintre relatări.";
-
-"Shared motifs make comparison useful. Similarities and differences, historical setting, and possible transmission all matter when evaluating a connection." = "Motivele comune fac comparația utilă. Asemănările și deosebirile, contextul istoric și posibila transmitere contează toate când evaluezi o legătură.";
-
-"A good investigator records both matches and mismatches between sources." = "Un investigator bun notează atât potrivirile, cât și diferențele dintre surse.";
-
-"What evidence can test the proposed rapid Black Sea inflow?" = "Ce dovezi pot verifica ipoteza pătrunderii rapide a apei în Marea Neagră?";
-
-"Dated shorelines and sediment or salinity sequences." = "Țărmuri datate și succesiuni de sedimente sau salinitate.";
-
-"A flood legend with no geological context." = "O legendă despre potop fără context geologic.";
-
-"A mountain fossil far from the basin." = "O fosilă de munte, departe de bazin.";
-
-"The rapid-inflow proposal is tested against basin shorelines, sediment records, and changes in salinity. The rate and scale are part of the hypothesis." = "Ipoteza pătrunderii rapide este evaluată pe baza țărmurilor bazinului, a sedimentelor și a schimbărilor de salinitate. Viteza și amploarea fac parte din ipoteză.";
-
-"A regional hypothesis needs evidence from its own basin before it can be linked to a wider story." = "Înainte de a lega o ipoteză regională de o poveste mai amplă, sunt necesare dovezi din bazinul respectiv.";
-
-"COMPARE WITH THE RECORD  →" = "COMPARĂ CU ÎNREGISTRAREA  →";
-
-"UPDATE MY PREDICTION  →" = "ACTUALIZEAZĂ PREDICȚIA  →";
-
-"YOU FOUND THE KEY DETAIL" = "AI GĂSIT DETALIUL-CHEIE";
-
-"HERE’S WHAT THE RECORD SHOWS" = "IATĂ CE ARATĂ ÎNREGISTRAREA";
-
-"The challenge checks how you read the evidence, not which flood theory you choose." = "Provocarea verifică felul în care citești dovezile, nu teoria despre potop pe care o alegi.";
-
-"CASE BOARD" = "PANOU DE CONEXIUNI";
-
-" LINKS" = " LEGĂTURI";
-
-"Build a connection—and label what kind of connection you mean." = "Construiește o legătură și precizează de ce fel este.";
-
-"MAY CONNECT" = "POSIBILĂ LEGĂTURĂ";
-
-"DIFFERENT TIMES / PLACES" = "PERIOADE / LOCURI DIFERITE";
-
-"NEEDS MORE EVIDENCE" = "NECESITĂ MAI MULTE DOVEZI";
-
-"What detail links—or separates—these records?" = "Ce detaliu leagă aceste înregistrări sau le deosebește?";
-
-"PIN CONNECTION TO BOARD" = "FIXEAZĂ LEGĂTURA PE PANOU";
-
-"Your links are working hypotheses. Record a detail from the sources before treating a connection as an explanation." = "Legăturile tale sunt ipoteze de lucru. Notează un detaliu din surse înainte să tratezi o legătură drept explicație.";
-
-"REMOVE CONNECTION" = "ELIMINĂ LEGĂTURA";
-
-"Working question: which clues might belong together—and which only look alike?" = "Întrebarea de lucru: care indicii ar putea avea legătură și care doar seamănă?";
-
-"Log three leads to open the case review. You can return for the rest at any time." = "Înregistrează trei indicii pentru a deschide analiza cazului. Poți reveni oricând pentru restul.";
-
-"What is your working theory?" = "Care este teoria ta de lucru?";
-
-"Lay the clues beside one another. Decide what your explanation accounts for, what it leaves unanswered, and how strongly you hold it." = "Pune indiciile unul lângă altul. Hotărăște ce explică teoria ta, ce întrebări lasă deschise și câtă încredere ai în ea.";
-
-"The case is still taking shape" = "Cazul încă se conturează";
-
-"Log three leads to begin a theory. You can add more evidence later." = "Înregistrează trei indicii pentru a începe formularea unei teorii. Poți adăuga alte dovezi mai târziu.";
-
-"CHOOSE A WORKING POSITION · YOU CAN REVISE IT LATER" = "ALEGE O POZIȚIE PROVIZORIE · O POȚI SCHIMBA";
-
-"The evidence is not enough for me to decide yet." = "Încă nu am suficiente dovezi pentru a decide.";
-
-"Keep the investigation open; record what would change your mind." = "Continuă investigația; notează ce te-ar putea face să-ți schimbi părerea.";
-
-"I have another explanation." = "Am o altă explicație.";
-
-"State it in your own words and attach the clues that matter to you." = "Formuleaz-o cu propriile cuvinte și atașează indiciile importante pentru tine.";
-
-"WRITE YOUR EXPLANATION" = "SCRIE EXPLICAȚIA TA";
-
-"WHY DOES THIS FIT THE CLUES? WHAT IS STILL UNCERTAIN?" = "CUM SE POTRIVEȘTE CU INDICIILE? CE RĂMÂNE NESIGUR?";
-
-"Name one clue that supports your view, one that complicates it, and what you would investigate next…" = "Menționează un indiciu care îți susține ideea, unul care o complică și ce ai investiga în continuare…";
-
-"YOUR CASE REASONING" = "RAȚIONAMENTUL TĂU";
-
-"HOW CONFIDENT ARE YOU?" = "CÂTĂ ÎNCREDERE AI?";
-
-"% · YOUR ESTIMATE" = "% · ESTIMAREA TA";
-
-"Confidence describes your current judgement, not a scientific probability." = "Nivelul de încredere descrie judecata ta actuală, nu o probabilitate științifică.";
-
-"FILE MY THEORY" = "ÎNREGISTREAZĂ TEORIA";
-
-"Your theory is archived, not graded. Use EDIT any time new evidence changes your mind." = "Teoria ta este arhivată, nu notată. O poți modifica oricând apar dovezi noi.";
-
-"You left the case open while the evidence is still incomplete." = "Ai lăsat cazul deschis cât timp dovezile sunt incomplete.";
-
-"Your explanation is on file. Keep testing it against the evidence." = "Explicația ta este înregistrată. Continuă să o verifici în raport cu dovezile.";
-
-"THEORY ON FILE · NOT SCORED" = "TEORIE ÎNREGISTRATĂ · FĂRĂ NOTĂ";
-
-"YOUR REASONING" = "RAȚIONAMENTUL TĂU";
-
-"CURRENT CONFIDENCE" = "NIVEL ACTUAL DE ÎNCREDERE";
-
-"% · SELF-ESTIMATE" = "% · AUTOEVALUARE";
-
-"LINKS YOU RECORDED" = "LEGĂTURILE ÎNREGISTRATE";
-
-"You recorded where the evidence currently stops short for you. An open question is a useful finding; return when you have new sources or a different connection to test." = "Ai notat unde dovezile nu te conving deocamdată. O întrebare deschisă este un rezultat util; revino când găsești surse noi sau o altă legătură de verificat.";
-
-"A useful case file keeps its sources, uncertainties, and revisions together. Your conclusion can change when your evidence changes." = "Un dosar util păstrează împreună sursele, incertitudinile și revizuirile. Concluzia se poate schimba pe măsură ce apar dovezi noi.";
-
-"EDIT MY THEORY" = "MODIFICĂ TEORIA";
-
-"Psalm 29 · Jehovah over the Deluge" = "Psalmul 29 · Iehova deasupra Potopului";
-
-"John 8 · Jesus’ statement about his prehuman existence" = "Ioan 8 · Afirmația lui Isus despre existența sa preumană";
-
-"Luke 3 · Noah in Jesus’ genealogy" = "Luca 3 · Noe în genealogia lui Isus";
-
-"LINKS" = "LEGĂTURI";
-
-"YOUR ESTIMATE" = "ESTIMAREA TA";
-
-"SELF-ESTIMATE" = "AUTOEVALUARE";
-
-"The past is never buried as deep as it seems." = "Trecutul nu este niciodată îngropat atât de adânc pe cât pare.";
-
-"National Park Service · Ashfall paleontology and burial sequence" = "National Park Service · Paleontologia și succesiunea îngropării de la Ashfall";
-
-"GOVERNMENT PALEONTOLOGY RESOURCE" = "RESURSĂ GUVERNAMENTALĂ DE PALEONTOLOGIE";
-
-"University of Nebraska · About Ashfall" = "Universitatea din Nebraska · Despre Ashfall";
-
-"American Museum of Natural History · Ashfall fossils, including unborn young" = "American Museum of Natural History · Fosilele de la Ashfall, inclusiv pui nenăscuți";
-
-"At Lagash, a dated flood deposit more than a metre thick covered existing architecture." = "La Lagash, un depozit de inundație datat, cu o grosime de peste un metru, a acoperit construcții existente.";

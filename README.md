@@ -1,10 +1,12 @@
 # The Flood Archive
 
-**A source-led flood investigation game for macOS, iPadOS, and iPhone.** In the English-language experience, players examine a source record before unlocking each evidence challenge, compare clue pairs on a case board, then choose their own theory about Noah’s Flood. Missions link real places, specimens, and texts to their sources, while identifying Flood-geology interpretations as interpretations.
+**A source-led flood investigation game for macOS, iPadOS, and iPhone.** In the English-language experience, players open a source record to unlock each evidence challenge, record case-board findings whose basis the source records support, then choose their own theory about Noah’s Flood. Missions link real places, specimens, and texts to their sources, while identifying Flood-geology interpretations as interpretations.
 
 ## Languages
 
-The interface and investigation content launch in English. Use the English / Română segmented control in the sidebar to switch to Romanian; the choice is saved on the device. Original publication titles remain in their published language so sources are easy to find.
+The interface and investigation content launch in English. Use the English / Română segmented control in the sidebar to switch to Romanian; the choice is saved on the device. Original publication titles and institution names remain in their published language so sources are easy to find. Bible references and the *Insight on the Scriptures* entries that exist in Romanian link to both editions: the active language opens its own edition, and a small EN / RO button opens the other. The Romanian Bible links use the New World Translation on jw.org; the Romanian *Insight* entries open on wol.jw.org. The “Ark” entry has no Romanian counterpart at the same address, so it links to the English edition only.
+
+On iPhone, pages are reached from the menu button in the top bar; Mac and iPad keep the sidebar.
 
 The game is an investigation interface, not a report of a newly discovered archive. Its named places, specimens, and ancient texts are real and linked to their sources; players assemble them into a theory.
 
@@ -18,11 +20,13 @@ The game is an investigation interface, not a report of a newly discovered archi
 
 ## Included
 
-- One universal Xcode project for Mac, iPad, and iPhone, with a custom illustrated title scene, mission map, clue collection, evidence wall, final theory, and reference-linked **Claim Audit**.
+- One universal Xcode project for Mac, iPad, and iPhone, with a custom illustrated title scene, mission map, clue collection, evidence wall, final theory, and reference-linked **Claim Audit**. Each Claim Audit file has three parts: what is observed, the argument built on those clues, and what the cited research concludes.
 - Twenty-one evidence files covering regional megafloods, the Black Sea rapid-inflow hypothesis, post-Ice-Age sea-level rise, marine fossils at elevation, Tapeats/Coconino megasequences, polystrate trees, dinosaur soft-tissue reports, unconformities, folded strata, catastrophic plate tectonics, RATE helium-in-zircon claims, fossil succession, a fossil preserving a marine reptile giving birth, Berezovka’s last meal, mammoth die-off arguments, flood traditions, the smoothed-Earth water-volume calculation, Ark-capacity claims, the proposed scriptural water source, biblical testimony cited by later writers, and the historical water-pressure fossilization estimate.
 - North American cases for the Channeled Scablands, Yukon mammoths, and Ashfall Fossil Beds in Nebraska.
 - Images that load from NASA, Yukon, and the University of Nebraska; a USGS lecture and an Ashfall Museum video embedded in the game; an official 360° tour and Nebraska Studies multimedia story open at their publishers. Credits and source links appear beside the media.
 - A timeline that keeps separate places, specimens, and geological periods distinct.
+- A case board where each link or difference needs a basis (region, measured dates, or kind of record) that the clues' records support; open questions are saved but do not unlock the final theory. Theories that join every clue into one event ask for the player's explanation of the places and periods involved.
+- **Restart the case** in the sidebar clears the saved missions, answers, opened sources, findings, and theory on the device; the language choice is kept.
 
 ## Source labels
 
