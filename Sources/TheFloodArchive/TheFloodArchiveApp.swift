@@ -22,9 +22,11 @@ struct TheFloodArchiveApp: App {
 }
 
 private enum Page: String, CaseIterable, Identifiable {
+    case home = "Home"
     case briefing = "Mission Briefing"
     case sites = "Missions"
     case evidence = "Evidence Wall"
+    case library = "Library"
     case northAmerica = "North America"
     case media = "Field Media"
     case claimAudit = "Claim Audit"
@@ -33,6 +35,8 @@ private enum Page: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var icon: String {
         switch self {
+        case .home: "house"
+        case .library: "books.vertical"
         case .briefing: "doc.text.magnifyingglass"
         case .sites: "location.north.circle"
         case .evidence: "point.3.connected.trianglepath.dotted"
@@ -44,6 +48,8 @@ private enum Page: String, CaseIterable, Identifiable {
     }
     var tabTitle: String {
         switch self {
+        case .home: "Home"
+        case .library: "Library"
         case .briefing: "Briefing"
         case .sites: "Missions"
         case .evidence: "Evidence"
@@ -53,9 +59,45 @@ private enum Page: String, CaseIterable, Identifiable {
         case .conclusion: "Theory"
         }
     }
+    // Pages without their own tab open inside a tab, with a Back button, as in JW Library.
+    var tab: Page {
+        switch self {
+        case .briefing: .home
+        case .northAmerica, .media, .claimAudit: .library
+        default: self
+        }
+    }
 }
 
-private let compactTabs: [Page] = [.sites, .evidence, .northAmerica, .media, .claimAudit, .conclusion]
+private let mainTabs: [Page] = [.home, .sites, .evidence, .library, .conclusion]
+
+private struct ScripturePassage {
+    let citation: String
+    let summary: String
+}
+
+// Short summaries written for the game; the passage text itself is read in the Bible.
+private let scripturePassages: [String: ScripturePassage] = [
+    "Genesis 6 · Noah commissioned to build the Ark": ScripturePassage(citation: "Genesis 6:13–22", summary: "God tells Noah that he will bring a flood, instructs him to build an ark and to bring his family and the animals into it, and Noah does everything he is commanded."),
+    "Genesis 6 · Ark dimensions in the biblical text": ScripturePassage(citation: "Genesis 6:15, 16", summary: "The ark is to be 300 cubits long, 50 cubits wide, and 30 cubits high, with an opening for light near the top, an entrance in its side, and three decks."),
+    "Genesis 7 · The Flood begins": ScripturePassage(citation: "Genesis 7:11–24", summary: "In the 600th year of Noah’s life the waters burst out and rain falls for 40 days and 40 nights; the waters cover the mountains, and only those in the ark survive."),
+    "Genesis 8 · The waters recede": ScripturePassage(citation: "Genesis 8:1–19", summary: "God remembers Noah, the waters recede, and the ark comes to rest on the mountains of Ararat; Noah sends out a raven and a dove, and the family leaves the ark."),
+    "Genesis 9 · The covenant": ScripturePassage(citation: "Genesis 9:8–17", summary: "God makes a covenant never again to destroy all life by a flood, and gives the rainbow as its sign."),
+    "Genesis 1 · The expanse and waters": ScripturePassage(citation: "Genesis 1:6–8", summary: "God makes an expanse that separates the waters beneath it from the waters above it, and calls the expanse Heaven."),
+    "Psalm 29 · Jehovah over the Deluge": ScripturePassage(citation: "Psalm 29:10", summary: "Jehovah is described as seated above the floodwaters, ruling as King forever."),
+    "Isaiah 54 · Noah reference": ScripturePassage(citation: "Isaiah 54:9", summary: "Jehovah compares a promise to his people with his sworn word that the waters of Noah would never again cover the earth."),
+    "Ezekiel 14 · Noah, Daniel, and Job": ScripturePassage(citation: "Ezekiel 14:14, 20", summary: "Noah is named with Daniel and Job as an example of a righteous man."),
+    "Matthew 24 · Jesus refers to Noah": ScripturePassage(citation: "Matthew 24:37–39", summary: "Jesus compares his presence to the days of Noah: people went on with everyday life and took no note until the Flood came and swept them all away."),
+    "Matthew 24 · Noah in Jesus’ warning": ScripturePassage(citation: "Matthew 24:37–39", summary: "Jesus compares his presence to the days of Noah: people went on with everyday life and took no note until the Flood came and swept them all away."),
+    "Luke 17 · Jesus refers to Noah": ScripturePassage(citation: "Luke 17:26, 27", summary: "Jesus says the days of the Son of man will be like the days of Noah, when people ate, drank, and married until the day Noah entered the ark and the Flood destroyed them."),
+    "Luke 17 · The days of Noah": ScripturePassage(citation: "Luke 17:26, 27", summary: "Jesus says the days of the Son of man will be like the days of Noah, when people ate, drank, and married until the day Noah entered the ark and the Flood destroyed them."),
+    "Luke 3 · Noah in Jesus’ genealogy": ScripturePassage(citation: "Luke 3:36", summary: "Noah is listed in the genealogy that Luke traces back from Jesus."),
+    "John 8 · Jesus’ statement about his prehuman existence": ScripturePassage(citation: "John 8:58", summary: "Jesus says that he existed before Abraham came into existence."),
+    "Hebrews 11 · Noah’s faith": ScripturePassage(citation: "Hebrews 11:7", summary: "Warned by God about things not yet seen, Noah showed faith and built an ark to save his household."),
+    "1 Peter 3 · Noah and the Flood": ScripturePassage(citation: "1 Peter 3:20", summary: "While the ark was being built in Noah’s day, God waited patiently; a few people, eight in all, were carried safely through the water."),
+    "2 Peter 2 · Noah as a preacher": ScripturePassage(citation: "2 Peter 2:5", summary: "God did not hold back from punishing the ancient world, but kept Noah, a preacher of righteousness, safe with seven others when he brought the Flood."),
+    "2 Peter 3 · The Flood account": ScripturePassage(citation: "2 Peter 3:5, 6", summary: "Peter recalls that the world of that time was destroyed when it was flooded with water.")
+]
 
 private struct Clue: Identifiable {
     let id: String
@@ -478,7 +520,7 @@ private struct ArchiveView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 #endif
     @AppStorage("archiveLanguage") private var languageCode = "en"
-    @AppStorage("archiveCurrentPage") private var storedPage = Page.briefing.rawValue
+    @AppStorage("archiveCurrentPage") private var storedPage = Page.home.rawValue
     @AppStorage("archiveCollectedClueIDs") private var storedCollectedClueIDs = ""
     @AppStorage("archiveTheory") private var storedTheory = ""
     @AppStorage("archiveTheoryNote") private var storedTheoryNote = ""
@@ -501,9 +543,10 @@ private struct ArchiveView: View {
     @State private var connectionRelation = "possible-link"
     @State private var connectionBasis = ""
     @State private var isResetConfirmationShown = false
+    @State private var expandedPassages: Set<String> = []
 
     private var page: Page {
-        get { Page(rawValue: storedPage) ?? .briefing }
+        get { Page(rawValue: storedPage) ?? .home }
         nonmutating set { storedPage = newValue.rawValue }
     }
 
@@ -631,7 +674,8 @@ private struct ArchiveView: View {
         connectionSecond = "nuncho"
         connectionRelation = "possible-link"
         connectionBasis = ""
-        page = .briefing
+        expandedPassages = []
+        page = .home
         openingDismissed = false
     }
 
@@ -699,7 +743,21 @@ private struct ArchiveView: View {
 
     private var topBar: some View {
         HStack(spacing: 8) {
-            settingsMenu
+            Group {
+                if page.tab != page {
+                    Button { page = page.tab } label: {
+                        HStack(spacing: 3) {
+                            Image(systemName: "chevron.left").font(.system(size: 17, weight: .semibold))
+                            Text("Back").font(.system(size: 16))
+                        }
+                        .foregroundStyle(gold).frame(height: 44).contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                } else {
+                    Color.clear.frame(height: 44)
+                }
+            }
+            .frame(width: 96, alignment: .leading)
             Spacer(minLength: 4)
             Text(LocalizedStringKey(page.rawValue))
                 .font(.system(size: 17, weight: .semibold)).foregroundStyle(.white)
@@ -707,7 +765,7 @@ private struct ArchiveView: View {
             Spacer(minLength: 4)
             Text("\(collected.count)/\(clues.count)")
                 .font(.system(size: 12, weight: .bold, design: .monospaced)).foregroundStyle(gold)
-                .frame(width: 44, alignment: .trailing)
+                .frame(width: 96, alignment: .trailing)
                 .accessibilityLabel(Text("MISSIONS CLEARED \(collected.count)/\(clues.count)"))
         }
         .padding(.horizontal, 12)
@@ -724,41 +782,10 @@ private struct ArchiveView: View {
         }
     }
 
-    private var settingsMenu: some View {
-        Menu {
-            Section {
-                Button { page = .briefing } label: {
-                    Label(LocalizedStringKey(Page.briefing.rawValue), systemImage: Page.briefing.icon)
-                }
-            }
-            Section("MISSIONS CLEARED \(collected.count)/\(clues.count)") {
-                Picker("Language", selection: $languageCode) {
-                    Text("English").tag("en")
-                    Text("Română").tag("ro")
-                }
-                Button(role: .destructive) { isResetConfirmationShown = true } label: {
-                    Label("RESTART THE CASE", systemImage: "arrow.counterclockwise")
-                }
-            }
-        } label: {
-            Image(systemName: "line.3.horizontal")
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(.white)
-                .frame(width: 44, height: 44)
-                .contentShape(Rectangle())
-        }
-        .menuIndicator(.hidden)
-#if os(macOS)
-        .menuStyle(.borderlessButton)
-        .fixedSize()
-#endif
-        .accessibilityLabel("Menu")
-    }
-
     private var bottomTabBar: some View {
         HStack(spacing: 2) {
-            ForEach(compactTabs) { item in
-                let isActive = page == item
+            ForEach(mainTabs) { item in
+                let isActive = page.tab == item
                 Button { page = item } label: {
                     VStack(spacing: 4) {
                         Image(systemName: item.icon)
@@ -788,14 +815,187 @@ private struct ArchiveView: View {
 
     @ViewBuilder private var pageContent: some View {
         switch page {
+        case .home: homePage
         case .briefing: briefingPage
         case .sites: sitesPage
         case .evidence: evidencePage
+        case .library: libraryPage
         case .northAmerica: northAmericaPage
         case .media: mediaPage
         case .claimAudit: claimAuditPage
         case .conclusion: conclusionPage
         }
+    }
+
+    private var nextStep: (text: String, target: Page) {
+        if collected.count < 3 {
+            return ("Clear three missions to open the case board and the final theory.", .sites)
+        }
+        if distinctComparisonCount < 2 {
+            return ("Record supported findings for two clue pairs on the case board.", .evidence)
+        }
+        if !theoryFiled {
+            return ("Choose your working theory and explain it.", .conclusion)
+        }
+        if collected.count < clues.count {
+            return ("Your theory is saved. Clear the remaining missions and revisit it.", .sites)
+        }
+        return ("Every mission is cleared and your theory is saved. Compare it with the claims and sources.", .library)
+    }
+
+    private var homePage: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                heroImage
+                homeStatusCard
+                homeSection("TUTORIAL") {
+                    homeRow(Page.briefing.rawValue, icon: Page.briefing.icon, detail: "How the investigation works") { page = .briefing }
+                    homeDivider
+                    homeRow("Show the introduction again", icon: "sparkles") { openingDismissed = false }
+                }
+                homeSection("SETTINGS") {
+                    HStack(spacing: 12) {
+                        homeIcon("globe", tint: gold)
+                        Text("Language").font(.system(size: 15)).foregroundStyle(.white)
+                        Spacer(minLength: 8)
+                        Picker("Language", selection: $languageCode) {
+                            Text("English").tag("en")
+                            Text("Română").tag("ro")
+                        }
+                        .pickerStyle(.segmented).labelsHidden().frame(maxWidth: 200)
+                    }
+                    .padding(.horizontal, 14).padding(.vertical, 10)
+                    homeDivider
+                    homeRow("RESTART THE CASE", icon: "arrow.counterclockwise", detail: "Clears missions, answers, findings, and the saved theory", tint: .red) { isResetConfirmationShown = true }
+                }
+                homeSection("LINKS") {
+                    homeRow("Bible online · New World Translation", icon: "book.closed", detail: "jw.org") {
+                        openReference(languageCode == "ro" ? "https://www.jw.org/ro/biblioteca/biblia/nwt/carti/" : "https://www.jw.org/en/library/bible/nwt/books/", missionID: nil)
+                    }
+                    homeDivider
+                    homeRow("Insight on the Scriptures · ‘Flood of Noah’s Day’", icon: "text.book.closed", detail: languageCode == "ro" ? "wol.jw.org" : "jw.org") {
+                        openReference(languageCode == "ro" ? "https://wol.jw.org/ro/wol/d/r34/lp-m/1200000758" : "https://www.jw.org/en/library/books/Insight-on-the-Scriptures/Flood-of-Noahs-Day/", missionID: nil)
+                    }
+                    homeDivider
+                    homeRow("The Great Missoula Floods", icon: "play.rectangle", detail: "U.S. Geological Survey · Public Domain") {
+                        openReference("https://www.usgs.gov/media/videos/pubtalk-92010-great-missoula-ice-age-floods-natl-geologic-trail", missionID: nil)
+                    }
+                }
+            }
+            .padding(.bottom, 24)
+        }
+    }
+
+    private var homeStatusCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("YOUR INVESTIGATION").font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea)
+                Spacer()
+                Text("\(clues.count - collected.count) missions left").font(.system(size: 11, weight: .semibold)).foregroundStyle(gold)
+            }
+            homeProgress("MISSIONS CLEARED", value: collected.count, total: clues.count, tint: sea)
+            homeProgress("CHALLENGES SOLVED", value: solvedChallengeCount, total: clues.count, tint: gold)
+            homeProgress("PAIRS WITH SUPPORTED FINDINGS", value: min(distinctComparisonCount, 2), total: 2, tint: sea)
+            HStack {
+                Text("THEORY").font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.6))
+                Spacer()
+                Text(LocalizedStringKey(theoryFiled ? "SAVED" : "NOT SAVED")).font(.system(size: 9, weight: .bold, design: .monospaced)).foregroundStyle(theoryFiled ? sea : .white.opacity(0.45))
+            }
+            Divider().overlay(.white.opacity(0.1))
+            Text(LocalizedStringKey(nextStep.text)).font(.system(size: 13)).foregroundStyle(.white.opacity(0.8)).fixedSize(horizontal: false, vertical: true)
+            Button { page = nextStep.target } label: {
+                HStack(spacing: 8) { Text("CONTINUE"); Image(systemName: "arrow.right") }
+                    .font(.system(size: 12, weight: .bold, design: .rounded)).tracking(0.8)
+                    .padding(.horizontal, 18).padding(.vertical, 11)
+                    .foregroundStyle(ink).background(gold, in: RoundedRectangle(cornerRadius: 8))
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(18)
+        .background(panel, in: RoundedRectangle(cornerRadius: 14))
+    }
+
+    private func homeProgress(_ title: String, value: Int, total: Int, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            HStack {
+                Text(LocalizedStringKey(title)).font(.system(size: 9, weight: .medium, design: .monospaced)).foregroundStyle(.white.opacity(0.6))
+                Spacer()
+                Text("\(value)/\(total)").font(.system(size: 9, weight: .bold, design: .monospaced)).foregroundStyle(.white.opacity(0.75))
+            }
+            ProgressView(value: Double(value), total: Double(max(total, 1))).tint(tint)
+        }
+    }
+
+    private func homeSection<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(LocalizedStringKey(title)).font(.system(size: 10, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(sea).padding(.leading, 4)
+            VStack(spacing: 0) { content() }
+                .background(panel, in: RoundedRectangle(cornerRadius: 12))
+        }
+    }
+
+    private var homeDivider: some View {
+        Rectangle().fill(.white.opacity(0.07)).frame(height: 1).padding(.leading, 58)
+    }
+
+    private func homeIcon(_ symbol: String, tint: Color) -> some View {
+        Image(systemName: symbol).font(.system(size: 15)).foregroundStyle(tint)
+            .frame(width: 32, height: 32).background(tint.opacity(0.14), in: RoundedRectangle(cornerRadius: 8))
+    }
+
+    private func homeRow(_ title: String, icon: String, detail: String? = nil, tint: Color? = nil, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                homeIcon(icon, tint: tint ?? gold)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(LocalizedStringKey(title)).font(.system(size: 15)).foregroundStyle(tint ?? .white)
+                    if let detail {
+                        Text(LocalizedStringKey(detail)).font(.system(size: 11)).foregroundStyle(.white.opacity(0.5))
+                    }
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right").font(.system(size: 12, weight: .semibold)).foregroundStyle(.white.opacity(0.3))
+            }
+            .padding(.horizontal, 14).padding(.vertical, 11)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var libraryPage: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                eyebrow("LIBRARY  /  SOURCES & MEDIA")
+                Text("Everything behind the clues.").font(.system(size: 34, weight: .regular, design: .serif))
+                Text("Open the evidence files, field media, and North American cases to compare them with your missions.")
+                    .font(.system(size: 14)).foregroundStyle(.white.opacity(0.6)).frame(maxWidth: 740, alignment: .leading)
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 280), spacing: 14)], spacing: 14) {
+                    libraryCard(.claimAudit, subtitle: "\(auditFiles.count) evidence files with their sources")
+                    libraryCard(.media, subtitle: "Videos, a virtual tour, and a timeline")
+                    libraryCard(.northAmerica, subtitle: "Scablands, Yukon, and Ashfall on the map")
+                }
+            }
+            .padding(.bottom, 24)
+        }
+    }
+
+    private func libraryCard(_ target: Page, subtitle: LocalizedStringKey) -> some View {
+        Button { page = target } label: {
+            HStack(spacing: 14) {
+                Image(systemName: target.icon).font(.system(size: 22)).foregroundStyle(gold)
+                    .frame(width: 52, height: 52).background(gold.opacity(0.13), in: RoundedRectangle(cornerRadius: 12))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(LocalizedStringKey(target.rawValue)).font(.system(size: 18, design: .serif)).foregroundStyle(.white)
+                    Text(subtitle).font(.system(size: 12)).foregroundStyle(.white.opacity(0.55))
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right").font(.system(size: 13, weight: .semibold)).foregroundStyle(.white.opacity(0.3))
+            }
+            .padding(16)
+            .background(panel, in: RoundedRectangle(cornerRadius: 14))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 
     private var briefingPage: some View {
@@ -921,7 +1121,7 @@ private struct ArchiveView: View {
                 set: { expandedSourceClueID = $0 ? clue.id : nil }
             )) {
                 VStack(alignment: .leading, spacing: 8) {
-                    ForEach(references(for: clue.id)) { referenceLink($0, missionID: clue.id) }
+                    referencesBlock(references(for: clue.id), blockID: clue.id, missionID: clue.id)
                     if openedSourceClueIDs.contains(clue.id) {
                         Label("SOURCE OPENED · CHALLENGE UNLOCKED", systemImage: "checkmark.seal.fill")
                             .font(.system(size: 9, weight: .bold, design: .monospaced)).foregroundStyle(sea).padding(.top, 5)
@@ -1674,7 +1874,7 @@ private struct ArchiveView: View {
                     if file.id == "arkCapacity" { ArkProportionDiagram() }
                     VStack(alignment: .leading, spacing: 7) {
                         eyebrow("REFERENCES · OPEN THE SOURCE")
-                        ForEach(file.references) { referenceLink($0) }
+                        referencesBlock(file.references, blockID: file.id, missionID: nil)
                     }.padding(.top, 2)
                 }.padding(.horizontal, 17).padding(.bottom, 17)
             }
@@ -1688,6 +1888,59 @@ private struct ArchiveView: View {
             Text(LocalizedStringKey(heading)).font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(1).foregroundStyle(color)
             Text(LocalizedStringKey(text)).font(.system(size: 12)).foregroundStyle(.white.opacity(0.70)).lineSpacing(4)
         }
+    }
+
+    @ViewBuilder private func referencesBlock(_ refs: [EvidenceReference], blockID: String, missionID: String?) -> some View {
+        let passages = refs.filter { scripturePassages[$0.title] != nil }
+        let others = refs.filter { scripturePassages[$0.title] == nil }
+        ForEach(others) { referenceLink($0, missionID: missionID) }
+        if !passages.isEmpty {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("BIBLE TEXTS · TAP TO READ THE SUMMARY").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.5).foregroundStyle(sea)
+                    .padding(.top, 6)
+                ForEach(passages) { reference in
+                    if let passage = scripturePassages[reference.title] {
+                        scriptureRow(passage, key: blockID + "|" + reference.title, missionID: missionID)
+                    }
+                }
+            }
+        }
+    }
+
+    private let scriptureBlue = Color(red: 0.45, green: 0.62, blue: 0.98)
+
+    private func scriptureRow(_ passage: ScripturePassage, key: String, missionID: String?) -> some View {
+        let isOpen = expandedPassages.contains(key)
+        return VStack(alignment: .leading, spacing: 4) {
+            Button {
+                if isOpen {
+                    expandedPassages.remove(key)
+                } else {
+                    expandedPassages.insert(key)
+                    if let missionID { markSourceOpened(for: missionID) }
+                }
+            } label: {
+                HStack(spacing: 6) {
+                    Text(LocalizedStringKey(passage.citation)).font(.system(size: 15, weight: .medium)).foregroundStyle(scriptureBlue)
+                    Image(systemName: isOpen ? "chevron.up" : "chevron.down").font(.system(size: 10, weight: .semibold)).foregroundStyle(scriptureBlue.opacity(0.8))
+                    Spacer(minLength: 0)
+                }
+                .padding(.vertical, 6)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            if isOpen {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("SUMMARY OF THE PASSAGE").font(.system(size: 8, weight: .bold, design: .monospaced)).tracking(0.5).foregroundStyle(Color(white: 0.4))
+                    Text(LocalizedStringKey(passage.summary)).font(.system(size: 15)).foregroundStyle(Color(white: 0.12)).lineSpacing(4)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color(white: 0.95), in: RoundedRectangle(cornerRadius: 8))
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: isOpen)
     }
 
     private func openReference(_ address: String, missionID: String?) {
